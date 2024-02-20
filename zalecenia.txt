@@ -1,0 +1,1 @@
+1. Zrób menu na wzór https://leverx.com/pl/ (responsywność, wygląd itd.) preferowane kolory (#000, #0f0) i ich odmiany
