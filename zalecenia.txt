@@ -1,2 +1,3 @@
 1. Zrób menu na wzór https://leverx.com/pl/ (responsywność, wygląd itd.) preferowane kolory (#000, #0f0) i ich odmiany
-Formularz na wzór strony https://leverx.com/pl/contact-us z przyciskiem reset (resetuje wszystkie dane w formularzu. Dane z formularza są zapisywane w bazie danych (dostępna w repo) oraz wysyła się mail z danymi z formularza na maila ( zostanie podany później)
+Formularz na wzór strony https://leverx.com/pl/contact-us z przyciskiem reset (resetuje wszystkie dane w formularzu. Dane z formularza są zapisywane w bazie danych (dostępna w repo) oraz wysyła się mail z danymi z formularza na maila ( zostanie podany później). Nie zapomnieć o Zgodzie na przetwarzanie danych w celu odpowiedzi na wiadomość oraz Zgoda na przetwarzanie danych w celach marketingowych i handlowych (treść zgody wstawię sam)
+Tytuły podstron wpisywać Tytuł | Secur-IT
