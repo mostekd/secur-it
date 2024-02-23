@@ -102,4 +102,19 @@ body{
 .dropdown:hover .dropbtn {
     background-color: #00cc07;
 }
-
+.spinaczcenter input{
+    background-color: #00cc07;
+    border-radius: 10px;
+}
+.kierunkowy{
+    color: #111111;
+    background-color: #00cc07;
+    border-radius: 10px;
+}
+.spinaczcenter textarea{
+    border-radius: 20px;
+    background-color: #00cc07;
+    color: #111111;
+    min-width: 300px;
+    min-height: 100px;
+}

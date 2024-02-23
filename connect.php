@@ -21,11 +21,11 @@ if ($result) {
     // Przetwarzanie wyników zapytania
     
     echo '<div>';
-    echo '<select id="kierunkowy">';
+    echo '<select class="kierunkowy">';
     while ($row = mysqli_fetch_assoc($result)) {
         // Generowanie struktury HTML z danymi
         
-        echo '<option value =' . $row["Kierunkowy"] .'> ' . $row["Kierunkowy"] . " " . $row["Kraj"]  . '</p>';
+        echo '<option class="kierunkowy" value =' . $row["Kierunkowy"] .'> ' . $row["Kierunkowy"] . " " . $row["Kraj"]  . '</p>';
     }
     echo '</select>';
     echo '</div>';
