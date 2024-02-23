@@ -1,3 +1,21 @@
 1. Zrób menu na wzór https://leverx.com/pl/ (responsywność, wygląd itd.) preferowane kolory (#000, #0f0) i ich odmiany
 Formularz na wzór strony https://leverx.com/pl/contact-us z przyciskiem reset (resetuje wszystkie dane w formularzu. Dane z formularza są zapisywane w bazie danych (dostępna w repo) oraz wysyła się mail z danymi z formularza na maila ( zostanie podany później). Nie zapomnieć o Zgodzie na przetwarzanie danych w celu odpowiedzi na wiadomość oraz Zgoda na przetwarzanie danych w celach marketingowych i handlowych (treść zgody wstawię sam)
 Tytuły podstron wpisywać Tytuł | Secur-IT
+
+
+Wymagania od patryka:
+Struktura HTML - Utwórz prosty szablon HTML z następującymi sekcjami:
+- Nagłówek (Header): Może zawierać nazwę i logo.
+- Sekcja "O mnie": Krótki opis osoby lub fikcyjnej firmy.
+- Sekcja "Umiejętności": Lista umiejętności lub usług.
+- Stopka (Footer): Informacje kontaktowe lub linki do mediów społecznościowych.
+Stylizacja CSS - Użyj CSS do stylizacji strony. Skup się na:
+- Użyciu różnych rodzajów czcionek.
+- Zastosowaniu kolorów odpowiadających schematowi kolorów (można użyć narzędzi takich jak Coolors lub Adobe Color).
+- Dodaniu prostych animacji lub efektów przejścia dla linków lub przycisków.
+Layout z użyciem Flexboxa:
+- Użyj flexboxa do organizacji layoutu sekcji i ich zawartości.
+- Upewnij się, że strona jest responsywna i dobrze wygląda na różnych rozmiarach ekranu.
+Dodatkowe wyzwania:
+- Dodaj galerię zdjęć w sekcji "O mnie", używając flexboxa do ustalenia układu.
+- Utwórz responsywne menu nawigacyjne, które będzie się dostosowywać do rozmiaru ekranu (np. hamburger menu na małych ekranach).
