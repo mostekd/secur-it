@@ -31,6 +31,10 @@ header{
     background: url('./images/placeholderbackground.jpg');
 }
 
+.tresc{
+    overflow: auto;
+}
+
 .top-nav{
     width: 100%;
     height: 15%;
@@ -116,6 +120,35 @@ header{
     padding: 5px;
     transition: border-radius 1s;
     cursor: pointer;
+}
+
+.dropdown-kontakt{
+    letter-spacing: 1.5px;
+    font-weight: 2em;
+    position: relative;
+    width: 135px;
+    margin-left: 15px;
+}
+
+.dropdown-top-kontakt{
+    letter-spacing: 1.5px;
+    font-weight: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(164, 164, 164, 0.19);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(164, 164, 164, 0.26);
+    padding: 5px;
+    transition: border-radius 1s;
+    cursor: pointer;
+}
+
+.dropdown-top-kontakt a{
+    color: white;
 }
 
 .dropdown-top.active{
