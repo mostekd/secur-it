@@ -1,3 +1,15 @@
+<!-- Dear user:
+When I wrote this code, only I and God knew what it was.
+Now, only God knows!
+
+So if you are done trying to 'optimize' this code (and failed), please increment the following counter as a warning:
+to the next guy:
+
+total_hours_wasted_here = 400
+
+notes:
+use icons from the fontawesome website plase and not all the svg
+-->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -10,6 +22,7 @@
     <title>Secur IT</title>
 </head>
 <body>
+    <div class="tlo"></div>
     <main class="main">
         <header>
             <a href="https://www.facebook.com/profile.php?id=61554027179435" class="spolecznosci" target="_blank">
@@ -66,45 +79,11 @@
                 </div>
             </div>
         </nav>
-        <div class="spinaczcenter"> 
-            <div class="formularz">
-                <form id="MyForm" action="./add.php" method="post">
-                    Imię i Nazwisko:
-                    <br>
-                    <input type="text" name="name" id="pole">
-                    <br>
-                    Adres e-mail:
-                    <br>
-                    <input type="email" name="email" id="pole">
-                    <br>
-                    Numer telefonu:
-                    <br>
-                    <div class="phone">
-                            <?php include ('connect.php')?><br>
-                        <div class="phone_number">
-                            <input type="tel" name="nr_telefonu" id="pole">
-                        </div>
-                    </div>
-                    <br>
-                    Wiadomość:
-                    <br>
-                    <textarea name="message" id="message"></textarea>
-            </div>
-                    <br><br>
-                    Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
-                    <br><br>
-                    <input type="checkbox">
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
-                    w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
-                    secut-it.com i dalszej wymiany korespondencji oraz oświadczam, 
-                    że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w polityce prywatności
-                    <br><br>
-                    <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
-                    <button type="submit" name="submit" class="przycisk">
-                        Wyślij
-                    </button>
-                </form><br>
+        <div class="tresc">
+            <h2>Zabezpieczanie Sieci</h2>
+            <p>Bezpieczeństwo sieci komputerowych jest kluczowe dla sukcesu każdej firmy w dzisiejszym świecie cyfrowym. W Secur-IT oferujemy kompleksowe rozwiązania, które pozwalają naszym klientom utrzymać ich sieci w najwyższym stopniu bezpieczeństwa. Nasze usługi obejmują audyt bezpieczeństwa, wdrażanie systemów ochrony przed atakami, monitorowanie infrastruktury oraz szkolenia dla personelu. Dzięki temu nasi klienci mogą być pewni, że ich dane są chronione przed wszelkimi zagrożeniami.</p>
+            
         </div>
     </main>
-    </body>
+</body>
 </html>

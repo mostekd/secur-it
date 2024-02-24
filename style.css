@@ -32,6 +32,9 @@ header{
 }
 
 .tresc{
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    margin: 10px;
     overflow: auto;
 }
 
@@ -218,21 +221,35 @@ header{
     backdrop-filter: blur(10px);
 }
 
+.spinaczcenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
 .spinaczcenter input{
-    background-color: #00cc07;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
 .kierunkowy{
     color: #111111;
-    background-color: #00cc07;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
 .spinaczcenter textarea{
     border-radius: 20px;
-    background-color: #00cc07;
+    background-color: #ffffff;
     color: #111111;
     min-width: 300px;
     min-height: 100px;
+}
+.przycisk{
+    border-radius: 10px;
+    height: 30px;
+    font-size: medium;
+    background-color: #fff;
+    width: 60px;
 }
