@@ -88,15 +88,14 @@ use icons from the fontawesome website plase and not all the svg
                         <li class="dropdown-item" style="--i:4;--j:1"><a href=""></a>Rozwój z nami</li>
                     </ol>
                 </div>
-                <div class="dropdown">
-                    <div class="dropdown-top">
-                        <a href="contact.php" target="_blank"><div class="dropdown-logo">Kontakt</div></a>
+                <div class="dropdown-kontakt">
+                    <div class="dropdown-top-kontakt">
+                        <a href="contact.php">Kontakt</a>
                     </div>
                 </div>
             </div>
         </nav>
-    </main>
-         <div class="spinaczcenter"> 
+        <div class="spinaczcenter"> 
             <div class="formularz">
                 <form id="MyForm" action="./add.php" method="post">
                     Imię i Nazwisko:
@@ -138,5 +137,6 @@ use icons from the fontawesome website plase and not all the svg
                     Numer Telefonu: +48 535525904
                 </div><br>
         </div>
+    </main>
     </body>
 </html>
