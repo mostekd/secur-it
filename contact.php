@@ -10,6 +10,7 @@
     <title>Secur IT</title>
 </head>
 <body>
+    <div class="tlo"></div>
     <main class="main">
         <header>
             <a href="https://www.facebook.com/profile.php?id=61554027179435" class="spolecznosci" target="_blank">
@@ -19,7 +20,7 @@
                 <i class="fa-brands fa-instagram" style="color: #51ca52;"></i>
             </a>
             <a href="#yt" class="spolecznosci" target="_blank">
-                <i class="fa-brands fa-youtube" style="color: #51ca52;""></i>
+                <i class="fa-brands fa-youtube" style="color: #51ca52;"></i>
             </a>
             <a href="https://www.linkedin.com/company/secur-it2/" class="spolecznosci" target="_blank">
                 <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
@@ -35,8 +36,8 @@
                 <div class="dropdown">
                     <div class="dropdown-top">
                         <div class="dropdown-logo">Firma</div>
-                        <div class="dropdown-toggle">
-                            <i class="fa-solid fa-bars"></i>
+                    <div class="dropdown-toggle">
+                           <i class="fa-solid fa-bars"></i>
                         </div>
                     </div>
                     <ol class="dropdown-list">
@@ -65,10 +66,29 @@
                     </div>
                 </div>
             </div>
+            <div class="phone">
+                <div class="dropdown">
+                    <div class="dropdown-top">
+                        <div class="dropdown-toggle-phone">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
+                    <ol class="dropdown-list">
+                        <li class="dropdown-item" style="--i:1;--j:7"><a href="./o-firmie.html"></a>O Firmie</li>
+                        <li class="dropdown-item" style="--i:2;--j:6"><a href="./nasza-historia.html"></a>Nasza historia</li>
+                        <li class="dropdown-item" style="--i:3;--j:5"><a href="./zabezpieczanie-sieci.html"></a>Zabezpieczanie sieci</li>
+                        <li class="dropdown-item" style="--i:4;--j:4"><a href="./kongfiguracja-sieci.html"></a>Kongfiguracja sieci</li>
+                        <li class="dropdown-item" style="--i:5;--j:3"><a href="./systemy-operacyjne.html"></a>Systemy operacyjne</li>
+                        <li class="dropdown-item" style="--i:6;--j:2"><a href="./rozwój-z nami.html"></a>Rozwój z nami</li>
+                        <li class="dropdown-item" style="--i:7;--j:1"> <a href="contact.php"></a>Kontakt</li>
+                     
+                    </ol>
+                </div>
+            </div>
         </nav>
         <div class="spinaczcenter"> 
             <div class="formularz">
-                <form id="MyForm" action="./add.php" method="post">
+            <form id="MyForm" action="./add.php" method="post">
                     Imię i Nazwisko:
                     <br>
                     <input type="text" name="name" id="pole">
@@ -79,7 +99,7 @@
                     <br>
                     Numer telefonu:
                     <br>
-                    <div class="phone">
+                    <div class="phonenumber">
                             <?php include ('connect.php')?><br>
                         <div class="phone_number">
                             <input type="tel" name="nr_telefonu" id="pole">
@@ -104,6 +124,7 @@
                         Wyślij
                     </button>
                 </form><br>
+        </div>
         </div>
         <footer>Dawid Mostowski 3A</footer>
     </main>

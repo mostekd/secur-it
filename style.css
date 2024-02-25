@@ -28,6 +28,7 @@ header{
 }
 
 .main {
+    overflow: auto;
     width: 100vw;
     height: calc(100vh - 50px); /* Wysokość ekranu minus wysokość stopki */
     background: url('./images/placeholderbackground.jpg');
@@ -41,7 +42,7 @@ header{
     margin: 10px;
     overflow: auto;
     text-shadow: 2px 2px #000000;
-width: 700px;
+    width: 50%;
 }
 .tresc h2, .tresc h4{
     margin-top: 15px;
@@ -56,6 +57,7 @@ width: 700px;
 }
 
 .top-nav-buttons{
+    overflow: auto;
     width: 50%;
     padding-top: 150px;
     display: flex;
@@ -293,7 +295,8 @@ footer {
         border: 1px solid rgba(147, 143, 143, 0.18);
     }
 .tresc{
-    width: 385px;
+    margin: 5%;
+    width: 90%;
 }
     .spolecznosci{
         margin: 3px;
@@ -348,4 +351,3 @@ footer {
         margin: 6px;
      }  
 }
-
