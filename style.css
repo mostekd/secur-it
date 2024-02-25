@@ -270,9 +270,10 @@ footer {
     height: 50px; /* Dowolna wysokość stopki */
 }
 
-.top-nav-buttons-phone{
+.phone{
     display: none;
 }
+
 @media only screen and (max-width: 768px) {
     header {
         display: flex;
@@ -324,5 +325,16 @@ footer {
     
     .top-nav-buttons{
         display: none;
+    }
+
+    .phone{
+        display: flex;
+        color: white;
+    }
+    .dropdown-toggle-phone{
+        height: 18px;
+        font-weight: 2em;
+        letter-spacing: 1.5px;
+        cursor: pointer;
     }
 }
