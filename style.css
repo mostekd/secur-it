@@ -15,11 +15,10 @@ body{
 
 header{
     display: flex;
-    height: 35px;
-    justify-content: flex-end;
+    height: 15vh;
+    overflow: visible;
+    justify-content: center;
     align-items: center;
-    padding: 5px;
-    padding-right: 190px;
     /* The glass effect on navbar || efekt szkła w navbarze */
     background: rgba(147, 143, 143, 0.6);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -30,8 +29,9 @@ header{
 
 .main{
     width: 100vw;
-    height: 650px;
+    height: 100vh;
     background: url('./images/placeholderbackground.jpg');
+    background-size: cover;
 }
 
 .tresc{
@@ -51,10 +51,12 @@ header{
 }
 
 .top-nav-buttons{
-    width: 50%;
-    padding-top: 150px;
+    overflow: visible;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .formularz{
