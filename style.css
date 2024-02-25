@@ -10,15 +10,15 @@ body{
     background-color: white;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 header{
     display: flex;
-    height: 15vh;
-    overflow: visible;
-    justify-content: center;
+    height: 35px;
+    justify-content: flex-end;
     align-items: center;
+    padding: 5px;
+    padding-right: 190px;
     /* The glass effect on navbar || efekt szkła w navbarze */
     background: rgba(147, 143, 143, 0.6);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -27,11 +27,12 @@ header{
     border: 1px solid rgba(147, 143, 143, 0.18);
 }
 
-.main{
+.main {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px); /* Wysokość ekranu minus wysokość stopki */
     background: url('./images/placeholderbackground.jpg');
     background-size: cover;
+    margin-bottom: 50px; /* Wysokość stopki */
 }
 
 .tresc{
@@ -51,12 +52,10 @@ header{
 }
 
 .top-nav-buttons{
-    overflow: visible;
+    width: 50%;
+    padding-top: 150px;
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    height: 100%;
+    justify-content: flex-end;
 }
 
 .formularz{
@@ -249,6 +248,7 @@ header{
     min-width: 300px;
     min-height: 100px;
 }
+
 .przycisk{
     border-radius: 10px;
     height: 30px;
@@ -256,12 +256,22 @@ header{
     background-color: #fff;
     width: 60px;
 }
-footer{
-    height: 20%;
-    display: flex;
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(147, 143, 143, 0.6);
     color: black;
-    font-size: larger;   
-    margin-top: auto;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Dowolna wysokość stopki */
+}
+
+.top-nav-buttons-phone{
+    display: none;
 }
 @media only screen and (max-width: 768px) {
     header {
@@ -285,5 +295,34 @@ footer{
     .logo{
         display: flex;
         width: 45%;
+    }
+    .main {
+        width: 100vw;
+        min-height: calc(100vh - 50px); /* Subtract footer height from viewport height */
+        background: url('./images/placeholderbackground.jpg');
+        background-size: cover;
+        padding-bottom: 50px; /* Add padding equal to the height of the footer */
+        box-sizing: border-box; /* Ensure padding is included in the height calculation */
+        position: relative; /* Add position relative */
+        overflow: auto; /* Enable scrolling if content exceeds viewport height */
+        top: 0; /* Ensure main content starts from the top */
+    }    
+    
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(147, 143, 143);
+        color: black;
+        font-size: larger;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        z-index: 999;
+    }
+    
+    .top-nav-buttons{
+        display: none;
     }
 }
