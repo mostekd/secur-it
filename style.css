@@ -8,6 +8,9 @@
 
 body{
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header{
@@ -152,6 +155,7 @@ header{
     padding: 5px;
     transition: border-radius 1s;
     cursor: pointer;
+    
 }
 
 .dropdown-top-kontakt a{
@@ -254,7 +258,8 @@ footer{
     height: 20%;
     display: flex;
     color: black;
-    font-size: larger;
+    font-size: larger;   
+    margin-top: auto;
 }
 @media only screen and (max-width: 768px) {
     header {
