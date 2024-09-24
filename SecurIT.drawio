@@ -640,7 +640,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KKkE_Qui8zbe5Bdun0iC-23" value="Klienci" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#ffff00;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="680" y="310" width="250" height="220" as="geometry" />
+          <mxGeometry x="660" y="150" width="250" height="220" as="geometry" />
         </mxCell>
         <mxCell id="KKkE_Qui8zbe5Bdun0iC-24" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#ffff00;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-23">
           <mxGeometry y="30" width="250" height="30" as="geometry" />
