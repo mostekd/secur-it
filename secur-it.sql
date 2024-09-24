@@ -1,5 +1,5 @@
-create database if not exists secur-it;
-use secur-it;
+create database if not exists secur_it;
+use secur_it;
 
 create table stanowiska (
     id_stanowisko int primary key auto_increment,
@@ -15,17 +15,17 @@ create table lokalizacje (
     kraj varchar(50)
 );
 
-create table dzialy(
+create table dzialy (
     id_dzial int primary key auto_increment,
     nazwa_dzialu varchar(100)
 );
 
-create table typy_paliwa(
+create table typy_paliwa (
     id_typ_paliwa int primary key auto_increment,
     typ_paliwa varchar(10)
 );
 
-create table samochody(
+create table samochody (
     id_samochod int primary key auto_increment,
     marka varchar(50),
     model varchar(100),
@@ -39,8 +39,82 @@ create table samochody(
     foreign key (id_typ_paliwa) references typy_paliwa (id_typ_paliwa)
 );
 
+create table rabaty (
+    id_rabat int primary key auto_increment,
+    wartosc_rabatu varchar(5)
+);
 
+create table numery_kierunkowe (
+    id_numer_kierunkowy int primary key auto_increment,
+    numer_kierunkowy varchar(10)
+    kraj varchar(50)
+);
 
+create table pracownicy (
+    id_pracownik int primary key auto_increment,
+    imie varchar(50),
+    nazwisko varchar(100),
+    adres_zamieszkania varchar (200),
+    id_numer_kierunkowy int,
+    numer_telefonu int,
+    adres_e_mail varchar(200),
+    PESEL int,
+    numer_umowy varchar(200),
+    numer_ubezpieczenia varchar(200),
+    data_urodzenia date,
+    data_zatrudnienia date,
+    wynagrodzenie varchar(200),
+    id_stanowisko int,
+    id_lokalizacja_pracy int,
+    id_dzial int,
+    id_samochod int,
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
+    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
+    foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
+    foreign key (id_dzial) references dzialy (id_dzial),
+    foreign key (id_samochod) references samochody (id_samochod)
+);
+
+create table administratorzy (
+    id_administrator int primary key auto_increment,
+    id_pracownik int,
+    foreign key (id_pracownik) references pracownicy (id_pracownik)
+);
+
+create table klienci (
+    id_klient int primary key auto_increment,
+    imie varchar(50),
+    nazwisko varchar(100),
+    id_numer_kierunkowy int,
+    numer_telefonu int,
+    adres_e_mail varchar(200),
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
+);
+
+create table konta (
+    id_konto int primary key auto_increment,
+    id_pracownik int,
+    id_klient int,
+    imie varchar(50),
+    nazwisko(100),
+    adres_e_mail varchar(200),
+    id_numer_kierunkowy int,
+    numer_telefonu int,
+    login varchar(100),
+    haslo varchar(250),
+    id_rabat int,
+    foreign key (id_pracownik) references pracownicy (id_pracownik),
+    foreign key (id_klient) references klienci (id_klient),
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
+    foreign key (id_rabat) references rabaty (id_rabat)
+);
+
+create table uslugi (
+    id_uslugi int primary key auto_increment,
+    nazwa varchar(100),
+    opis longtext,
+    cena decimal(10,2)
+);
 
 insert into `numery_kierunkowe` (`Kraj`, `numer kierunkowy`) values
 ('', ''),
