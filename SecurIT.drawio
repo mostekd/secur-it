@@ -758,6 +758,61 @@
         <mxCell id="KKkE_Qui8zbe5Bdun0iC-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="KKkE_Qui8zbe5Bdun0iC-2" target="KKkE_Qui8zbe5Bdun0iC-33">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-95" value="Usługi" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#ffff00;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="660" y="390" width="250" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-96" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#ffff00;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-95">
+          <mxGeometry y="30" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-97" value="PK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;fontStyle=1;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-96">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-98" value="id_usługi" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-96">
+          <mxGeometry x="30" width="220" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-99" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#ffff00;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-95">
+          <mxGeometry y="60" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-100" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-99">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-101" value="nazwa" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-99">
+          <mxGeometry x="30" width="220" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-102" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#ffff00;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-95">
+          <mxGeometry y="90" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-103" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-102">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-104" value="opis" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-102">
+          <mxGeometry x="30" width="220" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-108" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=#ffff00;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-95">
+          <mxGeometry y="120" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-109" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-108">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKkE_Qui8zbe5Bdun0iC-110" value="koszt" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#ffff00;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;strokeColor=#d6b656;" vertex="1" parent="KKkE_Qui8zbe5Bdun0iC-108">
+          <mxGeometry x="30" width="220" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
