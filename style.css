@@ -30,10 +30,10 @@ header{
 .main {
     overflow: auto;
     width: 100vw;
-    height: calc(100vh - 50px); /* Wysokość ekranu minus wysokość stopki */
+    height: calc(100vh - 50px);
     background: url('./images/placeholderbackground.jpg');
     background-size: cover;
-    margin-bottom: 50px; /* Wysokość stopki */
+    margin-bottom: 50px; 
 }
 
 .tresc{
@@ -91,17 +91,15 @@ header{
     justify-content: center;
 }
 
-/* Styl dla ikony */
+
 .icon {
-    width: 12.25px; /* Dostosuj szerokość ikony do własnych preferencji */
-    height: 14px; /* Dostosuj wysokość ikony do własnych preferencji */
-    fill: #112c5e; /* Kolor ikony */
-    transition: transform 0.3s ease; /* Dodaj płynne przejście */
+    width: 12.25px; 
+    height: 14px; 
+    fill: #112c5e;
+    transition: transform 0.3s ease; 
 }
 
-/* Dodatkowy styl dla ikony po najechaniu */
 .dropbtn:hover{
-    /* Zmiana d to zadanie */
     .icon{
         transform: rotate(180deg);
     }
@@ -116,7 +114,6 @@ header{
   margin-left: 30px;
 }
 
-/* Dropdown button */
 .dropdown{
     position: relative;
     width: 135px;
@@ -273,7 +270,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px; /* Dowolna wysokość stopki */
+    height: 50px;
 }
 
 .phone{
@@ -308,14 +305,14 @@ footer {
     }
     .main {
         width: 100vw;
-        min-height: calc(100vh - 50px); /* Subtract footer height from viewport height */
+        min-height: calc(100vh - 50px);
         background: url('./images/placeholderbackground.jpg');
         background-size: cover;
-        padding-bottom: 50px; /* Add padding equal to the height of the footer */
-        box-sizing: border-box; /* Ensure padding is included in the height calculation */
-        position: relative; /* Add position relative */
-        overflow: auto; /* Enable scrolling if content exceeds viewport height */
-        top: 0; /* Ensure main content starts from the top */
+        padding-bottom: 50px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: auto;
+        top: 0;
     }    
     
     footer {
