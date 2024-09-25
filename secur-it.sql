@@ -122,8 +122,10 @@ create table wpisy (
     tytul varchar(200),
     tresc longtext,
     data_dodania datetime,
-    id_pracownik int,
-    data_zatwierdzenia datetime
+    id_pracownik_zatwierdzajacy int,
+    data_zatwierdzenia datetime,
+    foreign key (id_konto) references konta (id_konto),
+    foreign key (id_pracownik_zatwierdzajacy) references pracownicy (id_pracownik)
 );
 
 insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
