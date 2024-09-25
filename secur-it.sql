@@ -122,9 +122,8 @@ create table wpisy (
     tytul varchar(200),
     tresc longtext,
     data_dodania datetime,
-    data_zatwierdzenia datetime,
-    id_pracownik int
-
+    id_pracownik int,
+    data_zatwierdzenia datetime
 );
 
 insert into `numery_kierunkowe` (`Kraj`, `numer kierunkowy`) values
