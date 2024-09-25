@@ -31,7 +31,7 @@ header{
     overflow: auto;
     width: 100vw;
     height: calc(100vh - 50px);
-    background: url('../images/placeholderbackground.jpg');
+    background: url('./images/placeholderbackground.jpg');
     background-size: cover;
     margin-bottom: 50px; 
 }
@@ -306,7 +306,7 @@ footer {
     .main {
         width: 100vw;
         min-height: calc(100vh - 50px);
-        background: url('../images/placeholderbackground.jpg');
+        background: url('./images/placeholderbackground.jpg');
         background-size: cover;
         padding-bottom: 50px;
         box-sizing: border-box;
