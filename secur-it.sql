@@ -123,6 +123,7 @@ create table wpisy (
     tresc longtext,
     data_dodania datetime,
     data_zatwierdzenia datetime,
+    id_pracownik int
 
 );
 
