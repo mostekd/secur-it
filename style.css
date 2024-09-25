@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+}
+header{
+    padding: 10px;
+    background-color: rgb(109, 109, 109);
+}
+header a{
+    text-decoration: none;
+}
+nav{
+    padding: 10px;
+}
+nav a{
+    text-decoration: none;
+    background-color: #3b3b3b;
+    color: #51ca52;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+}
