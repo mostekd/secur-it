@@ -8,16 +8,29 @@ header{
 header a{
     text-decoration: none;
 }
+header i:hover{
+    transform: scale(1.1);
+    padding-left: 2px;
+    padding-right: 2px;
+}
 nav{
+    background-color: rgb(117, 117, 117);
     padding: 10px;
+}
+nav img{
+    height: 10vh;
+    width: auto;
 }
 nav a{
     text-decoration: none;
-    background-color: #3b3b3b;
+    background-color: #555555;
     color: #51ca52;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 50px;
+}
+nav a:hover{
+    background-color: #3a3a3a;
 }
