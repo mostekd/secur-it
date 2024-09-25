@@ -46,7 +46,7 @@ create table rabaty (
 
 create table numery_kierunkowe (
     id_numer_kierunkowy int primary key auto_increment,
-    numer_kierunkowy varchar(10)
+    numer_kierunkowy varchar(10),
     kraj varchar(50)
 );
 
@@ -96,7 +96,7 @@ create table konta (
     id_pracownik int,
     id_klient int,
     imie varchar(50),
-    nazwisko(100),
+    nazwisko varchar(100),
     adres_e_mail varchar(200),
     id_numer_kierunkowy int,
     numer_telefonu int,
@@ -126,7 +126,7 @@ create table wpisy (
     data_zatwierdzenia datetime
 );
 
-insert into `numery_kierunkowe` (`Kraj`, `numer kierunkowy`) values
+insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
 ('', ''),
 ('Afganistan', '+93'),
 ('Alaska', '+1907'),
