@@ -116,6 +116,16 @@ create table uslugi (
     cena decimal(10,2)
 );
 
+create table wpisy (
+    id_wpis int primary key auto_increment,
+    id_konto int,
+    tytul varchar(200),
+    tresc longtext,
+    data_dodania datetime,
+    data_zatwierdzenia datetime,
+
+);
+
 insert into `numery_kierunkowe` (`Kraj`, `numer kierunkowy`) values
 ('', ''),
 ('Afganistan', '+93'),
