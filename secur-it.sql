@@ -127,7 +127,6 @@ create table wpisy (
 );
 
 insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
-('', ''),
 ('Afganistan', '+93'),
 ('Alaska', '+1907'),
 ('Albania', '+355'),
