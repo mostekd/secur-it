@@ -128,13 +128,13 @@
                     Problem:
                     <br>
                     <select type="list" name="problem" id="pole" class="problem" alt="pole problem">
-                        <option id="pole" value="problem">1</option>
-                        <option id="pole" value="problem">2</option>
-                        <option id="pole" value="problem">3</option>
-                        <option id="pole" value="problem">4</option>
-                        <option id="pole" value="problem">5</option>
-                        <option id="pole" value="problem">6</option>
-                        <option id="pole" value="problem">7</option>
+                        <option id="pole" value="1">1</option>
+                        <option id="pole" value="2">2</option>
+                        <option id="pole" value="3">3</option>
+                        <option id="pole" value="4">4</option>
+                        <option id="pole" value="5">5</option>
+                        <option id="pole" value="6">6</option>
+                        <option id="pole" value="7">7</option>
                     </select>
                     <br>
                     Wiadomość:
