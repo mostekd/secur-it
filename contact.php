@@ -105,7 +105,7 @@
                         if ($result){
                             
                         echo '<div>';
-                        echo '<select class="kierunkowy"';
+                        echo '<select class="kierunkowy" name="numer_kierunkowy">';
                         while ($row = mysqli_fetch_assoc($result)){
                             echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
                         }
