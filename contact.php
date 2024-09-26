@@ -127,15 +127,16 @@
                     <br>
                     Problem:
                     <br>
-                    <select type="list" name="problem" id="pole" class="problem" alt="pole problem">
-                        <option id="pole" value="1">1</option>
-                        <option id="pole" value="2">2</option>
-                        <option id="pole" value="3">3</option>
-                        <option id="pole" value="4">4</option>
-                        <option id="pole" value="5">5</option>
-                        <option id="pole" value="6">6</option>
-                        <option id="pole" value="7">7</option>
+                    <select name="problem" id="pole" class="problem" alt="pole problem">
+                        <option value="1">Problem 1</option>
+                        <option value="2">Problem 2</option>
+                        <option value="3">Problem 3</option>
+                        <option value="4">Problem 4</option>
+                        <option value="5">Problem 5</option>
+                        <option value="6">Problem 6</option>
+                        <option value="7">Problem 7</option>
                     </select>
+
                     <br>
                     Wiadomość:
                     <br>
