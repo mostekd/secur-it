@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
-    <title>Secur IT</title>
+    <title>Secur IT | Kontakt</title>
 </head>
 <body>
     <div class="tlo"></div>
@@ -32,7 +32,6 @@
         <nav class="top-nav">
             <a class="logo" href="./index.html"><img src="./images/logo.png" alt="logo"></a>                    
             <div class="top-nav-buttons">
-                <!-- the code for an animated dropdown menu i made -->
                 <div class="dropdown">
                     <div class="dropdown-top">
                         <div class="dropdown-logo">Firma</div>
@@ -45,7 +44,6 @@
                         <li class="dropdown-item" style="--i:2;--j:1"><a href="./nasza-historia.html"></a>Nasza historia</li>
                     </ol>
                 </div>
-                <!-- ----------- -->
                 <div class="dropdown">
                     <div class="dropdown-top">
                         <div class="dropdown-logo">Usługi</div>
@@ -91,24 +89,33 @@
             <form id="MyForm" action="./add.php" method="post">
                     Imię i Nazwisko:
                     <br>
-                    <input type="text" name="name" id="pole">
+                    <input type="text" placeholder="Imię i Nazwisko" aname="name" id="pole" alt="pole imię i nazwisko">
                     <br>
                     Adres e-mail:
                     <br>
-                    <input type="email" name="email" id="pole">
+                    <input type="email" placeholder="Adres e-mail" name="email" id="pole" alt="pole e-mail">
                     <br>
-                    Numer telefonu:
+                    Numer Telefonu:
                     <br>
                     <div class="phonenumber">
-                            <?php include ('connect.php')?><br>
+                        <?php
+                        
+                        ?>
                         <div class="phone_number">
-                            <input type="tel" name="nr_telefonu" id="pole">
+                            <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole" alt="pole numer telefonu">
                         </div>
                     </div>
+                    Tytuł:
+                    <br>
+                    <input type="text" placeholder="Tytuł" name="tytuł" id="pole" alt="pole tytuł">
+                    <br>
+                    Problem:
+                    <br>
+                    <input type="list" placeholder="Problem" name="problem" id="pole" alt="pole problem">
                     <br>
                     Wiadomość:
                     <br>
-                    <textarea name="message" id="message"></textarea>
+                    <textarea name="message" placeholder="Treść Wiadomości" id="message"></textarea>
             </div>
                     <br><br>
                     Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
@@ -117,7 +124,7 @@
                     Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
                     w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
                     secut-it.com i dalszej wymiany korespondencji oraz oświadczam, 
-                    że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w polityce prywatności
+                    że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a>
                     <br><br>
                     <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
                     <button type="submit" name="submit" class="przycisk">
@@ -126,7 +133,6 @@
                 </form><br>
         </div>
         </div>
-        <footer>Dawid Mostowski 3A</footer>
     </main>
     </body>
 </html>
