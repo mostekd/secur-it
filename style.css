@@ -81,6 +81,12 @@ header{
     width: 40vw;
 }
 
+#pole_nrtel{
+    padding: 10px;
+    height: 2vh;
+    width: 35vw;
+}
+
 #message{
     min-width: 60vw;
     max-width: 90vw;

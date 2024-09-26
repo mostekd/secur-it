@@ -118,7 +118,7 @@
 
                         mysqli_close($connection)
                         ?>
-                            <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole" alt="pole numer telefonu">
+                            <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole_nrtel" alt="pole numer telefonu">
                         </div>
                     </div>
                     Tytuł:
