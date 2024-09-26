@@ -104,13 +104,12 @@
                         $result = mysqli_query($connection, $query);
                         if ($result){
                             
-                        echo '<div>';
+                        echo '<div class="phone_number">';
                         echo '<select class="kierunkowy" name="numer_kierunkowy">';
                         while ($row = mysqli_fetch_assoc($result)){
                             echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
                         }
                             echo '</select>';
-                            echo '</div>';
 
                             mysqli_free_result($result);
                         } else {
@@ -119,7 +118,6 @@
 
                         mysqli_close($connection)
                         ?>
-                        <div class="phone_number">
                             <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole" alt="pole numer telefonu">
                         </div>
                     </div>
