@@ -1,8 +1,8 @@
 <?php
-$host = "localhost"; // adres hosta
-$username = "root"; // nazwa użytkownika bazy danych
-$password = ""; // hasło użytkownika bazy danych
-$database = "test_firma"; // nazwa bazy danych
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "test_firma";
 
 // Nawiązanie połączenia z bazą danych
 $connection = mysqli_connect($host, $username, $password, $database);
