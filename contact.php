@@ -99,7 +99,25 @@
                     <br>
                     <div class="phonenumber">
                         <?php
-                        
+                        include('connect.php');
+                        $query = "select * from numery_kierunkowe";
+                        $result = mysqli_query($connection, $query);
+                        if ($result){
+                            
+                        echo '<div>';
+                        echo '<select class="kierunkowy"';
+                        while ($row = mysqli_fetch_assoc($result)){
+                            echo '<option class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj="] .'</p>';
+                        }
+                            echo '</select>';
+                            echo '</div>';
+
+                            mysqli_free_result($result);
+                        } else {
+                            echo "Błąd zaputania: " .mysqli_error($connection);
+                        }
+
+                        mysqli_close($connection)
                         ?>
                         <div class="phone_number">
                             <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole" alt="pole numer telefonu">
