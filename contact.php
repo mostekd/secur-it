@@ -105,7 +105,6 @@
                         if ($result){
                             
                         echo '<div>';
-                        $selected = ($row["numer_kierunkowy"] == $defaultKierunkowy) ? 'selected' : '';
                         echo '<select class="kierunkowy"';
                         while ($row = mysqli_fetch_assoc($result)){
                             echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</p>';
