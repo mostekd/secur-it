@@ -127,7 +127,15 @@
                     <br>
                     Problem:
                     <br>
-                    <input type="list" placeholder="Problem" name="problem" id="pole" alt="pole problem">
+                    <select type="list" placeholder="Problem" name="problem" id="pole" alt="pole problem">
+                        <option id="pole">1</option>
+                        <option id="pole">2</option>
+                        <option id="pole">3</option>
+                        <option id="pole">4</option>
+                        <option id="pole">5</option>
+                        <option id="pole">6</option>
+                        <option id="pole">7</option>
+                    </select>
                     <br>
                     Wiadomość:
                     <br>
