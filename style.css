@@ -87,6 +87,10 @@ header{
     width: 28.5vw;
 }
 
+.problem{
+    border-radius: 10px;
+}
+
 #message{
     min-width: 60vw;
     max-width: 90vw;
