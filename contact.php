@@ -107,7 +107,7 @@
                         echo '<div>';
                         echo '<select class="kierunkowy"';
                         while ($row = mysqli_fetch_assoc($result)){
-                            echo '<option class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj="] .'</p>';
+                            echo '<option class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</p>';
                         }
                             echo '</select>';
                             echo '</div>';
