@@ -127,7 +127,7 @@
                     <br>
                     Problem:
                     <br>
-                    <select type="list" placeholder="Problem" name="problem" id="pole" class="peoblem" alt="pole problem">
+                    <select type="list" name="problem" id="pole" class="problem" alt="pole problem">
                         <option id="pole">1</option>
                         <option id="pole">2</option>
                         <option id="pole">3</option>
