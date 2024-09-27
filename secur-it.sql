@@ -96,6 +96,7 @@ create table klienci (
 create table konta (
     id_konto int primary key auto_increment,
     id_administrator int,
+    id_klient int,
     imie varchar(50),
     nazwisko varchar(100),
     id_nick varchar(50),
@@ -105,7 +106,8 @@ create table konta (
     login varchar(100),
     haslo varchar(250),
     foreign key (id_administrator) references administratorzy (id_administrator),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
+    foreign key (id_klient) references klienci (id_klient)
 );
 
 create table uslugi (
@@ -130,6 +132,7 @@ create table wpisy (
 create table opinie(
     id_opinia int primary key auto_increment,
     id_nick int,
+
 );
 
 
