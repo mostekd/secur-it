@@ -98,6 +98,7 @@ create table konta (
     id_administrator int,
     imie varchar(50),
     nazwisko varchar(100),
+    id_nick varchar(50),
     adres_e_mail varchar(200),
     id_numer_kierunkowy int,
     numer_telefonu int,
@@ -125,6 +126,13 @@ create table wpisy (
     foreign key (id_konto) references konta (id_konto),
     foreign key (id_pracownik_zatwierdzajacy) references pracownicy (id_pracownik)
 );
+
+create table opinie(
+    id_opinia int primary key auto_increment,
+    id_nick int,
+);
+
+
 
 insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
 ('Afganistan', '+93'),
