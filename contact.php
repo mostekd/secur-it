@@ -89,7 +89,7 @@
             <form id="MyForm" action="./add.php" method="post">
                     Imię i Nazwisko:
                     <br>
-                    <input type="text" placeholder="Imię i Nazwisko" aname="name" id="pole" alt="pole imię i nazwisko">
+                    <input type="text" placeholder="Imię i Nazwisko" name="name" id="pole" alt="pole imię i nazwisko">
                     <br>
                     Adres e-mail:
                     <br>
@@ -124,19 +124,6 @@
                     Tytuł:
                     <br>
                     <input type="text" placeholder="Tytuł" name="tytuł" id="pole" alt="pole tytuł">
-                    <br>
-                    Problem:
-                    <br>
-                    <select name="problem"  class="problem" alt="pole problem">
-                        <option id="pole" class="problem" value="1">Problem 1</option>
-                        <option id="pole" class="problem" value="2">Problem 2</option>
-                        <option id="pole" class="problem" value="3">Problem 3</option>
-                        <option id="pole" class="problem" alue="4">Problem 4</option>
-                        <option id="pole" class="problem" value="5">Problem 5</option>
-                        <option id="pole" class="problem" value="6">Problem 6</option>
-                        <option id="pole" class="problem" value="7">Problem 7</option>
-                    </select>
-
                     <br>
                     Wiadomość:
                     <br>
