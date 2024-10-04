@@ -131,7 +131,7 @@ create table wpisy (
 
 create table opinie(
     id_opinia int primary key auto_increment,
-    id_nick int,
+    id_nick int
 
 );
 
