@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
-    <title>Secur IT</title>
+    <link rel="shortcut icon" href="./images/ikona.png">
+    <title>Secur IT | Home</title>
 </head>
 <body>
     <div class="tlo"></div>
@@ -30,7 +31,7 @@
             </a>
         </header>
         <nav class="top-nav">
-            <a class="logo" href="./index.html"><img src="./images/logo.png" alt="logo"></a>                    
+            <a class="logo" href="./index.html"><img src="../images/logo.png" alt="logo"></a>                    
             <div class="top-nav-buttons">
                 <div class="dropdown">
                     <div class="dropdown-top">
@@ -40,8 +41,8 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:2"><a href="./o-firmie.html"></a>O Firmie</li>
-                        <li class="dropdown-item" style="--i:2;--j:1"><a href="./nasza-historia.html"></a>Nasza historia</li>
+                        <li class="dropdown-item" style="--i:1;--j:2"><a href="./#.html"></a>Podstrona 1</li>
+                        <li class="dropdown-item" style="--i:2;--j:1"><a href="./#.html"></a>Podstrona 2</li>
                     </ol>
                 </div>
                 <div class="dropdown">
@@ -52,10 +53,10 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./zabezpieczanie-sieci.html"></a>Zabezpieczanie sieci</li>
-                        <li class="dropdown-item" style="--i:2;--j:3"><a href="./kongfiguracja-sieci.html"></a>Kongfiguracja sieci</li>
-                        <li class="dropdown-item" style="--i:3;--j:2"><a href="./systemy-operacyjne.html"></a>Systemy operacyjne</li>
-                        <li class="dropdown-item" style="--i:4;--j:1"><a href="./rozwój-z nami.html"></a>Rozwój z nami</li>
+                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./#.html"></a>Podstrona 3</li>
+                        <li class="dropdown-item" style="--i:2;--j:3"><a href="./#.html"></a>Podstrona 4</li>
+                        <li class="dropdown-item" style="--i:3;--j:2"><a href="./#.html"></a>Podstrona 5</li>
+                        <li class="dropdown-item" style="--i:4;--j:1"><a href="./#.html"></a>Podstrona 6</li>
                     </ol>
                 </div>
                 <div class="dropdown-kontakt">
@@ -85,8 +86,18 @@
             </div>
         </nav>
         <div class="tresc">
-            <h2>Rozwój z Nami</h2>
-            <p>W Secur-IT wierzymy w ciągły rozwój i doskonalenie naszych usług. Nieustannie śledzimy zmiany w świecie technologii i dostosowujemy nasze podejście, aby sprostać rosnącym potrzebom naszych klientów. Nasz zespół stale podnosi swoje kwalifikacje i uczestniczy w szkoleniach oraz certyfikacjach branżowych, aby być na bieżąco z najnowszymi trendami i technologiami. Dołączając do Secur-IT, możesz być pewien, że masz partnera, który będzie wspierał Twój biznes na każdym etapie jego rozwoju.</p>
+            <h2>Witaj w Secur-IT!</h2>
+            <p>Jesteśmy firmą, która specjalizuje się w zapewnianiu kompleksowych rozwiązań w dziedzinie bezpieczeństwa komputerowego i sieciowego. Nasza pasja do technologii oraz zaangażowanie w ochronę danych sprawiają, że jesteśmy partnerem, na którym możesz polegać w cyfrowym świecie.</p>
+            <h2>Nasza Misja</h2>
+            <p>W Secur-IT wierzymy, że bezpieczeństwo IT powinno być dostępne dla wszystkich. Naszym celem jest zapewnienie naszym klientom spokoju ducha, wiedząc, że ich dane są w bezpiecznych rękach. Dążymy do tego poprzez świadczenie usług najwyższej jakości i ciągłe doskonalenie naszych rozwiązań.</p>
+            <h2>Co Oferujemy</h2>
+            <p>Oferujemy szeroki zakres usług, obejmujący m.in. tworzenie i administrację sieci komputerowych, projektowanie stron internetowych oraz serwis komputerowy. Nasze rozwiązania są elastyczne i dostosowane do indywidualnych potrzeb każdego klienta, aby zapewnić kompleksową ochronę danych i infrastruktury IT.</p>
+            <h2>Dlaczego Wybrać Secur-IT?</h2>
+            <h4>Doświadczony Zespół:</h4><p><p>Nasz zespół składa się z wykwalifikowanych specjalistów, którzy posiadają bogate doświadczenie w dziedzinie bezpieczeństwa IT oraz programowania.</p>
+            <h4>Indywidualne Podejście:</h4><p>Rozumiemy, że każda firma jest inna. Dlatego też nasze rozwiązania są dostosowane do indywidualnych potrzeb i wymagań klienta.</p>
+            <h4>Ciągły Rozwój:</h4><p>Stale śledzimy najnowsze trendy i technologie, aby zapewnić naszym klientom najlepsze i najbardziej innowacyjne rozwiązania.</p>
+            <h4>Profesjonalizm:</h4><p>Jesteśmy oddani naszej pracy i dbamy o najwyższy standard obsługi klienta oraz jakość świadczonych usług.</p>
+            <p>Dołącz do Secur-IT już dziś i zabezpiecz swoją firmę przed wszelkimi zagrożeniami cybernetycznymi, jednocześnie rozwijając jej potencjał technologiczny.</p>
         </div>
     </main>
 </body>
