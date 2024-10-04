@@ -87,9 +87,13 @@
         <div class="spinaczcenter"> 
             <div class="formularz">
             <form id="MyForm" action="./add.php" method="post">
-                    Imię i Nazwisko:
+                    Imię:
                     <br>
-                    <input type="text" placeholder="Imię i Nazwisko" name="name" id="pole" alt="pole imię i nazwisko">
+                    <input type="text" placeholder="Imię" name="name" id="pole" alt="pole imię">
+                    <br>
+                    Nazwisko:
+                    <br>
+                    <input type="text" placeholder="Nazwisko" name="surname" id="pole" alt="pole nazwisko">
                     <br>
                     Adres e-mail:
                     <br>

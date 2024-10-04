@@ -135,6 +135,16 @@ create table opinie(
 
 );
 
+create table formularz_kontaktowy(
+    id_formularz_kontaktowy int primary key auto_increment,
+    imie varchar(50),
+    nazwisko varchar(100),
+    e_mail varchar(200),
+    numer_telefonu varchar(30),
+    tytul varchar(150),
+    wiadomosc longtext
+);
+
 
 
 insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
