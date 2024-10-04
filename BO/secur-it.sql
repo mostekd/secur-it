@@ -140,9 +140,11 @@ create table formularz_kontaktowy(
     imie varchar(50),
     nazwisko varchar(100),
     e_mail varchar(200),
+    id_numer_kierunkowy int,
     numer_telefonu varchar(30),
     tytul varchar(150),
-    wiadomosc longtext
+    wiadomosc longtext,
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
 
