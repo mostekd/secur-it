@@ -96,12 +96,12 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                echo "<div id='wpis' class='artykul'>";
+                echo "<div id='wpis' class='artykul'><br>";
                 echo "<img src='".$row['zdjecie']."'>";
-                echo "Imię:".$row['imie']."
-                <br>Nazwisko:".$row['nazwisko']."
-                <br>Stanowisko:".$row['id_stanowisko']."
-                <br>Dział:".$row['id_dzial']."
+                echo "Imię: ".$row['imie']."
+                <br>Nazwisko: ".$row['nazwisko']."
+                <br>Stanowisko: ".$row['id_stanowisko']."
+                <br>Dział: ".$row['id_dzial']."
                 </div>";
             }
             }else {
