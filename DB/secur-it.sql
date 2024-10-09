@@ -114,17 +114,18 @@ create table konta (
     foreign key (id_klient) references klienci (id_klient)
 );
 
+create table typy_uslug (
+    id_typ_uslugi int primary key auto_increment,
+    typ_uslugi varchar(100)
+);
+
 create table uslugi (
     id_uslugi int primary key auto_increment,
     id_typ_uslugi int,
     nazwa varchar(100),
     opis longtext,
     cena decimal(10,2)
-);
-
-create table typy_uslug (
-    id_typ_uslugi int primary key auto_increment,
-    typ_uslugi varchar(100)
+    foreign key (id_typ_uslugi) references typy_uslug (id_typ_uslugi),
 );
 
 create table wpisy (
@@ -375,3 +376,7 @@ insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
 ('Zanzibar', '+259'),
 ('Zielonego Przylądka Wyspy', '+238'),
 ('Zimbabwe', '+263');
+
+INSERT INTO `typy_uslug` (`id_typ_uslugi`, `typ_uslugi`) VALUES ('1', 'Sieci Komputerowe'), ('2', 'Systemy Operacyjne'), ('3', 'Bazy Danych'), ('4', 'Strony Internetowe'), ('5', 'Serwis Komputerowy');
+
+INSERT INTO `stanowiska` (`id_stanowisko`, `nazwa`) VALUES ('1', 'CEO');
