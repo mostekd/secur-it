@@ -106,7 +106,6 @@ create table konta (
     adres_e_mail varchar(200),
     id_numer_kierunkowy int,
     numer_telefonu int,
-    login varchar(100),
     haslo varchar(250),
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
