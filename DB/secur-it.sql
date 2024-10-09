@@ -116,9 +116,15 @@ create table konta (
 
 create table uslugi (
     id_uslugi int primary key auto_increment,
+    id_typ_uslugi int,
     nazwa varchar(100),
     opis longtext,
     cena decimal(10,2)
+);
+
+create table typy_uslug (
+    id_typ_uslugi int primary key auto_increment,
+    typ_uslugi varchar(100)
 );
 
 create table wpisy (
