@@ -124,8 +124,8 @@ create table uslugi (
     id_typ_uslugi int,
     nazwa varchar(100),
     opis longtext,
-    cena decimal(10,2)
-    foreign key (id_typ_uslugi) references typy_uslug (id_typ_uslugi),
+    cena decimal(10,2),
+    foreign key (id_typ_uslugi) references typy_uslug (id_typ_uslugi)
 );
 
 create table wpisy (
