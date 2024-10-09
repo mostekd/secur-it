@@ -103,7 +103,7 @@
                     <br>
                     <div class="phonenumber">
                         <?php
-                            include('../DB/db_o_firmie.php');
+                            include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
                             $baza->databaseConnect();
                             $data = $baza->selectNrKierunkowe();
