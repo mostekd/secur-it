@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/ikona.png">
     <title>Secur IT | Kontakt</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
             </a>
         </header>
         <nav class="top-nav">
-            <a class="logo" href="./index.html"><img src="../images/logo.png" alt="logo"></a>                    
+            <a class="logo" href="./index.php"><img src="../images/logo.png" alt="logo"></a>                    
             <div class="top-nav-buttons">
                 <div class="dropdown">
                     <div class="dropdown-top">
@@ -40,8 +41,8 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:2"><a href="./o-firmie.html"></a>O Firmie</li>
-                        <li class="dropdown-item" style="--i:2;--j:1"><a href="./nasza-historia.html"></a>Nasza historia</li>
+                        <li class="dropdown-item" style="--i:1;--j:2"><a href="./o_firmie.php"></a>O Firmie</li>
+                        <li class="dropdown-item" style="--i:2;--j:1"><a href="./pracownicy.php"></a>Pracownicy</li>
                     </ol>
                 </div>
                 <div class="dropdown">
@@ -52,10 +53,10 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./zabezpieczanie-sieci.html"></a>Zabezpieczanie sieci</li>
-                        <li class="dropdown-item" style="--i:2;--j:3"><a href="./kongfiguracja-sieci.html"></a>Kongfiguracja sieci</li>
-                        <li class="dropdown-item" style="--i:3;--j:2"><a href="./systemy-operacyjne.html"></a>Systemy operacyjne</li>
-                        <li class="dropdown-item" style="--i:4;--j:1"><a href="./rozwój-z nami.html"></a>Rozwój z nami</li>
+                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./#.html"></a>Podstrona 3</li>
+                        <li class="dropdown-item" style="--i:2;--j:3"><a href="./#.html"></a>Podstrona 4</li>
+                        <li class="dropdown-item" style="--i:3;--j:2"><a href="./#.html"></a>Podstrona 5</li>
+                        <li class="dropdown-item" style="--i:4;--j:1"><a href="./#.html"></a>Podstrona 6</li>
                     </ol>
                 </div>
                 <div class="dropdown-kontakt">
