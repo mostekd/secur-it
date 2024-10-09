@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./#.html"></a>Podstrona 3</li>
+                    <li class="dropdown-item" style="--i:1;--j:4"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
                         <li class="dropdown-item" style="--i:2;--j:3"><a href="./#.html"></a>Podstrona 4</li>
                         <li class="dropdown-item" style="--i:3;--j:2"><a href="./#.html"></a>Podstrona 5</li>
                         <li class="dropdown-item" style="--i:4;--j:1"><a href="./#.html"></a>Podstrona 6</li>
@@ -85,7 +85,7 @@
                     <ol class="dropdown-list">
                         <li class="dropdown-item" style="--i:1;--j:7"><a href="./o-firmie.html"></a>O Firmie</li>
                         <li class="dropdown-item" style="--i:2;--j:6"><a href="./nasza-historia.html"></a>Nasza historia</li>
-                        <li class="dropdown-item" style="--i:3;--j:5"><a href="./zabezpieczanie-sieci.html"></a>Zabezpieczanie sieci</li>
+                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
                         <li class="dropdown-item" style="--i:4;--j:4"><a href="./kongfiguracja-sieci.html"></a>Kongfiguracja sieci</li>
                         <li class="dropdown-item" style="--i:5;--j:3"><a href="./systemy-operacyjne.html"></a>Systemy operacyjne</li>
                         <li class="dropdown-item" style="--i:6;--j:2"><a href="./rozwój-z nami.html"></a>Rozwój z nami</li>
