@@ -12,7 +12,7 @@ class db_o_firmie extends db_connection{
     function insertOFirmie ($tytul, $opis){
         $query = "INSERT INTO `o_firmie`(`tytul`, `opis`) VALUES ('".$tytul."','".$opis."');";
         $data = mysqli_query($this->connect, $query);
-        header('location: ../BO/student_list.php'); 
+        header('location: ../BO/o_firmie.php'); 
         $this->close();
     }
 
@@ -20,7 +20,7 @@ class db_o_firmie extends db_connection{
         $query = "Delete from o_firmie where id_o_firmie =".$id_o_firmie.";";
         $data = mysqli_query($this->connect, $query);
         unset($_GET['id']);
-        header('location: ./student_list.php');   
+        header('location: ../BO/o_firmie.php'); 
         $this->close();
     }
 
@@ -28,7 +28,7 @@ class db_o_firmie extends db_connection{
         $query = "UPDATE `o_firmie` SET `tytul`='".$tytul."',`opis`='".$opis.";";
         $data = mysqli_query($this->connect, $query);
         unset($_GET['id']);
-        header('location: ../BO/student_list.php');   
+        header('location: ../BO/o_firmie.php');  
         $this->close();
     }
 }
