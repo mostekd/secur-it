@@ -30,7 +30,7 @@
             </a>
         </header>
         <nav class="top-nav">
-            <a class="logo" href="./index.html"><img src="./images/logo.png" alt="logo"></a>                    
+            <a class="logo" href="./index.html"><img src="../images/logo.png" alt="logo"></a>                    
             <div class="top-nav-buttons">
                 <div class="dropdown">
                     <div class="dropdown-top">
@@ -103,7 +103,7 @@
                     <br>
                     <div class="phonenumber">
                         <?php
-                        include('../BO/connect.php');
+                        include('../DB/connect.php');
                         $query = "SELECT * FROM numery_kierunkowe";
                         $result = mysqli_query($connection, $query);
                         if ($result){
