@@ -65,6 +65,7 @@ create table pracownicy (
     data_urodzenia date,
     data_zatrudnienia date,
     wynagrodzenie varchar(200),
+    zdjecie varchar(100),
     id_stanowisko int,
     id_lokalizacja_pracy int,
     id_dzial int,
