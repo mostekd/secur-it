@@ -380,3 +380,7 @@ insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
 INSERT INTO `typy_uslug` (`id_typ_uslugi`, `typ_uslugi`) VALUES ('1', 'Sieci Komputerowe'), ('2', 'Systemy Operacyjne'), ('3', 'Bazy Danych'), ('4', 'Strony Internetowe'), ('5', 'Serwis Komputerowy');
 
 INSERT INTO `stanowiska` (`id_stanowisko`, `nazwa`) VALUES ('1', 'CEO');
+
+INSERT INTO `pracownicy` (`id_pracownik`, `imie`, `nazwisko`, `adres_zamieszkania`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `PESEL`, `numer_umowy`, `numer_ubezpieczenia`, `data_urodzenia`, `data_zatrudnienia`, `wynagrodzenie`, `zdjecie`, `id_stanowisko`, `id_lokalizacja_pracy`, `id_dzial`, `id_samochod`) VALUES ('1', 'Dawid', 'Mostowski', 'Polska, Częstochowa, 42-221, Heraklesa 38G', '145', '535525904', 'dawid.mostowski@secur-it.pl', '06250205651', NULL, NULL, '2006-05-02', '2024-02-01', NULL, '../images/pracownicy/dawid_mostowski.png', '1', NULL, NULL, NULL);
+
+INSERT INTO `uslugi` (`id_uslugi`, `id_typ_uslugi`, `nazwa`, `opis`, `cena`) VALUES ('1', '1', 'Test Sieci Komputerowe', 'Test', '200'), ('2', '2', 'Test Systemy Operacyjne', 'Test', '100'), ('3', '3', 'Test Bazy Danych', 'Test', '250'), ('4', '4', 'Test Strony Internetowe', 'Test', '500'), ('5', '5', 'Test Serwis Komputerowy', 'Test', '200');
