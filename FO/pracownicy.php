@@ -53,10 +53,11 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                    <li class="dropdown-item" style="--i:1;--j:4"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
-                        <li class="dropdown-item" style="--i:2;--j:3"><a href="./#.html"></a>Podstrona 4</li>
-                        <li class="dropdown-item" style="--i:3;--j:2"><a href="./#.html"></a>Podstrona 5</li>
-                        <li class="dropdown-item" style="--i:4;--j:1"><a href="./#.html"></a>Podstrona 6</li>
+                        <li class="dropdown-item" style="--i:1;--j:5"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
+                        <li class="dropdown-item" style="--i:2;--j:4"><a href="./systemy_operacyjne.php"></a>Systemy Operacyjne</li>
+                        <li class="dropdown-item" style="--i:3;--j:3"><a href="./bazy_danych.php"></a>Bazy Danych</li>
+                        <li class="dropdown-item" style="--i:4;--j:2"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
+                        <li class="dropdown-item" style="--i:5;--j:1"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
                     </ol>
                 </div>
                 <div class="dropdown-kontakt">
@@ -83,13 +84,16 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:7"><a href="./o-firmie.html"></a>O Firmie</li>
-                        <li class="dropdown-item" style="--i:2;--j:6"><a href="./nasza-historia.html"></a>Nasza historia</li>
-                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
-                        <li class="dropdown-item" style="--i:4;--j:4"><a href="./kongfiguracja-sieci.html"></a>Kongfiguracja sieci</li>
-                        <li class="dropdown-item" style="--i:5;--j:3"><a href="./systemy-operacyjne.html"></a>Systemy operacyjne</li>
-                        <li class="dropdown-item" style="--i:6;--j:2"><a href="./rozwój-z nami.html"></a>Rozwój z nami</li>
-                        <li class="dropdown-item" style="--i:7;--j:1"> <a href="contact.php"></a>Kontakt</li>
+                        <li class="dropdown-item" style="--i:1;--j:10"><a href="./o-firmie.html"></a>O Firmie</li>
+                        <li class="dropdown-item" style="--i:2;--j:9"><a href="./nasza-historia.html"></a>Nasza historia</li>
+                        <li class="dropdown-item" style="--i:3;--j:8"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
+                        <li class="dropdown-item" style="--i:4;--j:7"><a href="./systemy_operacyjne.php"></a>Systemy Operacyjne</li>
+                        <li class="dropdown-item" style="--i:5;--j:6"><a href="./bazy_danych.php"></a>Bazy Danych</li>
+                        <li class="dropdown-item" style="--i:6;--j:5"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
+                        <li class="dropdown-item" style="--i:7;--j:4"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
+                        <li class="dropdown-item" style="--i:8;--j:3"> <a href="contact.php"></a>Kontakt</li>
+                        <li class="dropdown-item" style="--i:9;--j:2"> <a href="logowanie.php"></a>Logowanie</li>
+                        <li class="dropdown-item" style="--i:10;--j:1"> <a href="rejestracja.php"></a>Rejestracja</li>
                      
                     </ol>
                 </div>
