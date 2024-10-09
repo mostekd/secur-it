@@ -97,8 +97,8 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='artykul'>
-                Tytył: ".$row['tytul']."
-                Treść: ".$row['opis']."
+                Tytuł:<br> ".$row['tytul']."
+                <br>Treść:<br> ".$row['opis']."
                 </div>";
             }
             }else {
