@@ -104,6 +104,7 @@
                     <div class="phonenumber">
                         <?php
                         include('../DB/db_connection.php');
+                        $baza->databaseConnect();
                         $query = "SELECT * FROM numery_kierunkowe";
                         $result = mysqli_query($connection, $query);
                         if ($result){
