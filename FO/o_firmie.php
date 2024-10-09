@@ -31,7 +31,7 @@
             </a>
         </header>
         <nav class="top-nav">
-            <a class="logo" href="./index.html"><img src="../images/logo.png" alt="logo"></a>                    
+            <a class="logo" href="./index.php"><img src="../images/logo.png" alt="logo"></a>                    
             <div class="top-nav-buttons">
                 <div class="dropdown">
                     <div class="dropdown-top">
