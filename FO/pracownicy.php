@@ -98,10 +98,10 @@
             {
                 echo "<div id='wpis' class='artykul'>";
                 echo "<img src='".$row['zdjecie']."'>";
-                echo "Imię:<br> ".$row['imie']."
-                <br>Nazwisko:<br> ".$row['nazwisko']."
-                <br>Stanowisko:<br> ".$row['id_stanowisko']."
-                <br>Dział:<br> ".$row['id_dzial']."
+                echo "Imię:".$row['imie']."
+                <br>Nazwisko:".$row['nazwisko']."
+                <br>Stanowisko:".$row['id_stanowisko']."
+                <br>Dział:".$row['id_dzial']."
                 </div>";
             }
             }else {
