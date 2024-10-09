@@ -96,8 +96,8 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                echo "<div id='wpis' class='artykul'><br>";
-                echo "<img src='".$row['zdjecie']."'>";
+                echo "<div id='wpis' class='artykul'>";
+                echo "<img src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
                 <br>Nazwisko: ".$row['nazwisko']."
                 <br>Stanowisko: ".$row['id_stanowisko']."
