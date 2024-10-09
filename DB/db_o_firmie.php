@@ -8,23 +8,23 @@ class db_o_firmie extends db_connection{
         }
     }
 
-    function insertOFirmie ($imie, $nazwisko, $PESEL, $email, $comments){
-        $query = "INSERT INTO `formularz_kontaktowy`(`imie`, `nazwisko`, `e_mail`, `numer_telefonu`, `tytul`, `wiadomosc`) VALUES ('".$imie."','".$nazwisko."','".$email."','".$email."','".$comments."');";
+    function insertOFirmie ($tytul, $opis){
+        $query = "INSERT INTO `o_firmie`(`tytul`, `opis`) VALUES ('".$tytul."','".$opis."');";
         $data = mysqli_query($this->connect, $query);
         header('location: ../BO/student_list.php'); 
         $this->close();
     }
 
-    function deleteOFirmie($id_ucznia){
-        $query = "Delete from uczen where id_ucznia =".$id_ucznia.";";
+    function deleteOFirmie($id_o_firmie){
+        $query = "Delete from o_firmie where id_o_firmie =".$id_o_firmie.";";
         $data = mysqli_query($this->connect, $query);
         unset($_GET['id']);
         header('location: ./student_list.php');   
         $this->close();
     }
 
-    function updateOFirmie($id_ucznia, $imie, $nazwisko, $PESEL, $email, $comments){
-        $query = "UPDATE `uczen` SET `imie`='".$imie."',`nazwisko`='".$nazwisko."',`PESEL`='".$PESEL."',`email`='".$email."',`comments`='".$comments."' WHERE `id_ucznia`=".$id_ucznia.";";
+    function updateOFirmie($id_o_firmie, $tytul, $opis){
+        $query = "UPDATE `o_firmie` SET `tytul`='".$tytul."',`opis`='".$opis.";";
         $data = mysqli_query($this->connect, $query);
         unset($_GET['id']);
         header('location: ../BO/student_list.php');   
