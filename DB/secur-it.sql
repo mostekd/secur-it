@@ -1,4 +1,5 @@
-create database if not exists secur_it;
+drop database if exists secur_it;
+create database secur_it;
 use secur_it;
 
 create table stanowiska (
