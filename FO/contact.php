@@ -156,7 +156,7 @@
                     <input type="checkbox">
                     Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
                     w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
-                    secut-it.com i dalszej wymiany korespondencji oraz oświadczam, 
+                    secut-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
                     że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a>
                     <br><br>
                     <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
