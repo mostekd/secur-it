@@ -103,25 +103,25 @@
                     <br>
                     <div class="phonenumber">
                         <?php
-                        include('../DB/db_connection.php');
-                        $baza->databaseConnect();
-                        $query = "SELECT * FROM numery_kierunkowe";
-                        $result = mysqli_query($connection, $query);
-                        if ($result){
-                            
-                        echo '<div class="phone_number">';
-                        echo '<select class="kierunkowy" name="numer_kierunkowy">';
-                        while ($row = mysqli_fetch_assoc($result)){
-                            echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
-                        }
-                            echo '</select>';
+                            include('../DB/db_o_firmie.php');
+                            $baza = new db_numery_kierunkowe();
+                            $baza->databaseConnect();
+                            $data = $baza->selectNrKierunkowe();
+                            if ($data){
+                                
+                            echo '<div class="phone_number">';
+                            echo '<select class="kierunkowy" name="numer_kierunkowy">';
+                            while ($row = mysqli_fetch_assoc($result)){
+                                echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                            }
+                                echo '</select>';
 
-                            mysqli_free_result($result);
-                        } else {
-                            echo "Błąd zaputania: " .mysqli_error($connection);
-                        }
+                                mysqli_free_result($result);
+                            } else {
+                                echo "Błąd zaputania: " .mysqli_error($connection);
+                            }
 
-                        mysqli_close($connection)
+                            mysqli_close($connection)
                         ?>
                             <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole_nrtel" alt="pole numer telefonu">
                         </div>
