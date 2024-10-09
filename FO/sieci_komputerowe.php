@@ -111,7 +111,7 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='artykul'>
-                ".$row['tytul']."
+                ".$row['nazwa']."
                 <br>".$row['opis']."
                 <br>".$row['cena']."
                 </div>";
