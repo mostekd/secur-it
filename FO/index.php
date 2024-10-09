@@ -41,8 +41,8 @@
                         </div>
                     </div>
                     <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:2"><a href="./#.html"></a>Podstrona 1</li>
-                        <li class="dropdown-item" style="--i:2;--j:1"><a href="./#.html"></a>Podstrona 2</li>
+                        <li class="dropdown-item" style="--i:1;--j:2"><a href="./o_firmie.php"></a>O Firmie</li>
+                        <li class="dropdown-item" style="--i:2;--j:1"><a href="./pracownicy.php"></a>Pracownicy</li>
                     </ol>
                 </div>
                 <div class="dropdown">
