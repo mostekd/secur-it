@@ -105,7 +105,7 @@
                 </div>";
             }
             }else {
-                echo "Brak wpisów";
+                echo "Brak pracowników";
             }
             $baza->close();
         ?>
