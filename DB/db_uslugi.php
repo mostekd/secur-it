@@ -1,8 +1,40 @@
 <?php
     include("db_connection.php");
     class db_uslugi extends db_connection{
-        function selectUslugi(){
-            $query = 'SELECT * FROM `uslugi` WHERE 1';
+        function selectUslugi_sieci(){
+            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 1';
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0){
+            return $data;
+            }
+        }
+        
+        function selectUslugi_systemy(){
+            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 2';
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0){
+            return $data;
+            }
+        }
+
+        function selectUslugi_bazy_danych(){
+            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 3';
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0){
+            return $data;
+            }
+        }
+
+        function selectUslugi_strony_internetowe(){
+            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 4';
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0){
+            return $data;
+            }
+        }
+
+        function selectUslugi_serwis_komputerowy(){
+            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 5';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;

@@ -8,7 +8,7 @@
     <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./images/ikona.png">
-    <title>Secur IT | Usługi - Sieci Komputerowe</title>
+    <title>Secur IT | Usługi - Systemy Operacyjne</title>
 </head>
 <body>
     <div class="tlo"></div>
@@ -103,7 +103,7 @@
             include('../DB/db_uslugi.php');
             $baza = new db_uslugi();
             $baza->databaseConnect();
-            $data = $baza->selectUslugi_sieci();
+            $data = $baza->selectUslugi_systemy();
             if (!empty($data)){
             ?>
         <div class="tresc">
