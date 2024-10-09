@@ -64,6 +64,16 @@
                         <a href="contact.php">Kontakt</a>
                     </div>
                 </div>
+                <div class="dropdown-kontakt">
+                    <div class="dropdown-top-kontakt">
+                        <a href="logowanie.php">Logowanie</a>
+                    </div>
+                </div>
+                <div class="dropdown-kontakt">
+                    <div class="dropdown-top-kontakt">
+                        <a href="rejestracja.php">Rejestracja</a>
+                    </div>
+                </div>
             </div>
             <div class="phone">
                 <div class="dropdown">
