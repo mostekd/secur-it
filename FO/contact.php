@@ -111,12 +111,12 @@
                                 
                             echo '<div class="phone_number">';
                             echo '<select class="kierunkowy" name="numer_kierunkowy">';
-                            while ($row = mysqli_fetch_assoc($result)){
+                            while ($row = mysqli_fetch_assoc($data)){
                                 echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
                             }
                                 echo '</select>';
 
-                                mysqli_free_result($result);
+                                mysqli_free_result($data);
                             } else {
                                 echo "Błąd zaputania: " .mysqli_error($connection);
                             }
