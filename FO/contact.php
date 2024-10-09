@@ -103,7 +103,7 @@
                     <br>
                     <div class="phonenumber">
                         <?php
-                        include('../DB/connect.php');
+                        include('../DB/dc_connection.php');
                         $query = "SELECT * FROM numery_kierunkowe";
                         $result = mysqli_query($connection, $query);
                         if ($result){
