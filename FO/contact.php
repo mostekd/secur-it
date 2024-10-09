@@ -121,7 +121,8 @@
                                 echo "Błąd zaputania: " .mysqli_error($connection);
                             }
 
-                            mysqli_close($connection)
+                            
+                            $baza->close();
                         ?>
                             <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole_nrtel" alt="pole numer telefonu">
                         </div>
