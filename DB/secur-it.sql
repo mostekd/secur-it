@@ -135,6 +135,12 @@ create table opinie(
 
 );
 
+create table o_firmie(
+    id_o_firmie int primary key auto_increment,
+    tytul varchar(255),
+    opis longtext
+);
+
 create table formularz_kontaktowy(
     id_formularz_kontaktowy int primary key auto_increment,
     imie varchar(50),
