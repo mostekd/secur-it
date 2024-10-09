@@ -59,7 +59,7 @@ create table pracownicy (
     id_numer_kierunkowy int,
     numer_telefonu int,
     adres_e_mail varchar(200),
-    PESEL int,
+    PESEL varchar(11),
     numer_umowy varchar(200),
     numer_ubezpieczenia varchar(200),
     data_urodzenia date,
