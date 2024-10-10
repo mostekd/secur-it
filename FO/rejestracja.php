@@ -140,7 +140,7 @@
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <div class="form-group">
-                    <button class="button" type="submit">Zaloguj się</button><br><br>
+                    <button class="button" type="submit">Zarejestruj się</button><br><br>
                     <a class="button" href="./index.php">Strona Główna</a>
                 </div>
             </form>
