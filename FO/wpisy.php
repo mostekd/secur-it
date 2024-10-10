@@ -105,7 +105,7 @@
             include('../DB/db_wpisy.php');
             $baza = new db_wpisy();
             $baza->databaseConnect();
-            $data = $baza->selectWpis();
+            $data = $baza->selectCheckWpis();
             if (!empty($data)){
             ?>
         <div class="tresc">
@@ -119,7 +119,7 @@
                 </div>";
             }
             }else {
-                echo "Brak usług";
+                echo "Brak wpisów";
             }
             $baza->close();
         ?>

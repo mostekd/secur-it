@@ -32,7 +32,7 @@
             $this->close();
         }
 
-        function selectWpisById ($id_wpis){
+        function selectCheckWpis (){
             $query = "SELECT `id_wpis`, `id_konto`, `tytul`, `tresc`, `data_zatwierdzenia` FROM `wpisy` WHERE id_wpis = 1";
             $data = mysqli_query($this->connect, $query);
 
