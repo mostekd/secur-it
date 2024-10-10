@@ -2,7 +2,7 @@
     include("db_connection.php");
     class db_wpisy extends db_connection{
         function selectKonto(){
-            $query = "SELECT * FROM `formularz_kontaktowy` WHERE login='$username' AND haslo='$encrypted'";
+            $query = "SELECT * FROM `wpisy` WHERE login='$username' AND haslo='$encrypted'";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
@@ -10,14 +10,14 @@
         }
 
         function insertWpis ($id_konto, $tytul, $tresc, $data_dodania){
-            $query = "INSERT INTO `formularz_kontaktowy`(`imie`, `nazwisko`, `e_mail`, `numer_telefonu`, `tytul`, `wiadomosc`) VALUES ('".$imie."','".$nazwisko."','".$email."','".$email."','".$comments."');";
+            $query = "INSERT INTO `wpisy`(`imie`, `nazwisko`, `e_mail`, `numer_telefonu`, `tytul`, `wiadomosc`) VALUES ('".$imie."','".$nazwisko."','".$email."','".$email."','".$comments."');";
             $data = mysqli_query($this->connect, $query);
             header('location: ../BO/student_list.php'); 
             $this->close();
         }
 
         function deleteWpis ($id_wpis){
-            $query = "Delete from uczen where id_wpis =".$id_wpis.";";
+            $query = "Delete from wpisy where id_wpis =".$id_wpis.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             header('location: ./student_list.php');   
