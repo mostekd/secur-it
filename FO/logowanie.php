@@ -108,7 +108,7 @@
                     $login = $_POST['login'];
                     $haslo = $_POST['haslo'];
                     $encrypted = sha1($haslo);
-                    $adress = "./index_admin.php";
+                    $adress = "./index.php";
                     $data = $baza->selectKonto();
                     $result = mysqli_query($connect, $sql);
 

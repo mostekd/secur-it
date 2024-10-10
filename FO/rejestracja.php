@@ -118,7 +118,7 @@
                     $baza->insertKonto($imie, $nazwisko, $id_nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
 
                     // Przekierowanie na stronę po pomyślnym dodaniu użytkownika
-                    header('location: ./student_list.php');
+                    header('location: ./logowanie.php');
                     exit();
                 }
 
