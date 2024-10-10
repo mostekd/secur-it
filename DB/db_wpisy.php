@@ -1,5 +1,6 @@
 <?php
-    class db_konta extends db_connection{
+    include("db_connection.php");
+    class db_wpisy extends db_connection{
         function selectKonto(){
             $query = "SELECT * FROM `formularz_kontaktowy` WHERE login='$username' AND haslo='$encrypted'";
             $data = mysqli_query($this->connect, $query);
