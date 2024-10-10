@@ -1,5 +1,4 @@
 <?php
-    include("db_connection.php");
     class db_numery_kierunkowe extends db_connection{
         function selectNrKierunkowe(){
             $query = 'SELECT * FROM numery_kierunkowe WHERE 1';
