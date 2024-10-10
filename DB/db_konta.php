@@ -24,7 +24,7 @@
             $this->close();
         }
 
-        function updateKonto ($id_ucznia, $imie, $nazwisko, $PESEL, $email, $comments){
+        function updateKonto ($id_konto, $id_administrator, $id_pracownik, $id_klient, $imie, $nazwisko, $id_nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
             $query = "UPDATE `uczen` SET `id_administrator`='".$id_administrator."',`id_pracownik`='".$id_pracownik."',`id_klient`='".$id_klient."',`imie`='".$imie."',`nazwisko`='".$nazwisko."',`id_nick`='".$id_nick."',`adres_e_mail`='".$adres_e_mail."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`haslo`='".$haslo."' WHERE `id_konto`=".$id_konto.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
