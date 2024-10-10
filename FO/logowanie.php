@@ -100,8 +100,6 @@
                 </div>
             </nav>
             <?php
-                session_start();
-
                 include('../DB/db_konta.php');
                 $baza = new db_konta();
                 $baza->databaseConnect();

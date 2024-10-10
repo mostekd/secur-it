@@ -1,4 +1,5 @@
 <?php
+    include("db_connection.php");
     class db_konta extends db_connection{
         function selectKonto(){
             $query = "SELECT * FROM `formularz_kontaktowy` WHERE login='$username' AND haslo='$encrypted'";
