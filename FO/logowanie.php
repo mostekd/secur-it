@@ -7,18 +7,18 @@
     $data = $baza->selectKonto();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $login = $_POST['login'];
+        $haslo = $_POST['haslo'];
         $encrypted = sha1($password);
         $adress = "./index_admin.php";
         
-        $sql = "SELECT * FROM `administratorzy` WHERE login='$username' AND haslo='$encrypted'";
+        $sql = "SELECT * FROM `administratorzy` WHERE login='$login' AND haslo='$encrypted'";
         $result = mysqli_query($connect, $sql);
 
         if (mysqli_num_rows($result) == 1) {
             // Zalogowano pomyślnie
             $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $username;
+            $_SESSION['login'] = $login;
             header("location:". $adress); // Przekierowanie do panelu administracyjnego
         } else {
             $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
