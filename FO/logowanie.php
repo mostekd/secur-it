@@ -10,7 +10,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $encrypted = sha1($password);
-        $adress = "./admin_panel.php";
+        $adress = "./index_admin.php";
         
         $sql = "SELECT * FROM `administratorzy` WHERE login='$username' AND haslo='$encrypted'";
         $result = mysqli_query($connect, $sql);
