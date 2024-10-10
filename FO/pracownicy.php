@@ -114,7 +114,7 @@
                 echo "<img src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
                 <br>Nazwisko: ".$row['nazwisko']."
-                <br>Stanowisko: ".$row['id_stanowisko']."
+                <br>Stanowisko: ".$row['nazwa']."
                 <br>Dział: ".$row['id_dzial']."
                 </div>";
             }
