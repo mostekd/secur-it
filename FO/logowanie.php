@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    include('../DB/db_uslugi.php');
-    $baza = new db_uslugi();
+    include('../DB/db_konta.php');
+    $baza = new db_konta();
     $baza->databaseConnect();
-    $data = $baza->selectUslugi_bazy_danych();
+    $data = $baza->selectKonto();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
