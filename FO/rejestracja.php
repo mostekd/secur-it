@@ -155,7 +155,6 @@
                     <input type="email" id="email" name="email" placeholder="Wpisz email" required>
                 </div>
                 <?php
-                    include("db_connection.php");
                     include('../DB/db_numery_kierunkowe.php');
                     $baza = new db_numery_kierunkowe();
                     $baza->databaseConnect();
