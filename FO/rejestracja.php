@@ -154,30 +154,30 @@
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Wpisz email" required>
                 </div>
-                <?php
-                    include('../DB/db_numery_kierunkowe.php');
-                    $baza = new db_numery_kierunkowe();
-                    $baza->databaseConnect();
-                    $data = $baza->selectNrKierunkowe();
-                    if ($data){
-                        
-                    echo '<div class="phone_number">';
-                    echo '<select class="kierunkowy" name="numer_kierunkowy">';
-                    while ($row = mysqli_fetch_assoc($data)){
-                        echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
-                    }
-                        echo '</select>';
-
-                        mysqli_free_result($data);
-                    } else {
-                        echo "Błąd zaputania: " .mysqli_error($connection);
-                    }
-
-                    
-                    $baza->close();
-                ?>
                 <div class="form-group">
                     <label for="numer_telefonu">Numer telefonu:</label>
+                    <?php
+                        include('../DB/db_numery_kierunkowe.php');
+                        $baza = new db_numery_kierunkowe();
+                        $baza->databaseConnect();
+                        $data = $baza->selectNrKierunkowe();
+                        if ($data){
+                            
+                        echo '<div class="phone_number">';
+                        echo '<select class="kierunkowy" name="numer_kierunkowy">';
+                        while ($row = mysqli_fetch_assoc($data)){
+                            echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                        }
+                            echo '</select>';
+
+                            mysqli_free_result($data);
+                        } else {
+                            echo "Błąd zaputania: " .mysqli_error($connection);
+                        }
+
+                        
+                        $baza->close();
+                    ?>
                     <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
                 </div>
 
