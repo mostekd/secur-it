@@ -99,29 +99,55 @@
                     </div>
                 </div>
             </nav>
-            <?php
-                include('../DB/db_konta.php');
-                $baza = new db_konta();
-                $baza->databaseConnect();
+            
+Poniżej znajduje się połączony kod HTML i PHP, który obsługuje formularz rejestracji użytkownika oraz zapisuje dane do bazy danych. Wprowadzone dane są przetwarzane po wysłaniu formularza, a następnie użytkownik zostaje zapisany do bazy.
 
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $login = $_POST['login'];
-                    $haslo = $_POST['haslo'];
-                    $encrypted = sha1($haslo);
-                    $adress = "./index_admin.php";
-                    $data = $baza->selectKonto();
-                    $result = mysqli_query($connect, $sql);
+Połączony kod:
+php
+Skopiuj kod
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./script.js" defer></script>
+    <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../images/ikona.png">
+    <title>Secur IT | Rejestracja użytkownika</title>
+</head>
+<body>
+    <main class="main">
+        <h2>Rejestracja użytkownika</h2>
 
-                    if (mysqli_num_rows($result) == 1) {
-                        // Zalogowano pomyślnie
-                        $_SESSION['loggedin'] = true;
-                        $_SESSION['login'] = $login;
-                        header("location:". $adress); // Przekierowanie do panelu administracyjnego
-                    } else {
-                        $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
-                    }
-                }
-            ?>
+        <?php
+        include('../DB/db_konta.php');
+        $baza = new db_konta();
+        $baza->databaseConnect();
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Pobranie danych z formularza
+            $imie = $_POST['imie'];
+            $nazwisko = $_POST['nazwisko'];
+            $id_nick = $_POST['id_nick'];
+            $email = $_POST['email'];
+            $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
+            $numer_telefonu = $_POST['numer_telefonu'];
+            $haslo = sha1($_POST['haslo']);  // Szyfrowanie hasła
+
+            // Wywołanie funkcji dodającej konto
+            $baza->insertKonto($imie, $nazwisko, $id_nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+
+            // Przekierowanie na stronę po pomyślnym dodaniu użytkownika
+            header('location: ./student_list.php');
+            exit();
+        }
+
+        if (isset($error_message)) {
+            echo '<p style="color: red;">' . $error_message . '</p>';
+        }
+        ?>
             <div id="loginPage" class="login-container">
                 <h2>Rejestracja</h2>
 
@@ -130,18 +156,62 @@
                     echo '<p style="color: red;">' . $error_message . '</p>';
                 }
             ?>
-            <form method="post" action="login.php" class="login-form">
+            <form method="post" action="rejestracja.php" class="registration-form">
                 <div class="form-group">
-                    <label for="username">Nazwa użytkownika:</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    <label for="imie">Imię:</label>
+                    <input type="text" id="imie" name="imie" placeholder="Wpisz imię" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="password">Hasło:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <label for="nazwisko">Nazwisko:</label>
+                    <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko" required>
                 </div>
+
                 <div class="form-group">
-                    <button class="button" type="submit">Zarejestruj się</button><br><br>
-                    <a class="button" href="./index.php">Strona Główna</a>
+                    <label for="id_nick">Nazwa użytkownika (Nick):</label>
+                    <input type="text" id="id_nick" name="id_nick" placeholder="Wpisz nazwę użytkownika" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Wpisz email" required>
+                </div>
+
+                <?php
+                            include('../DB/db_numery_kierunkowe.php');
+                            $baza = new db_numery_kierunkowe();
+                            $baza->databaseConnect();
+                            $data = $baza->selectNrKierunkowe();
+                            if ($data){
+                                
+                            echo '<div class="phone_number">';
+                            echo '<select class="kierunkowy" name="numer_kierunkowy">';
+                            while ($row = mysqli_fetch_assoc($data)){
+                                echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                            }
+                                echo '</select>';
+
+                                mysqli_free_result($data);
+                            } else {
+                                echo "Błąd zaputania: " .mysqli_error($connection);
+                            }
+
+                            
+                            $baza->close();
+                        ?>
+
+                <div class="form-group">
+                    <label for="numer_telefonu">Numer telefonu:</label>
+                    <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="haslo">Hasło:</label>
+                    <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required>
+                </div>
+
+                <div class="form-group">
+                    <button class="button" type="submit">Zarejestruj użytkownika</button>
                 </div>
             </form>
             </div>`
