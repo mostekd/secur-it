@@ -99,55 +99,33 @@
                     </div>
                 </div>
             </nav>
-            
-Poniżej znajduje się połączony kod HTML i PHP, który obsługuje formularz rejestracji użytkownika oraz zapisuje dane do bazy danych. Wprowadzone dane są przetwarzane po wysłaniu formularza, a następnie użytkownik zostaje zapisany do bazy.
+            <?php
+                include('../DB/db_konta.php');
+                $baza = new db_konta();
+                $baza->databaseConnect();
 
-Połączony kod:
-php
-Skopiuj kod
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="./script.js" defer></script>
-    <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../images/ikona.png">
-    <title>Secur IT | Rejestracja użytkownika</title>
-</head>
-<body>
-    <main class="main">
-        <h2>Rejestracja użytkownika</h2>
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Pobranie danych z formularza
+                    $imie = $_POST['imie'];
+                    $nazwisko = $_POST['nazwisko'];
+                    $id_nick = $_POST['id_nick'];
+                    $email = $_POST['email'];
+                    $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
+                    $numer_telefonu = $_POST['numer_telefonu'];
+                    $haslo = sha1($_POST['haslo']);  // Szyfrowanie hasła
 
-        <?php
-        include('../DB/db_konta.php');
-        $baza = new db_konta();
-        $baza->databaseConnect();
+                    // Wywołanie funkcji dodającej konto
+                    $baza->insertKonto($imie, $nazwisko, $id_nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Pobranie danych z formularza
-            $imie = $_POST['imie'];
-            $nazwisko = $_POST['nazwisko'];
-            $id_nick = $_POST['id_nick'];
-            $email = $_POST['email'];
-            $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
-            $numer_telefonu = $_POST['numer_telefonu'];
-            $haslo = sha1($_POST['haslo']);  // Szyfrowanie hasła
+                    // Przekierowanie na stronę po pomyślnym dodaniu użytkownika
+                    header('location: ./student_list.php');
+                    exit();
+                }
 
-            // Wywołanie funkcji dodającej konto
-            $baza->insertKonto($imie, $nazwisko, $id_nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
-
-            // Przekierowanie na stronę po pomyślnym dodaniu użytkownika
-            header('location: ./student_list.php');
-            exit();
-        }
-
-        if (isset($error_message)) {
-            echo '<p style="color: red;">' . $error_message . '</p>';
-        }
-        ?>
+                if (isset($error_message)) {
+                    echo '<p style="color: red;">' . $error_message . '</p>';
+                }
+            ?>
             <div id="loginPage" class="login-container">
                 <h2>Rejestracja</h2>
 
@@ -177,28 +155,10 @@ Skopiuj kod
                     <input type="email" id="email" name="email" placeholder="Wpisz email" required>
                 </div>
 
-                <?php
-                            include('../DB/db_numery_kierunkowe.php');
-                            $baza = new db_numery_kierunkowe();
-                            $baza->databaseConnect();
-                            $data = $baza->selectNrKierunkowe();
-                            if ($data){
-                                
-                            echo '<div class="phone_number">';
-                            echo '<select class="kierunkowy" name="numer_kierunkowy">';
-                            while ($row = mysqli_fetch_assoc($data)){
-                                echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
-                            }
-                                echo '</select>';
-
-                                mysqli_free_result($data);
-                            } else {
-                                echo "Błąd zaputania: " .mysqli_error($connection);
-                            }
-
-                            
-                            $baza->close();
-                        ?>
+                <div class="form-group">
+                    <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
+                    <input type="text" id="id_numer_kierunkowy" name="id_numer_kierunkowy" placeholder="Wpisz numer kierunkowy" required>
+                </div>
 
                 <div class="form-group">
                     <label for="numer_telefonu">Numer telefonu:</label>
