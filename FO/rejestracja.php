@@ -8,7 +8,7 @@
         <script src="./script.js" defer></script>
         <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
         <link rel="shortcut icon" href="../images/ikona.png">
-        <title>Secur IT | Logowanie</title>
+        <title>Secur IT | Rejestracja</title>
     </head>
     <body>
         <div class="tlo"></div>
@@ -123,7 +123,7 @@
                 }
             ?>
             <div id="loginPage" class="login-container">
-                <h2>Logowanie</h2>
+                <h2>Rejestracja</h2>
 
                 <?php
                 if (isset($error_message)) {
