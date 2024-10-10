@@ -5,7 +5,7 @@
             $query = 'SELECT pracownicy.imie, pracownicy.nazwisko, pracownicy.zdjecie, stanowiska.nazwa, dzialy.nazwa_dzialu 
             FROM pracownicy 
             JOIN stanowiska ON pracownicy.id_stanowisko = stanowiska.id_stanowisko 
-            JOIN dzialy on dzialy.id_dzial = pracownicy.id_dzial
+            JOIN dzialy ON pracownicy.id_dzial = dzialy.id_dzial
             WHERE 1';
 
             $data = mysqli_query($this->connect, $query);

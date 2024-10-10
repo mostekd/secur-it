@@ -117,7 +117,7 @@
                 echo "Imię: ".$row['imie']."
                 <br>Nazwisko: ".$row['nazwisko']."
                 <br>Stanowisko: ".$row['nazwa']."
-                <br>Dział: ".$row['id_dzial']."
+                <br>Dział: ".$row['nazwa_dzialu']."
                 </div>";
             }
             }else {
