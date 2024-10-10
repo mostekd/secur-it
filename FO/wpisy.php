@@ -8,7 +8,7 @@
     <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./images/ikona.png">
-    <title>Secur IT | Usługi - Bazy Danych</title>
+    <title>Secur IT | Usługi - Systemy Operacyjne</title>
 </head>
 <body>
     <div class="tlo"></div>
@@ -102,10 +102,10 @@
             </div>
         </nav>
         <?php
-            include('../DB/db_uslugi.php');
-            $baza = new db_uslugi();
+            include('../DB/db_wpisy.php');
+            $baza = new db_wpisy();
             $baza->databaseConnect();
-            $data = $baza->selectUslugi_bazy_danych();
+            $data = $baza->selectWpis();
             if (!empty($data)){
             ?>
         <div class="tresc">
