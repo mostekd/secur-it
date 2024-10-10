@@ -103,15 +103,13 @@
                 include('../DB/db_konta.php');
                 $baza = new db_konta();
                 $baza->databaseConnect();
-                $data = $baza->selectKonto();
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $login = $_POST['login'];
                     $haslo = $_POST['haslo'];
-                    $encrypted = sha1($password);
+                    $encrypted = sha1($haslo);
                     $adress = "./index_admin.php";
-                    
-                    $sql = "SELECT * FROM `administratorzy` WHERE login='$login' AND haslo='$encrypted'";
+                    $data = $baza->selectKonto();
                     $result = mysqli_query($connect, $sql);
 
                     if (mysqli_num_rows($result) == 1) {
