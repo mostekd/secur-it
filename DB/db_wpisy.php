@@ -32,7 +32,7 @@
         }
 
         function selectKontoById ($id_wpis){
-            $query = "SELECT * FROM `uczen` WHERE id_wpis = 1;
+            $query = "SELECT * FROM `uczen` WHERE id_wpis = 1";
             $data = mysqli_query($this->connect, $query);
 
             if (mysqli_num_rows($data) > 0) {
