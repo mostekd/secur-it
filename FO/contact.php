@@ -124,13 +124,28 @@
                             include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
                             $baza->databaseConnect();
+                            
+                            $dataPolska = $baza->selectNrKierunkowePolska();
+                            if ($dataPolska){
+                                while ($row = mysqli_fetch_assoc($dataPolska)){
+                                    $selectedId = $row["id_numer_kierunkowy"];
+                                } 
+                            }
+                            
                             $data = $baza->selectNrKierunkowe();
                             if ($data){
                                 
                             echo '<div class="phone_number">';
                             echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
                             while ($row = mysqli_fetch_assoc($data)){
-                                echo '<option id="pole" class="kierunkowy" value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                                $text = '<option id="pole" class="kierunkowy"';
+                                if($row["id_numer_kierunkowy"] == $selectedId)
+                                {
+                                $text .= 'selected = "selected"';
+                                } 
+                                $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+
+                                echo $text;
                             }
                                 echo '</select>';
 
