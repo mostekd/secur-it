@@ -11,7 +11,7 @@
         function insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc){
             $query = "INSERT INTO `formularz_kontaktowy`(`imie`, `nazwisko`, `e_mail`, `id_numer_kierunkowy`, `numer_telefonu`, `tytul`, `wiadomosc`) VALUES ('".$imie."','".$nazwisko."','".$email."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$tytul."','".$wiadomosc."');";
             $data = mysqli_query($this->connect, $query);
-            header('location: ../BO/student_list.php'); 
+            header('location: ./contact.php'); 
             $this->close();
         }
 
