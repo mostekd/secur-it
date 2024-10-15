@@ -11,6 +11,33 @@
     <title>Secur IT | Kontakt</title>
 </head>
 <body>
+    <?php
+        include("../DB/db_connection.php");
+        include('../DB/db_numery_kierunkowe.php');
+        $baza = new db_contact();
+        $baza->insertContact();
+
+        if(!empty($_GET)){
+            $baza->databaseConnect()
+            if(isset($_GET['opcja'])){
+                if($_GET['opcja'] == 'dodaj'){
+                    $imie = $_GET['imie'];
+                    $nazwisko = $_GET['nazwisko'];
+                    $e_mail = $_GET['e_mail'];
+                    $id_numer_kierunkowy = $_GET['id_numer_kierunkowy'];
+                    $numer_telefonu = $_GET['numer_telefonu'];
+                    $tytul = $_GET['tytul'];
+                    $wiadomosc = $_GET['wiadomosc'];
+                    $baza->insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc);
+                }
+            }
+            else{
+                echo "<p>Wiadomość nie została wysłana</p>";
+            }
+        }    
+
+        $baza->close();
+    ?>
     <div class="tlo"></div>
     <main class="main">
         <header>
@@ -120,11 +147,9 @@
                     <br>
                     <div class="phonenumber">
                         <?php
-                            include("../DB/db_connection.php");
-                            include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
                             $baza->databaseConnect();
-                            
+            
                             $dataPolska = $baza->selectNrKierunkowePolska();
                             if ($dataPolska){
                                 while ($row = mysqli_fetch_assoc($dataPolska)){
@@ -178,6 +203,7 @@
                     że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a>
                     <br><br>
                     <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
+                    <input type=hidden name="opcja" id="opcja" class="opcja" value='dodaj'></input>
                     <button type="submit" name="submit" class="przycisk">
                         Wyślij
                     </button>
