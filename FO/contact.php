@@ -14,16 +14,17 @@
     <?php
         include("../DB/db_connection.php");
         include('../DB/db_numery_kierunkowe.php');
+        include('../DB/db_contact.php');
         $baza = new db_contact();
         $baza->insertContact();
 
         if(!empty($_GET)){
-            $baza->databaseConnect()
+            $baza->databaseConnect();
             if(isset($_GET['opcja'])){
                 if($_GET['opcja'] == 'dodaj'){
                     $imie = $_GET['imie'];
                     $nazwisko = $_GET['nazwisko'];
-                    $e_mail = $_GET['e_mail'];
+                    $email = $_GET['e_mail'];
                     $id_numer_kierunkowy = $_GET['id_numer_kierunkowy'];
                     $numer_telefonu = $_GET['numer_telefonu'];
                     $tytul = $_GET['tytul'];
@@ -130,7 +131,7 @@
         </nav>
         <div class="spinaczcenter"> 
             <div class="formularz">
-            <form id="MyForm" action="./add.php" method="post">
+            <form id="MyForm" method="post">
                     Imię:
                     <br>
                     <input type="text" placeholder="Imię" name="name" id="pole" alt="pole imię">
