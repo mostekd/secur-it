@@ -128,9 +128,9 @@
                             if ($data){
                                 
                             echo '<div class="phone_number">';
-                            echo '<select class="kierunkowy" name="numer_kierunkowy">';
+                            echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
                             while ($row = mysqli_fetch_assoc($data)){
-                                echo '<option id="pole" class="kierunkowy" value=' .$row["numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                                echo '<option id="pole" class="kierunkowy" value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
                             }
                                 echo '</select>';
 

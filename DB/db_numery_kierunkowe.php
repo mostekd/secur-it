@@ -7,5 +7,12 @@
             return $data;
             }
         }
+        function selectNrKierunkowePolska(){
+            $query = 'SELECT * FROM numery_kierunkowe WHERE kraj = "Polska"';
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0){
+            return $data;
+            }
+        }
     }
 ?>
