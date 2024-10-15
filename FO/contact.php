@@ -36,7 +36,6 @@
             }
         }    
 
-        $baza->close();
     ?>
     <div class="tlo"></div>
     <main class="main">

@@ -18,9 +18,7 @@
         }
 
         public function close(){
-            if ($this->connect !== null) {
-                mysqli_close($this->connect);
-            }
+            mysqli_close($this->connect);
         }
     }
 ?>
