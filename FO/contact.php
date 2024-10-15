@@ -16,7 +16,6 @@
         include('../DB/db_numery_kierunkowe.php');
         include('../DB/db_contact.php');
         $baza = new db_contact();
-        $baza->insertContact();
 
         if(!empty($_GET)){
             $baza->databaseConnect();
