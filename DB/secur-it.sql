@@ -113,7 +113,6 @@ create table konta (
     foreign key (id_numer_telefonu) references klienci (numer_telefonu),
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
     foreign key (id_klient) references klienci (id_klient)
 );
 
