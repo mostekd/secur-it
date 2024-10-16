@@ -116,9 +116,14 @@
                 echo "<img src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
                 <br>Nazwisko: ".$row['nazwisko']."
-                <br>Stanowisko: ".$row['nazwa']."
-                <br>Dział: ".$row['nazwa_dzialu']."
-                </div>";
+                <br>Stanowisko: ".$row['nazwa']."";
+                if(!empty($dzial)){
+                    echo "<br>Dział: ".$row['nazwa_dzialu']."
+                    </div>";
+                }
+                else{
+                    echo "</div>";
+                }
             }
             }else {
                 echo "Brak pracowników";
