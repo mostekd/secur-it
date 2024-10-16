@@ -135,8 +135,8 @@ create table wpisy (
 
 create table opinie(
     id_opinia int primary key auto_increment,
-    id_nick int,
-    foreign key (id_nick) references konta (id_nick)
+    id_konto int,
+    foreign key (id_konto) references konta (id_konto)
 );
 
 create table o_firmie(
