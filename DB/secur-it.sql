@@ -98,7 +98,7 @@ create table konta (
     id_administrator int,
     id_pracownik int,
     id_klient int,
-    id_nick varchar(50),
+    nick varchar(50),
     haslo varchar(250),
     id_rabat int,
     foreign key (id_administrator) references administratorzy (id_administrator),

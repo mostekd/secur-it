@@ -9,8 +9,8 @@
             }
         }
 
-        function insertKonto ($imie, $nazwisko, $id_nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
-            $query = "INSERT INTO `konta`(`id_administrator`, `id_pracownik`, `id_klient`, `imie`, `nazwisko`, `id_nick`, `adres_e_mail`, `id_numer_kierunkowy`, `numer_telefonu`, `haslo`) VALUES ('".$imie."','".$nazwisko."','".$id_nick."','".$adres_e_mail."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$haslo."');";
+        function insertKonto ($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
+            $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_klient."','".$nick."','".$haslo."');";
             $data = mysqli_query($this->connect, $query);
             header('location: ../index.php'); 
             $this->close();

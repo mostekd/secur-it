@@ -109,14 +109,14 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $imie = $_POST['imie'];
                     $nazwisko = $_POST['nazwisko'];
-                    $id_nick = $_POST['id_nick'];
+                    $nick = $_POST['nick'];
                     $email = $_POST['email'];
                     $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
                     $numer_telefonu = $_POST['numer_telefonu'];
                     $haslo = sha1($_POST['haslo']);
 
 
-                    $baza->insertKonto($imie, $nazwisko, $id_nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+                    $baza->insertKonto($imie, $nazwisko, $nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
 
                     header('location: ./logowanie.php');
                     exit();
@@ -146,8 +146,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="id_nick">Nazwa użytkownika (Nick):</label>
-                    <input type="text" id="id_nick" name="id_nick" placeholder="Wpisz nazwę użytkownika" required>
+                    <label for="nick">Nazwa użytkownika (Nick):</label>
+                    <input type="text" id="nick" name="nick" placeholder="Wpisz nazwę użytkownika" required>
                 </div>
 
                 <div class="form-group">
