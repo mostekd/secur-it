@@ -90,9 +90,7 @@ create table klienci (
     id_numer_kierunkowy int,
     numer_telefonu int,
     adres_e_mail varchar(200),
-    id_rabat int,
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
-    foreign key (id_rabat) references rabaty (id_rabat)
 );
 
 create table konta (
@@ -100,20 +98,13 @@ create table konta (
     id_administrator int,
     id_pracownik int,
     id_klient int,
-    id_imie int,
-    id_nazwisko int,
     id_nick varchar(50),
-    adres_e_mail varchar(200),
-    id_numer_kierunkowy int,
-    id_numer_telefonu int,
     haslo varchar(250),
-    foreign key (id_imie) references klienci (imie),
-    foreign key (id_nazwisko) references klienci (nazwisko),
-    foreign key (id_numer_kierunkowy) references klienci (id_numer_kierunkowy),
-    foreign key (id_numer_telefonu) references klienci (numer_telefonu),
+    id_rabat int,
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
-    foreign key (id_klient) references klienci (id_klient)
+    foreign key (id_klient) references klienci (id_klient),
+    foreign key (id_rabat) references rabaty (id_rabat)
 );
 
 create table typy_uslug (
