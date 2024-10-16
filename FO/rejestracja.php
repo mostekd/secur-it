@@ -105,19 +105,17 @@
                 $baza->databaseConnect();
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    // Pobranie danych z formularza
                     $imie = $_POST['imie'];
                     $nazwisko = $_POST['nazwisko'];
                     $id_nick = $_POST['id_nick'];
                     $email = $_POST['email'];
                     $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
                     $numer_telefonu = $_POST['numer_telefonu'];
-                    $haslo = sha1($_POST['haslo']);  // Szyfrowanie hasła
+                    $haslo = sha1($_POST['haslo']);
 
-                    // Wywołanie funkcji dodającej konto
+
                     $baza->insertKonto($imie, $nazwisko, $id_nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
 
-                    // Przekierowanie na stronę po pomyślnym dodaniu użytkownika
                     header('location: ./logowanie.php');
                     exit();
                 }
