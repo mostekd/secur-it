@@ -157,7 +157,6 @@
                 <div class="form-group">
                     <label for="numer_telefonu">Numer telefonu:</label>
                     <?php
-                            include("../DB/db_connection.php");
                             include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
                             $baza->databaseConnect();
