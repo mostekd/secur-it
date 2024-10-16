@@ -108,7 +108,7 @@ create table konta (
     id_numer_telefonu int,
     haslo varchar(250),
     foreign key (id_imie) references klienci (imie),
-    foreign key (id_nazwisko) references klienci (id_administrator),
+    foreign key (id_nazwisko) references klienci (nazwisko),
     foreign key (id_numer_kierunkowy) references klienci (id_numer_kierunkowy),
     foreign key (id_numer_telefonu) references klienci (numer_telefonu),
     foreign key (id_administrator) references administratorzy (id_administrator),
