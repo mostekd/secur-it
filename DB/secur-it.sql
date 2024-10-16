@@ -90,7 +90,7 @@ create table klienci (
     id_numer_kierunkowy int,
     numer_telefonu int,
     adres_e_mail varchar(200),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
 create table konta (
