@@ -144,7 +144,7 @@
                     <a class="button" href="./index.php">Strona Główna</a>
                 </div>
             </form>
-            </div>`
+            </div>
         </main>
     </body>
 </html>
