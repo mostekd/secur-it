@@ -10,11 +10,26 @@
         }
 
         function insertKonto ($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
-            $query = "INSERT INTO `klienci`(`imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."');
-            INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_klient."','".$nick."','".$haslo."');";
+            $query = "INSERT INTO `klienci`(`imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."');";
+           
             $data = mysqli_query($this->connect, $query);
-            header('location: ../index.php'); 
-            $this->close();
+            if ($data) 
+            {
+
+                $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_konto."','".$nick."','".$haslo."')";
+                $data = mysqli_query($this->connect, $query);
+                if(mysqli_num_rows($data) > 0) 
+                {
+                    header('location: ../index.php'); 
+                    $this->close();
+                }
+                else{
+                    mysqli_rollback($this->connect);
+                }
+            }
+            else{
+                echo "You are stupidddddddddd";
+            }
         }
 
         function deleteKonto ($id_konto){

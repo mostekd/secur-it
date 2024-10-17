@@ -172,7 +172,7 @@
                             if ($data){
                                 
                             echo '<div class="phone_number">';
-                            echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
+                            echo '<select class="kierunkowy" name="id_numer_kierunkowy" default="">';
                             while ($row = mysqli_fetch_assoc($data)){
                                 $text = '<option id="pole" class="kierunkowy"';
                                 if($row["id_numer_kierunkowy"] == $selectedId)
