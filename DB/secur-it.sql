@@ -73,7 +73,6 @@ create table pracownicy (
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
     foreign key (id_stanowisko) references stanowiska (id_stanowisko),
     foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
-    foreign key (id_dzial) references dzialy (id_dzial),
     foreign key (id_samochod) references samochody (id_samochod)
 );
 
