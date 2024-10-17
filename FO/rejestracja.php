@@ -110,7 +110,7 @@
                     $imie = $_POST['imie'];
                     $nazwisko = $_POST['nazwisko'];
                     $nick = $_POST['nick'];
-                    $email = $_POST['email'];
+                    $adres_e_mail = $_POST['adres_e_mail'];
                     $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
                     $numer_telefonu = $_POST['numer_telefonu'];
                     $haslo = sha1($_POST['haslo']);
