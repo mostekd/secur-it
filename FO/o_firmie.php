@@ -115,7 +115,7 @@
                 echo "<div id='wpis' class='artykul'>
                 Tytuł:<br> ".$row['tytul']."
                 <br>Treść:<br> ".$row['opis']."
-                </div>";
+                </div><br>";
             }
             }else {
                 echo "Brak wpisów";
