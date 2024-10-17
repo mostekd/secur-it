@@ -112,7 +112,6 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                
                 echo "<div id='wpis' class='artykul'>";
                 echo "<img src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."

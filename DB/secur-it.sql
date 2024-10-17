@@ -375,7 +375,7 @@ INSERT INTO `stanowiska` (`id_stanowisko`, `nazwa`) VALUES ('1', 'CEO');
 
 INSERT INTO `dzialy` (`id_dzial`, `nazwa_dzialu`) VALUES ('1', 'Brak');
 
-INSERT INTO `pracownicy` (`id_pracownik`, `imie`, `nazwisko`, `adres_zamieszkania`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `PESEL`, `numer_umowy`, `numer_ubezpieczenia`, `data_urodzenia`, `data_zatrudnienia`, `wynagrodzenie`, `zdjecie`, `id_stanowisko`, `id_lokalizacja_pracy`, `id_dzial`, `id_samochod`) VALUES ('1', 'Dawid', 'Mostowski', 'Polska, Częstochowa, 42-221, Heraklesa 38G', '145', '535525904', 'dawid.mostowski@secur-it.pl', '06250205651', NULL, NULL, '2006-05-02', '2024-02-01', NULL, '../images/pracownicy/dawid_mostowski.png', '1', NULL, NULL, NULL);
+INSERT INTO `pracownicy` (`id_pracownik`, `imie`, `nazwisko`, `adres_zamieszkania`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `PESEL`, `numer_umowy`, `numer_ubezpieczenia`, `data_urodzenia`, `data_zatrudnienia`, `wynagrodzenie`, `zdjecie`, `id_stanowisko`, `id_lokalizacja_pracy`, `id_dzial`, `id_samochod`) VALUES ('1', 'Dawid', 'Mostowski', 'Polska, Częstochowa, 42-221, Heraklesa 38G', '145', '535525904', 'dawid.mostowski@secur-it.pl', '06250205651', NULL, NULL, '2006-05-02', '2024-02-01', NULL, '../images/pracownicy/dawid_mostowski.png', NULL, NULL, NULL, NULL);
 
 UPDATE `pracownicy` SET `id_dzial` = '1' WHERE `pracownicy`.`id_pracownik` = 1;
 
