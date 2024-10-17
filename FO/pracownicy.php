@@ -112,12 +112,13 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
+                
                 echo "<div id='wpis' class='artykul'>";
                 echo "<img src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
                 <br>Nazwisko: ".$row['nazwisko']."
                 <br>Stanowisko: ".$row['nazwa']."";
-                if(!empty($dzial)){
+                if(!empty($row['nazwa_dzialu'])){
                     echo "<br>Dział: ".$row['nazwa_dzialu']."
                     </div>";
                 }
