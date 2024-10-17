@@ -116,7 +116,7 @@
                     $haslo = sha1($_POST['haslo']);
 
 
-                    $baza->insertKonto($imie, $nazwisko, $nick, $email, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+                    $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
 
                     header('location: ./logowanie.php');
                     exit();
@@ -151,8 +151,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Wpisz email" required>
+                    <label for="adres_e_mail">Email:</label>
+                    <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
                 </div>
                 <div class="form-group">
                     <label for="numer_telefonu">Numer telefonu:</label>
