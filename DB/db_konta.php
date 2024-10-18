@@ -21,7 +21,7 @@
                 $data = mysqli_query($this->connect, $query);
                 if($data) 
                 {
-                    header('location: ../index.php'); 
+                    header("Location: ./logowanie.php");
                     $this->close();
                 }
                 else{
