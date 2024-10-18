@@ -15,10 +15,11 @@
             $data = mysqli_query($this->connect, $query);
             if ($data) 
             {
-
-                $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_konto."','".$nick."','".$haslo."')";
+                $id_klient = $this->connect->insert_id;
+                
+                $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_klient."','".$nick."','".$haslo."')";
                 $data = mysqli_query($this->connect, $query);
-                if(mysqli_num_rows($data) > 0) 
+                if($data) 
                 {
                     header('location: ../index.php'); 
                     $this->close();
