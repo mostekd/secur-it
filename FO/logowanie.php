@@ -111,12 +111,12 @@
                     $haslo = $_POST['haslo'];
                     $encrypted = sha1($haslo);
                     $adress = "./index.php";
-                    $data = $baza->selectKonto();
 
                     if (mysqli_num_rows($data) == 1) {
                         // Zalogowano pomyślnie
                         $_SESSION['loggedin'] = true;
                         $_SESSION['login'] = $login;
+                        $data = $baza->selectKonto();
                         header("location:". $adress);
                     } else {
                         $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
