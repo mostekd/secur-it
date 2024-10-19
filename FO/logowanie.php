@@ -112,7 +112,6 @@
                     $encrypted = sha1($haslo);
                     $adress = "./index.php";
                     $data = $baza->selectKonto();
-                    $result = mysqli_query($connect, $sql);
 
                     if (mysqli_num_rows($result) == 1) {
                         // Zalogowano pomyślnie
