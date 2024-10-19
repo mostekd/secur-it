@@ -101,6 +101,20 @@
                     </div>
                 </div>
             </nav>
+            <form method="post" class="login-form">
+                <div class="form-group">
+                    <label for="username">Nazwa użytkownika:</label>
+                    <input type="text" id="nick" name="nick" placeholder="Enter your nick" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="haslo" name="haslo" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <button class="button" type="submit">Zaloguj się</button><br><br>
+                    <a class="button" href="./index.php">Strona Główna</a>
+                </div>
+            </form>
             <?php
                 include('../DB/db_konta.php');
                 $baza = new db_konta();
@@ -131,20 +145,6 @@
                     echo '<p style="color: red;">' . $error_message . '</p>';
                 }
             ?>
-            <form method="post" class="login-form">
-                <div class="form-group">
-                    <label for="username">Nazwa użytkownika:</label>
-                    <input type="text" id="nick" name="nick" placeholder="Enter your nick" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Hasło:</label>
-                    <input type="password" id="haslo" name="haslo" placeholder="Enter your password" required>
-                </div>
-                <div class="form-group">
-                    <button class="button" type="submit">Zaloguj się</button><br><br>
-                    <a class="button" href="./index.php">Strona Główna</a>
-                </div>
-            </form>
             </div>
         </main>
     </body>
