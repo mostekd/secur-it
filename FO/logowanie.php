@@ -107,11 +107,12 @@
                 $baza->databaseConnect();
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $data = $baza->selectKonto();
                     $login = $_POST['nick'];
                     $haslo = $_POST['haslo'];
                     $encrypted = sha1($haslo);
                     $adress = "./index.php";
-                    $data = $baza->selectKonto();
+                    
 
                     if (mysqli_num_rows($data) == 1) {
                         // Zalogowano pomyślnie
