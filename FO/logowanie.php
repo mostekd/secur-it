@@ -113,7 +113,7 @@
                     $adress = "./index.php";
                     $data = $baza->selectKonto();
 
-                    if (mysqli_num_rows($result) == 1) {
+                    if (mysqli_num_rows($data) == 1) {
                         // Zalogowano pomyślnie
                         $_SESSION['loggedin'] = true;
                         $_SESSION['login'] = $login;
