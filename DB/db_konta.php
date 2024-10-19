@@ -37,7 +37,6 @@
             $query = "Delete from konta where id_konto =".$id_konto.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
-            header('location: ../index_admin.php');   
             $this->close();
         }
 

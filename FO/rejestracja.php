@@ -117,6 +117,7 @@
 
 
                     $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+                    header("Location: ./logowanie.php");
                     exit();
                 }
 
