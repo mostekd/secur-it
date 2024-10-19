@@ -107,7 +107,7 @@
                 $baza->databaseConnect();
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $login = $_POST['login'];
+                    $login = $_POST['nick'];
                     $haslo = $_POST['haslo'];
                     $encrypted = sha1($haslo);
                     $adress = "./index.php";
