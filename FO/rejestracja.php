@@ -116,7 +116,6 @@
                             <li class="dropdown-item" style="--i:9;--j:3"> <a href="contact.php"></a>Kontakt</li>
                             <li class="dropdown-item" style="--i:10;--j:2"> <a href="logowanie.php"></a>Logowanie</li>
                             <li class="dropdown-item" style="--i:11;--j:1"> <a href="rejestracja.php"></a>Rejestracja</li>
-                        
                         </ol>
                     </div>
                 </div>
@@ -205,7 +204,7 @@
                     <button class="button" type="submit">Zarejestruj użytkownika</button>
                 </div>
             </form>
-            </div>`
+            </div>
         </main>
     </body>
 </html>
