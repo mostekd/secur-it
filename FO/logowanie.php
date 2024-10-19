@@ -118,7 +118,7 @@
                         // Zalogowano pomyślnie
                         $_SESSION['loggedin'] = true;
                         $_SESSION['login'] = $login;
-                        header("location:". $adress); // Przekierowanie do panelu administracyjnego
+                        header("location:". $adress);
                     } else {
                         $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
                     }
@@ -132,7 +132,7 @@
                     echo '<p style="color: red;">' . $error_message . '</p>';
                 }
             ?>
-            <form method="post" action="login.php" class="login-form">
+            <form method="post" class="login-form">
                 <div class="form-group">
                     <label for="username">Nazwa użytkownika:</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
