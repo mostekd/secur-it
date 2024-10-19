@@ -1,3 +1,23 @@
+<?php
+    include('../DB/db_konta.php');
+    $baza = new db_konta();
+    $baza->databaseConnect();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $imie = $_POST['imie'];
+        $nazwisko = $_POST['nazwisko'];
+        $nick = $_POST['nick'];
+        $adres_e_mail = $_POST['adres_e_mail'];
+        $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
+        $numer_telefonu = $_POST['numer_telefonu'];
+        $haslo = sha1($_POST['haslo']);
+
+
+        $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+        header("Location: ./logowanie.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="pl">
     `<head>
@@ -102,25 +122,6 @@
                 </div>
             </nav>
             <?php
-                include('../DB/db_konta.php');
-                $baza = new db_konta();
-                $baza->databaseConnect();
-
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $imie = $_POST['imie'];
-                    $nazwisko = $_POST['nazwisko'];
-                    $nick = $_POST['nick'];
-                    $adres_e_mail = $_POST['adres_e_mail'];
-                    $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
-                    $numer_telefonu = $_POST['numer_telefonu'];
-                    $haslo = sha1($_POST['haslo']);
-
-
-                    $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
-                    header("Location: ./logowanie.php");
-                    exit();
-                }
-
                 if (isset($error_message)) {
                     echo '<p style="color: red;">' . $error_message . '</p>';
                 }
