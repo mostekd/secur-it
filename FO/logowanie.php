@@ -16,9 +16,9 @@
         $baza = new db_konta();
         $baza->databaseConnect();
 
-        if (isset($_GET['nick'])) {
-            $login = $_GET['nick'];
-            $haslo = $_GET['haslo'];
+        if (isset($_POST['nick'])) {
+            $login = $_POST['nick'];
+            $haslo = $_POST['haslo'];
             $encrypted = sha1($haslo);
             $data = $baza->selectKonto($login, $encrypted);
 
@@ -46,7 +46,7 @@
                     echo '<p style="color: red;">' . $error_message . '</p>';
                 }
             ?>
-            <form method="GET" class="login-form">
+            <form method="POST" class="login-form">
                 <div class="form-group">
                     <label for="username">Nazwa użytkownika:</label>
                     <input type="text" id="nick" name="nick" placeholder="Enter your nick" required>
