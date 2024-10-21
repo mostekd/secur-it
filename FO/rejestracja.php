@@ -20,7 +20,7 @@
                     header("Location: ./logowanie.php");
                 case 1:
                     header("Location: ./rejestracja.php");
-                    echo "Bład 1"; //nie wstawiono dnaych do tabeli klient
+                    echo "Bład strony"; //nie wstawiono dnaych do tabeli klient
                 case 2:
                     header("Location: ./rejestracja.php");
                     echo "Użytkownik o danym nicku już istnieje. Wybierz inny nick";//jesli jest juz taki nick w bazie
