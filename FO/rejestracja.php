@@ -14,8 +14,8 @@
 
 
         $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
-        if(isset($data)){
-            switch($data):
+        if(isset($return)){
+            switch($return):
                 case 0:
                     header("Location: ./logowanie.php");
                 case 1:
