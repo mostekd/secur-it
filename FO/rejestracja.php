@@ -25,6 +25,7 @@
                     break;
                 case 3:
                     header("Location: ./rejestracja.php?echo=blad2"); //jesli jest juz taki nick w bazie
+                    echo "Nick zajęty przez innego użytkownika. Wybierz inny nick.";
                     break;
                 case 4:
                     header("Location: ./rejestracja.php?echo=blad3"); //rollback
