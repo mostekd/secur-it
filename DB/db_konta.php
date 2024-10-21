@@ -35,7 +35,7 @@
                     }     
                 }
                 else{
-                   return $query; //nie wstawiono dnaych do tabeli klient
+                   return 2; //nie wstawiono dnaych do tabeli klient
                 }
             }
             else{
