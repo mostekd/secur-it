@@ -117,7 +117,7 @@
                         // Zalogowano pomyślnie
                         $_SESSION['loggedin'] = true;
                         $_SESSION['login'] = $login;
-                        header("location:". $adress);
+                         header("Location: ./index.php");
                     } else {
                         $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
                     }
