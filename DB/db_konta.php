@@ -12,11 +12,12 @@
         function insertKonto ($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
             $query = "SELECT * FROM konta WHERE nick = '".$nick."'";
             $data = mysqli_query($this->connect, $query);
-            if(!$data){
+            if(mysqli_num_rows($data) == 0)
+            {
                 $query = "INSERT INTO `klienci`(`imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."');";
            
                 $data = mysqli_query($this->connect, $query);
-                if ($data) 
+                if($data) 
                 {
                     $id_klient = $this->connect->insert_id;
                     
@@ -25,18 +26,20 @@
                     if($data) 
                     {
                         $this->close();
+                        $_POST = array();
+                        return 1; //OK
                     }
                     else{
                         mysqli_rollback($this->connect);
-                    }
-                    return 0; //OK
+                        return 4; //rollback
+                    }     
                 }
                 else{
-                   return 1; //nie wstawiono dnaych do tabeli klient
+                   return $query; //nie wstawiono dnaych do tabeli klient
                 }
             }
             else{
-                return 2; //jesli jest juz taki nick w bazie
+                return 3; //jesli jest juz taki nick w bazie
             }
         }
 

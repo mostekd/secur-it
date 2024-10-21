@@ -22,7 +22,7 @@
             $encrypted = sha1($haslo);
             $data = $baza->selectKonto($login, $encrypted);
 
-            if (mysqli_num_rows($data) == true) {
+            if ($data) {
                 // Zalogowano pomyślnie
                 $_SESSION['loggedin'] = true;
                 $_SESSION['login'] = $login;

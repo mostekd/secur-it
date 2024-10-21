@@ -13,21 +13,29 @@
         $haslo = sha1($_POST['haslo']);
 
 
-        $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+        $return = $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
         if(isset($return)){
-            switch($return):
-                case 0:
-                    header("Location: ./logowanie.php");
+            switch($return) {
                 case 1:
-                    header("Location: ./rejestracja.php");
-                    echo "Bład strony"; //nie wstawiono dnaych do tabeli klient
+                    header("Location: ./logowanie.php");
+                    break;
                 case 2:
-                    header("Location: ./rejestracja.php");
-                    echo "Użytkownik o danym nicku już istnieje. Wybierz inny nick";//jesli jest juz taki nick w bazie
-            endswitch;
+                    header("Location: ./rejestracja.php?echo=blad1");
+                    echo "Bład strony"; //nie wstawiono dnaych do tabeli klient
+                    break;
+                case 3:
+                    header("Location: ./rejestracja.php?echo=blad2"); //jesli jest juz taki nick w bazie
+                    break;
+                case 4:
+                    header("Location: ./rejestracja.php?echo=blad3"); //rollback
+                    break;
+                default:
+                    header("Location: ./rejestracja.php?echo=".$return."");
+                    break;
+                }
         }
         else{
-            header("Location: ./rejestracja.php");
+            header("Location: ./rejestracja.php?echo=else");
         }
         exit();
     }
