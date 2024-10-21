@@ -11,6 +11,27 @@
         <title>Secur IT | Logowanie</title>
     </head>
     <body>
+    <?php
+        include('../DB/db_konta.php');
+        $baza = new db_konta();
+        $baza->databaseConnect();
+
+        if (isset($_GET['nick'])) {
+            $login = $_GET['nick'];
+            $haslo = $_GET['haslo'];
+            $encrypted = sha1($haslo);
+            $data = $baza->selectKonto($login, $encrypted);
+
+            if (mysqli_num_rows($data) == true) {
+                // Zalogowano pomyślnie
+                $_SESSION['loggedin'] = true;
+                $_SESSION['login'] = $login;
+                    header("Location: ./index.php");
+            } else {
+                $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
+            }
+        }
+    ?>
         <div class="tlo"></div>
         <main class="main">
             <header>
@@ -101,28 +122,6 @@
                     </div>
                 </div>
             </nav>
-            <?php
-                include('../DB/db_konta.php');
-                $baza = new db_konta();
-                $baza->databaseConnect();
-
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $login = $_POST['nick'];
-                    $haslo = $_POST['haslo'];
-                    $encrypted = sha1($haslo);
-                    $adress = "./index.php";
-                    $data = $baza->selectKonto();
-
-                    if (mysqli_num_rows($data) == 1) {
-                        // Zalogowano pomyślnie
-                        $_SESSION['loggedin'] = true;
-                        $_SESSION['login'] = $login;
-                         header("Location: ./index.php");
-                    } else {
-                        $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
-                    }
-                }
-            ?>
             <div id="loginPage" class="login-container">
                 <h2>Logowanie</h2>
 
@@ -131,7 +130,7 @@
                     echo '<p style="color: red;">' . $error_message . '</p>';
                 }
             ?>
-            <form method="post" class="login-form">
+            <form method="GET" class="login-form">
                 <div class="form-group">
                     <label for="username">Nazwa użytkownika:</label>
                     <input type="text" id="nick" name="nick" placeholder="Enter your nick" required>

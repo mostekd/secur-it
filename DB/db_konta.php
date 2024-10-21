@@ -1,7 +1,7 @@
 <?php
     include("db_connection.php");
     class db_konta extends db_connection{
-        function selectKonto(){
+        function selectKonto($login, $encrypted){
             $query = "SELECT * FROM `konta` WHERE nick='$login' AND haslo='$encrypted'";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
@@ -10,25 +10,33 @@
         }
 
         function insertKonto ($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
-            $query = "INSERT INTO `klienci`(`imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."');";
-           
+            $query = "SELECT * FROM konta WHERE nick = '".$nick."'";
             $data = mysqli_query($this->connect, $query);
-            if ($data) 
-            {
-                $id_klient = $this->connect->insert_id;
-                
-                $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_klient."','".$nick."','".$haslo."')";
+            if(!$data){
+                $query = "INSERT INTO `klienci`(`imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."');";
+           
                 $data = mysqli_query($this->connect, $query);
-                if($data) 
+                if ($data) 
                 {
-                    $this->close();
+                    $id_klient = $this->connect->insert_id;
+                    
+                    $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_klient."','".$nick."','".$haslo."')";
+                    $data = mysqli_query($this->connect, $query);
+                    if($data) 
+                    {
+                        $this->close();
+                    }
+                    else{
+                        mysqli_rollback($this->connect);
+                    }
+                    return 0; //OK
                 }
                 else{
-                    mysqli_rollback($this->connect);
+                   return 1; //nie wstawiono dnaych do tabeli klient
                 }
             }
             else{
-                echo "You are stupidddddddddd";
+                return 2; //jesli jest juz taki nick w bazie
             }
         }
 

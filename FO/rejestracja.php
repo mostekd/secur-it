@@ -14,7 +14,20 @@
 
 
         $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
-        header("Location: ./logowanie.php");
+        if(isset($return)){
+            switch($return):
+                case 0:
+                    header("Location: ./logowanie.php");
+                case 1:
+                    header("Location: ./rejestracja.php");
+                    echo "Bład 1"; //nie wstawiono dnaych do tabeli klient
+                case 2:
+                    header("Location: ./rejestracja.php");
+                    echo "Użytkownik o danym nicku już istnieje. Wybierz inny nick";//jesli jest juz taki nick w bazie
+        }
+        else{
+            header("Location: ./rejestracja.php");
+        }
         exit();
     }
 ?>
