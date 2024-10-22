@@ -89,14 +89,20 @@ create table klienci (
     id_numer_kierunkowy int,
     numer_telefonu int,
     adres_e_mail varchar(200),
+    czy_firma boolean,
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
-create table konta (
-    id_konto int primary key auto_increment,
+create table urzytkownicy (
+    id_urzytkownik int primary key auto_increment,
     id_administrator int,
     id_pracownik int,
     id_klient int,
+    imie varchar(50),
+    nazwisko varchar(100),
+    id_numer_kierunkowy int,
+    numer_telefonu int,
+    adres_e_mail varchar(200),
     nick varchar(50),
     haslo varchar(250),
     id_rabat int,

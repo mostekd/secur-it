@@ -59,8 +59,12 @@
         }
 
         function selectKontoById ($id_konto){
-            $query = "SELECT * FROM `konta` WHERE id_konto =".$id_konto;
+            $query = "SELECT `id_klient`, `nick`, `haslo` FROM `konta` WHERE id_konto =".$id_konto;
             $data = mysqli_query($this->connect, $query);
+            if($data)
+            {
+                $query = "SELECT * FROM `klienci` WHERE id_klient =".$id_klient;
+                $data = mysqli_query($this->connect, $query);
 
             if (mysqli_num_rows($data) > 0) {
                 return $data;

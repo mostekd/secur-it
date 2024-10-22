@@ -79,12 +79,12 @@
             <form method="post" action="rejestracja.php" class="registration-form">
                 <div class="form-group">
                     <label for="imie">Imię:</label>
-                    <input type="text" id="imie" name="imie" placeholder="Wpisz imię" required>
+                    <input type="text" id="imie" name="imie" placeholder="Wpisz imię / nazwa firmy" required>
                 </div>
 
                 <div class="form-group">
                     <label for="nazwisko">Nazwisko:</label>
-                    <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko" required>
+                    <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko / nazwa firmy cd." required>
                 </div>
 
                 <div class="form-group">
