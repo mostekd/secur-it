@@ -34,15 +34,17 @@
                             <a href="contact.php">Kontakt</a>
                         </div>
                     </div>
-                    <div class="dropdown-kontakt">
-                        <div class="dropdown-top-kontakt">
-                            <a href="logowanie.php">Logowanie</a>
+                    <div class="dropdown">
+                        <div class="dropdown-top">
+                            <div class="dropdown-logo">Konto</div>
+                            <div class="dropdown-toggle">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="dropdown-kontakt">
-                        <div class="dropdown-top-kontakt">
-                            <a href="rejestracja.php">Rejestracja</a>
-                        </div>
+                        <ol class="dropdown-list">
+                            <li class="dropdown-item" style="--i:1;--j:5"><a href="./logowanie.php"></a>Logowanie</li>
+                            <li class="dropdown-item" style="--i:2;--j:4"><a href="./rejestracja.php"></a>Rejestracja</li>
+                        </ol>
                     </div>
                 </div>
                 <div class="phone">
@@ -61,9 +63,9 @@
                             <li class="dropdown-item" style="--i:6;--j:6"><a href="./bazy_danych.php"></a>Bazy Danych</li>
                             <li class="dropdown-item" style="--i:7;--j:5"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
                             <li class="dropdown-item" style="--i:8;--j:4"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
-                            <li class="dropdown-item" style="--i:9;--j:3"> <a href="contact.php"></a>Kontakt</li>
-                            <li class="dropdown-item" style="--i:10;--j:2"> <a href="logowanie.php"></a>Logowanie</li>
-                            <li class="dropdown-item" style="--i:11;--j:1"> <a href="rejestracja.php"></a>Rejestracja</li>
+                            <li class="dropdown-item" style="--i:9;--j:3"> <a href="./contact.php"></a>Kontakt</li>
+                            <li class="dropdown-item" style="--i:10;--j:2"> <a href="./logowanie.php"></a>Logowanie</li>
+                            <li class="dropdown-item" style="--i:11;--j:1"> <a href="./rejestracja.php"></a>Rejestracja</li>
                         </ol>
                     </div>
                 </div>
