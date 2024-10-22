@@ -4,16 +4,19 @@
     $baza->databaseConnect();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $imie = $_POST['imie'];
-        $nazwisko = $_POST['nazwisko'];
+        $typ_konta = $_POST['typ_konta'];
+        $imie = ($typ_konta == 'osoba_publiczna') ? $_POST['imie'] : '';
+        $nazwisko = ($typ_konta == 'osoba_publiczna') ? $_POST['nazwisko'] : '';
+        $nazwa_firmy = ($typ_konta == 'firma') ? $_POST['nazwa_firmy'] : '';
+        $nip = ($typ_konta == 'firma') ? $_POST['nip'] : '';
         $nick = $_POST['nick'];
         $adres_e_mail = $_POST['adres_e_mail'];
         $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
         $numer_telefonu = $_POST['numer_telefonu'];
         $haslo = sha1($_POST['haslo']);
 
-
-        $return = $baza->insertKonto($imie, $nazwisko, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+        // Obsługa zapisu danych do bazy
+        $return = $baza->insertKonto($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
         if(isset($return)){
             switch($return) {
                 case 1:
@@ -21,24 +24,19 @@
                     break;
                 case 2:
                     header("Location: ./rejestracja.php?echo=blad1");
-                    echo "Bład strony"; //nie wstawiono dnaych do tabeli klient
+                    echo "Bład strony";
                     break;
                 case 3:
-                    header("Location: ./rejestracja.php?echo=blad2"); //jesli jest juz taki nick w bazie
-//                    alert "Nick zajęty przez innego użytkownika. Wybierz inny nick.";
-//                    function alert($msg) {
-//                        echo "<script type='text/javascript'>alert('$msg');</script>";
-//                    }
+                    header("Location: ./rejestracja.php?echo=blad2");
                     break;
                 case 4:
-                    header("Location: ./rejestracja.php?echo=blad3"); //rollback
+                    header("Location: ./rejestracja.php?echo=blad3");
                     break;
                 default:
                     header("Location: ./rejestracja.php?echo=".$return."");
                     break;
-                }
-        }
-        else{
+            }
+        } else {
             header("Location: ./rejestracja.php?echo=else");
         }
         exit();
@@ -46,7 +44,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="pl">
-    `<head>
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
@@ -63,42 +61,57 @@
                 include("header.php");
                 include("nav.php");
             ?>
-            <?php
-                if (isset($error_message)) {
-                    echo '<p style="color: red;">' . $error_message . '</p>';
-                }
-            ?>
             <div id="loginPage" class="login-container">
                 <h2>Rejestracja</h2>
 
-                <?php
-                if (isset($error_message)) {
-                    echo '<p style="color: red;">' . $error_message . '</p>';
-                }
-            ?>
-            <form method="post" action="rejestracja.php" class="registration-form">
-                <div class="form-group">
-                    <label for="imie">Imię:</label>
-                    <input type="text" id="imie" name="imie" placeholder="Wpisz imię / nazwa firmy" required>
-                </div>
+                <form method="post" action="rejestracja.php" class="registration-form">
+                    <!-- Wybór typu konta -->
+                    <div class="form-group">
+                        <label for="typ_konta">Wybierz typ konta:</label>
+                        <input type="radio" id="firma" name="typ_konta" value="firma" checked>
+                        <label for="firma">Firma</label>
+                        <input type="radio" id="osoba_publiczna" name="typ_konta" value="osoba_publiczna">
+                        <label for="osoba_publiczna">Osoba publiczna</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="nazwisko">Nazwisko:</label>
-                    <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko / nazwa firmy cd." required>
-                </div>
+                    <!-- Pole Imię dla osoby publicznej -->
+                    <div class="form-group" id="imie_group">
+                        <label for="imie">Imię:</label>
+                        <input type="text" id="imie" name="imie" placeholder="Wpisz imię">
+                    </div>
 
-                <div class="form-group">
-                    <label for="nick">Nazwa użytkownika (Nick):</label>
-                    <input type="text" id="nick" name="nick" placeholder="Wpisz nazwę użytkownika" required>
-                </div>
+                    <!-- Pole Nazwisko dla osoby publicznej -->
+                    <div class="form-group" id="nazwisko_group">
+                        <label for="nazwisko">Nazwisko:</label>
+                        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko">
+                    </div>
 
-                <div class="form-group">
-                    <label for="adres_e_mail">Email:</label>
-                    <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
-                </div>
-                <div class="form-group">
-                    <label for="numer_telefonu">Numer telefonu:</label>
-                    <?php
+                    <!-- Pole Nazwa firmy dla firm -->
+                    <div class="form-group" id="nazwa_firmy_group">
+                        <label for="nazwa_firmy">Nazwa firmy:</label>
+                        <input type="text" id="nazwa_firmy" name="nazwa_firmy" placeholder="Wpisz nazwę firmy">
+                    </div>
+
+                    <!-- Pole NIP dla firm -->
+                    <div class="form-group" id="nip_group">
+                        <label for="nip">NIP:</label>
+                        <input type="text" id="nip" name="nip" placeholder="Wpisz NIP firmy">
+                    </div>
+
+                    <!-- Zawsze wypełniane -->
+                    <div class="form-group">
+                        <label for="nick">Nazwa użytkownika (Nick):</label>
+                        <input type="text" id="nick" name="nick" placeholder="Wpisz nazwę użytkownika" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adres_e_mail">Email:</label>
+                        <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numer_telefonu">Numer telefonu:</label>
+                        <?php
                             include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
                             $baza->databaseConnect();
@@ -135,19 +148,21 @@
                             
                             $baza->close();
                         ?>
-                    <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
-                </div>
+                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="haslo">Hasło:</label>
-                    <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required>
-                </div>
+                    <div class="form-group">
+                        <label for="haslo">Hasło:</label>
+                        <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required>
+                    </div>
 
-                <div class="form-group">
-                    <button class="button" type="submit">Zarejestruj użytkownika</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <button class="button" type="submit">Zarejestruj użytkownika</button>
+                    </div>
+                </form>
             </div>
         </main>
+
+        <script src="./script.js"></script>
     </body>
 </html>
