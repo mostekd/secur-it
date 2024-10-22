@@ -129,7 +129,7 @@
 
                                 mysqli_free_result($data);
                             } else {
-                                echo "Błąd zaputania: " .mysqli_error($connection);
+                                echo "Błąd zapytania: " .mysqli_error($connect);
                             }
 
                             

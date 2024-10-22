@@ -93,8 +93,8 @@ create table klienci (
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
-create table urzytkownicy (
-    id_urzytkownik int primary key auto_increment,
+create table uzytkownicy (
+    id_uzytkownik int primary key auto_increment,
     id_administrator int,
     id_pracownik int,
     id_klient int,
@@ -128,20 +128,20 @@ create table uslugi (
 
 create table wpisy (
     id_wpis int primary key auto_increment,
-    id_urzytkownik int,
+    id_uzytkownik int,
     tytul varchar(200),
     tresc longtext,
     data_dodania datetime,
     id_pracownik_zatwierdzajacy int,
     data_zatwierdzenia datetime,
-    foreign key (id_urzytkownik) references konta (id_urzytkownik),
+    foreign key (id_uzytkownik) references uzytkownicy (id_uzytkownik),
     foreign key (id_pracownik_zatwierdzajacy) references pracownicy (id_pracownik)
 );
 
 create table opinie(
     id_opinia int primary key auto_increment,
-    id_urzytkownik int,
-    foreign key (id_urzytkownik) references konta (id_urzytkownik)
+    id_uzytkownik int,
+    foreign key (id_uzytkownik) references uzytkownicy (id_uzytkownik)
 );
 
 create table o_firmie(
