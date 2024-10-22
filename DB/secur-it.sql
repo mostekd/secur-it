@@ -128,20 +128,20 @@ create table uslugi (
 
 create table wpisy (
     id_wpis int primary key auto_increment,
-    id_konto int,
+    id_urzytkownik int,
     tytul varchar(200),
     tresc longtext,
     data_dodania datetime,
     id_pracownik_zatwierdzajacy int,
     data_zatwierdzenia datetime,
-    foreign key (id_konto) references konta (id_konto),
+    foreign key (id_urzytkownik) references konta (id_urzytkownik),
     foreign key (id_pracownik_zatwierdzajacy) references pracownicy (id_pracownik)
 );
 
 create table opinie(
     id_opinia int primary key auto_increment,
-    id_konto int,
-    foreign key (id_konto) references konta (id_konto)
+    id_urzytkownik int,
+    foreign key (id_urzytkownik) references konta (id_urzytkownik)
 );
 
 create table o_firmie(
