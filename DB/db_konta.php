@@ -66,8 +66,9 @@
                 $query = "SELECT * FROM `klienci` WHERE id_klient =".$id_klient;
                 $data = mysqli_query($this->connect, $query);
 
-            if (mysqli_num_rows($data) > 0) {
-                return $data;
+                if (mysqli_num_rows($data) > 0) {
+                    return $data;
+                }
             }
         }
     }
