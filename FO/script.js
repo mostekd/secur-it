@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nazwiskoGroup = document.getElementById('nazwisko_group');
     const nazwaFirmyGroup = document.getElementById('nazwa_firmy_group');
     const nipGroup = document.getElementById('nip_group');
-    
+    const submitButton = document.querySelector('.button');  // Dodajemy selektor dla przycisku
+
     // Funkcja do przełączania widoczności pól w zależności od typu konta
     function toggleFields() {
         if (typKontaOsobaPubliczna.checked) {
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('nazwisko').required = true;
             document.getElementById('nazwa_firmy').required = false;
             document.getElementById('nip').required = false;
+            submitButton.textContent = 'Zarejestruj użytkownika';  // Zmiana tekstu przycisku
         } else {
             imieGroup.style.display = 'none';
             nazwiskoGroup.style.display = 'none';
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('nazwisko').required = false;
             document.getElementById('nazwa_firmy').required = true;
             document.getElementById('nip').required = true;
+            submitButton.textContent = 'Zarejestruj firmę';  // Zmiana tekstu przycisku
         }
     }
 
