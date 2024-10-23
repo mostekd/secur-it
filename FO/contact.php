@@ -35,7 +35,6 @@
                     echo "<p>Wiadomość nie została wysłana</p>";
                 }
             }    
-
         ?>
         <div class="tlo"></div>
         <main class="main">
@@ -93,7 +92,6 @@
                                 } else {
                                     echo "Błąd zaputania: " .mysqli_error($connection);
                                 }
-
                                 
                                 $baza->close();
                             ?>
