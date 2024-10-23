@@ -31,31 +31,21 @@ dropdown.forEach(e => {
 document.addEventListener('DOMContentLoaded', function() {
     const typKontaFirma = document.getElementById('firma');
     const typKontaOsobaPubliczna = document.getElementById('osoba_publiczna');
-    const imieGroup = document.getElementById('imie_group');
-    const nazwiskoGroup = document.getElementById('nazwisko_group');
-    const nazwaFirmyGroup = document.getElementById('nazwa_firmy_group');
-    const nipGroup = document.getElementById('nip_group');
+    const firma_form = document.getElementById('firma_form');
+    const osoba_publiczna_form = document.getElementById('osoba_publiczna_form');
     
     // Funkcja do przełączania widoczności pól w zależności od typu konta
     function toggleFields() {
         if (typKontaOsobaPubliczna.checked) {
-            imieGroup.style.display = 'block';
-            nazwiskoGroup.style.display = 'block';
-            nazwaFirmyGroup.style.display = 'none';
-            nipGroup.style.display = 'none';
-            document.getElementById('imie').required = true;
-            document.getElementById('nazwisko').required = true;
-            document.getElementById('nazwa_firmy').required = false;
-            document.getElementById('nip').required = false;
+            osoba_publiczna_form.style.display = 'block';
+            firma_form.style.display = 'none';
+            document.getElementById('osoba_publiczna_form').required = true;
+            document.getElementById('firma_form').required = false;
         } else {
-            imieGroup.style.display = 'none';
-            nazwiskoGroup.style.display = 'none';
-            nazwaFirmyGroup.style.display = 'block';
-            nipGroup.style.display = 'block';
-            document.getElementById('imie').required = false;
-            document.getElementById('nazwisko').required = false;
-            document.getElementById('nazwa_firmy').required = true;
-            document.getElementById('nip').required = true;
+            osoba_publiczna_form.style.display = 'none';
+            firma_form.style.display = 'block';
+            document.getElementById('osoba_publiczna_form').required = false;
+            document.getElementById('firma_form').required = true;
         }
     }
 
