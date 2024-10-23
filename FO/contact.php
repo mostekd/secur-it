@@ -123,6 +123,8 @@
                         <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
                     </form><br>
                 </div>
+                <i class="fa-solid fa-phone"></i>+48123456789
+                <i class="fa-solid fa-at"></i>contact@secut-it.pl
             </div>
         </main>
     </body>
