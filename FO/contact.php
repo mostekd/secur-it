@@ -116,11 +116,11 @@
                         secut-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
                         że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a>
                         <br><br>
-                        <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
                         <input type=hidden name="opcja" id="opcja" class="opcja" value='dodaj'></input>
                         <button type="submit" name="submit" class="przycisk">
                             Wyślij
                         </button>
+                        <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
                     </form><br>
                 </div>
             </div>
