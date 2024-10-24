@@ -36,12 +36,13 @@
                     </div>
                     <div class="dropdown">
                         <div class="dropdown-top">
-                             <div class="dropdown-logo" style="--i:1;--j:5"><a href="./konto.php"></a>Konto</div>
+                            <div class="dropdown-logo">Konto</div>
                             <div class="dropdown-toggle">
                                 <i class="fa-solid fa-bars"></i>
                             </div>
                         </div>
                         <ol class="dropdown-list">
+                            <li class="dropdown-item" style="--i:1;--j:5"><a href="./konto.php"></a>Konto</li>
                             <li class="dropdown-item" style="--i:1;--j:5"><a href="./logowanie.php"></a>Logowanie</li>
                             <li class="dropdown-item" style="--i:2;--j:4"><a href="./rejestracja.php"></a>Rejestracja</li>
                         </ol>
