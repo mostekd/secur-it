@@ -88,12 +88,7 @@ create table uzytkownicy (
 
 create table pracownicy (
     id_pracownik int primary key auto_increment,
-    imie varchar(50),
-    nazwisko varchar(100),
     adres_zamieszkania varchar (200),
-    id_numer_kierunkowy int,
-    numer_telefonu int,
-    adres_e_mail varchar(200),
     PESEL varchar(11),
     numer_umowy varchar(200),
     numer_ubezpieczenia varchar(200),
