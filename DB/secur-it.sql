@@ -76,7 +76,7 @@ create table uzytkownicy (
     id_rabat int,
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
-    foreign key (id_klient) references klienci (id_klient),
+    foreign key (id_firma) references firmy (id_firma),
     foreign key (id_rabat) references rabaty (id_rabat)
 );
 
