@@ -52,11 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             imieGroup.style.display = 'none';
             nazwiskoGroup.style.display = 'none';
+            nazwa_firmy_cd_group.style.display = "block";
             nazwaFirmyGroup.style.display = 'block';
             nipGroup.style.display = 'block';
             document.getElementById('imie').required = false;
             document.getElementById('nazwisko').required = false;
             document.getElementById('nazwa_firmy').required = true;
+            document.getElementById('nazwa_firmy_cd').required = true;
             document.getElementById('nip').required = true;
             submitButton.textContent = 'Zarejestruj firmę';  // Zmiana tekstu przycisku
         }

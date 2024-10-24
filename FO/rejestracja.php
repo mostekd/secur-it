@@ -79,17 +79,19 @@
                         <label for="imie">Imię:</label>
                         <input type="text" id="imie" name="imie" placeholder="Wpisz imię">
                     </div>
-
                     <!-- Pole Nazwisko dla osoby publicznej -->
                     <div class="form-group" id="nazwisko_group">
                         <label for="nazwisko">Nazwisko:</label>
                         <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko">
                     </div>
-
                     <!-- Pole Nazwa firmy dla firm -->
                     <div class="form-group" id="nazwa_firmy_group">
                         <label for="nazwa_firmy">Nazwa firmy:</label>
                         <input type="text" id="nazwa_firmy" name="nazwa_firmy" placeholder="Wpisz nazwę firmy">
+                    </div>
+                    <div class="form-group" id="nazwa_firmy_cd_group">
+                        <label for="nazwa_firmy">Nazwa firmy c.d.:</label>
+                        <input type="text" id="nazwa_firmy_cd" name="nazwa_firmy_cd" placeholder="Wpisz nazwę firmy">
                     </div>
 
                     <!-- Pole NIP dla firm -->
