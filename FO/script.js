@@ -43,20 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
             imieGroup.style.display = 'block';
             nazwiskoGroup.style.display = 'block';
             nazwaFirmyGroup.style.display = 'none';
+            nazwa_firmy_cd_group.style.display = "none";
             nipGroup.style.display = 'none';
             document.getElementById('imie').required = true;
             document.getElementById('nazwisko').required = true;
             document.getElementById('nazwa_firmy').required = false;
+            document.getElementById('nazwa_firmy_cd').required = false;
             document.getElementById('nip').required = false;
             submitButton.textContent = 'Zarejestruj użytkownika';  // Zmiana tekstu przycisku
         } else {
-            imieGroup.style.display = 'none';
-            nazwiskoGroup.style.display = 'none';
+            imieGroup.style.display = 'block';
+            nazwiskoGroup.style.display = 'block';
             nazwa_firmy_cd_group.style.display = "block";
             nazwaFirmyGroup.style.display = 'block';
             nipGroup.style.display = 'block';
-            document.getElementById('imie').required = false;
-            document.getElementById('nazwisko').required = false;
+            document.getElementById('imie').required = true;
+            document.getElementById('nazwisko').required = true;
             document.getElementById('nazwa_firmy').required = true;
             document.getElementById('nazwa_firmy_cd').required = true;
             document.getElementById('nip').required = true;
