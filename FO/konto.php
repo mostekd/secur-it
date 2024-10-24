@@ -8,7 +8,7 @@
     <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../images/ikona.png">
-    <title>Secur IT | Home</title>
+    <title>Secur IT | Konto</title>
 </head>
 <body>
     <div class="tlo"></div>
