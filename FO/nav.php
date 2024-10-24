@@ -36,7 +36,7 @@
                     </div>
                     <div class="dropdown">
                         <div class="dropdown-top">
-                            <div class="dropdown-logo">Konto</div>
+                             <li class="dropdown-logo" style="--i:1;--j:5"><a href=".konto.php"></a>Konto</li>
                             <div class="dropdown-toggle">
                                 <i class="fa-solid fa-bars"></i>
                             </div>
