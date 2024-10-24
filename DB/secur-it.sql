@@ -51,12 +51,6 @@ create table numery_kierunkowe (
     kraj varchar(50)
 );
 
-create table administratorzy (
-    id_administrator int primary key auto_increment,
-    id_pracownik int,
-    foreign key (id_pracownik) references pracownicy (id_pracownik)
-);
-
 create table firmy (
     id_firma int primary key auto_increment,
     nazwa varchar(50),
@@ -106,6 +100,12 @@ create table pracownicy (
     foreign key (id_stanowisko) references stanowiska (id_stanowisko),
     foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
     foreign key (id_samochod) references samochody (id_samochod)
+);
+
+create table administratorzy (
+    id_administrator int primary key auto_increment,
+    id_pracownik int,
+    foreign key (id_pracownik) references pracownicy (id_pracownik)
 );
 
 create table typy_uslug (
