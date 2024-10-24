@@ -61,6 +61,31 @@ create table firmy (
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
+create table pracownicy (
+    id_pracownik int primary key auto_increment,
+    adres_zamieszkania varchar (200),
+    PESEL varchar(11),
+    numer_umowy varchar(200),
+    numer_ubezpieczenia varchar(200),
+    data_urodzenia date,
+    data_zatrudnienia date,
+    wynagrodzenie varchar(200),
+    zdjecie varchar(100),
+    id_stanowisko int,
+    id_lokalizacja_pracy int,
+    id_dzial int,
+    id_samochod int,
+    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
+    foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
+    foreign key (id_samochod) references samochody (id_samochod)
+);
+
+create table administratorzy (
+    id_administrator int primary key auto_increment,
+    id_pracownik int,
+    foreign key (id_pracownik) references pracownicy (id_pracownik)
+);
+
 create table uzytkownicy (
     id_uzytkownik int primary key auto_increment,
     id_administrator int,
@@ -76,36 +101,9 @@ create table uzytkownicy (
     id_rabat int,
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
+    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
     foreign key (id_firma) references firmy (id_firma),
     foreign key (id_rabat) references rabaty (id_rabat)
-);
-
-create table pracownicy (
-    id_pracownik int primary key auto_increment,
-    adres_zamieszkania varchar (200),
-    PESEL varchar(11),
-    numer_umowy varchar(200),
-    numer_ubezpieczenia varchar(200),
-    data_urodzenia date,
-    data_zatrudnienia date,
-    wynagrodzenie varchar(200),
-    zdjecie varchar(100),
-    id_uzytkownik int,
-    id_stanowisko int,
-    id_lokalizacja_pracy int,
-    id_dzial int,
-    id_samochod int,
-    foreign key (id_uzytkownik) references uzytkownicy (id_uzytkownik),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
-    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
-    foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
-    foreign key (id_samochod) references samochody (id_samochod)
-);
-
-create table administratorzy (
-    id_administrator int primary key auto_increment,
-    id_pracownik int,
-    foreign key (id_pracownik) references pracownicy (id_pracownik)
 );
 
 create table typy_uslug (
