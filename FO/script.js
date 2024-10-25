@@ -31,20 +31,26 @@ dropdown.forEach(e => {
 document.addEventListener('DOMContentLoaded', function() {
     const typKontaFirma = document.getElementById('firma');
     const typKontaOsobaPubliczna = document.getElementById('osoba_publiczna');
-    const imieGroup = document.getElementById('imie_group');
-    const nazwiskoGroup = document.getElementById('nazwisko_group');
     const nazwaFirmyGroup = document.getElementById('nazwa_firmy_group');
     const nipGroup = document.getElementById('nip_group');
     const submitButton = document.querySelector('.button');  // Dodajemy selektor dla przycisku
+    const numer_telefonu_firma = document.getElementById('numer_telefonu_firma');
+    const numer_telefonu = document.getElementById('numer_telefonu');
+    const numer_telefonu_firma_txt = document.getElementById('numer_telefonu_firma_txt');
+    const numer_telefonu_txt = document.getElementById('numer_telefonu_txt');
 
     // Funkcja do przełączania widoczności pól w zależności od typu konta
     function toggleFields() {
         if (typKontaOsobaPubliczna.checked) {
-            imieGroup.style.display = 'block';
-            nazwiskoGroup.style.display = 'block';
+            numer_telefonu_firma.style.display = 'none';
+            numer_telefonu.style.display = 'block';
+            numer_telefonu_firma_txt.style.display = 'none';
+            numer_telefonu_txt.style.display = 'block';
             nazwaFirmyGroup.style.display = 'none';
             nazwa_firmy_cd_group.style.display = "none";
             nipGroup.style.display = 'none';
+            document.getElementById('numer_telefonu_firma').required = false;
+            document.getElementById('numer_telefonu').required = true;
             document.getElementById('imie').required = true;
             document.getElementById('nazwisko').required = true;
             document.getElementById('nazwa_firmy').required = false;
@@ -52,13 +58,15 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('nip').required = false;
             submitButton.textContent = 'Zarejestruj użytkownika';  // Zmiana tekstu przycisku
         } else {
-            imieGroup.style.display = 'block';
-            nazwiskoGroup.style.display = 'block';
+            numer_telefonu_firma.style.display = 'block';
+            numer_telefonu.style.display = 'none';
+            numer_telefonu_firma_txt.style.display = 'block';
+            numer_telefonu_txt.style.display = 'none';
             nazwa_firmy_cd_group.style.display = "block";
             nazwaFirmyGroup.style.display = 'block';
             nipGroup.style.display = 'block';
-            document.getElementById('imie').required = true;
-            document.getElementById('nazwisko').required = true;
+            document.getElementById('numer_telefonu_firma').required = true;
+            document.getElementById('numer_telefonu').required = false;
             document.getElementById('nazwa_firmy').required = true;
             document.getElementById('nazwa_firmy_cd').required = true;
             document.getElementById('nip').required = true;

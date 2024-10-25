@@ -108,9 +108,9 @@
                         <label for="adres_e_mail">Email:</label>
                         <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
                     </div>
-
-                    <div class="form-group">
-                        <label for="numer_telefonu">Numer telefonu:</label>
+                    <div class="form_group">
+                        <label for="numer_telefonu" id="numer_telefonu_txt">Numer telefonu:</label>
+                        <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt">Numer telefonu firmy:</label>
                         <?php
                             include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
@@ -149,8 +149,8 @@
                             $baza->close();
                         ?>
                         <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
+                        <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" placeholder="Wpisz numer telefonu firmy" required>
                     </div>
-
                     <div class="form-group">
                         <label for="haslo">Hasło:</label>
                         <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required>
