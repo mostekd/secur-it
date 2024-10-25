@@ -35,35 +35,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const nazwiskoGroup = document.getElementById('nazwisko_group');
     const nazwaFirmyGroup = document.getElementById('nazwa_firmy_group');
     const nipGroup = document.getElementById('nip_group');
-    const numerTelefonuOsobaGroup = document.getElementById('numer_telefonu_osoba_group');
-    const numerTelefonuFirmaGroup = document.getElementById('numer_telefonu_firma_group');
     const submitButton = document.querySelector('.button');  // Dodajemy selektor dla przycisku
 
+    // Funkcja do przełączania widoczności pól w zależności od typu konta
     function toggleFields() {
         if (typKontaOsobaPubliczna.checked) {
             imieGroup.style.display = 'block';
             nazwiskoGroup.style.display = 'block';
             nazwaFirmyGroup.style.display = 'none';
+            nazwa_firmy_cd_group.style.display = "none";
             nipGroup.style.display = 'none';
-            numerTelefonuOsobaGroup.style.display = 'block';
-            numerTelefonuFirmaGroup.style.display = 'none';
             document.getElementById('imie').required = true;
             document.getElementById('nazwisko').required = true;
             document.getElementById('nazwa_firmy').required = false;
+            document.getElementById('nazwa_firmy_cd').required = false;
             document.getElementById('nip').required = false;
-            submitButton.textContent = 'Zarejestruj użytkownika';
+            submitButton.textContent = 'Zarejestruj użytkownika';  // Zmiana tekstu przycisku
         } else {
-            imieGroup.style.display = 'none';
-            nazwiskoGroup.style.display = 'none';
+            imieGroup.style.display = 'block';
+            nazwiskoGroup.style.display = 'block';
+            nazwa_firmy_cd_group.style.display = "block";
             nazwaFirmyGroup.style.display = 'block';
             nipGroup.style.display = 'block';
-            numerTelefonuOsobaGroup.style.display = 'none';
-            numerTelefonuFirmaGroup.style.display = 'block';
-            document.getElementById('imie').required = false;
-            document.getElementById('nazwisko').required = false;
+            document.getElementById('imie').required = true;
+            document.getElementById('nazwisko').required = true;
             document.getElementById('nazwa_firmy').required = true;
+            document.getElementById('nazwa_firmy_cd').required = true;
             document.getElementById('nip').required = true;
-            submitButton.textContent = 'Zarejestruj firmę';
+            submitButton.textContent = 'Zarejestruj firmę';  // Zmiana tekstu przycisku
         }
     }
 

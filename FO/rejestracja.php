@@ -111,8 +111,7 @@
                         <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
                     </div>
 
-                    <!-- Numer telefonu dla osoby prywatnej -->
-                    <div class="form-group" id="numer_telefonu_osoba_group">
+                    <div class="form-group">
                         <label for="numer_telefonu">Numer telefonu:</label>
                         <?php
                             include('../DB/db_numery_kierunkowe.php');
@@ -151,50 +150,7 @@
                             
                             $baza->close();
                         ?>
-                        <input type="text" id="numer_telefonu_osoba" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
-                    </div>
-                    
-                    <!-- Numer telefonu firmy -->
-                    <div class="form-group" id="numer_telefonu_firma_group">
-                        <label for="numer_telefonu_firma">Numer telefonu firmy:</label>
-                        <?php
-                            include('../DB/db_numery_kierunkowe.php');
-                            $baza = new db_numery_kierunkowe();
-                            $baza->databaseConnect();
-                            
-                            $dataPolska = $baza->selectNrKierunkowePolska();
-                            if ($dataPolska){
-                                while ($row = mysqli_fetch_assoc($dataPolska)){
-                                    $selectedId = $row["id_numer_kierunkowy"];
-                                } 
-                            }
-                            
-                            $data = $baza->selectNrKierunkowe();
-                            if ($data){
-                                
-                            echo '<div class="phone_number">';
-                            echo '<select class="kierunkowy" name="id_numer_kierunkowy" default="">';
-                            while ($row = mysqli_fetch_assoc($data)){
-                                $text = '<option id="pole" class="kierunkowy"';
-                                if($row["id_numer_kierunkowy"] == $selectedId)
-                                {
-                                $text .= 'selected = "selected"';
-                                } 
-                                $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
-
-                                echo $text;
-                            }
-                                echo '</select>';
-
-                                mysqli_free_result($data);
-                            } else {
-                                echo "Błąd zapytania: " .mysqli_error($connect);
-                            }
-
-                            
-                            $baza->close();
-                        ?>
-                        <input type="text" id="numer_telefonu_firma" name="numer_telefonu" placeholder="Wpisz numer telefonu firmy" required>
+                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
                     </div>
 
                     <div class="form-group">
