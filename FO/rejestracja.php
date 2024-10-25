@@ -5,8 +5,8 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $typ_konta = $_POST['typ_konta'];
-        $imie = ($typ_konta == 'osoba_publiczna') ? $_POST['imie'] : '';
-        $nazwisko = ($typ_konta == 'osoba_publiczna') ? $_POST['nazwisko'] : '';
+        $imie = $_POST['imie'];
+        $nazwisko = $_POST['nazwisko'];
         $nazwa_firmy = ($typ_konta == 'firma') ? $_POST['nazwa_firmy'] : '';
         $nip = ($typ_konta == 'firma') ? $_POST['nip'] : '';
         $nick = $_POST['nick'];
@@ -16,7 +16,7 @@
         $haslo = sha1($_POST['haslo']);
 
         // Obsługa zapisu danych do bazy
-        $return = $baza->insertKonto($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
+        $return = $baza->rejestrujKlienta($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
         if(isset($return)){
             switch($return) {
                 case 1:
