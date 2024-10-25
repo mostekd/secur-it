@@ -73,17 +73,6 @@
                         <input type="radio" id="osoba_publiczna" name="typ_konta" value="osoba_publiczna">
                         <label for="osoba_publiczna">Osoba publiczna</label>
                     </div>
-
-                    <!-- Pole Imię dla osoby publicznej -->
-                    <div class="form-group" id="imie_group">
-                        <label for="imie">Imię:</label>
-                        <input type="text" id="imie" name="imie" placeholder="Wpisz imię">
-                    </div>
-                    <!-- Pole Nazwisko dla osoby publicznej -->
-                    <div class="form-group" id="nazwisko_group">
-                        <label for="nazwisko">Nazwisko:</label>
-                        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko">
-                    </div>
                     <!-- Pole Nazwa firmy dla firm -->
                     <div class="form-group" id="nazwa_firmy_group">
                         <label for="nazwa_firmy">Nazwa firmy:</label>
@@ -99,7 +88,16 @@
                         <label for="nip">NIP:</label>
                         <input type="text" id="nip" name="nip" placeholder="Wpisz NIP firmy">
                     </div>
-
+                    <!-- Pole Imię dla osoby publicznej -->
+                    <div class="form-group" id="imie_group">
+                        <label for="imie">Imię:</label>
+                        <input type="text" id="imie" name="imie" placeholder="Wpisz imię">
+                    </div>
+                    <!-- Pole Nazwisko dla osoby publicznej -->
+                    <div class="form-group" id="nazwisko_group">
+                        <label for="nazwisko">Nazwisko:</label>
+                        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko">
+                    </div>
                     <!-- Zawsze wypełniane -->
                     <div class="form-group">
                         <label for="nick">Nazwa użytkownika (Nick):</label>
