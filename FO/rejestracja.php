@@ -13,7 +13,7 @@
         $adres_e_mail = $_POST['adres_e_mail'];
         $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
         $numer_telefonu = $_POST['numer_telefonu'];
-        $haslo = sha1($_POST['haslo']);
+        $haslo = sha1($_GET['haslo']);
 
         // Obsługa zapisu danych do bazy
         $return = $baza->rejestrujKlienta($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo);
