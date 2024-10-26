@@ -373,7 +373,15 @@ INSERT INTO `typy_uslug` (`id_typ_uslugi`, `typ_uslugi`) VALUES ('1', 'Sieci Kom
 
 INSERT INTO `stanowiska` (`id_stanowisko`, `nazwa`) VALUES ('1', 'CEO');
 
-INSERT INTO `dzialy` (`id_dzial`, `nazwa_dzialu`) VALUES ('1', 'Brak'); 
+INSERT INTO `pracownicy` (`id_pracownik`, `adres_zamieszkania`, `PESEL`, `numer_umowy`, `numer_ubezpieczenia`, `data_urodzenia`, `data_zatrudnienia`, `wynagrodzenie`, `zdjecie`, `id_stanowisko`, `id_lokalizacja_pracy`, `id_dzial`, `id_samochod`) VALUES (NULL, 'Heraklesa 38G, Częstochowa, 42-221, Polska', '06250205651', NULL, NULL, '2006-05-02', '2024-02-01', NULL, './images/pracownicy/dawid_mostowski.png', '1', NULL, NULL, NULL);
+
+INSERT INTO `administratorzy` (`id_administrator`, `id_pracownik`) VALUES (NULL, '1');
+
+INSERT INTO `firmy` (`id_firma`, `nazwa`, `nazwa_cd`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES (NULL, 'Secur-IT', 'sp. z o.o.', '145', NULL, NULL);
+
+INSERT INTO `typy_paliwa` (`id_typ_paliwa`, `typ_paliwa`) VALUES (NULL, 'benzyna'), (NULL, 'gaz'), (NULL, 'diesel');
+
+INSERT INTO `uzytkownicy` (`id_uzytkownik`, `id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `id_rabat`) VALUES (NULL, '1', '1', '1', 'Dawid', 'Mostowski', '145', '535525904', 'dawid.mostowski@secur-it.pl', 'dmostowski', '0a122bc6fa5426260c1d55ecdce0bb3765725429', '100');
 
 INSERT INTO `uslugi` (`id_uslugi`, `id_typ_uslugi`, `nazwa`, `opis`, `cena`) VALUES ('1', '1', 'Test Sieci Komputerowe', 'Test', '200'), ('2', '2', 'Test Systemy Operacyjne', 'Test', '100'), ('3', '3', 'Test Bazy Danych', 'Test', '250'), ('4', '4', 'Test Strony Internetowe', 'Test', '500'), ('5', '5', 'Test Serwis Komputerowy', 'Test', '200');
 
