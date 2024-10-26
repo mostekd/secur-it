@@ -10,7 +10,7 @@
         }
 
         function rejestrujKlienta ($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
-            $query = "SELECT id_firmid_uzytkownik AS res FROM uzytkownicy WHERE nick = '".$nick."'";
+            $query = "SELECT id_firma, id_uzytkownik AS res FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
             {
                 $query .= " UNION ";
