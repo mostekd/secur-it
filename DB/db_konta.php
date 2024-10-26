@@ -1,7 +1,7 @@
 <?php
     include("db_connection.php");
     class db_konta extends db_connection{
-        function selectKonto($login, $encrypted){
+        function selectKlient($login, $encrypted){
             $query = "SELECT * FROM `konta` WHERE nick='$login' AND haslo='$encrypted'";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
@@ -48,14 +48,14 @@
             }
         }
 
-        function deleteKonto ($id_konto){
+        function deleteKlient ($id_konto){
             $query = "Delete from konta where id_konto =".$id_konto.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             $this->close();
         }
 
-        function updateKonto ($id_konto, $id_administrator, $id_pracownik, $id_klient, $imie, $nazwisko, $id_nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
+        function updateklient ($id_konto, $id_administrator, $id_pracownik, $id_klient, $imie, $nazwisko, $id_nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
             $query = "UPDATE `uczen` SET `id_administrator`='".$id_administrator."',`id_pracownik`='".$id_pracownik."',`id_klient`='".$id_klient."',`imie`='".$imie."',`nazwisko`='".$nazwisko."',`id_nick`='".$id_nick."',`adres_e_mail`='".$adres_e_mail."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`haslo`='".$haslo."' WHERE `id_konto`=".$id_konto.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
