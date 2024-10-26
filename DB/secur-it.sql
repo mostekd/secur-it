@@ -373,7 +373,7 @@ INSERT INTO `typy_uslug` (`id_typ_uslugi`, `typ_uslugi`) VALUES ('1', 'Sieci Kom
 
 INSERT INTO `stanowiska` (`id_stanowisko`, `nazwa`) VALUES ('1', 'CEO');
 
-INSERT INTO `typy_paliwa` (`id_typ_paliwa`, `typ_paliwa`) VALUES (NULL, 'benzyna'), (NULL, 'gaz'), (NULL, 'diesel');
+INSERT INTO `typy_paliwa` (`id_typ_paliwa`, `typ_paliwa`) VALUES (NULL, 'P - benzyna'), (NULL, 'D - olej napędowy'), (NULL, 'M - mieszanka paliwo-olej'), (NULL, 'LPG - gaz płynny propan-butan'), (NULL, 'CNG - gaz ziemny skroplony (metan)'), (NULL, 'H - wodór'), (NULL, 'BD - biodiesel'), (NULL, 'E85 - etanol'), (NULL, 'EE - energia elektryczna'), (NULL, '999 - inne');
 
 INSERT INTO `uslugi` (`id_uslugi`, `id_typ_uslugi`, `nazwa`, `opis`, `cena`) VALUES ('1', '1', 'Test Sieci Komputerowe', 'Test', '200'), ('2', '2', 'Test Systemy Operacyjne', 'Test', '100'), ('3', '3', 'Test Bazy Danych', 'Test', '250'), ('4', '4', 'Test Strony Internetowe', 'Test', '500'), ('5', '5', 'Test Serwis Komputerowy', 'Test', '200');
 
