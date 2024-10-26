@@ -10,11 +10,11 @@
         }
 
         function rejestrujKlienta ($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
-            $query = "SELECT id_firma, id_uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
+            $query = "SELECT id_firma, id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
             {
                 $query .= " UNION ";
-                $query .= "SELECT id_firma AS res FROM firmy WHERE nazwa = '".$nazwa_firmy."'";
+                $query .= "SELECT id_firma AS firma FROM firmy WHERE nazwa = '".$nazwa_firmy."'";
             }
             $data = mysqli_query($this->connect, $query);
             if(mysqli_num_rows($data) == 0)
