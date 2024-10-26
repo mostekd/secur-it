@@ -23,7 +23,7 @@ create table dzialy (
 
 create table typy_paliwa (
     id_typ_paliwa int primary key auto_increment,
-    typ_paliwa varchar(10)
+    typ_paliwa varchar(50)
 );
 
 create table samochody (
