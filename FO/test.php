@@ -35,3 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label for="haslo">Hasło:</label>
     <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required>
 </div>
+
+<div class="form-group">
+    <button class="button" type="submit">Zarejestruj użytkownika</button>
+</div>
