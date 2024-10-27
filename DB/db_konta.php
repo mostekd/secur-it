@@ -19,7 +19,7 @@
             $data = mysqli_query($this->connect, $query);
             if(mysqli_num_rows($data) == 0)
             {
-                $query = "IINSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES  ('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."')";
+                $query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES  ('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."')";
            
                 $data = mysqli_query($this->connect, $query);
                 if($data) 
