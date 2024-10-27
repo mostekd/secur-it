@@ -48,15 +48,15 @@
             }
         }
 
-        function deleteKlient ($id_konto){
-            $query = "Delete from konta where id_konto =".$id_konto.";";
+        function deleteKlient ($id_uzytkownik){
+            $query = "Delete from konta where id_uzytkownik =".$id_uzytkownik.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             $this->close();
         }
 
-        function updateklient ($id_konto, $id_administrator, $id_pracownik, $id_klient, $imie, $nazwisko, $id_nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
-            $query = "UPDATE `uczen` SET `id_administrator`='".$id_administrator."',`id_pracownik`='".$id_pracownik."',`id_klient`='".$id_klient."',`imie`='".$imie."',`nazwisko`='".$nazwisko."',`id_nick`='".$id_nick."',`adres_e_mail`='".$adres_e_mail."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`haslo`='".$haslo."' WHERE `id_konto`=".$id_konto.";";
+        function updateklient ($id_uzytkownik, $id_administrator, $id_pracownik, $id_firma, $imie, $nazwisko, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $nick, $haslo){
+            $query = "UPDATE `uzytkownicy` SET `id_administrator`='".$id_administrator."',`id_pracownik`='".$id_pracownik."',`id_firma`='".$id_firma."',`imie`='".$imie."',`nazwisko`='".$nazwisko."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`adres_e_mail`='".$adres_e_mail."'`nick`='".$nick."',,`haslo`='".$haslo."' WHERE `id_uzytkownik`=".$id_uzytkownik.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             header('location: ../index_admin.php');   
