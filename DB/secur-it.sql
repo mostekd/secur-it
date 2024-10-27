@@ -55,6 +55,7 @@ create table firmy (
     id_firma int primary key auto_increment,
     nazwa varchar(50),
     nazwa_cd varchar(100),
+    nip varchar(20),
     id_numer_kierunkowy int,
     numer_telefonu int,
     adres_e_mail varchar(200),

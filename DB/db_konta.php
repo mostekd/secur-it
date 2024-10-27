@@ -9,7 +9,7 @@
             }
         }
 
-        function rejestrujKlienta ($imie, $nazwisko, $nazwa_firmy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
+        function rejestrujKlienta ($nazwa, $nazwa_cd, $id_numer_kierunkowy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
             $query = "SELECT id_firma, id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
             {
@@ -19,14 +19,14 @@
             $data = mysqli_query($this->connect, $query);
             if(mysqli_num_rows($data) == 0)
             {
-                $query = "INSERT INTO `uzytkownicy`(`imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."');";
+                $query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$nazwa."','".$nazwa_cd."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."')";
            
                 $data = mysqli_query($this->connect, $query);
                 if($data) 
                 {
                     $id_klient = $this->connect->insert_id;
                     
-                    $query = "INSERT INTO `konta`(`id_klient`, `nick`, `haslo`) VALUES ('".$id_klient."','".$nick."','".$haslo."')";
+                    $query = "INSERT INTO `uzytkownicy`(`id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `id_rabat`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."')";
                     $data = mysqli_query($this->connect, $query);
                     if($data) 
                     {
