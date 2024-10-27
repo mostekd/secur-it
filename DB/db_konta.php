@@ -63,12 +63,12 @@
             $this->close();
         }
 
-        function selectKontoById ($id_konto){
-            $query = "SELECT `id_klient`, `nick`, `haslo` FROM `konta` WHERE id_konto =".$id_konto;
+        function selectKontoById ($id_uzytkownik, $id_firma){
+            $query = "SELECT * FROM `uzytkownicy` WHERE id_uzytkownik =".$id_uzytkownik;
             $data = mysqli_query($this->connect, $query);
             if($data)
             {
-                $query = "SELECT * FROM `klienci` WHERE id_klient =".$id_klient;
+                $query = "SELECT * FROM `firmy` WHERE id_firma =".$id_firma;
                 $data = mysqli_query($this->connect, $query);
 
                 if (mysqli_num_rows($data) > 0) {
