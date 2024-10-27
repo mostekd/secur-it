@@ -66,6 +66,7 @@
         function selectKontoById ($id_uzytkownik, $id_firma){
             $query = "SELECT * FROM `uzytkownicy` WHERE id_uzytkownik =".$id_uzytkownik;
             $data = mysqli_query($this->connect, $query);
+            return $data;
             if($data)
             {
                 $query = "SELECT * FROM `firmy` WHERE id_firma =".$id_firma;
