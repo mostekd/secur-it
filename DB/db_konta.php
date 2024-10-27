@@ -9,7 +9,7 @@
             }
         }
 
-        function rejestrujKlienta ($nazwa, $nazwa_cd, $id_numer_kierunkowy, $nip, $nick, $adres_e_mail, $id_numer_kierunkowy, $numer_telefonu, $haslo){
+        function rejestrujKlienta ($nazwa_firmy, $nazwa_cd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $imie, $nazwisko, $nick, $haslo){
             $query = "SELECT id_firma, id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
             {
@@ -19,7 +19,7 @@
             $data = mysqli_query($this->connect, $query);
             if(mysqli_num_rows($data) == 0)
             {
-                $query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('".$nazwa."','".$nazwa_cd."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."')";
+                $query = "IINSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES  ('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."')";
            
                 $data = mysqli_query($this->connect, $query);
                 if($data) 
