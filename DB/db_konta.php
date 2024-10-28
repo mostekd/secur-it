@@ -23,7 +23,7 @@ class db_konta extends db_connection
             }
             $data = mysqli_query($this->connect, $query);
         
-            if(mysqli_num_rows($data) == 0)
+            if(mysqli_num_rows($data) == 0 and $nazwa_firmy != '')
             {
 				if($nazwa_firmy != '')
 				{
