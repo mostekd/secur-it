@@ -17,31 +17,31 @@
                 $query .= "SELECT id_firma AS firma FROM firmy WHERE nazwa = '".$nazwa_firmy."'";
             }
             $data = mysqli_query($this->connect, $query);
-            if(mysqli_num_rows($data) == 0)
+            
+            if(mysqli_num_rows($data) == 0 and $nazwa_firmy != '')
             {
                 $query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES  ('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."')";
-           
+                $data = mysqli_query($this->connect, $query);
+            }
+            elseif($data) 
+            {
+                $id_klient = $this->connect->insert_id;
+                
+                $query = "INSERT INTO `uzytkownicy`(`id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `id_rabat`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."')";
                 $data = mysqli_query($this->connect, $query);
                 if($data) 
                 {
-                    $id_klient = $this->connect->insert_id;
-                    
-                    $query = "INSERT INTO `uzytkownicy`(`id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `id_rabat`) VALUES ('".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."')";
-                    $data = mysqli_query($this->connect, $query);
-                    if($data) 
-                    {
-                        $this->close();
-                        $_POST = array();
-                        return 1; //OK
-                    }
-                    else{
-                        mysqli_rollback($this->connect);
-                        return 4; //rollback
-                    }     
+                    $this->close();
+                    $_POST = array();
+                    return 1; //OK
                 }
                 else{
-                   return 2; //nie wstawiono dnaych do tabeli klient
-                }
+                    mysqli_rollback($this->connect);
+                    return 4; //rollback
+                }     
+            }
+            else{
+               return 2; //nie wstawiono dnaych do tabeli klient
             }
             else{
                 return 3; //jesli jest juz taki nick w bazie
