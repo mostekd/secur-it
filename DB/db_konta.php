@@ -18,8 +18,8 @@ class db_konta extends db_connection
             $query = "SELECT id_firma, id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
             {
-                $query. = " UNION ";
-                $query. = "SELECT id_firma AS firma FROM firmy WHERE nazwa = '".$nazwa_firmy."'";
+                $query .= " UNION ";
+                $query .= "SELECT id_firma AS firma FROM firmy WHERE nazwa = '".$nazwa_firmy."'";
             }
             $data = mysqli_query($this->connect, $query);
         
@@ -28,7 +28,7 @@ class db_konta extends db_connection
 				if($nazwa_firmy != '')
 				{
 					$nazwa_firmy = $nazwa_firmy;
-					$nazwa_cd  $nazwa_cd;
+					$nazwa_cd = $nazwa_cd;
 					$nip = $nip;
 					$id_numer_kierunkowy = $id_numer_kierunkowy;
 					$numer_telefonu = $numer_telefonu;
@@ -108,4 +108,4 @@ class db_konta extends db_connection
             }
         }
     }
-? >
+?>
