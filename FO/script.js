@@ -50,11 +50,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funkcja do przełączania widoczności pól w zależności od typu konta
     function toggleFields() {
         if (typKontaOsobaPubliczna.checked) {
-            numer_telefonu_firma.style.display = 'none';
+
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+
+            if(numer_telefonu_firma.style.display === "block"){
+                numer_telefonu_firma.style.display = 'none';
+            } else
+            {
+                numer_telefonu_firma.style.display = 'block';
+            }
             numer_telefonu.style.display = 'block';
             numer_telefonu_firma_txt.style.display = 'none';
             numer_telefonu_txt.style.display = 'block';
             nazwaFirmyGroup.style.display = 'none';
+            nazwa_firmy.style.display = 'none';
             nazwaFirmyCdGroup.style.display = 'none';
             nipGroup.style.display = 'none';
 
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nip.required = false;
 
             submitButton.textContent = 'Zarejestruj użytkownika';
-        } else {
+        } else { // firma zaznaczone
             numer_telefonu_firma.style.display = 'block';
             numer_telefonu.style.display = 'none';
             numer_telefonu_firma_txt.style.display = 'block';
