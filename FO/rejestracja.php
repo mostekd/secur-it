@@ -8,12 +8,13 @@
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
         $nazwa_firmy = ($typ_konta == 'firma') ? $_POST['nazwa_firmy'] : '';
+        $nazwa_cd = ($typ_konta == 'firma') ? $_POST['nazwa_firmy_cd'] : '';
         $nip = ($typ_konta == 'firma') ? $_POST['nip'] : '';
         $nick = $_POST['nick'];
         $adres_e_mail = $_POST['adres_e_mail'];
         $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
         $numer_telefonu = $_POST['numer_telefonu'];
-        $haslo = sha1(string: $_GET['haslo']);
+        $haslo = sha1(string: $_POST['haslo']);
 
         // Obsługa zapisu danych do bazy
         $return = $baza->rejestrujKlienta($nazwa_firmy, $nazwa_cd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $imie, $nazwisko, $nick, $haslo);

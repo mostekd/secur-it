@@ -15,7 +15,7 @@ class db_konta extends db_connection
 
         function rejestrujKlienta($nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $imie, $nazwisko, $nick, $haslo)
         {
-            $query = "SELECT id_firma, id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
+            $query = "SELECT id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
             {
                 $query .= " UNION ";
