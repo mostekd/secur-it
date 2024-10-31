@@ -78,40 +78,40 @@
                     <!-- Pole Nazwa firmy dla firm -->
                     <div class="form-group" id="nazwa_firmy_group">
                         <label for="nazwa_firmy">Nazwa firmy:</label>
-                        <input type="text" id="nazwa_firmy" name="nazwa_firmy" value="Secur-IT" placeholder="Wpisz nazwę firmy">
+                        <input type="text" id="nazwa_firmy" name="nazwa_firmy" placeholder="Wpisz nazwę firmy">
                     </div>
                     <div class="form-group" id="nazwa_firmy_cd_group">
                         <label for="nazwa_firmy">Nazwa firmy c.d.:</label>
-                        <input type="text" id="nazwa_firmy_cd" name="nazwa_firmy_cd" value="sp. z o.o." placeholder="Wpisz nazwę firmy">
+                        <input type="text" id="nazwa_firmy_cd" name="nazwa_firmy_cd" placeholder="Wpisz nazwę firmy">
                     </div>
 
                     <!-- Pole NIP dla firm -->
                     <div class="form-group" id="nip_group">
                         <label for="nip">NIP:</label>
-                        <input type="text" id="nip" name="nip" value="123-456-7890" placeholder="Wpisz NIP firmy">
+                        <input type="text" id="nip" name="nip" placeholder="Wpisz NIP firmy">
                     </div>
                     <!-- Pole Imię dla osoby publicznej -->
                     <div class="form-group" id="imie_group">
                         <label for="imie">Imię:</label>
-                        <input type="text" id="imie" name="imie"value="Dawid" placeholder="Wpisz imię">
+                        <input type="text" id="imie" name="imie" placeholder="Wpisz imię">
                     </div>
                     <!-- Pole Nazwisko dla osoby publicznej -->
                     <div class="form-group" id="nazwisko_group">
                         <label for="nazwisko">Nazwisko:</label>
-                        <input type="text" id="nazwisko" name="nazwisko" value="Mostowski" placeholder="Wpisz nazwisko">
+                        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko">
                     </div>
                     <!-- Zawsze wypełniane -->
                     <div class="form-group">
                         <label for="nick">Nazwa użytkownika (Nick):</label>
-                        <input type="text" id="nick" name="nick" value="dmostowski" placeholder="Wpisz nazwę użytkownika" required>
+                        <input type="text" id="nick" name="nick" placeholder="Wpisz nazwę użytkownika" required>
                     </div>
 
                     <div class="form-group">
                         <label for="adres_e_mail">Email:</label>
-                        <input type="email" id="adres_e_mail" name="adres_e_mail" value="dawid.mostowski@secur-it.pl" placeholder="Wpisz email" required>
+                        <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
                     </div>
                     <div class="form_group">
-                        <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" value="">Numer telefonu firmy:</label>
+                        <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
                         <?php
                             include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
@@ -149,8 +149,8 @@
                             
                             $baza->close();
                         ?>
-                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" value="535525904" required>
-                        <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" value="123456789" placeholder="Wpisz numer telefonu firmy" required>
+                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
+                        <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" placeholder="Wpisz numer telefonu firmy" required>
                     </div>
                     <div class="form-group">
                         <label for="haslo">Hasło:</label>
