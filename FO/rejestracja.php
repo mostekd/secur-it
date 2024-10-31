@@ -70,24 +70,34 @@
                     <!-- Wybór typu konta -->
                     <div class="form-group">
                         <label for="typ_konta">Wybierz typ konta:</label>
+                        
                         <input type="radio" id="firma" name="typ_konta" value="firma" checked>
                         <label for="firma">Firma</label>
+                        
                         <input type="radio" id="osoba_publiczna" name="typ_konta" value="osoba_publiczna">
                         <label for="osoba_publiczna">Osoba publiczna</label>
+                        
                         <label for="nazwa_firmy">Nazwa firmy:</label>
                         <input type="text" id="nazwa_firmy" name="nazwa_firmy" placeholder="Wpisz nazwę firmy">
+                        
                         <label for="nazwa_firmy">Nazwa firmy c.d.:</label>
                         <input type="text" id="nazwa_firmy_cd" name="nazwa_firmy_cd" placeholder="Wpisz nazwę firmy">
+                        
                         <label for="nip">NIP:</label>
                         <input type="text" id="nip" name="nip" placeholder="Wpisz NIP firmy">
+                        
                         <label for="imie">Imię:</label>
                         <input type="text" id="imie" name="imie" placeholder="Wpisz imię">
+                        
                         <label for="nazwisko">Nazwisko:</label>
                         <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko">
+                        
                         <label for="nick">Nazwa użytkownika (Nick):</label>
                         <input type="text" id="nick" name="nick" placeholder="Wpisz nazwę użytkownika" required>
+                        
                         <label for="adres_e_mail">Email:</label>
                         <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
+                        
                         <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
                         
                         <?php
@@ -132,8 +142,10 @@
                         ?>
                         <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required>
                         <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" placeholder="Wpisz numer telefonu firmy" required>
+                        
                         <label for="haslo">Hasło:</label>
                         <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required>
+                        
                         <button class="button" type="submit">Zarejestruj użytkownika</button>
                     </div>
                 </form>
