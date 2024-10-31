@@ -15,7 +15,7 @@
         $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
         $numer_telefonu_firma = $_POST['numer_telefonu_firma'];
         $numer_telefonu = $_POST['numer_telefonu'];
-        $haslo = sha1(string: $_POST['haslo']);
+        $haslo = sha1($_POST['haslo']);
 
         // Obsługa zapisu danych do bazy
         $return = $baza->rejestrujKlienta($nazwa_firmy, $nazwa_cd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $imie, $nazwisko, $nick, $haslo);
