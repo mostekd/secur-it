@@ -13,6 +13,7 @@
         $nick = $_POST['nick'];
         $adres_e_mail = $_POST['adres_e_mail'];
         $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
+        $numer_telefonu_firma = $_POST['numer_telefonu_firma'];
         $numer_telefonu = $_POST['numer_telefonu'];
         $haslo = sha1(string: $_POST['haslo']);
 
