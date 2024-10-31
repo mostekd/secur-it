@@ -67,7 +67,6 @@
                 <h2>Rejestracja</h2>
 
                 <form method="post" action="rejestracja.php" class="registration-form">
-                    <!-- Wybór typu konta -->
                     <div class="form-group">
                         <label for="typ_konta">Wybierz typ konta:</label>
                         

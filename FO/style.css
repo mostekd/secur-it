@@ -373,3 +373,6 @@ footer {
         margin: 6px;
      }  
 }
+.form-group > * {
+    margin-bottom: 15px;
+}
