@@ -33,7 +33,7 @@
         }
 
         function selectCheckWpis (){
-            $query = "SELECT `id_wpis`, `id_konto`, `tytul`, `tresc`, `data_zatwierdzenia` FROM `wpisy` WHERE data_zatwierdzenia != 0";
+            $query = "SELECT `id_wpis`, `id_uzytkownik`, `tytul`, `tresc`, `data_zatwierdzenia` FROM `wpisy` WHERE data_zatwierdzenia != 0";
             $data = mysqli_query($this->connect, $query);
 
             if (mysqli_num_rows($data) > 0) {
