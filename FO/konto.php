@@ -16,8 +16,30 @@
         <?php
             include("header.php");
             include("nav.php");
+            include('../DB/db_konta.php');
+            session_start();
+
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                $id_uzytkownik = $_SESSION['id_uzytkownik'];
+
+                $baza = new db_konta();
+                $baza->databaseConnect();
+                $data = $baza->selectKontoById($id_uzytkownik, null);
+
+                if ($data && mysqli_num_rows($data) > 0) {
+                    $user = mysqli_fetch_assoc($data);
+                    echo "<h2>Witaj, " . htmlspecialchars($user['nick']) . "!</h2>";
+                    echo "<p>Imię: " . htmlspecialchars($user['imie']) . "</p>";
+                    echo "<p>Nazwisko: " . htmlspecialchars($user['nazwisko']) . "</p>";
+                    echo "<p>Email: " . htmlspecialchars($user['adres_e_mail']) . "</p>";
+                    echo "<p>Numer telefonu: " . htmlspecialchars($user['numer_telefonu']) . "</p>";
+                } else {
+                    echo "<p>Nie znaleziono danych użytkownika.</p>";
+                }
+            } else {
+                echo "<p>Musisz być zalogowany, aby zobaczyć tę stronę.</p>";
+            }
         ?>
-        
     </main>
 </body>
 </html>

@@ -11,27 +11,32 @@
         <title>Secur IT | Logowanie</title>
     </head>
     <body>
-    <?php
-        include('../DB/db_konta.php');
-        $baza = new db_konta();
-        $baza->databaseConnect();
+        <?php
+            include('../DB/db_konta.php');
+            session_start(); // Startuje sesję
 
-        if (isset($_POST['nick'])) {
-            $login = $_POST['nick'];
-            $haslo = $_POST['haslo'];
-            $encrypted = sha1($haslo);
-            $data = $baza->selectKlient($login, $encrypted);
+            $baza = new db_konta();
+            $baza->databaseConnect();
 
-            if ($data) {
-                // Zalogowano pomyślnie
-                $_SESSION['loggedin'] = true;
-                $_SESSION['login'] = $login;
-                    header("Location: ./index.php");
-            } else {
-                $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
+            if (isset($_POST['nick'])) {
+                $login = $_POST['nick'];
+                $haslo = $_POST['haslo'];
+                $encrypted = sha1($haslo);
+                $data = $baza->selectKlient($login, $encrypted);
+
+                if ($data && mysqli_num_rows($data) > 0) {
+                    // Pobierz dane użytkownika
+                    $user = mysqli_fetch_assoc($data);
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['login'] = $login;
+                    $_SESSION['id_uzytkownik'] = $user['id_uzytkownik']; // Zapisuje id użytkownika do sesji
+
+                    header("Location: ./konto.php");
+                } else {
+                    $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
+                }
             }
-        }
-    ?>
+        ?>
         <div class="tlo"></div>
         <main class="main">
             <?php
