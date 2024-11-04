@@ -5,7 +5,7 @@ class db_konta extends db_connection
     {
         function selectKlient($login, $encrypted)
         {
-            $query = "SELECT * FROM `konta` WHERE nick='$login' AND haslo='$encrypted'";
+            $query = "SELECT * FROM `uzytkownicy` WHERE nick='$login' AND haslo='$encrypted'";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0)
             {
