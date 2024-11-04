@@ -25,11 +25,10 @@
             $data = $baza->selectKlient($login, $encrypted);
 
             if ($data && mysqli_num_rows($data) > 0) {
-                // Pobierz dane użytkownika
                 $user = mysqli_fetch_assoc($data);
                 $_SESSION['loggedin'] = true;
                 $_SESSION['login'] = $login;
-                $_SESSION['id_uzytkownik'] = $user['id_uzytkownik']; // Zapisuje id użytkownika do sesji
+                $_SESSION['id_uzytkownik'] = $user['id_uzytkownik'];
 
                 header("Location: ./konto.php");
             } else {
