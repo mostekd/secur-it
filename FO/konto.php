@@ -15,9 +15,7 @@
     <main class="main">
         <?php
             include("header.php");
-            include("nav.php");
-            include('../DB/db_konta.php');
-            session_start();
+            include("nav.php");\
 
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 $id_uzytkownik = $_SESSION['id_uzytkownik'];
