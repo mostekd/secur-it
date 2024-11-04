@@ -19,7 +19,7 @@
         $haslo = sha1($_POST['haslo']);
 
         // Obsługa zapisu danych do bazy
-        $return = $baza->rejestrujKlienta($nazwa_firmy, $nazwa_cd, $nip, $id_numer_kierunkowy, $numer_telefonu_firma, $numer_telefonu, $adres_e_mail, $imie, $nazwisko, $nick, $haslo);
+        $return = $baza->rejestrujKlienta($nazwa_firmy, $nazwa_cd, $nip, $id_numer_kierunkowy, $numer_telefonu_firma, $numer_telefonu, $adres_e_mail, $adres_e_mail_firma, $imie, $nazwisko, $nick, $haslo);
         if(isset($return)){
             switch($return) {
                 case 1:

@@ -47,7 +47,7 @@ class db_konta extends db_connection
 					$adres_e_mail_firma = null;
 					$adres_e_mail = $adres_e_mail;
 				}
-				$query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu_firma."','".$adres_e_mail."')";
+				$query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu_firma."','".$adres_e_mail_firma."')";
 				$data = mysqli_query($this->connect, $query);
 				$id_firma = $this->connect->insert_id;
 				
