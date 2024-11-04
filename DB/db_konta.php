@@ -86,7 +86,7 @@ class db_konta extends db_connection
     
         function updateklient($id_uzytkownik, $id_administrator, $id_pracownik, $id_firma, $imie, $nazwisko, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $nick, $haslo)
         {
-            $query = "UPDATE `uzytkownicy` SET `id_administrator`='".$id_administrator."',`id_pracownik`='".$id_pracownik."',`id_firma`='".$id_firma."',`imie`='".$imie."',`nazwisko`='".$nazwisko."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`adres_e_mail`='".$adres_e_mail."'`nick`='".$nick."',,`haslo`='".$haslo."' WHERE `id_uzytkownik`=".$id_uzytkownik.";";
+            $query = "UPDATE `uzytkownicy` SET `id_administrator`='".$id_administrator."',`id_pracownik`='".$id_pracownik."',`id_firma`='".$id_firma."',`imie`='".$imie."',`nazwisko`='".$nazwisko."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`adres_e_mail`='".$adres_e_mail."'`nick`='".$nick."',`haslo`='".$haslo."' WHERE `id_uzytkownik`=".$id_uzytkownik.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             header('location: ../index_admin.php');
