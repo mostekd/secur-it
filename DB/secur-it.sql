@@ -102,7 +102,6 @@ create table uzytkownicy (
     id_rabat int,
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
     foreign key (id_firma) references firmy (id_firma),
     foreign key (id_rabat) references rabaty (id_rabat)
 );
@@ -479,3 +478,11 @@ INSERT INTO `rabaty`(`id_rabat`, `wartosc_rabatu`) VALUES
 ('98','0,98'),
 ('99','0,99'),
 ('100','1');
+
+INSERT INTO `firmy`(`id_firma`, `nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('1','Secur-IT','sp. z o.o.','1234567890','145','123456789','contact@secur-it.pl');
+
+INSERT INTO `pracownicy`(`id_pracownik`, `adres_zamieszkania`, `PESEL`, `numer_umowy`, `numer_ubezpieczenia`, `data_urodzenia`, `data_zatrudnienia`, `wynagrodzenie`, `zdjecie`, `id_stanowisko`, `id_lokalizacja_pracy`, `id_dzial`, `id_samochod`) VALUES ('1','Heraklesa 38G, Częstochowa, 42-221','06250205651',null,null,'2006-05-02','2024-02-01',null,'../images/pracownicy/dawid_mostowski.png','1',null,null,null);
+
+INSERT INTO `administratorzy`(`id_administrator`, `id_pracownik`) VALUES ('1','1');
+
+INSERT INTO `uzytkownicy`(`id_uzytkownik`, `id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `id_rabat`) VALUES ('1','1','1','1','Dawid','Mostowski','145','535525904','dawid.mostowski@secur-it.pl','dmostowski','test','100');
