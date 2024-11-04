@@ -2,10 +2,11 @@
     include("db_connection.php");
     class db_pracownicy extends db_connection{
         function selectPracownik(){
-            $query = 'SELECT pracownicy.imie, pracownicy.nazwisko, pracownicy.zdjecie, stanowiska.nazwa, dzialy.nazwa_dzialu 
-            FROM pracownicy 
-            JOIN stanowiska ON pracownicy.id_stanowisko = stanowiska.id_stanowisko 
-            left JOIN dzialy ON pracownicy.id_dzial = dzialy.id_dzial
+            $query = 'SELECT u.id_pracownik, u.imie, u.nazwisko, p.zdjecie, s.nazwa, d.nazwa_dzialu 
+            FROM uzytkownicy AS u WHERE i.id_pracownik = p.id_pracownik
+            JOIN pracownicy as p
+            JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko 
+            left JOIN dzialy AS d ON p.id_dzial = d.id_dzial
             WHERE 1';
 
             $data = mysqli_query($this->connect, $query);
