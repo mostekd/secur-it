@@ -3,8 +3,8 @@
     class db_pracownicy extends db_connection{
         function selectPracownik(){
             $query = 'SELECT u.id_pracownik, u.imie, u.nazwisko, p.zdjecie, s.nazwa, d.nazwa_dzialu 
-            FROM uzytkownicy AS u WHERE i.id_pracownik = p.id_pracownik
-            JOIN pracownicy as p
+            FROM uzytkownicy AS u
+            JOIN pracownicy as p ON u.id_pracownik = p.id_pracownik
             JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko 
             left JOIN dzialy AS d ON p.id_dzial = d.id_dzial
             WHERE 1';
