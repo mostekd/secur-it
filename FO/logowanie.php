@@ -1,3 +1,7 @@
+<?php
+    include('../DB/db_konta.php');
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -12,9 +16,6 @@
     </head>
     <body>
     <?php
-        include('../DB/db_konta.php');
-        session_start(); // Startuje sesję
-
         $baza = new db_konta();
         $baza->databaseConnect();
 
