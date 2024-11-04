@@ -29,9 +29,9 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='artykul'>
-                ".$row['nazwa']."
-                <br>".$row['opis']."
-                <br>".$row['cena']."
+                ".$row['tytul']."
+                <br>".$row['tresc']."
+                <br>".$row['data_zatwierdzenia']."
                 </div>";
             }
             }else {
