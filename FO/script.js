@@ -28,3 +28,27 @@ dropdown.forEach(e => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const typKontaRadios = document.querySelectorAll('input[name="typ_konta"]');
+    const firmaDiv = document.querySelector('.firma');
+    const submitButton = document.querySelector('.button');
+
+    typKontaRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.value === 'firma') {
+                firmaDiv.style.display = 'block'; // Pokaż sekcję dla firmy
+                submitButton.textContent = 'Zarejestruj firmę'; // Zmień tekst przycisku
+            } else {
+                firmaDiv.style.display = 'none'; // Ukryj sekcję dla firmy
+                submitButton.textContent = 'Zarejestruj użytkownika'; // Przywróć tekst przycisku
+            }
+        });
+    });
+
+    // Inicjalnie ustaw widoczność
+    if (document.querySelector('#firma').checked) {
+        firmaDiv.style.display = 'block';
+    } else {
+        firmaDiv.style.display = 'none';
+    }
+});
