@@ -128,6 +128,7 @@
                             $baza->close();
                         ?>
                         <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" placeholder="Wpisz numer telefonu firmy" required>
+                        </div>
                     </div>
                     <br>
                     <label for="imie">Imię:</label>
