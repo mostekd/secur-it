@@ -1,3 +1,7 @@
+// nie przesyła numeru telefonu do uzytkownicy, 
+// nie rozróżnia numer kuerunkowego firma a użytkownik,
+//  nie rozróżnia emailów firma a użytkownik 
+
 <?php
     include('../DB/db_konta.php');
     $baza = new db_konta();
