@@ -12,6 +12,7 @@
         $nip = ($typ_konta == 'firma') ? $_POST['nip'] : '';
         $nick = $_POST['nick'];
         $adres_e_mail = $_POST['adres_e_mail'];
+        $adres_e_mail_firma = $_POST['adres_e_mail_firma'];
         $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
         $numer_telefonu_firma = $_POST['numer_telefonu_firma'];
         $numer_telefonu = $_POST['numer_telefonu'];
@@ -96,6 +97,8 @@
                         
                         <label for="adres_e_mail">Email:</label>
                         <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required>
+                        <label for="adres_e_mail_firma">Email:</label>
+                        <input type="email" id="adres_e_mail_firma" name="adres_e_mail_firma" placeholder="Wpisz email firmy" required>
                         
                         <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
                         

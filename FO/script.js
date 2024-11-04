@@ -39,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const numerTelefonuFirmaLabel = document.getElementById("numer_telefonu_firma_txt");
     const numerTelefonuFirma = document.getElementById("numer_telefonu_firma");
     const numerTelefonu = document.getElementById("numer_telefonu");
-    const emailLabel = document.querySelector("label[for='adres_e_mail']");
+    const email = document.getElementById("adres_e_mail");
+    const emailFirma = document.getElementById("adres_e_mail_firma");
     const buttonText = document.querySelector(".button");
 
     // Funkcja zmieniająca widoczność i teksty
@@ -49,8 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
             nazwaFirmy.style.display = "block";
             nazwaFirmyCd.style.display = "block";
             nip.style.display = "block";
+            email.textContent = "Email firmy:";
+            email.style.display = "none";
+            emailFirma.style.display = "block";
             numerTelefonuFirmaLabel.textContent = "Numer telefonu firmy:";
-            emailLabel.textContent = "Email firmy:";
             numerTelefonuFirma.style.display = "block";
             numerTelefonu.style.display = "none";
             buttonText.textContent = "Zarejestruj firmę";
@@ -60,7 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
             nazwaFirmyCd.style.display = "none";
             nip.style.display = "none";
             numerTelefonuFirmaLabel.textContent = "Numer telefonu:";
-            emailLabel.textContent = "Email:";
+            email.textContent = "Email:";
+            email.style.display = "block";
+            emailFirma.style.display = "none";
             numerTelefonuFirma.style.display = "none";
             numerTelefonu.style.display = "block";
             buttonText.textContent = "Zarejestruj użytkownika";
