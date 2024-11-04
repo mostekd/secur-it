@@ -20,7 +20,7 @@
             $login = $_POST['nick'];
             $haslo = $_POST['haslo'];
             $encrypted = sha1($haslo);
-            $data = $baza->selectKonto($login, $encrypted);
+            $data = $baza->selectKlient($login, $encrypted);
 
             if ($data) {
                 // Zalogowano pomyślnie
