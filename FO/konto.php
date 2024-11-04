@@ -1,4 +1,4 @@
-//dodać wyświetlanie numeru kierunkowego
+<!-- dodać wyświetlanie numeru kierunkowego -->
 
 <?php
     include('../DB/db_konta.php');
