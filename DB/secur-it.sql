@@ -57,7 +57,7 @@ create table firmy (
     nazwa_cd varchar(100),
     nip varchar(20),
     id_numer_kierunkowy int,
-    numer_telefonu int,
+    numer_telefonu varchar(20),
     adres_e_mail varchar(200),
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
@@ -95,7 +95,7 @@ create table uzytkownicy (
     imie varchar(50),
     nazwisko varchar(100),
     id_numer_kierunkowy int,
-    numer_telefonu int,
+    numer_telefonu varchar(20),
     adres_e_mail varchar(200),
     nick varchar(50),
     haslo varchar(250),
