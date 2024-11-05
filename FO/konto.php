@@ -35,8 +35,13 @@
                     echo "<h2>Witaj, " . htmlspecialchars($user['nick']) . "!</h2>";
                     echo "<p>Imię: " . htmlspecialchars($user['imie']) . "</p>";
                     echo "<p>Nazwisko: " . htmlspecialchars($user['nazwisko']) . "</p>";
-                    echo "<p>Email: " . htmlspecialchars($user['adres_e_mail']) . "</p>";
-                    echo "<p>Numer telefonu: " . htmlspecialchars($user['numer_kierunkowy']) . " " . htmlspecialchars($user['numer_telefonu']) . "</p>";
+                    echo "<p>Email: " . htmlspecialchars($user['uae']) . "</p>";
+                    echo "<p>Numer telefonu: " . htmlspecialchars($user['unk']) . " " . htmlspecialchars($user['unt']) . "</p>";
+                    echo "<h4>Twoja Firma:</h4>";
+                    echo "<p>Nazwa firmy:  " . htmlspecialchars($user['nazwa']) . " " . htmlspecialchars($user['nazwa_cd']) . "</p>";
+                    echo "<p>" . htmlspecialchars($user['nip']) . "</p>";
+                    echo "<p>Numer telefonu: " . htmlspecialchars($user['fnk']) . " " . htmlspecialchars($user['fnt']) . "</p>";
+                    echo "<p>Email firmy: " . htmlspecialchars($user['fae']) . "</p>";
                     echo "<a href='./wyloguj.php' class='button'>Wyloguj się</a>";
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";

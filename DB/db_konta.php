@@ -85,19 +85,18 @@ class db_konta extends db_connection
     
         function selectKontoById($id_uzytkownik, $id_firma)
         {
-            $query = "SELECT id_uzytkownik, id_firma, imie, nazwisko, numery_kierunkowe.id_numer_kierunkowy, numer_kierunkowy, numer_telefonu, adres_e_mail, nick, haslo FROM `uzytkownicy` JOIN numery_kierunkowe on numery_kierunkowe.id_numer_kierunkowy = uzytkownicy.id_numer_kierunkowy WHERE id_uzytkownik =".$id_uzytkownik;
+            $query = "SELECT u.id_uzytkownik, u.id_firma, u.imie, u.nazwisko, u.id_numer_kierunkowy, nk1.numer_kierunkowy as unk, u.numer_telefonu as unt, u.adres_e_mail as uae, u.nick, u.haslo, f.nazwa, f.nazwa_cd, f.nip, f.id_numer_kierunkowy, nk2.numer_kierunkowy as fnk, f.numer_telefonu as fnt, f.adres_e_mail as fae
+            FROM uzytkownicy as u
+            JOIN numery_kierunkowe as nk1 ON nk1.id_numer_kierunkowy = u.id_numer_kierunkowy 
+            JOIN firmy as f ON f.id_firma = u.id_firma
+            JOIN numery_kierunkowe as nk2 ON nk2.id_numer_kierunkowy = f.id_numer_kierunkowy 
+            WHERE id_uzytkownik =".$id_uzytkownik;
             $data = mysqli_query($this->connect, $query);
-            return $data;
-            if ($data)
-            {
-                $query = "SELECT * FROM `firmy` WHERE id_firma =".$id_firma;
-                $data = mysqli_query($this->connect, $query);
-        
                 if (mysqli_num_rows($data) > 0) 
                 {
                     return $data;
                 }
             }
         }
-    }
+    // }
 ?>
