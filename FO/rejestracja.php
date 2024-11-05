@@ -85,7 +85,7 @@
                             <input type="text" id="nip" name="nip" placeholder="Wpisz NIP firmy">
                             <br>
                             <label for="adres_e_mail_firma">Email firmy:</label>
-                            <input type="email" id="adres_e_mail_firma" name="adres_e_mail_firma" placeholder="Wpisz email firmy" required>
+                            <input type="email" id="adres_e_mail_firma" name="adres_e_mail_firma" placeholder="Wpisz email firmy">
                             <br>
                             <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
                             <?php
@@ -126,7 +126,7 @@
                                 }
                                 $baza->close();
                             ?>
-                            <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" placeholder="Wpisz numer telefonu firmy" required>  
+                            <input type="text" id="numer_telefonu_firma" name="numer_telefonu_firma" placeholder="Wpisz numer telefonu firmy">  
                         </div>
                         <br>
                         <label for="imie">Imię:</label>
