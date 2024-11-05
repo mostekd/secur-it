@@ -1,14 +1,15 @@
 <?php
     include('../DB/db_konta.php');
     session_start();
-
-    // Sprawdzenie, czy użytkownik jest zalogowany
-    if (!isset($_SESSION['id_uzytkownik']) || !isset($_SESSION['id_firma'])) {
+    
+    // Sprawdzenie, czy użytkownik jest zalogowany, jeśli nie, przekierowanie na stronę logowania
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         header("Location: logowanie.php");
         exit();
     }
-
-    $id_firma = $_SESSION['id_firma']; // Pobranie id firmy z sesji użytkownika
+    
+    // Pobierz id_firma użytkownika z sesji, aby przypisać je nowemu pracownikowi
+    $id_firma = $_SESSION['id_firma'];
     $baza = new db_konta();
     $baza->databaseConnect();
 
@@ -66,55 +67,48 @@
                         
                         <label for="adres_e_mail">Email:</label>
                         <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required><br>
-                        
-                        <label for="numer_kierunkowy">Numer kierunkowy:</label>
-                        <select name="numer_kierunkowy" required>
+                        <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
                         <?php
-                                include('../DB/db_numery_kierunkowe.php');
-                                $baza = new db_numery_kierunkowe();
-                                $baza->databaseConnect();
-                                
-                                $dataPolska = $baza->selectNrKierunkowePolska();
-                                if ($dataPolska){
-                                    while ($row = mysqli_fetch_assoc($dataPolska)){
-                                        $selectedId = $row["id_numer_kierunkowy"];
-                                    } 
-                                }
-                                
-                                $data = $baza->selectNrKierunkowe();
-                                if ($data)
-                                {
-                                    echo '<div class="phone_number">';
-                                    echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
-                                    while ($row = mysqli_fetch_assoc($data))
-                                    {
-                                        $text = '<option id="pole" class="kierunkowy"';
-                                        if($row["id_numer_kierunkowy"] == $selectedId)
-                                        {
-                                        $text .= 'selected = "selected"';
-                                        } 
-                                        $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
-
-                                        echo $text;
-                                    }
-                                    echo '</select>';
-                                    echo '</div>';
-                                    mysqli_free_result($data);
+                            include('../DB/db_numery_kierunkowe.php');
+                            $baza = new db_numery_kierunkowe();
+                            $baza->databaseConnect();
+                            
+                            $dataPolska = $baza->selectNrKierunkowePolska();
+                            if ($dataPolska){
+                                while ($row = mysqli_fetch_assoc($dataPolska)){
+                                    $selectedId = $row["id_numer_kierunkowy"];
                                 } 
-                                else 
+                            }
+                            
+                            $data = $baza->selectNrKierunkowe();
+                            if ($data)
+                            {
+                                echo '<div class="phone_number">';
+                                echo '<select class="kierunkowy" name="numer_kierunkowy_firma" default="">';
+                                while ($row = mysqli_fetch_assoc($data))
                                 {
-                                    echo "Błąd zapytania: " .mysqli_error($connect);
+                                    $text = '<option id="pole" class="kierunkowy"';
+                                    if($row["id_numer_kierunkowy"] == $selectedId)
+                                    {
+                                    $text .= 'selected = "selected"';
+                                    } 
+                                    $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+
+                                    echo $text;
                                 }
-                                $baza->close();
-                            ?>
-                        </select><br>
-                        
-                        <label for="numer_telefonu">Numer telefonu:</label>
-                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu" required><br>
-                        
+                                echo '</select>';
+                                echo '</div>';
+                                mysqli_free_result($data);
+                            } 
+                            else 
+                            {
+                                echo "Błąd zapytania: " .mysqli_error($connect);
+                            }
+                            $baza->close();
+                        ?>
+                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu"><br>
                         <label for="haslo">Hasło:</label>
                         <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required><br>
-                        
                         <button class="button" type="submit">Dodaj pracownika</button>
                     </div>
                 </form>
