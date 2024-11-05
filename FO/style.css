@@ -373,3 +373,7 @@ footer {
         margin: 6px;
      }  
 }
+
+.user_page, .firma_page, .button{
+    padding: 10px;
+}
