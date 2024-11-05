@@ -13,7 +13,7 @@ class db_konta extends db_connection
             }
         }
 
-        function rejestrujKlienta($nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $id_numer_kierunkowy_firma = '', $numer_telefonu_firma = '',$numer_telefonu = '', $adres_e_mail = '', $adres_e_mail_firma = '', $imie, $nazwisko, $nick, $haslo)
+        function rejestrujKlienta($nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $id_numer_kierunkowy_firma = '', $numer_telefonu_firma = '',$numer_telefonu = '', $adres_e_mail = '', $adres_e_mail_firma = '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy = '0')
         {
             $query = "SELECT id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
@@ -33,6 +33,7 @@ class db_konta extends db_connection
                 $adres_e_mail_firma = $adres_e_mail_firma;
                 $id_numer_kierunkowy = $id_numer_kierunkowy;
                 $numer_telefonu = $numer_telefonu;
+                $czy_admin_firmy = 1;
                 $adres_e_mail = $adres_e_mail;
 
 				$query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy_firma."','".$numer_telefonu_firma."','".$adres_e_mail_firma."')";
@@ -41,7 +42,7 @@ class db_konta extends db_connection
 				
 				if($data)
 				{        
-					$query = "INSERT INTO `uzytkownicy`(`id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `id_rabat`) VALUES(null, null,'".$id_firma."','".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."', null)";
+					$query = "INSERT INTO `uzytkownicy`(`id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`,`czy_admin_firmy`, `id_rabat`) VALUES(null, null,'".$id_firma."','".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."', '".$czy_admin_firmy."', null)";
 					$data = mysqli_query($this->connect, $query);
 					if ($data)
 					{

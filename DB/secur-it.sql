@@ -99,6 +99,7 @@ create table uzytkownicy (
     adres_e_mail varchar(200),
     nick varchar(50),
     haslo varchar(250),
+    czy_admin_firmy boolean,
     id_rabat int,
     foreign key (id_administrator) references administratorzy (id_administrator),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
