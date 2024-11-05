@@ -45,7 +45,7 @@
                     echo "<p>Numer telefonu firmy: " . htmlspecialchars($user['fnk']) . " " . htmlspecialchars($user['fnt']) . "</p>";
                     echo "<p>Email firmy: " . htmlspecialchars($user['fae']) . "</p>";
                     echo"</div>";
-                    echo "<a href='./wyloguj.php' class='button'>Wyloguj się</a>";
+                    echo "<a href='./wyloguj.php' class='button_logout'>Wyloguj się</a>";
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
                 }
