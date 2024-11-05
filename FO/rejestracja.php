@@ -17,13 +17,14 @@ nie rozróżnia emailów firma a użytkownik  -->
         $nick = $_POST['nick'];
         $adres_e_mail = $_POST['adres_e_mail'];
         $adres_e_mail_firma = $_POST['adres_e_mail_firma'];
-        $id_numer_kierunkowy = $_POST['id_numer_kierunkowy'];
+        $numer_kierunkowy = $_POST['numer_kierunkowy'];
+        $numer_kierunkowy_firma = $_POST['numer_kierunkowy_firma'];
         $numer_telefonu_firma = $_POST['numer_telefonu_firma'];
         $numer_telefonu = $_POST['numer_telefonu'];
         $haslo = sha1($_POST['haslo']);
 
         // Obsługa zapisu danych do bazy
-        $return = $baza->rejestrujKlienta($nazwa_firmy, $nazwa_cd, $nip, $id_numer_kierunkowy, $numer_telefonu_firma, $numer_telefonu, $adres_e_mail, $adres_e_mail_firma, $imie, $nazwisko, $nick, $haslo);
+        $return = $baza->rejestrujKlienta($nazwa_firmy, $nazwa_cd, $nip, $numer_kierunkowy, $numer_kierunkowy_firma, $numer_telefonu_firma, $numer_telefonu, $adres_e_mail, $adres_e_mail_firma, $imie, $nazwisko, $nick, $haslo);
         if(isset($return)){
             switch($return) {
                 case 1:
@@ -107,7 +108,7 @@ nie rozróżnia emailów firma a użytkownik  -->
                                 if ($data)
                                 {
                                     echo '<div class="phone_number">';
-                                    echo '<select class="kierunkowy" name="id_numer_kierunkowy" default="">';
+                                    echo '<select class="kierunkowy" name="numer_kierunkowy_firma" default="">';
                                     while ($row = mysqli_fetch_assoc($data))
                                     {
                                         $text = '<option id="pole" class="kierunkowy"';
@@ -160,7 +161,7 @@ nie rozróżnia emailów firma a użytkownik  -->
                             if ($data)
                             {
                                 echo '<div class="phone_number">';
-                                echo '<select class="kierunkowy" name="id_numer_kierunkowy" default="">';
+                                echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
                                 while ($row = mysqli_fetch_assoc($data))
                                 {
                                     $text = '<option id="pole" class="kierunkowy"';

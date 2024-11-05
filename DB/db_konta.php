@@ -13,7 +13,7 @@ class db_konta extends db_connection
             }
         }
 
-        function rejestrujKlienta($nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $numer_telefonu_firma = '',$numer_telefonu = '', $adres_e_mail = '', $adres_e_mail_firma = '', $imie, $nazwisko, $nick, $haslo)
+        function rejestrujKlienta($nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $id_numer_kierunkowy_firma = '', $numer_telefonu_firma = '',$numer_telefonu = '', $adres_e_mail = '', $adres_e_mail_firma = '', $imie, $nazwisko, $nick, $haslo)
         {
             $query = "SELECT id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
@@ -25,29 +25,17 @@ class db_konta extends db_connection
         
             if(mysqli_num_rows($data) == 0 and $nazwa_firmy != '')
             {
-				if($nazwa_firmy != '')
-				{
-					$nazwa_firmy = $nazwa_firmy;
-					$nazwa_cd = $nazwa_cd;
-					$nip = $nip;
-					$id_numer_kierunkowy = $id_numer_kierunkowy;
-					$numer_telefonu_firma = $numer_telefonu_firma;
-					$numer_telefonu = null;
-					$adres_e_mail_firma = $adres_e_mail_firma;
-					$adres_e_mail = null;
-				}
-				else
-				{
-					$nazwa_firmy = null;
-					$nazwa_cd = null;
-					$nip = null;
-					$id_numer_kierunkowy = $id_numer_kierunkowy;
-					$numer_telefonu = $numer_telefonu;
-					$numer_telefonu_firma = null;
-					$adres_e_mail_firma = null;
-					$adres_e_mail = $adres_e_mail;
-				}
-				$query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy."','".$numer_telefonu_firma."','".$adres_e_mail_firma."')";
+                $nazwa_firmy = $nazwa_firmy;
+                $nazwa_cd = $nazwa_cd;
+                $nip = $nip;
+                $id_numer_kierunkowy_firma = $id_numer_kierunkowy_firma;
+                $numer_telefonu_firma = $numer_telefonu_firma;
+                $adres_e_mail_firma = $adres_e_mail_firma;
+                $id_numer_kierunkowy = $id_numer_kierunkowy;
+                $numer_telefonu = $numer_telefonu;
+                $adres_e_mail = $adres_e_mail;
+
+				$query = "INSERT INTO `firmy`(`nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES('".$nazwa_firmy."','".$nazwa_cd."','".$nip."','".$id_numer_kierunkowy_firma."','".$numer_telefonu_firma."','".$adres_e_mail_firma."')";
 				$data = mysqli_query($this->connect, $query);
 				$id_firma = $this->connect->insert_id;
 				
