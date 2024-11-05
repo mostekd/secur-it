@@ -85,7 +85,7 @@ class db_konta extends db_connection
     
         function selectKontoById($id_uzytkownik, $id_firma)
         {
-            $query = "SELECT * FROM `uzytkownicy` WHERE id_uzytkownik =".$id_uzytkownik;
+            $query = "SELECT id_uzytkownik, id_firma, imie, nazwisko, numery_kierunkowe.id_numer_kierunkowy, numer_kierunkowy, numer_telefonu, adres_e_mail, nick, haslo FROM `uzytkownicy` JOIN numery_kierunkowe on numery_kierunkowe.id_numer_kierunkowy = uzytkownicy.id_numer_kierunkowy WHERE id_uzytkownik =".$id_uzytkownik;
             $data = mysqli_query($this->connect, $query);
             return $data;
             if ($data)

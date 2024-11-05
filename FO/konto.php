@@ -36,7 +36,7 @@
                     echo "<p>Imię: " . htmlspecialchars($user['imie']) . "</p>";
                     echo "<p>Nazwisko: " . htmlspecialchars($user['nazwisko']) . "</p>";
                     echo "<p>Email: " . htmlspecialchars($user['adres_e_mail']) . "</p>";
-                    echo "<p>Numer telefonu: " . htmlspecialchars($user['numer_telefonu']) . "</p>";
+                    echo "<p>Numer telefonu: " . htmlspecialchars($user['numer_kierunkowy']) . " " . htmlspecialchars($user['numer_telefonu']) . "</p>";
                     echo "<a href='./wyloguj.php' class='button'>Wyloguj się</a>";
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
