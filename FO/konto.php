@@ -38,13 +38,21 @@
                     echo "<p>Nazwisko: " . htmlspecialchars($user['nazwisko']) . "</p>";
                     echo "<p>Email: " . htmlspecialchars($user['uae']) . "</p>";
                     echo "<p>Numer telefonu: " . htmlspecialchars($user['unk']) . " " . htmlspecialchars($user['unt']) . "</p>";
-                    echo "</div><div class='firma_page'>";
-                    echo "<h2>Twoja Firma:</h2>";
-                    echo "<p>Nazwa firmy:  " . htmlspecialchars($user['nazwa']) . " " . htmlspecialchars($user['nazwa_cd']) . "</p>";
-                    echo "<p>NIP: " . htmlspecialchars($user['nip']) . "</p>";
-                    echo "<p>Numer telefonu firmy: " . htmlspecialchars($user['fnk']) . " " . htmlspecialchars($user['fnt']) . "</p>";
-                    echo "<p>Email firmy: " . htmlspecialchars($user['fae']) . "</p>";
-                    echo"</div>";
+                    if($nazwa_firmy != '')
+                    {
+                        if($czy_admin_firmy = 1)
+                        {
+                            echo "<a href='./dodaj_pracownika.php'>Dodaj pracownika</a>";
+                            echo "<a href='./edytuj_firme.php'>Edytuj dane firmy</a>";
+                        }
+                        echo "</div><div class='firma_page'>";
+                        echo "<h2>Twoja Firma:</h2>";
+                        echo "<p>Nazwa firmy:  " . htmlspecialchars($user['nazwa']) . " " . htmlspecialchars($user['nazwa_cd']) . "</p>";
+                        echo "<p>NIP: " . htmlspecialchars($user['nip']) . "</p>";
+                        echo "<p>Numer telefonu firmy: " . htmlspecialchars($user['fnk']) . " " . htmlspecialchars($user['fnt']) . "</p>";
+                        echo "<p>Email firmy: " . htmlspecialchars($user['fae']) . "</p>";
+                        echo"</div>";
+                    }
                     echo "<a href='./wyloguj.php' class='button_logout'>Wyloguj się</a>";
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
