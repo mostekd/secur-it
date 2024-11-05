@@ -50,7 +50,7 @@
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
                 }
             } else {
-                echo "<p>Musisz być zalogowany, aby zobaczyć tę stronę.</p>";
+                echo "<p>Musisz być <a href='./logowanie.php'>zalogowany</a>, aby zobaczyć tę stronę.</p>";
             }
         ?>
     </main>
