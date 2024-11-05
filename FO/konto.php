@@ -1,5 +1,3 @@
-<!-- dodać wyświetlanie numeru kierunkowego -->
-
 <?php
     include('../DB/db_konta.php');
     session_start();
