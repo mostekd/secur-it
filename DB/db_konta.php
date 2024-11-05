@@ -93,11 +93,10 @@ class db_konta extends db_connection
             JOIN numery_kierunkowe as nk2 ON nk2.id_numer_kierunkowy = f.id_numer_kierunkowy 
             WHERE id_uzytkownik =".$id_uzytkownik;
             $data = mysqli_query($this->connect, $query);
-                if (mysqli_num_rows($data) > 0) 
-                {
-                    return $data;
-                }
+            if (mysqli_num_rows($data) > 0) 
+            {
+                return $data;
             }
         }
-    // }
+    }
 ?>
