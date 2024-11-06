@@ -77,10 +77,11 @@ create table pracownicy (
 
 create table umowy (
     id_umowa int,
-    PESEL varchar(11),
     id_pracownik int,
-    okres_zatrudnienia varchar(25),
     numer_umowy varchar(50),
+    PESEL varchar(11),
+    numer_ubezpieczenia varchar(200),
+    okres_zatrudnienia varchar(25),
     data_rozpoczecia_pracy datetime,
     data_zakonczenia_pracy datetime,
     wynagrodzenie int(11),
@@ -88,7 +89,6 @@ create table umowy (
     id_stanowisko int,
     id_lokalizacja_pracy int,
     id_dzial int,
-    numer_ubezpieczenia varchar(200),
     foreign key (id_pracownik) references pracownicy (id_pracownik),
     foreign key (id_stanowisko) references stanowiska (id_stanowisko),
     foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja)
