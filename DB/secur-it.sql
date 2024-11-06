@@ -90,7 +90,6 @@ create table pracownicy (
     id_stanowisko int,
     id_samochod int,
     foreign key (id_stanowisko) references stanowiska (id_stanowisko),
-    foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
     foreign key (id_samochod) references samochody (id_samochod)
 );
 
