@@ -62,6 +62,19 @@ create table firmy (
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
+create table pracownicy (
+    id_pracownik int primary key auto_increment,
+    adres_zamieszkania varchar (200),
+    id_umowa int,
+    data_urodzenia date,
+    zdjecie varchar(100),
+    czy_admin boolean,
+    id_stanowisko int,
+    id_samochod int,
+    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
+    foreign key (id_samochod) references samochody (id_samochod)
+);
+
 create table umowy (
     id_umowa int,
     PESEL varchar(11),
@@ -79,19 +92,6 @@ create table umowy (
     foreign key (id_pracownik) references pracownicy (id_pracownik),
     foreign key (id_stanowisko) references stanowiska (id_stanowisko),
     foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja)
-);
-
-create table pracownicy (
-    id_pracownik int primary key auto_increment,
-    adres_zamieszkania varchar (200),
-    id_umowa int,
-    data_urodzenia date,
-    zdjecie varchar(100),
-    czy_admin boolean,
-    id_stanowisko int,
-    id_samochod int,
-    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
-    foreign key (id_samochod) references samochody (id_samochod)
 );
 
 create table uzytkownicy (
