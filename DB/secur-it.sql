@@ -72,6 +72,7 @@ create table pracownicy (
     data_zatrudnienia date,
     wynagrodzenie varchar(200),
     zdjecie varchar(100),
+    czy_admin boolean,
     id_stanowisko int,
     id_lokalizacja_pracy int,
     id_dzial int,
@@ -79,12 +80,6 @@ create table pracownicy (
     foreign key (id_stanowisko) references stanowiska (id_stanowisko),
     foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja),
     foreign key (id_samochod) references samochody (id_samochod)
-);
-
-create table administratorzy (
-    id_administrator int primary key auto_increment,
-    id_pracownik int,
-    foreign key (id_pracownik) references pracownicy (id_pracownik)
 );
 
 create table uzytkownicy (
