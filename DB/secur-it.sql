@@ -63,7 +63,7 @@ create table firmy (
 );
 
 create table umowy (
-    id_umowa int,
+    id_umowa int primary key auto_increment,
     numer_umowy varchar(50),
     PESEL varchar(11),
     numer_ubezpieczenia varchar(200),
