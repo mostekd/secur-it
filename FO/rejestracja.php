@@ -183,7 +183,7 @@
                         <br>
                         <label for="haslo">Hasło:</label>
                         <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required><br>
-                        <button class="button" type="submit">Zarejestruj użytkownika</button>
+                        <button class="button" type="submit">Zarejestruj firmę</button>
                     </div>
                 </form>
             </div>
