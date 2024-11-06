@@ -137,6 +137,8 @@ create table wpisy (
 create table opinie(
     id_opinia int primary key auto_increment,
     id_uzytkownik int,
+    dataOpinii date,
+    trescOpini longtext,
     foreign key (id_uzytkownik) references uzytkownicy (id_uzytkownik)
 );
 
