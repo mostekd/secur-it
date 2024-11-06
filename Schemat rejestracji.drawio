@@ -40,7 +40,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="3YU50Hzs8JmX-f17dHfL-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" source="3YU50Hzs8JmX-f17dHfL-16" target="3YU50Hzs8JmX-f17dHfL-14" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-10" y="240" />
+              <mxPoint x="-10" y="240" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="3YU50Hzs8JmX-f17dHfL-9" value="Czy pola wypełnione" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="210" width="120" height="60" as="geometry" />
