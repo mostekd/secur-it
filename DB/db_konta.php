@@ -13,7 +13,7 @@ class db_konta extends db_connection
             }
         }
 
-        function rejestrujKlienta($nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $id_numer_kierunkowy_firma = '', $numer_telefonu_firma = '',$numer_telefonu = '', $adres_e_mail = '', $adres_e_mail_firma = '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy = '0')
+        function rejestrujKlienta($id_firma = '', $nazwa_firmy = '', $nazwa_cd = '', $nip = '', $id_numer_kierunkowy, $id_numer_kierunkowy_firma = '', $numer_telefonu_firma = '',$numer_telefonu = '', $adres_e_mail = '', $adres_e_mail_firma = '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy = '0')
         {
             $query = "SELECT id_uzytkownik AS uzytkownik FROM uzytkownicy WHERE nick = '".$nick."'";
             if($nazwa_firmy != '')
