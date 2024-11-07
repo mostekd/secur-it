@@ -32,7 +32,7 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                echo "<a href='./pracownik.php?id_pracownik&id_pracownik=".$row['id_pracownik']."'>";
+                echo "<a class='pracownik' href='./pracownik.php?id_pracownik&id_pracownik=".$row['id_pracownik']."'>";
                 echo "<div class='pracownik'>";
                 echo "<img class='photo' src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
