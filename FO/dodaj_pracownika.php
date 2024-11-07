@@ -1,3 +1,5 @@
+<!-- nie mam pojęcia jaki błąd xD ale nie działa -->
+
 <?php
     include('../DB/db_konta.php');
     session_start();
