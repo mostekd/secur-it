@@ -32,7 +32,7 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                // echo "<a href='pracownik.php?id="$id_pracownik"'>";
+                echo "<./pracownik.php?id_pracownik&id_pracownik=".$row['id_pracownik']."'>";
                 echo "<div class='pracownik'>";
                 echo "<img class='photo' src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
@@ -40,8 +40,7 @@
                 <br>Stanowisko: ".$row['nazwa']."";
                 if(!empty($row['nazwa_dzialu'])){
                     echo "<br>Dział: ".$row['nazwa_dzialu']."
-                    </div>";
-                    // </a>"
+                    </div> </a>";
                 }
                 else{
                     echo "</div>";
