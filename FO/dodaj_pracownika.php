@@ -2,13 +2,11 @@
     include('../DB/db_konta.php');
     session_start();
     
-    // Sprawdzenie, czy użytkownik jest zalogowany, jeśli nie, przekierowanie na stronę logowania
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         header("Location: logowanie.php");
         exit();
     }
     
-    // Pobierz id_firma użytkownika z sesji, aby przypisać je nowemu pracownikowi
     $id_firma = $_SESSION['id_firma'];
     $baza = new db_konta();
     $baza->databaseConnect();
@@ -21,9 +19,8 @@
         $numer_kierunkowy = $_POST['numer_kierunkowy'];
         $numer_telefonu = $_POST['numer_telefonu'];
         $haslo = sha1($_POST['haslo']);
-        $czy_admin_firmy = 0; // Pracownik ma wartość 0 w polu czy_admin_firmy
+        $czy_admin_firmy = 0;
 
-        // Dodanie nowego użytkownika do firmy
         $return = $baza->rejestrujKlienta('', '', '', $numer_kierunkowy, '', '', $numer_telefonu, $adres_e_mail, '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy);
         
         if ($return == 1) {
