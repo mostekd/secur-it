@@ -1,0 +1,11 @@
+.pracownik{
+    padding: 10px;
+    background-color: rgb(108, 136, 136);
+    border-radius: 20px;
+}
+
+.photo{
+    max-height: 20vh;
+    max-width: 20vw;
+    border-radius: 100%;
+}

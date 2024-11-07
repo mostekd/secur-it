@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../FO/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../images/ikona.png">
+    <title>Secur IT | Admin - Dodaj Pracownika</title>
 </head>
 <body>
     
 <?php
-include('./head_admin.php');
+include('./header_admin.php');
 ?>
     <div class="panel_lewy">
     <a class="przycisk" href="./admin_panel.php"><i class="fa-solid fa-house" style="color: #fff;"></i>Strona główna</a>
-    <a class="przycisk" href="./student_add.php"><i class="fa-solid fa-user-plus" style="color: #fff;"></i>Dodaj ucznia</a>
+    <a class="przycisk" href="./dodawanie_pracownika.php"><i class="fa-solid fa-user-plus" style="color: #fff;"></i>Dodaj ucznia</a>
     </div>
 
     <?php
-    include('../DB/db_student.php');
-    $baza = new db_student();
+    include('../DB/db_pracownicy.php');
+    $baza = new db_studendb_pracownicyt();
 
     if(!empty($_GET)){
         $baza->databaseConnect();
@@ -74,9 +79,5 @@ include('./head_admin.php');
             $baza->close();
         ?>
     </div>
-</body>
-</html>
-<!-- Formularz dodający ucznia do bazy danych, pole wyszukiwania uczniów, raport (tabela) po kliknięciu na przycisk będzie pokazywała wszystkich uczniów lub uczniów zaczynających się na określoną literę nazwiska lub imienia (wyszukiwanie ucznia) wraz z informacją jakie książki wypożyczył do tej pory i jakie książki ma wypożyczone, -->
-
 </body>
 </html>
