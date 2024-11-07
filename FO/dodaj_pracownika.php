@@ -3,8 +3,7 @@
     session_start();
     
     // Sprawdzenie, czy użytkownik jest zalogowany, jeśli nie, przekierowanie na stronę logowania
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        $id_uzytkownik = $_SESSION['id_uzytkownik'];
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         header("Location: logowanie.php");
         exit();
     }
