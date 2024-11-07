@@ -3,3 +3,4 @@
 3. ogólnie css do strony
 4. Nie działa rejestracja klienta jako osoba prywatna (blad2 - taki nick już istnieje w bazie [nie istnieje] nie wiem czemu nie działa) (Pan Szczepanik wie czemu ale jeszcze nie powiedział xD)
 5. Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
+TODO: zrobic logowanie/rejestracje/konto w headerze - konrad

@@ -16,6 +16,7 @@
         <?php
             include("header.php");
             include("nav.php");
+            include("footer.php");
         ?>
         <div class="tresc">
             <h2>Witaj w Secur-IT!</h2>
