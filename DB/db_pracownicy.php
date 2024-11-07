@@ -6,7 +6,8 @@
             FROM uzytkownicy AS u
             JOIN pracownicy as p ON u.id_pracownik = p.id_pracownik
             JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko 
-            left JOIN dzialy AS d ON p.id_dzial = d.id_dzial
+            JOIN umowy as um ON p.id_umowa = um.id_umowa
+            left JOIN dzialy AS d ON um.id_dzial = d.id_dzial
             WHERE 1';
 
             $data = mysqli_query($this->connect, $query);
