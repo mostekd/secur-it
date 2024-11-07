@@ -1,5 +1,5 @@
 <footer>
-    <div id="socjale" style="float: left;">
+    <div id="socjale">
         <p style="display: inline;">
             Profile socjalne secur-IT:
         </p>

@@ -19,7 +19,16 @@ header{
     align-items: center;
     padding: 5px;
     padding-right: 190px;
-    /* The glass effect on navbar || efekt szkła w navbarze */
+    /* Glass effect for navbar || efekt szkła w navbarze */
+    background-color: rgb(117, 116, 116 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(147, 143, 143, 0.18);
+}
+
+footer {
+    /* Glass effect for navbar || efekt szkła w navbarze */
     background-color: rgb(117, 116, 116 0.6);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.5px);
