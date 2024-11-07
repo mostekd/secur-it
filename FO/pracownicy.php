@@ -28,8 +28,8 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                echo "<div id='wpis' class='artykul'>";
-                echo "<img src='".$row['zdjecie']."'><br>";
+                echo "<div id='wpis' class='pracownik'>";
+                echo "<img class='photo' src='".$row['zdjecie']."'><br>";
                 echo "Imię: ".$row['imie']."
                 <br>Nazwisko: ".$row['nazwisko']."
                 <br>Stanowisko: ".$row['nazwa']."";

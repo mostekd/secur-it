@@ -386,3 +386,21 @@ footer {
 .user_page, .firma_page, .button_logout{
     padding: 10px;
 }
+
+.pracownik{
+    display: block;
+    align-items: center;
+    text-decoration: none;
+    max-height: auto;
+    max-width: 12vw; 
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(112, 112, 112);
+    border-radius: 20px;
+}
+
+.photo{
+    max-height: 20vh;
+    max-width: 20vw;
+    border-radius: 100%;
+}
