@@ -1,6 +1,7 @@
 .pracownik{
     display: block;
     align-items: center;
+    text-decoration: none;
     max-height: auto;
     max-width: 12vw; 
     padding: 10px;
