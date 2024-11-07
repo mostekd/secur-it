@@ -1,4 +1,4 @@
 1. Nie działa dodawanie pracownika do firmy w dodaj_pracownika.php (nie mam pojecia dleczego)
 2. Podstrona edytuj_firmę - będzie można tam edytować dane firmy ( tylko osoby mające czy_admin_firmy = 1)
 3. ogólnie css do strony
-4. 
+4. Nie działa rejestracja klienta jako osoba prywatna (Pan Szczepanik wie czemu ale jeszcze nie powiedział xD)
