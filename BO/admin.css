@@ -1,4 +1,6 @@
 .pracownik{
+    display: flex;
+    align-items: center;
     max-height: auto;
     max-width: 12vw; 
     padding: 10px;
