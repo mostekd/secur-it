@@ -21,9 +21,9 @@
         $haslo = sha1($_POST['haslo']);
         $czy_admin_firmy = 0;
 
-        $return = $baza->rejestrujKlienta('', '', '', $numer_kierunkowy, '', '', $numer_telefonu, $adres_e_mail, '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy);
+        $query = $baza->rejestrujKlienta('', '', '', $numer_kierunkowy, '', '', $numer_telefonu, $adres_e_mail, '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy);
         
-        if ($return == 1) {
+        if ($query == 1) {
             echo "Pracownik został dodany pomyślnie.";
         } else {
             echo "Wystąpił błąd podczas dodawania pracownika.";
