@@ -42,7 +42,7 @@ class db_konta extends db_connection
 				
 				if($data)
 				{        
-					$query = "INSERT INTO `uzytkownicy`(`id_administrator`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`,`czy_admin_firmy`, `id_rabat`) VALUES(null, null,'".$id_firma."','".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."', '".$czy_admin_firmy."', null)";
+					$query = "INSERT INTO `uzytkownicy`( `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `czy_admin_firmy`, `id_rabat`) VALUES (null,'".$id_firma."','".$imie."','".$nazwisko."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$adres_e_mail."','".$nick."','".$haslo."', '".$czy_admin_firmy."', null)";
 					$data = mysqli_query($this->connect, $query);
 					if ($data)
 					{
