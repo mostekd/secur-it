@@ -69,6 +69,7 @@
                         <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required><br>
                         <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
                         <?php
+                            include('../DB/db_numery_kierunkowe.php');
                             $baza = new db_numery_kierunkowe();
                             $baza->databaseConnect();
                             
