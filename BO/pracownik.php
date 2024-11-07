@@ -9,7 +9,26 @@
 	
 	while($row = mysqli_fetch_assoc($data))
 	{
-		echo "<div class='artykul_full'>Tytuł: ".$row['title']."<br>Data: ".$row['data']."<article><p>Treść:</p>".$row['text']."</article><br>Autor: ".$row['author']."</div>";
+		echo "<div class='pracownik_ingo'>";
+        echo "<img class='photo' src='".$row['zdjecie']."'><br>";
+        echo "Imię: ".$row['imie']."<br>
+        Nazwisko: ".$row['nazwisko']."<br>
+        Numer telefonu: Numer telefonu: " .($row['numer_kierunkowy']) . " " .($row['numer_telefonu']) . "<br>
+        Adres e-mail: ".$row['adres_e_mail']."<br>
+        Adres zamieszkania: ".$row['adres_zamieszkania']."<br>
+        Data urodzenia: ".$row['data_urodzenia']."<br>
+        Numer umowy: ".$row['numer_umowy']."<br>
+        PESEL: ".$row['PESEL']."<br>
+        Numer ubezpieczenia: ".$row['numer_ubezpieczenia']."<br>
+        Okres zatrudnienia: ".$row['okres_zatrudnienia']."<br>
+        Data rozpoczęcia pracy: ".$row['data_rozpoczecia_pracy']."<br>
+        Data zakończenia pracy: ".$row['data_zakonczenia_pracy']."<br>
+        Wynagrodzenie: ".$row['wynagrodzenie']."<br>
+        Wysokość premii: ".$row['premia']."<br>
+        Lokalizacja pracy: ".$row['id_lokalizacja_pracy']."<br>
+        Stanowisko: ".$row['nazwa']."<br>
+        Dział: ".$row['nazwa_dzialu']."
+        </div>";
 	}
 
 	$baza->close();

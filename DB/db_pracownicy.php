@@ -2,11 +2,13 @@
     include("db_connection.php");
     class db_pracownicy extends db_connection{
         function selectPracownikById($id_pracownik){
-            $query = "SELECT u.imie, u.nazwisko, u.numer_telefonu, u.adres_e_mail, p.adres_zamieszkania, p.data_urodzenia, p.zdjecie, u.*, s.nazwa, d.nazwa_dzialu
+            $query = "SELECT u.imie, u.nazwisko, u.id_numer_kierunkowy, nk.numer_kierunkowy u.numer_telefonu, u.adres_e_mail, p.adres_zamieszkania, p.data_urodzenia, p.zdjecie, u.*, s.nazwa, d.nazwa_dzialu
             FROM `uzytkownicy` as u 
+            JOIN numery_kierunkowe as nk ON nk.id_numer_kierunkowy = u.id_numer_kierunkowy 
             JOIN pracownicy as p ON u.id_pracownik = p.id_pracownik
-            JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko 
             JOIN umowy as um ON p.id_umowa = um.id_umowa
+            JOIN lokalizacja as l on um.id_lokalizacja = l.id_lokalizacja
+            JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko 
             left JOIN dzialy AS d ON um.id_dzial = d.id_dzial
             WHERE id_pracownik =".$id_pracownik;
             $data = mysqli_query($this->connect, $query);
