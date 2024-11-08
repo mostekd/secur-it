@@ -4,11 +4,11 @@
         function selectPracownikById($id_pracownik){
             $query = "SELECT u.imie, u.nazwisko, u.id_numer_kierunkowy, nk.numer_kierunkowy, u.numer_telefonu, u.adres_e_mail, p.adres_zamieszkania, p.data_urodzenia, p.zdjecie, u.*, s.nazwa, d.nazwa_dzialu
             FROM `uzytkownicy` AS u
-            JOIN numery_kierunkowe AS nk ON u.id_numer_kierunkowy = nk.id_numer_kierunkowy
-            JOIN pracownicy AS p ON u.id_pracownik = p.id_pracownik
-            JOIN umowy AS um ON p.id_umowa = um.id_umowa
-            JOIN lokalizacje AS l ON um.id_lokalizacja_pracy = l.id_lokalizacja
-            JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko
+            LEFT JOIN numery_kierunkowe AS nk ON u.id_numer_kierunkowy = nk.id_numer_kierunkowy
+            LEFT JOIN pracownicy AS p ON u.id_pracownik = p.id_pracownik
+            LEFT JOIN umowy AS um ON p.id_umowa = um.id_umowa
+            LEFT JOIN lokalizacje AS l ON um.id_lokalizacja_pracy = l.id_lokalizacja
+            LEFT JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko
             LEFT JOIN dzialy AS d ON um.id_dzial = d.id_dzial
             WHERE u.id_pracownik = ".$id_pracownik;
             $data = mysqli_query($this->connect, $query);
@@ -23,8 +23,7 @@
             JOIN pracownicy as p ON u.id_pracownik = p.id_pracownik
             JOIN stanowiska AS s ON p.id_stanowisko = s.id_stanowisko 
             JOIN umowy as um ON p.id_umowa = um.id_umowa
-            left JOIN dzialy AS d ON um.id_dzial = d.id_dzial
-            WHERE 1';
+            left JOIN dzialy AS d ON um.id_dzial = d.id_dzial';
 
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
@@ -32,7 +31,7 @@
             }
         }
         function selectPracownikAll(){
-            $query = 'SELECT * FROM `pracownicy` WHERE 1';
+            $query = 'SELECT * FROM `pracownicy`;';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
