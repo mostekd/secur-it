@@ -33,5 +33,5 @@
 
 	$baza->close();
 ?>
-<a href="./index.php">Powrót</a>
+<a href="./admin_pracownicy.php">Powrót</a>
 </div>
