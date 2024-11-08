@@ -2,7 +2,7 @@
     include("db_connection.php");
     class db_pracownicy extends db_connection{
         function selectPracownikById($id_pracownik){
-            $query = "SELECT u.imie, u.nazwisko, u.id_numer_kierunkowy, nk.numer_kierunkowy, u.numer_telefonu, u.adres_e_mail, p.adres_zamieszkania, p.data_urodzenia, p.zdjecie, u.*, s.nazwa, d.nazwa_dzialu
+            $query = "SELECT u.imie, u.nazwisko, u.id_numer_kierunkowy, nk.numer_kierunkowy, u.numer_telefonu, u.adres_e_mail, p.adres_zamieszkania, p.data_urodzenia, p.zdjecie, um.*, s.nazwa, d.nazwa_dzialu
             FROM `uzytkownicy` AS u
             LEFT JOIN numery_kierunkowe AS nk ON u.id_numer_kierunkowy = nk.id_numer_kierunkowy
             LEFT JOIN pracownicy AS p ON u.id_pracownik = p.id_pracownik
