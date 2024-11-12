@@ -30,6 +30,7 @@
             $data = $baza->selectKontoByIdFirma($id_firma);
             if (!empty($data)){
             ?>
+            <a href="./konto.php"><button>Powrót</button></a>
         <div class="tresc">
         <?php
             while($row = mysqli_fetch_assoc($data))
