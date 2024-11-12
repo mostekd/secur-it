@@ -89,5 +89,17 @@ class db_konta extends db_connection
                 return $data;
             }
         }
+        function selectKontoByIdFirma($id_firma)
+        {
+            $query = "SELECT u.id_uzytkownik, u.id_firma, u.imie, u.nazwisko, u.id_numer_kierunkowy, nk1.numer_kierunkowy as unk, u.numer_telefonu as unt, u.adres_e_mail as uae, u.nick, u.haslo, u.czy_admin_firmy
+            FROM uzytkownicy as u
+            JOIN numery_kierunkowe as nk1 ON nk1.id_numer_kierunkowy = u.id_numer_kierunkowy
+            WHERE u.id_firma =".$id_firma;
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0) 
+            {
+                return $data;
+            }
+        }
     }
 ?>
