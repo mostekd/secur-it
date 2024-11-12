@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                 <label for="nazwa">Nazwa firmy:</label>
                 <input type="text" id="nazwa" name="nazwa" value="<?php $row['nazwa'] ?>" required>
 
-                <label for="nazwa_cd">Nazwa dodatkowa:</label>
+                <label for="nazwa_cd">Nazwa firmy cd:</label>
                 <input type="text" id="nazwa_cd" name="nazwa_cd" value="<?php $row['nazwa_cd'] ?>" required>
 
                 <label for="nip">NIP:</label>
