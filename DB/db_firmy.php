@@ -12,5 +12,10 @@ class db_firmy extends db_connection
                 return $data;
             }
         }
+
+        function selectFirmaById($id_firma)
+        {
+            $query = "SELECT * FROM `firmy` WHERE id_firma = ".$id_firma.";";
+        }
     }
 ?>
