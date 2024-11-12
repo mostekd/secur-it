@@ -16,6 +16,10 @@ class db_firmy extends db_connection
         function selectFirmaById($id_firma)
         {
             $query = "SELECT * FROM `firmy` WHERE id_firma = ".$id_firma.";";
+            if (mysqli_num_rows($data) > 0) 
+            {
+                return $data;
+            }
         }
     }
 ?>
