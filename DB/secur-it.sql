@@ -108,7 +108,6 @@ create table uzytkownicy (
     id_rabat int,
     foreign key (id_pracownik) references pracownicy (id_pracownik),
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
-    foreign key (id_firma) references firmy (id_firma),
     foreign key (id_rabat) references rabaty (id_rabat)
 );
 
