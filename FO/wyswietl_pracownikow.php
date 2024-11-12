@@ -34,15 +34,11 @@
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                echo "<div id='wpis' class='pracownik'>";
-                echo "<img class='photo' src='".$row['zdjecie']."'><br>";
-                echo "Imię: ".$row['imie']."
-                <br>Nazwisko: ".$row['nazwisko']."
-                    </div>";
-                }
-                else{
-                    echo "</div>";
-                }
+                echo "<div class='user_page'>";
+                echo "<p>Imię: ".$row['imie']."
+                </p><p>Nazwisko: ".$row['nazwisko']."
+                </p><p>Email: ".$row['uae']."
+                </p><p>Numer teoefonu: ".$row['unk']." ".$row['unt']."</p></div>";
             }
             }else {
                 echo "Brak pracowników";
