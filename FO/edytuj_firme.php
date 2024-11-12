@@ -43,26 +43,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
         <section class="form-section">
             <h2>Edytuj Dane Firmy</h2>
             <form action="edytuj_firme.php?id_firma=<?php echo $id_firma; ?>" method="post">
-                <label for="nazwa">Nazwa firmy:</label>
-                <input type="text" id="nazwa" name="nazwa" value="<?php $row['nazwa'] ?>" required>
+            <label for="nazwa">Nazwa firmy:</label>
+            <input type="text" id="nazwa" name="nazwa" value="<?php echo $firma['nazwa']; ?>" required>
 
-                <label for="nazwa_cd">Nazwa firmy cd:</label>
-                <input type="text" id="nazwa_cd" name="nazwa_cd" value="<?php $row['nazwa_cd'] ?>" required>
+            <label for="nazwa_cd">Nazwa firmy cd:</label>
+            <input type="text" id="nazwa_cd" name="nazwa_cd" value="<?php echo $firma['nazwa_cd']; ?>" required>
 
-                <label for="nip">NIP:</label>
-                <input type="text" id="nip" name="nip" value="<?php $row['nip'] ?>" required>
+            <label for="nip">NIP:</label>
+            <input type="text" id="nip" name="nip" value="<?php echo $firma['nip']; ?>" required>
 
-                <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
-                <input type="text" id="id_numer_kierunkowy" name="id_numer_kierunkowy" value="<?php $row['id_numer_kierunkowy'] ?>" required>
+            <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
+            <input type="text" id="id_numer_kierunkowy" name="id_numer_kierunkowy" value="<?php echo $firma['id_numer_kierunkowy']; ?>" required>
 
-                <label for="numer_telefonu">Numer telefonu:</label>
-                <input type="text" id="numer_telefonu" name="numer_telefonu" value="<?php $row['numer_telefonu'] ?>" required>
+            <label for="numer_telefonu">Numer telefonu:</label>
+            <input type="text" id="numer_telefonu" name="numer_telefonu" value="<?php echo $firma['numer_telefonu']; ?>" required>
 
-                <label for="adres_e_mail">Adres e-mail:</label>
-                <input type="email" id="adres_e_mail" name="adres_e_mail" value="<?php $row['adres_e_mail'] ?>" required>
+            <label for="adres_e_mail">Adres e-mail:</label>
+            <input type="email" id="adres_e_mail" name="adres_e_mail" value="<?php echo $firma['adres_e_mail']; ?>" required>
 
-                <button type="submit" name="update">Zaktualizuj dane</button>
-            </form>
+            <button type="submit" name="update">Zaktualizuj dane</button>
+        </form>
         </section>
     </main>
 </body>
