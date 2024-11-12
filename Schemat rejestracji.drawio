@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.4">
   <diagram name="Strona-1" id="n98KaX4injBVcnxOvaJd">
-    <mxGraphModel dx="2022" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1702" dy="464" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -243,7 +243,7 @@
         <mxCell id="BkWQtHeBbHfLeY4W3J_r-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="BkWQtHeBbHfLeY4W3J_r-1" target="BkWQtHeBbHfLeY4W3J_r-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="BkWQtHeBbHfLeY4W3J_r-1" value="STRT" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BkWQtHeBbHfLeY4W3J_r-1" value="START" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1700" y="150" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="BkWQtHeBbHfLeY4W3J_r-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="BkWQtHeBbHfLeY4W3J_r-2" target="BkWQtHeBbHfLeY4W3J_r-4">
