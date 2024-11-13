@@ -85,7 +85,7 @@ $baza->close();
                         {
                         $text .= 'selected = "selected"';
                         } 
-                        $text .= ' value=' .$firma["id_numer_kierunkowy"] .'> ' .$firma["numer_kierunkowy"]. " " .$firma["kraj"] .'</option>';
+                        $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
 
                         echo $text;
                     }
