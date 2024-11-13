@@ -15,8 +15,7 @@ class db_firmy extends db_connection
 
         function selectFirmaById($id_firma)
         {
-            $query = "SELECT * FROM `firmy` AS f
-            JOIN uzytkownicy AS u ON u.id_firma = f.id_firma
+            $query = "SELECT f.* FROM `firmy` AS f
             WHERE f.id_firma = ".$id_firma.";";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0) 

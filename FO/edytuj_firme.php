@@ -6,13 +6,13 @@ $baza = new db_firmy();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $id_uzytkownik = $_SESSION['id_uzytkownik'];
-    $id_firma = $_SESSION['id_firma'];
 }
-if (isset($_GET['id_firma'])) {
-    $id_firma = $_GET['id_firma'];
+if (isset($_SESSION['id_firma'])) {
+    $id_firma = $_SESSION['id_firma'];
     $data = $baza->selectFirmaById($id_firma);
     $firma = mysqli_fetch_assoc($data);
 } else {
+    echo $id_firma;
     echo "Error: No firm ID specified.";
 }
 
