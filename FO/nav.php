@@ -1,4 +1,5 @@
 <?php
+$id_uzytkownik = 0;
 $czy_admin  = 0;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $id_uzytkownik = $_SESSION['id_uzytkownik'];
@@ -51,7 +52,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                         <ol class="dropdown-list">
                         <li class="dropdown-item" style="--i:1;--j:4"><a href="./konto.php"></a>Konto</li>
                             <?php
-                            $id_uzytkownik = 0;
                                 if ($id_uzytkownik > 0) {
                                     echo "<li class='dropdown-item' style='--i:2;--j:3'><a href='./logowanie.php'></a>Logowanie</li>
                                     <li class='dropdown-item' style='--i:3;--j:2'><a href='./rejestracja.php'></a>Rejestracja</li>";
