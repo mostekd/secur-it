@@ -48,10 +48,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             </div>
                         </div>
                         <ol class="dropdown-list">
-                            <li class="dropdown-item" style="--i:1;--j:4"><a href="./konto.php"></a>Konto</li>
-                            <li class="dropdown-item" style="--i:2;--j:3"><a href="./logowanie.php"></a>Logowanie</li>
-                            <li class="dropdown-item" style="--i:3;--j:2"><a href="./rejestracja.php"></a>Rejestracja</li>
+                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./konto.php"></a>Konto</li>
                             <?php
+                                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === false) {
+                                    echo "<li class='dropdown-item' style='--i:2;--j:3'><a href='./logowanie.php'></a>Logowanie</li>
+                                    <li class='dropdown-item' style='--i:3;--j:2'><a href='./rejestracja.php'></a>Rejestracja</li>";
+                                }
                             if($czy_admin == 1){
                                 echo "<li class='dropdown-item' style='--i:4;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
                             }
