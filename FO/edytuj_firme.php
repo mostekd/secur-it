@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
 
     $baza->updateFirma($id_firma, $nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail);
 }   
-
+$baza->close();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
             <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
             <?php
                 $baza = new db_numery_kierunkowe();
+                $baza->databaseConnect();
                 
                 $dataPolska = $baza->selectNrKierunkowePolska();
                 if ($dataPolska){
