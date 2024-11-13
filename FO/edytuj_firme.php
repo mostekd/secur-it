@@ -66,9 +66,9 @@ $baza->close();
                 $baza = new db_numery_kierunkowe();
                 $baza->databaseConnect();
                 
-                $dataPolska = $baza->selectNrKierunkowePolska();
-                if ($dataPolska){
-                    while ($row = mysqli_fetch_assoc($dataPolska)){
+                $dataselected = $baza->selectNrKierunkoweById($id_numer_kierunkowy);
+                if ($dataselected){
+                    while ($row = mysqli_fetch_assoc($dataselected)){
                         $selectedId = $row["id_numer_kierunkowy"];
                     } 
                 }

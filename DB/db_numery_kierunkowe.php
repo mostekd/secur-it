@@ -14,5 +14,15 @@
             return $data;
             }
         }
+
+        function selectNrKierunkoweById($id_numer_kierunkowy){
+            $query = "SELECT * FROM numery_kierunkowe AS nk
+            JOIN firmy AS f ON nk.id_numer_kierunkowy = f.id_numer_kierunkowy
+            WHERE f.id_numer_kierunkowy =".$id_numer_kierunkowy;
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0){
+            return $data;
+            }
+        }
     }
 ?>
