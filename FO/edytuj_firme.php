@@ -1,5 +1,6 @@
 <?php
 include('../DB/db_firmy.php');
+include('../DB/db_numery_kierunkowe.php');
 session_start();
 
 $baza = new db_firmy();
@@ -62,7 +63,42 @@ $baza->close();
             <input type="text" id="nip" name="nip" value="<?php echo $firma['nip']; ?>" required><br>
 
             <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
-            <input type="text" id="id_numer_kierunkowy" name="id_numer_kierunkowy" value="<?php echo $firma['id_numer_kierunkowy']; ?>" required><br>
+            <?php
+                $baza = new db_numery_kierunkowe();
+                
+                $dataPolska = $baza->selectNrKierunkowePolska();
+                if ($dataPolska){
+                    while ($row = mysqli_fetch_assoc($dataPolska)){
+                        $selectedId = $row["id_numer_kierunkowy"];
+                    } 
+                }
+                
+                $data = $baza->selectNrKierunkowe();
+                if ($data)
+                {
+                    echo '<div class="phone_number">';
+                    echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
+                    while ($row = mysqli_fetch_assoc($data))
+                    {
+                        $text = '<option id="pole" class="kierunkowy"';
+                        if($row["id_numer_kierunkowy"] == $selectedId)
+                        {
+                        $text .= 'selected = "selected"';
+                        } 
+                        $text .= ' value=' .$firma["id_numer_kierunkowy"] .'> ' .$firma["numer_kierunkowy"]. " " .$firma["kraj"] .'</option>';
+
+                        echo $text;
+                    }
+                    echo '</select>';
+                    echo '</div>';
+                    mysqli_free_result($data);
+                } 
+                else 
+                {
+                    echo "Błąd zapytania: " .mysqli_error($connect);
+                }
+                $baza->close();
+            ?>
 
             <label for="numer_telefonu">Numer telefonu:</label>
             <input type="text" id="numer_telefonu" name="numer_telefonu" value="<?php echo $firma['numer_telefonu']; ?>" required><br>

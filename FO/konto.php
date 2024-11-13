@@ -58,10 +58,10 @@
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
                 }
+                $baza->close();
             } else {
                 echo "<p>Musisz być <a href='./logowanie.php'>zalogowany</a>, aby zobaczyć tę stronę.</p>";
             }
-            $baza->close();
         ?>
     </main>
 </body>
