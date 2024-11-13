@@ -29,6 +29,11 @@
                             <li class="dropdown-item" style="--i:5;--j:1"><a href="./admin_serwis_komputerowy.php"></a>Serwis Komputerowy</li>
                         </ol>
                     </div>
+                    <div class="dropdown-kontakt">
+                        <div class="dropdown-top-kontakt">
+                            <a href="./admin_kontakt.php">Kontakt</a>
+                        </div>
+                    </div>
                     <div class="dropdown">
                         <div class="dropdown-top">
                             <div class="dropdown-logo">Konto</div>
@@ -52,16 +57,17 @@
                         </div>
                         <ol class="dropdown-list">
                             <li class="dropdown-item" style="--i:1;--j:11"><a href="./admin_o-firmie.php"></a>O Firmie</li>
-                            <li class="dropdown-item" style="--i:2;--j:10"><a href="./admin_pracownicy.php"></a>Pracownicy</li>
-                            <li class="dropdown-item" style="--i:3;--j:9"><a href="./admin_wpisy.php"></a>Wpisy</li>
-                            <li class="dropdown-item" style="--i:4;--j:8"><a href="./admin_sieci_komputerowe.php"></a>Sieci komputerowe</li>
-                            <li class="dropdown-item" style="--i:5;--j:7"><a href="./admin_systemy_operacyjne.php"></a>Systemy Operacyjne</li>
-                            <li class="dropdown-item" style="--i:6;--j:6"><a href="./admin_bazy_danych.php"></a>Bazy Danych</li>
-                            <li class="dropdown-item" style="--i:7;--j:5"><a href="./admin_strony_internetowe.php"></a>Strony Internetowe</li>
-                            <li class="dropdown-item" style="--i:8;--j:4"><a href="./admin_serwis_komputerowy.php"></a>Serwis Komputerowy</li>
-                            <li class="dropdown-item" style="--i:8;--j:4"><a href="./admin_konto.php"></a>Konto</li>
-                            <li class="dropdown-item" style="--i:10;--j:2"> <a href="../FO/logowanie.php"></a>Logowanie</li>
-                            <li class="dropdown-item" style="--i:11;--j:1"> <a href="../FO/rejestracja.php"></a>Rejestracja</li>
+                            <li class="dropdown-item" style="--i:2;--j:12"><a href="./admin_pracownicy.php"></a>Pracownicy</li>
+                            <li class="dropdown-item" style="--i:3;--j:11"><a href="./admin_wpisy.php"></a>Wpisy</li>
+                            <li class="dropdown-item" style="--i:4;--j:10"><a href="./admin_sieci_komputerowe.php"></a>Sieci komputerowe</li>
+                            <li class="dropdown-item" style="--i:5;--j:9"><a href="./admin_systemy_operacyjne.php"></a>Systemy Operacyjne</li>
+                            <li class="dropdown-item" style="--i:6;--j:8"><a href="./admin_bazy_danych.php"></a>Bazy Danych</li>
+                            <li class="dropdown-item" style="--i:7;--j:7"><a href="./admin_strony_internetowe.php"></a>Strony Internetowe</li>
+                            <li class="dropdown-item" style="--i:8;--j:6"><a href="./admin_serwis_komputerowy.php"></a>Serwis Komputerowy</li>
+                            <li class="dropdown-item" style="--i:9;--j:5"><a href="./admin_kontakt.php"></a>Kontakt</li>
+                            <li class="dropdown-item" style="--i:10;--j:4"><a href="./admin_konto.php"></a>Konto</li>
+                            <li class="dropdown-item" style="--i:11;--j:2"> <a href="../FO/logowanie.php"></a>Logowanie</li>
+                            <li class="dropdown-item" style="--i:12;--j:1"> <a href="../FO/rejestracja.php"></a>Rejestracja</li>
                         </ol>
                     </div>
                 </div>
