@@ -50,16 +50,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             </div>
                         </div>
                         <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./konto.php"></a>Konto</li>
-                            <?php
-                                if ($id_uzytkownik != null) {
-                                    echo "<li class='dropdown-item' style='--i:2;--j:3'><a href='./logowanie.php'></a>Logowanie</li>
-                                    <li class='dropdown-item' style='--i:3;--j:2'><a href='./rejestracja.php'></a>Rejestracja</li>";
-                                }
-                            if($czy_admin == 1){
-                                echo "<li class='dropdown-item' style='--i:4;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
-                            }
-                            ?>
+                        <li class="dropdown-item" style="--i:1;--j:1"><a href="./konto.php"></a>Konto</li>
                         </ol>
                     </div>
                 </div>
@@ -71,22 +62,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             </div>
                         </div>
                         <ol class="dropdown-list">
-                            <li class="dropdown-item" style="--i:1;--j:12"><a href="./o-firmie.php"></a>O Firmie</li>
-                            <li class="dropdown-item" style="--i:2;--j:11"><a href="./pracownicy.php"></a>Pracownicy</li>
-                            <li class="dropdown-item" style="--i:3;--j:10"><a href="./wpisy.php"></a>Wpisy</li>
-                            <li class="dropdown-item" style="--i:4;--j:9"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
-                            <li class="dropdown-item" style="--i:5;--j:8"><a href="./systemy_operacyjne.php"></a>Systemy Operacyjne</li>
-                            <li class="dropdown-item" style="--i:6;--j:7"><a href="./bazy_danych.php"></a>Bazy Danych</li>
-                            <li class="dropdown-item" style="--i:7;--j:6"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
-                            <li class="dropdown-item" style="--i:8;--j:5"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
-                            <li class="dropdown-item" style="--i:9;--j:4"> <a href="./contact.php"></a>Kontakt</li>
-                            <li class="dropdown-item" style="--i:10;--j:3"> <a href="./logowanie.php"></a>Logowanie</li>
-                            <li class="dropdown-item" style="--i:11;--j:2"> <a href="./rejestracja.php"></a>Rejestracja</li>
-                            <?php
-                            if($czy_admin == 1){
-                                echo "<li class='dropdown-item' style='--i:12;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
-                            }
-                            ?>
+                            <li class="dropdown-item" style="--i:1;--j:10"><a href="./o-firmie.php"></a>O Firmie</li>
+                            <li class="dropdown-item" style="--i:2;--j:9"><a href="./pracownicy.php"></a>Pracownicy</li>
+                            <li class="dropdown-item" style="--i:3;--j:8"><a href="./wpisy.php"></a>Wpisy</li>
+                            <li class="dropdown-item" style="--i:4;--j:7"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
+                            <li class="dropdown-item" style="--i:5;--j:6"><a href="./systemy_operacyjne.php"></a>Systemy Operacyjne</li>
+                            <li class="dropdown-item" style="--i:6;--j:5"><a href="./bazy_danych.php"></a>Bazy Danych</li>
+                            <li class="dropdown-item" style="--i:7;--j:4"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
+                            <li class="dropdown-item" style="--i:8;--j:3"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
+                            <li class="dropdown-item" style="--i:9;--j:2"> <a href="./contact.php"></a>Kontakt</li>
+                            <li class="dropdown-item" style="--i:10;--j:1"> <a href="./contact.php"></a>Konto</li>
                         </ol>
                     </div>
                 </div>
