@@ -1,4 +1,4 @@
-<?php
+<button?php
 include('../DB/db_firmy.php');
 session_start();
 
@@ -93,7 +93,7 @@ $baza->close();
                 <input type="email" id="adres_e_mail" name="adres_e_mail" value="<?php echo $firma['adres_e_mail']; ?>" required><br>
 
                 <button type="submit" name="update">Zaktualizuj dane</button>
-                <a href="./konto.php"><button>Powrót</button></a>
+                <button><a href="./konto.php">Powrót</a></button>
             </form>
         </section>
     </main>
