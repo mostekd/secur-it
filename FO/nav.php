@@ -50,8 +50,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             </div>
                         </div>
                         <ol class="dropdown-list">
-                        <li class="dropdown-item" style="--i:1;--j:4"><a href="./konto.php"></a>Konto</li>
                             <?php
+                                if ($id_uzytkownik !== 0) {
+                                    echo "<li class='dropdown-item' style='--i:1;--j:4'><a href='./konto.php'></a>Konto</li>";
+                                }
                                 if ($id_uzytkownik == 0) {
                                     echo "<li class='dropdown-item' style='--i:2;--j:3'><a href='./logowanie.php'></a>Logowanie</li>
                                     <li class='dropdown-item' style='--i:3;--j:2'><a href='./rejestracja.php'></a>Rejestracja</li>";
@@ -80,8 +82,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             <li class="dropdown-item" style="--i:7;--j:7"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
                             <li class="dropdown-item" style="--i:8;--j:6"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
                             <li class="dropdown-item" style="--i:9;--j:5"> <a href="./contact.php"></a>Kontakt</li>
-                            <li class="dropdown-item" style="--i:10;--j:4"> <a href="./konto.php"></a>Konto</li>
                             <?php
+                                if ($id_uzytkownik !== 0) {
+                                    echo "<li class='dropdown-item' style='--i:10;--j:4'> <a href='./konto.php'></a>Konto</li>";
+                                }
                                 if ($id_uzytkownik == 0) {
                                     echo "<li class='dropdown-item' style='--i:11;--j:3'> <a href='./logowanie.php'></a>Logowanie</li>
                                     <li class='dropdown-item' style='--i:12;--j:2'> <a href='./rejestracja.php'></a>Rejestracja</li>";
