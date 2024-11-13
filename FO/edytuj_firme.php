@@ -1,4 +1,4 @@
-<button?php
+<?php
 include('../DB/db_firmy.php');
 session_start();
 
