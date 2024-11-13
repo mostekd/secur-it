@@ -81,12 +81,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                             <li class="dropdown-item" style="--i:8;--j:6"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
                             <li class="dropdown-item" style="--i:9;--j:5"> <a href="./contact.php"></a>Kontakt</li>
                             <li class="dropdown-item" style="--i:10;--j:4"> <a href="./konto.php"></a>Konto</li>
-                            <li class="dropdown-item" style="--i:11;--j:3"> <a href="./logowanie.php"></a>Logowanie</li>
-                            <li class="dropdown-item" style="--i:12;--j:2"> <a href="./rejestracja.php"></a>Rejestracja</li>
                             <?php
-                            if($czy_admin == 1){
-                                echo "<li class='dropdown-item' style='--i:13;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
-                            }
+                                if ($id_uzytkownik == 0) {
+                                    echo "<li class='dropdown-item' style='--i:11;--j:3'> <a href='./logowanie.php'></a>Logowanie</li>
+                                    <li class='dropdown-item' style='--i:12;--j:2'> <a href='./rejestracja.php'></a>Rejestracja</li>";
+                                }
+                                if($czy_admin == 1){
+                                    echo "<li class='dropdown-item' style='--i:13;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
+                                }
                             ?>
                         </ol>
                     </div>
