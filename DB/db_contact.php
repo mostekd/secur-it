@@ -15,24 +15,24 @@
             $this->close();
         }
 
-        function deleteUczen($id_ucznia){
-            $query = "Delete from uczen where id_ucznia =".$id_ucznia.";";
+        function deleteContact($id_formularz_kontaktowy){
+            $query = "Delete from formularz_kontaktowy where id_formularz_kontaktowy =".$id_formularz_kontaktowy.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             header('location: ./student_list.php');   
             $this->close();
         }
 
-        function updateUczen($id_ucznia, $imie, $nazwisko, $PESEL, $email, $comments){
-            $query = "UPDATE `uczen` SET `imie`='".$imie."',`nazwisko`='".$nazwisko."',`PESEL`='".$PESEL."',`email`='".$email."',`comments`='".$comments."' WHERE `id_ucznia`=".$id_ucznia.";";
+        function updateContact($id_formularz_kontaktowy, $imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc){
+            $query = "UPDATE `formularz_kontaktowy` SET `imie`=".$imie.",`nazwisko`=".$nazwisko.",`e_mail`=".$email.",`id_numer_kierunkowy`=".$id_numer_kierunkowy.",`numer_telefonu`=".$numer_telefonu.",`tytul`=".$tytul.",`wiadomosc`=".$wiadomosc." WHERE  `id_formularz_kontaktowy`=".$id_formularz_kontaktowy.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             header('location: ../BO/student_list.php');   
             $this->close();
         }
 
-        function selectUczenByID($id_ucznia){
-            $query = "SELECT * FROM `uczen` WHERE id_ucznia =".$id_ucznia;
+        function selectContactByID($id_formularz_kontaktowy){
+            $query = "SELECT * FROM `formularz_kontaktowy` WHERE id_formularz_kontaktowy =".$id_formularz_kontaktowy;
             $data = mysqli_query($this->connect, $query);
 
             if (mysqli_num_rows($data) > 0) {
