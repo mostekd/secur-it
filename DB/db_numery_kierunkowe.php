@@ -15,13 +15,5 @@
                 return $data;
             }
         }
-
-        function selectNrKierunkoweById($id_numer_kierunkowy) {
-            $query = "SELECT * FROM numery_kierunkowe WHERE id_numer_kierunkowy = " . intval($id_numer_kierunkowy);
-            $data = mysqli_query($this->connect, $query);
-            if (mysqli_num_rows($data) > 0) {
-                return $data;
-            }
-        }
     }
 ?>
