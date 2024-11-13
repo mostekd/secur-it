@@ -2,3 +2,4 @@
 2. ogólnie css do strony
 3. Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
 4. TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
+5. Dane sesji nie są przechowywane na innych stronach niż konto (w nav.php jest sprawdzanie ale nie działa)
