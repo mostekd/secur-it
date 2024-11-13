@@ -23,28 +23,29 @@
         
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 $id_uzytkownik = $_SESSION['id_uzytkownik'];
-            $id_firma = $_SESSION['id_firma'];
+                $id_firma = $_SESSION['id_firma'];
 
-            $baza = new db_konta();
-            $baza->databaseConnect();
-            $data = $baza->selectKontoByIdFirma($id_firma);
-            if (!empty($data)){
-            ?>
-            <a href="./konto.php"><button>Powrót</button></a>
-        <div class="tresc">
-        <?php
-            while($row = mysqli_fetch_assoc($data))
-            {
-                echo "<div class='user_page'>";
-                echo "<p>Imię: ".$row['imie']."
-                </p><p>Nazwisko: ".$row['nazwisko']."
-                </p><p>Email: ".$row['uae']."
-                </p><p>Numer teoefonu: ".$row['unk']." ".$row['unt']."</p></div>";
+                $baza = new db_konta();
+                $baza->databaseConnect();
+                $data = $baza->selectKontoByIdFirma($id_firma);
+                if (!empty($data)){
+                    ?>
+                    <a href="./konto.php"><button>Powrót</button></a>
+                    <div class="tresc">
+                    <?php
+                    while($row = mysqli_fetch_assoc($data))
+                    {
+                        echo "<div class='user_page'>";
+                        echo "<p>Imię: ".$row['imie']."
+                        </p><p>Nazwisko: ".$row['nazwisko']."
+                        </p><p>Email: ".$row['uae']."
+                        </p><p>Numer teoefonu: ".$row['unk']." ".$row['unt']."</p></div>";
+                    }
+                }else {
+                    echo "Brak pracowników";
+                }
             }
-            }else {
-                echo "Brak pracowników";
-            }
-        }
+            $baza->close();
         ?>
         </div>
     </main>

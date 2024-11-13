@@ -3,6 +3,7 @@ include('../DB/db_firmy.php');
 session_start();
 
 $baza = new db_firmy();
+$baza->databaseConnect();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $id_uzytkownik = $_SESSION['id_uzytkownik'];
@@ -28,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $baza->updateFirma($nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $id_firma);
 }
 
+$baza->close();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
