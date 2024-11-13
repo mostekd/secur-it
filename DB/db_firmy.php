@@ -15,7 +15,9 @@ class db_firmy extends db_connection
 
         function selectFirmaById($id_firma)
         {
-            $query = "SELECT * FROM `firmy` WHERE id_firma = ".$id_firma.";";
+            $query = "SELECT * FROM `firmy` AS f
+            JOIN uzytkownicy AS u ON u.id_firma = f.id_firma
+            WHERE f.id_firma = ".$id_firma.";";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0) 
             {
@@ -31,7 +33,7 @@ class db_firmy extends db_connection
             $this->close();
         }
 
-        function updateFirma($id_firma, $nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail)
+        function updateFirma($nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail)
         {
             $query = "UPDATE `firmy` SET `nazwa`='".$nazwa."',`nazwa_cd`='".$nazwacd."',`nip`='".$nip."',`id_numer_kierunkowy`='".$id_numer_kierunkowy."',`numer_telefonu`='".$numer_telefonu."',`adres_e_mail`=''".$adres_e_mail."' WHERE `id_firma`=".$id_firma.";";
             $data = mysqli_query($this->connect, $query);
