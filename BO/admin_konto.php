@@ -48,8 +48,8 @@
                         
                         // Dodanie opcji administracyjnych, jeśli użytkownik jest administratorem firmy
                         if ($user['czy_admin_firmy'] == 1) {
-                            echo "<a href='./dodaj_pracownika.php'><button>Dodaj pracownika</button</a>";
-                            echo "<a href='./wyswietl_pracownikow.php'><button>Wyświetl pracowników</botton></a>";
+                            echo "<a href='./dodawanie_pracownika.php'><button>Dodaj pracownika</button</a>";
+                            echo "<a href='./admin_pracownicy.php'><button>Wyświetl pracowników</botton></a>";
                             echo "<a href='./edytuj_firme.php'><button>Edytuj dane firmy</button></a>";
                         }
                         echo "</div>";
