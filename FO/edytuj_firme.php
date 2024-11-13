@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $numer_telefonu = $_POST['numer_telefonu'];
     $adres_e_mail = $_POST['adres_e_mail'];
 
-    $baza->updateFirma($nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail, $id_firma);
-}
+    $baza->updateFirma($id_firma, $nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail);
+}   
 
 $baza->close();
 ?>
