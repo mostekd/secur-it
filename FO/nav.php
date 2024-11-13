@@ -1,3 +1,8 @@
+<?php
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    $czy_admin = $_SESSION['czy_admin'];
+}
+?>
 <nav class="top-nav">
                 <a class="logo" href="./index.php"><img src="../images/logo.png" alt="logo"></a>                    
                 <div class="top-nav-buttons">
@@ -46,7 +51,7 @@
                             <li class="dropdown-item" style="--i:2;--j:3"><a href="./logowanie.php"></a>Logowanie</li>
                             <li class="dropdown-item" style="--i:3;--j:2"><a href="./rejestracja.php"></a>Rejestracja</li>
                             <?php
-                            if(!empty($id_pracownik)){
+                            if($czy_admin == 1){
                                 echo "<li class='dropdown-item' style='--i:4;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
                             }
                             ?>

@@ -30,6 +30,7 @@
                 $_SESSION['login'] = $login;
                 $_SESSION['id_uzytkownik'] = $user['id_uzytkownik'];
                 $_SESSION['id_firma'] = $user['id_firma'];
+                $_SESSION['czy_admin'] = $user['czy_admin'];
 
                 header("Location: ./konto.php");
             } else {
