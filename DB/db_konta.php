@@ -5,9 +5,7 @@ class db_konta extends db_connection
     {
         function selectKlient($login, $encrypted)
         {
-            $query = "SELECT * FROM `uzytkownicy` AS u
-            LEFT JOIN pracownicy AS p ON u.id_pracownik = p.id_pracownik 
-            WHERE nick='$login' AND haslo='$encrypted'";
+            $query = "SELECT * FROM `uzytkownicy` AS u LEFT JOIN pracownicy AS p ON u.id_pracownik = p.id_pracownik WHERE nick='$login' AND haslo='$encrypted'";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0)
             {
