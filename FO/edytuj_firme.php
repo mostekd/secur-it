@@ -1,6 +1,5 @@
 <?php
 include('../DB/db_firmy.php');
-include('../DB/db_numery_kierunkowe.php');
 session_start();
 
 $baza = new db_firmy();
@@ -63,6 +62,7 @@ $baza->close();
 
             <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
             <?php
+                include('../DB/db_numery_kierunkowe.php');
                 $baza = new db_numery_kierunkowe();
                 $baza->databaseConnect();
                 
