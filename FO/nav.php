@@ -1,5 +1,5 @@
 <?php
-$  = 0;
+$czy_admin  = 0;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $czy_admin = $_SESSION['czy_admin'];
 }
