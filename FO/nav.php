@@ -1,6 +1,6 @@
 <?php
-$id_uzytkownik = 0;
-$czy_admin  = 0;
+$id_uzytkownik == 0;
+$czy_admin  == 0;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $id_uzytkownik = $_SESSION['id_uzytkownik'];
     $czy_admin = $_SESSION['czy_admin'];
