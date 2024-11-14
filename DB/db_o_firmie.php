@@ -1,4 +1,5 @@
 <?php
+include_once("db_connection.php");
     class db_o_firmie extends db_connection{
         function selectOFirmie(){
             $query = 'SELECT *FROM `o_firmie` WHERE 1';

@@ -1,4 +1,5 @@
 <?php
+    include_once("db_connection.php");
     class db_wpisy extends db_connection{
         function selectKonto(){
             $query = "SELECT * FROM `wpisy` WHERE login='$username' AND haslo='$encrypted'";

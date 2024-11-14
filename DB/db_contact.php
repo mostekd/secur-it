@@ -1,4 +1,5 @@
 <?php
+    include_once("db_connection.php");
     class db_contact extends db_connection{
         function selectContact(){
             $query = 'SELECT * FROM `formularz_kontaktowy` WHERE 1';

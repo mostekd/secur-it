@@ -1,4 +1,5 @@
 <?php
+    include_once("db_connection.php");
     class db_uslugi extends db_connection{
         function selectUslugi_sieci(){
             $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 1';
