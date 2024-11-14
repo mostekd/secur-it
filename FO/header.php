@@ -23,8 +23,8 @@
             $baza->close();
         }
         else{
-            echo "<p><a href='./rejestracja.php'><i class='fa-solid fa-user-plus'></i>Rejestracja</a></p>
-            <p><a href='./logowanie.php'><i class='fa-solid fa-user'></i>Logowanie</a></p>";
+            echo "<a href='./rejestracja.php'><i class='fa-solid fa-user-plus'></i>Rejestracja</a>
+            <a href='./logowanie.php'><i class='fa-solid fa-user'></i>Logowanie</a>";
         }
     ?>
 </header>
