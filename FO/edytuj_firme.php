@@ -1,6 +1,5 @@
 <?php
 include('../DB/db_firmy.php');
-session_start();
 
 $baza = new db_firmy();
 $baza->databaseConnect();
