@@ -1,6 +1,4 @@
 <?php
-include("db_connection.php");
-
 class db_firmy extends db_connection
     {
         function selectFirmy()
