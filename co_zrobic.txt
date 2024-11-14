@@ -3,3 +3,4 @@ Formularz kontaktowy nie działa
 ogólnie css do strony
 Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
 TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
+nie działa rozwijany nav na telefonie
