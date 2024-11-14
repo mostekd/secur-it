@@ -1,7 +1,7 @@
 <header>
     <!-- TODO: zrobic logowanie/rejestracje/konto w headerze - Konrad -->
     <?php
-        // include_once('../DB/db_konta.php');
+        include_once('../DB/db_konta.php');
         if(!isset($_SESSION['sesja'])){
             session_start();
             $_SESSION['sesja'] = "test";
