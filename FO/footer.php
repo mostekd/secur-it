@@ -26,6 +26,6 @@
     </div>
 
     <div id="kontakt">
-        <a href="mailto:kontakt@secur-IT.pl">kontakt@secur-IT.pl</a>
+        <a href="mailto:kontakt@secur-IT.pl">kontakt@secur-it.pl</a>
     </div>
 </footer>
