@@ -325,10 +325,10 @@ footer {
         -webkit-backdrop-filter: blur(3.5px);
         border: 1px solid rgba(147, 143, 143, 0.18);
     }
-.tresc{
-    margin: 5%;
-    width: 90%;
-}
+    .tresc{
+        margin: 5%;
+        width: 90%;
+    }
     .spolecznosci{
         margin: 3px;
     }
@@ -340,7 +340,6 @@ footer {
     .main {
         width: 100vw;
         min-height: calc(100vh - 50px);
-        background: url('./images/placeholderbackground.jpg');
         background-size: cover;
         padding-bottom: 50px;
         box-sizing: border-box;
@@ -368,7 +367,7 @@ footer {
     }
 
     .phone{
-        display: flex;
+        display: block;
         color: white;
         margin-top: 250px;
     }
