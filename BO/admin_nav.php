@@ -48,17 +48,10 @@ else {
                             <a href="./admin_kontakt.php">Kontakt</a>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <div class="dropdown-top">
-                            <div class="dropdown-logo">Konto</div>
-                            <div class="dropdown-toggle">
-                                <i class="fa-solid fa-bars"></i>
-                            </div>
+                    <div class="dropdown-kontakt">
+                        <div class="dropdown-top-kontakt">
+                            <a href="../FO/index.php">Strona Główna</a>
                         </div>
-                        <ol class="dropdown-list">
-                            <li class="dropdown-item" style="--i:1;--j:3"><a href="./admin_konto.php"></a>Konto</li>
-                            <li class="dropdown-item" style="--i:3;--j:2"><a href="../FO/index.php"></a>Strona Główna</li>
-                            </ol>
                     </div>
                 </div>
                 <div class="phone">
