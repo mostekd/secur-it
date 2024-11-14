@@ -20,7 +20,7 @@
             include("header.php");
             include("nav.php");
 
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            if (/*isset($_SESSION['loggedin']) && */ $_SESSION['loggedin'] === true) {
                 $id_uzytkownik = $_SESSION['id_uzytkownik'];
 
                 $baza = new db_konta();

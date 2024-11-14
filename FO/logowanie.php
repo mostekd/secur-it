@@ -13,7 +13,9 @@
     <body>
     <?php
         include('../DB/db_konta.php');
-
+        if(!isset($_SESSION['sesja'])){
+            session_start();
+        }
         $baza = new db_konta();
         $baza->databaseConnect();
 
@@ -33,6 +35,7 @@
 
                 header("Location: ./konto.php");
             } else {
+                $_SESSION['loggedin'] = false;
                 $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";
             }
         }
