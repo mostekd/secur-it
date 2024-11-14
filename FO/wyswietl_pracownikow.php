@@ -1,5 +1,5 @@
 <?php
-    include('../DB/db_konta.php');
+    include_once('../DB/db_konta.php');
     session_start();
 ?>
 <!DOCTYPE html>

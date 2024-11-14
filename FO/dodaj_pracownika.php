@@ -1,5 +1,5 @@
 <?php
-    include('../DB/db_konta.php');
+    include_once('../DB/db_konta.php');
     
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         header("Location: logowanie.php");

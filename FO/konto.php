@@ -1,5 +1,5 @@
 <?php
-    include('../DB/db_konta.php');
+    include_once('../DB/db_konta.php');
 ?>
 <!DOCTYPE html>
 <html lang="pl">

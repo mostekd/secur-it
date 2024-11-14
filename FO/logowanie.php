@@ -12,7 +12,7 @@
     </head>
     <body>
     <?php
-        include('../DB/db_konta.php');
+        include_once('../DB/db_konta.php');
         if(!isset($_SESSION['sesja'])){
             session_start();
         }
