@@ -3,6 +3,6 @@ session_start();
 session_unset();
 session_destroy();
 
-header("Location: ./admin_panel.php");
+header("Location: ../FO/index.php");
 exit();
 ?>
