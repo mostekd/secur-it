@@ -48,29 +48,17 @@ else {
                 <a href="contact.php">Kontakt</a>
             </div>
         </div>
-        <div class="dropdown">
-            <div class="dropdown-top">
-                <div class="dropdown-logo">Konto</div>
-                <div class="dropdown-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+        <?php
+            if($czy_admin == 1){
+        ?>
+        <div class="dropdown-kontakt">
+            <div class="dropdown-top-kontakt">
+                <a href="../BO/admin_panel.php">Panel Administratora</a>
             </div>
-            <ol class="dropdown-list">
-                <?php
-                    if ($id_uzytkownik != 0) {
-                        echo "<li class='dropdown-item' style='--i:1;--j:4'><a href='./konto.php'></a>Konto</li>";
-                    }
-                    if ($id_uzytkownik == 0) {
-                        echo "<li class='dropdown-item' style='--i:2;--j:3'><a href='./logowanie.php'></a>Logowanie</li>
-                        <li class='dropdown-item' style='--i:3;--j:2'><a href='./rejestracja.php'></a>Rejestracja</li>";
-                    }
-                if($czy_admin == 1){
-                    echo "<li class='dropdown-item' style='--i:4;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
-                }
-                ?>
-            </ol>
         </div>
-    </div>
+        <?php
+            }
+        ?>
     <div class="phone">
         <div class="dropdown">
             <div class="dropdown-top">
