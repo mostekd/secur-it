@@ -1,4 +1,5 @@
 <?php
+echo "Nav Loaded";
 if(!isset($_SESSION['sesja'])){
     session_start();
     $_SESSION['sesja'] = "test";
