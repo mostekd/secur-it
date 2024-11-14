@@ -24,7 +24,7 @@
         }
         else{
             echo "<p><a href='./rejestracja.php'>Rejestracja</a></p>
-            <p><a href='./logowanie.php'> Logowanie</a></p>";
+            <p><a href='./logowanie.php'>Logowanie</a></p>";
         }
     ?>
 </header>
