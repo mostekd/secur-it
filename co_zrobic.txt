@@ -1,4 +1,3 @@
-Dane sesji nie są przechowywane na innych stronach niż konto (w nav.php jest sprawdzanie ale nie działa)
 Formularz kontaktowy nie działa
 ogólnie css do strony
 Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
