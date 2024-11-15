@@ -105,7 +105,7 @@
                         <br>
                         Wiadomość:
                         <br>
-                        <textarea name="message" placeholder="Treść Wiadomości" id="wiadomosc"></textarea>
+                        <textarea name="wiadomosc" placeholder="Treść Wiadomości" id="wiadomosc"></textarea>
                         <br><br>
                         Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
                         <br><br>
