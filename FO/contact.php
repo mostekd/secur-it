@@ -124,7 +124,7 @@
                                     {
                                     $text .= 'selected = "selected"';
                                     } 
-                                    $text .= ' value=' .$userData["unk"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                                    $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
 
                                     echo $text;
                                 }
