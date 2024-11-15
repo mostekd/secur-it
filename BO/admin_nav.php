@@ -13,7 +13,7 @@ else {
 }
 ?>
 <nav class="top-nav">
-                <a class="logo" href="./index.php"><img src="../images/logo.png" alt="logo"></a>                    
+                <a class="logo" href="./admin_panel.php"><img src="../images/logo.png" alt="logo"></a>                    
                 <div class="top-nav-buttons">
                     <div class="dropdown">
                         <div class="dropdown-top">
