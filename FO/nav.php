@@ -59,6 +59,7 @@ else {
         <?php
             }
         ?>
+    </div>
     <div class="phone">
         <div class="dropdown">
             <div class="dropdown-top">
