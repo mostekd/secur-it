@@ -30,7 +30,7 @@
                         $wiadomosc = $_GET['wiadomosc'];
                         $czy_zgoda = 0;
                         if(isset($_GET['czy_zgoda'])){
-                        $czy_zgoda = 1;
+                            $czy_zgoda = 1;
                         }
                         $baza->insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda);
                     }
