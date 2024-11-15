@@ -2,7 +2,9 @@
     include_once("db_connection.php");
     class db_contact extends db_connection{
         function selectContact(){
-            $query = 'SELECT * FROM `formularz_kontaktowy` WHERE 1';
+            $query = 'SELECT fk.*, nk.numer_kierunkowy FROM `formularz_kontaktowy` AS fk
+            JOIN numery_kierunkowe AS nk ON nk.id_numer_kierunkowy = fk.id_numer_kierunkowy
+            WHERE 1;';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
