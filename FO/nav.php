@@ -68,7 +68,7 @@ else {
                 </div>
             </div>
             <ol class="dropdown-list">
-                <li class="dropdown-item" style="--i:1;--j:10"><a href="./o-firmie.php"></a>O Firmie</li>
+                <li class="dropdown-item" style="--i:1;--j:10"><a href="./o_firmie.php"></a>O Firmie</li>
                 <li class="dropdown-item" style="--i:2;--j:9"><a href="./pracownicy.php"></a>Pracownicy</li>
                 <li class="dropdown-item" style="--i:3;--j:8"><a href="./wpisy.php"></a>Wpisy</li>
                 <li class="dropdown-item" style="--i:4;--j:7"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
