@@ -14,7 +14,7 @@
     
 <?php
     include('./admin_header.php');
-    // include('nav_admin.php');
+    include('./admin_nav.php')
 ?>
     <div class="panel_lewy">
     <a class="przycisk" href="./admin_panel.php"><i class="fa-solid fa-house" style="color: #fff;"></i>Strona główna</a>
