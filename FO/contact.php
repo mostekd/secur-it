@@ -154,7 +154,8 @@
                         Zgoda na przetwarzanie danych:
                         <br><br>
                         <input type="checkbox" name="czy_zgoda">
-                        <span>Wyrażam zgodę na przetwarzanie moich danych osobowych...</span>
+                        <span> Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o.w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej secur-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
+                        że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a></span>
                         <br><br>
                         <input type="hidden" name="opcja" id="opcja" value="dodaj">
                         <button type="submit" name="submit" class="przycisk">Wyślij</button>
