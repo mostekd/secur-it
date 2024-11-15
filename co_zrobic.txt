@@ -1,4 +1,4 @@
-Formularz kontaktowy nie działa
+nie pobiera id_numer_kierunkowy użytkownika z bazy przy zalogowanym użytkowniku
 ogólnie css do strony
 Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
 TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
