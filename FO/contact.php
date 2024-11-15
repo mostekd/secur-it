@@ -84,20 +84,20 @@
                         Imię:
                         <br>
                         <input type="text" placeholder="Imię" name="imie" id="imie" alt="pole imię" 
-                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['imie']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['imie']).'"' : ''; ?>>
+                               value="<?php echo $isLoggedIn ? ($userData['imie']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['imie']).'"' : ''; ?>>
                         <br>
                         Nazwisko:
                         <br>
                         <input type="text" placeholder="Nazwisko" name="nazwisko" id="nazwisko" alt="pole nazwisko"
-                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['nazwisko']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['nazwisko']).'"' : ''; ?>>
+                               value="<?php echo $isLoggedIn ? ($userData['nazwisko']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['nazwisko']).'"' : ''; ?>>
                         <br>
                         Adres e-mail:
                         <br>
                         <input type="email" placeholder="Adres e-mail" name="e_mail" id="e_mail" alt="pole e-mail" 
-                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['uae']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['uae']).'"' : ''; ?>>
+                               value="<?php echo $isLoggedIn ? ($userData['uae']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['uae']).'"' : ''; ?>>
                         <br>
                         Numer Telefonu:
                         <br>
@@ -138,8 +138,8 @@
                                 $baza->close();
                             ?>
                             <input type="tel" placeholder="Numer Telefonu" name="numer_telefonu" id="numer_telefonu" alt="pole numer telefonu" 
-                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['unt']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['unt']).'"' : ''; ?>>
+                               value="<?php echo $isLoggedIn ? ($userData['unt']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['unt']).'"' : ''; ?>>
                             </div>
                         </div>
                         <br>
