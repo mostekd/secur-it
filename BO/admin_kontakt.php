@@ -20,7 +20,7 @@
         $baza->databaseConnect();
         $kontakty = $baza->selectContact();
     ?>
-    <div class="container">
+    <main class="main">
         <h1>Lista Kontaktów</h1>
         <?php if ($kontakty && mysqli_num_rows($kontakty) > 0): ?>
             <table border="1" cellpadding="15" cellspacing="0">
@@ -53,6 +53,6 @@
             <p>Brak danych do wyświetlenia.</p>
         <?php endif; ?>
         <?php $baza->close(); ?>
-    </div>
+    </main>
 </body>
 </html>
