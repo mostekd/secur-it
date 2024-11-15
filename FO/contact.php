@@ -124,7 +124,7 @@
                                     {
                                     $text .= 'selected = "selected"';
                                     } 
-                                    $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                                    $text .= ' value=' .$userData["unk"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
 
                                     echo $text;
                                 }
@@ -132,7 +132,7 @@
 
                                     mysqli_free_result($data);
                                 } else {
-                                    echo "Błąd zaputania: " .mysqli_error($connection);
+                                    echo "Błąd zapytania: " .mysqli_error($connection);
                                 }
                                 
                                 $baza->close();
