@@ -17,7 +17,6 @@
     include('./admin_nav.php')
 ?>
     <div class="panel_lewy">
-    <a class="przycisk" href="./admin_panel.php"><i class="fa-solid fa-house" style="color: #fff;"></i>Strona główna</a>
     <a class="przycisk" href="./dodawanie_pracownika.php"><i class="fa-solid fa-user-plus" style="color: #fff;"></i>Dodaj pracownika</a>
     </div>
     <main class="main">
