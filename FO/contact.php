@@ -47,15 +47,15 @@
                     <form id="MyForm" method="get">
                         Imię:
                         <br>
-                        <input type="text" placeholder="Imię" name="name" id="pole" alt="pole imię">
+                        <input type="text" placeholder="Imię" name="imie" id="pole" alt="pole imię">
                         <br>
                         Nazwisko:
                         <br>
-                        <input type="text" placeholder="Nazwisko" name="surname" id="pole" alt="pole nazwisko">
+                        <input type="text" placeholder="Nazwisko" name="nazwisko" id="pole" alt="pole nazwisko">
                         <br>
                         Adres e-mail:
                         <br>
-                        <input type="email" placeholder="Adres e-mail" name="email" id="pole" alt="pole e-mail">
+                        <input type="email" placeholder="Adres e-mail" name="e_mail" id="pole" alt="pole e-mail">
                         <br>
                         Numer Telefonu:
                         <br>
@@ -75,7 +75,7 @@
                                 if ($data){
                                     
                                 echo '<div class="phone_number">';
-                                echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
+                                echo '<select class="kierunkowy" name="id_numer_kierunkowy" default="">';
                                 while ($row = mysqli_fetch_assoc($data)){
                                     $text = '<option id="pole" class="kierunkowy"';
                                     if($row["id_numer_kierunkowy"] == $selectedId)
@@ -95,20 +95,20 @@
                                 
                                 $baza->close();
                             ?>
-                            <input type="tel" placeholder="Numer Telefonu" name="nr_telefonu" id="pole_nrtel" alt="pole numer telefonu">
+                            <input type="tel" placeholder="Numer Telefonu" name="numer_telefonu" id="pole_nrtel" alt="pole numer telefonu">
                             </div>
                         </div>
                         Tytuł:
                         <br>
-                        <input type="text" placeholder="Tytuł" name="tytuł" id="pole" alt="pole tytuł">
+                        <input type="text" placeholder="Tytuł" name="tytul" id="pole" alt="pole tytuł">
                         <br>
                         Wiadomość:
                         <br>
-                        <textarea name="message" placeholder="Treść Wiadomości" id="message"></textarea>
+                        <textarea name="message" placeholder="Treść Wiadomości" id="wiadomosc"></textarea>
                         <br><br>
                         Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
                         <br><br>
-                        <input type="checkbox">
+                        <input type="checkbox" name="checkbox">
                         Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
                         w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
                         secut-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
