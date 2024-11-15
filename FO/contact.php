@@ -44,7 +44,7 @@
             ?>
             <div class="spinaczcenter"> 
                 <div class="formularz">
-                    <form id="MyForm" method="post">
+                    <form id="MyForm" method="get">
                         Imię:
                         <br>
                         <input type="text" placeholder="Imię" name="name" id="pole" alt="pole imię">
