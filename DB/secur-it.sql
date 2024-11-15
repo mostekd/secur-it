@@ -160,6 +160,7 @@ create table formularz_kontaktowy(
     numer_telefonu varchar(30),
     tytul varchar(150),
     wiadomosc longtext,
+    czy_zgoda boolean,
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 

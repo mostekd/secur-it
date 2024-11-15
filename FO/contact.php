@@ -28,7 +28,8 @@
                         $numer_telefonu = $_GET['numer_telefonu'];
                         $tytul = $_GET['tytul'];
                         $wiadomosc = $_GET['wiadomosc'];
-                        $baza->insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc);
+                        $czy_zgoda = $_GET['czy_zgoda'];
+                        $baza->insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda);
                     }
                 }
                 else{
@@ -108,7 +109,7 @@
                         <br><br>
                         Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
                         <br><br>
-                        <input type="checkbox" name="checkbox">
+                        <input type="checkbox" name="czy_zgoda">
                         Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
                         w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
                         secut-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
