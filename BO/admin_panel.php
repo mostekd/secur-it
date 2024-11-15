@@ -14,7 +14,7 @@
     <div class="tlo"></div>
     <main class="main">
         <?php
-            include("admin_header.php");
-            include("admin_nav.php");
+            include("./admin_header.php");
+            include("./admin_nav.php");
             // include("footer_admin.php");
         ?>

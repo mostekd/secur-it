@@ -18,8 +18,8 @@
     <div class="tlo"></div>
     <main class="main">
     <?php
-            include("admin_header.php");
-            include("admin_nav.php");
+            include("./admin_header.php");
+            include("./admin_nav.php");
 
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 $id_uzytkownik = $_SESSION['id_uzytkownik'];

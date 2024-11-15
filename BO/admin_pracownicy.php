@@ -13,8 +13,8 @@
 <body>
     
 <?php
-    include('./admin_header.php');
-    include('./admin_nav.php')
+    include("./admin_header.php");
+    include("./admin_nav.php");
 ?>
     <div class="panel_lewy">
     <a class="przycisk" href="./dodawanie_pracownika.php"><i class="fa-solid fa-user-plus" style="color: #fff;"></i>Dodaj pracownika</a>
