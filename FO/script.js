@@ -52,3 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
         firmaDiv.style.display = 'none';
     }
 });
+
+function toggleUserData(checkbox) {
+    const fields = ['imie', 'nazwisko', 'e_mail', 'numer_telefonu'];
+    fields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (checkbox.checked) {
+            field.removeAttribute('readonly');
+            field.value = '';
+        } else {
+            field.setAttribute('readonly', 'readonly');
+            if (field.dataset.defaultValue) {
+                field.value = field.dataset.defaultValue;
+            }
+        }
+    });
+}
+

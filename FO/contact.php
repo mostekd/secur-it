@@ -33,6 +33,17 @@
                             $czy_zgoda = 1;
                         }
                         $baza->insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda);
+                        if(isset($baza)){
+                            switch($baza){
+                                case 1:
+                                    echo "<script>alert('Wiadomość została wysłana')</script>";
+                                    header('location: ./contact.php');
+                                    break;
+                                default:
+                                    header("Location: ./contact.php?echo=".$baza."");
+                                    break;
+                            }
+                        }
                     }
                 }
                 else{
@@ -49,17 +60,44 @@
             <div class="spinaczcenter"> 
                 <div class="formularz">
                     <form id="MyForm" method="get">
+                        <?php
+                            $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+                            $userData = [];
+
+                            if ($isLoggedIn) {
+                                $id_uzytkownik = $_SESSION['id_uzytkownik'];
+                                $konto = new db_konta();
+                                $konto->databaseConnect();
+                                $result = $konto->selectKontoById($id_uzytkownik, null);
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    $userData = mysqli_fetch_assoc($result);
+                                }
+                                $konto->close();
+                            }
+                        ?>
+                        <label>
+                            <input type="checkbox" id="useOtherData" onclick="toggleUserData(this)">
+                            Użyj innych danych
+                        </label>
+                        <br><br>
+
                         Imię:
                         <br>
-                        <input type="text" placeholder="Imię" name="imie" id="pole" alt="pole imię">
+                        <input type="text" placeholder="Imię" name="imie" id="imie" alt="pole imię" 
+                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['imie']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['imie']).'"' : ''; ?>>
                         <br>
                         Nazwisko:
                         <br>
-                        <input type="text" placeholder="Nazwisko" name="nazwisko" id="pole" alt="pole nazwisko">
+                        <input type="text" placeholder="Nazwisko" name="nazwisko" id="nazwisko" alt="pole nazwisko"
+                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['nazwisko']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['nazwisko']).'"' : ''; ?>>
                         <br>
                         Adres e-mail:
                         <br>
-                        <input type="email" placeholder="Adres e-mail" name="e_mail" id="pole" alt="pole e-mail">
+                        <input type="email" placeholder="Adres e-mail" name="e_mail" id="e_mail" alt="pole e-mail" 
+                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['uae']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['uae']).'"' : ''; ?>>
                         <br>
                         Numer Telefonu:
                         <br>
@@ -99,29 +137,27 @@
                                 
                                 $baza->close();
                             ?>
-                            <input type="tel" placeholder="Numer Telefonu" name="numer_telefonu" id="pole_nrtel" alt="pole numer telefonu">
+                            <input type="tel" placeholder="Numer Telefonu" name="numer_telefonu" id="numer_telefonu" alt="pole numer telefonu" 
+                               value="<?php echo $isLoggedIn ? htmlspecialchars($userData['unt']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.htmlspecialchars($userData['unt']).'"' : ''; ?>>
                             </div>
                         </div>
+                        <br>
                         Tytuł:
                         <br>
-                        <input type="text" placeholder="Tytuł" name="tytul" id="pole" alt="pole tytuł">
+                        <input type="text" placeholder="Tytuł" name="tytul" id="tytul" alt="pole tytuł">
                         <br>
                         Wiadomość:
                         <br>
                         <textarea name="wiadomosc" placeholder="Treść Wiadomości" id="wiadomosc"></textarea>
                         <br><br>
-                        Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
+                        Zgoda na przetwarzanie danych:
                         <br><br>
                         <input type="checkbox" name="czy_zgoda">
-                        Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
-                        w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
-                        secut-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
-                        że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a>
+                        <span>Wyrażam zgodę na przetwarzanie moich danych osobowych...</span>
                         <br><br>
-                        <input type=hidden name="opcja" id="opcja" class="opcja" value='dodaj'></input>
-                        <button type="submit" name="submit" class="przycisk">
-                            Wyślij
-                        </button>
+                        <input type="hidden" name="opcja" id="opcja" value="dodaj">
+                        <button type="submit" name="submit" class="przycisk">Wyślij</button>
                         <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
                     </form><br>
                 </div>

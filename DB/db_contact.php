@@ -12,8 +12,11 @@
         function insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda){
             $query = "INSERT INTO `formularz_kontaktowy`(`imie`, `nazwisko`, `e_mail`, `id_numer_kierunkowy`, `numer_telefonu`, `tytul`, `wiadomosc`, `czy_zgoda`) VALUES ('".$imie."','".$nazwisko."','".$email."','".$id_numer_kierunkowy."','".$numer_telefonu."','".$tytul."','".$wiadomosc."','".$czy_zgoda."');";
             $data = mysqli_query($this->connect, $query);
-            header('location: ./contact.php'); 
-            $this->close();
+            if ($data) {
+                $this->close();
+                $$_GET = array();
+                return 1; // Wiadomosc wysłana
+            }
         }
 
         function deleteContact($id_formularz_kontaktowy){
