@@ -37,19 +37,24 @@
                         <th>Zgoda na przetwarzanie danych</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody>63+
+
                     <?php 
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
-                        <tr>
-                            <td><?php echo ($row['imie']); ?></td>
-                            <td><?php echo ($row['nazwisko']); ?></td>
-                            <td><?php echo ($row['e_mail']); ?></td>
-                            <td><?php echo ($row['numer_kierunkowy']) .($row['numer_telefonu']); ?></td>
-                            <td><?php echo ($row['tytul']); ?></td>
-                            <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
-                            <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
-                        </tr>
+                    <?php
+                        echo "<a href='./kontakt.php?id=".$row['id_formularz_kontaktowy']."'>";
+                    ?>
+                            <tr>
+                                <td><?php echo ($row['imie']); ?></td>
+                                <td><?php echo ($row['nazwisko']); ?></td>
+                                <td><?php echo ($row['e_mail']); ?></td>
+                                <td><?php echo ($row['numer_kierunkowy']) .($row['numer_telefonu']); ?></td>
+                                <td><?php echo ($row['tytul']); ?></td>
+                                <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
+                                <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
+                            </tr>
+                        </a>
                     <?php 
                         endwhile; 
                     ?>
