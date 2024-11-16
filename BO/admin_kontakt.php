@@ -43,7 +43,7 @@
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
                     <?php
-                        echo "<a href='./kontakt.php?id=".$row['id_formularz_kontaktowy']."'>";
+                        echo "<a href='./admin_kontakt_caly.php?id=".$row['id_formularz_kontaktowy']."'>";
                     ?>
                             <tr>
                                 <td><?php echo ($row['imie']); ?></td>
