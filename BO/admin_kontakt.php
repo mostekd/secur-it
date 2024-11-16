@@ -55,7 +55,7 @@
                                 <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
-                                    if(isset($row[`pi`])) {
+                                    if(!empty($row[`pi`])) {
                                 ?>
                                     <td><?php echo ($row['pi']) .($row['pn']); ?></td>
                                 <?php
