@@ -9,6 +9,8 @@
 </head>
 <body>
     <?php
+    include("./header.php");
+    include("./nav.php");
     include("../DB/db_connection.php");
     include('../DB/db_numery_kierunkowe.php');
     include('../DB/db_contact.php');
