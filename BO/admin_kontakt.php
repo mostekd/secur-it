@@ -52,9 +52,7 @@
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
                                     if(!empty($row[`pi`])) {
-                                ?>
-                                    <td><?php echo ($row['pi']) .($row['pn']); ?></td>
-                                <?php
+                                        echo "<td><?php echo ($row['pi']) .($row['pn']); ?></td>";
                                     }
                                 ?>
                             </tr>
