@@ -161,6 +161,8 @@ create table formularz_kontaktowy(
     tytul varchar(150),
     wiadomosc longtext,
     czy_zgoda boolean,
+    id_pracownik int,
+    foreign key (id_pracownik) references pracownicy (id_pracownik),
     foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
 );
 
