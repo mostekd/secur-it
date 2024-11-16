@@ -3,3 +3,4 @@ ogólnie css do strony
 Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
 TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
 komunikaty pi błędzie rejestracji
+w panelu administracyjnym możliwość przypisania problemu z admin_kontakt do pracownika oraz jego przepisanie do innego pracownika
