@@ -42,9 +42,6 @@
                     <?php 
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
-                    <?php
-                        echo "<a href='./admin_kontakt_caly.php?id=".$row['id_formularz_kontaktowy']."'>";
-                    ?>
                             <tr>
                                 <td><?php echo ($row['imie']); ?></td>
                                 <td><?php echo ($row['nazwisko']); ?></td>
@@ -61,7 +58,6 @@
                                     }
                                 ?>
                             </tr>
-                        </a>
                     <?php 
                         endwhile; 
                     ?>
