@@ -52,8 +52,7 @@ class db_konta extends db_connection
                     return 4; // Użytkownik o takim loginie już istnieje. Wybierz inny login
                 }
             } else {
-                // Krok 4: Firma już istnieje, przekazanie użytkownikowi informacji o kontakcie z administratorem
-                return 3; // Firma o takiej nazwie już istnieje. Skontaktuj się z administratorem firmy
+                return 3; // Firma/Użytkownik o takiej nazwie już istnieje. Skontaktuj się z administratorem firmy
             }
         }
     
