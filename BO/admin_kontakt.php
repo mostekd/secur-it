@@ -35,6 +35,7 @@
                         <th>Tytuł</th>
                         <th>Wiadomość</th>
                         <th>Zgoda na przetwarzanie danych</th>
+                        <th>Przypisano do</th>
                     </tr>
                 </thead>
                 <tbody>63+
@@ -53,6 +54,7 @@
                                 <td><?php echo ($row['tytul']); ?></td>
                                 <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
+                                <td><?php echo ($row['pi']) .($row['pn']); ?></td>
                             </tr>
                         </a>
                     <?php 
