@@ -54,7 +54,13 @@
                                 <td><?php echo ($row['tytul']); ?></td>
                                 <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
-                                <td><?php echo ($row['pi']) .($row['pn']); ?></td>
+                                <?php
+                                    if(isset($row[`pi`])) {
+                                ?>
+                                    <td><?php echo ($row['pi']) .($row['pn']); ?></td>
+                                <?php
+                                    }
+                                ?>
                             </tr>
                         </a>
                     <?php 
