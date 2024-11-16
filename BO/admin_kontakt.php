@@ -35,10 +35,11 @@
                         <th>Tytuł</th>
                         <th>Wiadomość</th>
                         <th>Zgoda na przetwarzanie danych</th>
-                        <!-- <th>Przypisano do</th> -->
+                        <th>Przypisano do</th>
                     </tr>
                 </thead>
                 <tbody>
+
                     <?php 
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
@@ -50,13 +51,7 @@
                                 <td><?php echo ($row['tytul']); ?></td>
                                 <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
-                                <?php
-                                //     if(!empty($row[`pi`])) {
-                                //         echo "<td>"; 
-                                //             echo ($row['pi']) .($row['pn']);
-                                //         echo" </td>";
-                                //     }
-                                 ?>
+                                <td><?php echo ($row['pi']) .($row['pn']); ?></td>
                             </tr>
                     <?php 
                         endwhile; 
