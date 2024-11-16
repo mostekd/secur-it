@@ -30,8 +30,8 @@
             $this->close();
         }
 
-        function updateContact($id_formularz_kontaktowy, $imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda){
-            $query = "UPDATE `formularz_kontaktowy` SET `imie`=".$imie.",`nazwisko`=".$nazwisko.",`e_mail`=".$email.",`id_numer_kierunkowy`=".$id_numer_kierunkowy.",`numer_telefonu`=".$numer_telefonu.",`tytul`=".$tytul.",`wiadomosc`=".$wiadomosc.",`czy_zgoda`=".$czy_zgoda." WHERE  `id_formularz_kontaktowy`=".$id_formularz_kontaktowy.";";
+        function updateContact($id_formularz_kontaktowy, $imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda, $id_pracownik){
+            $query = "UPDATE `formularz_kontaktowy` SET `imie`=".$imie.",`nazwisko`=".$nazwisko.",`e_mail`=".$email.",`id_numer_kierunkowy`=".$id_numer_kierunkowy.",`numer_telefonu`=".$numer_telefonu.",`tytul`=".$tytul.",`wiadomosc`=".$wiadomosc.",`czy_zgoda`=".$czy_zgoda.",`id_pracownik`=".$id_pracownik." WHERE  `id_formularz_kontaktowy`=".$id_formularz_kontaktowy.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);
             header('location: ../BO/student_list.php');   
