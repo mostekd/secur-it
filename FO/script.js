@@ -53,19 +53,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function toggleUserData(checkbox) {
-    const fields = ['imie', 'nazwisko', 'e_mail', 'numer_telefonu'];
-    fields.forEach(fieldId => {
-        const field = document.getElementById(fieldId);
-        if (checkbox.checked) {
-            field.removeAttribute('readonly');
-            field.value = '';
-        } else {
-            field.setAttribute('readonly', 'readonly');
-            if (field.dataset.defaultValue) {
-                field.value = field.dataset.defaultValue;
-            }
-        }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const checkbox = document.getElementById('useOtherData');
+    const kierunkowyField = document.getElementById('id_numer_kierunkowy');
+    const fields = ['imie', 'nazwisko', 'numer_telefonu'];
+
+    if (checkbox) {
+        checkbox.addEventListener('change', () => {
+            const isChecked = checkbox.checked;
+
+            // Numer kierunkowy zmienia się na "Polska" (zakładamy ID = 1)
+            kierunkowyField.value = isChecked ? '1' : kierunkowyField.dataset.defaultValue;
+
+            // Pozostałe pola zmieniają stan
+            fields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (isChecked) {
+                    field.removeAttribute('readonly');
+                    field.value = '';
+                } else {
+                    field.setAttribute('readonly', 'readonly');
+                    if (field.dataset.defaultValue) {
+                        field.value = field.dataset.defaultValue;
+                    }
+                }
+            });
+        });
+    }
+});
+
+function resetujPola() {
+    document.getElementById("MyForm").reset();
+    const kierunkowyField = document.getElementById('id_numer_kierunkowy');
+    if (kierunkowyField.dataset.defaultValue) {
+        kierunkowyField.value = kierunkowyField.dataset.defaultValue;
+    }
 }
 
