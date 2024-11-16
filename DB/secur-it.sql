@@ -1,174 +1,192 @@
-drop database if exists secur_it;
-create database secur_it;
-use secur_it;
+drop database if exists secur_it; -- Usuń bazę danych, jeśli istnieje
+create database secur_it; -- Utwórz bazę danych
+use secur_it; -- Użyj bazy danych
 
-create table stanowiska (
-    id_stanowisko int primary key auto_increment,
-    nazwa varchar(50)
+-- Tabela stanowiska pracy
+create table positions (
+    id_position int primary key auto_increment, -- Identyfikator stanowiska
+    name varchar(50) -- Nazwa stanowiska
 );
 
-create table lokalizacje (
-    id_lokalizacja int primary key auto_increment,
-    numer_budynku varchar(10),
-    ulica varchar(100),
-    miasto varchar(200),
-    kod_pocztowy varchar(10),
-    kraj varchar(50)
+-- Tabela lokalizacje
+create table locations (
+    id_location int primary key auto_increment, -- Identyfikator lokalizacji
+    building_number varchar(10), -- Numer budynku
+    street varchar(100), -- Ulica
+    city varchar(200), -- Miasto
+    postal_code varchar(10), -- Kod pocztowy
+    country varchar(50) -- Kraj
 );
 
-create table dzialy (
-    id_dzial int primary key auto_increment,
-    nazwa_dzialu varchar(100)
+-- Tabela działy
+create table departments (
+    id_department int primary key auto_increment, -- Identyfikator działu
+    department_name varchar(100) -- Nazwa działu
 );
 
-create table typy_paliwa (
-    id_typ_paliwa int primary key auto_increment,
-    typ_paliwa varchar(50)
+-- Tabela typy paliwa
+create table fuel_types (
+    id_fuel_type int primary key auto_increment, -- Identyfikator typu paliwa
+    fuel_type varchar(50) -- Typ paliwa
 );
 
-create table samochody (
-    id_samochod int primary key auto_increment,
-    marka varchar(50),
-    model varchar(100),
-    rok_produkcji date,
-    kolor varchar(50),
-    przebieg varchar (15),
-    pojemnosc_silnika varchar(20),
-    moc varchar(10),
-    id_typ_paliwa int,
-    numer_vin varchar(30),
-    foreign key (id_typ_paliwa) references typy_paliwa (id_typ_paliwa)
+-- Tabela samochody
+create table cars (
+    id_car int primary key auto_increment, -- Identyfikator samochodu
+    brand varchar(50), -- Marka
+    model varchar(100), -- Model
+    production_year date, -- Rok produkcji
+    color varchar(50), -- Kolor
+    mileage varchar(15), -- Przebieg
+    engine_capacity varchar(20), -- Pojemność silnika
+    power varchar(10), -- Moc
+    id_fuel_type int, -- Identyfikator typu paliwa
+    vin_number varchar(30), -- Numer VIN
+    foreign key (id_fuel_type) references fuel_types (id_fuel_type) -- Klucz obcy do tabeli typy_paliwa
 );
 
-create table rabaty (
-    id_rabat int primary key auto_increment,
-    wartosc_rabatu varchar(5)
+-- Tabela rabaty
+create table discounts (
+    id_discount int primary key auto_increment, -- Identyfikator rabatu
+    discount_value varchar(5) -- Wartość rabatu
 );
 
-create table numery_kierunkowe (
-    id_numer_kierunkowy int primary key auto_increment,
-    numer_kierunkowy varchar(10),
-    kraj varchar(50)
+-- Tabela numery kierunkowe
+create table country_codes (
+    id_country_code int primary key auto_increment, -- Identyfikator numeru kierunkowego
+    country_code varchar(10), -- Numer kierunkowy
+    country varchar(50) -- Kraj
 );
 
-create table firmy (
-    id_firma int primary key auto_increment,
-    nazwa varchar(50),
-    nazwa_cd varchar(100),
-    nip varchar(20),
-    id_numer_kierunkowy int,
-    numer_telefonu varchar(20),
-    adres_e_mail varchar(200),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
+-- Tabela firmy
+create table companies (
+    id_company int primary key auto_increment, -- Identyfikator firmy
+    name varchar(50), -- Nazwa
+    additional_name varchar(100), -- Dodatkowa nazwa
+    tax_id varchar(20), -- NIP
+    id_country_code int, -- Identyfikator numeru kierunkowego
+    phone_number varchar(20), -- Numer telefonu
+    email_address varchar(200), -- Adres e-mail
+    foreign key (id_country_code) references country_codes (id_country_code) -- Klucz obcy do tabeli numery_kierunkowe
 );
 
-create table umowy (
-    id_umowa int primary key auto_increment,
-    numer_umowy varchar(50),
-    PESEL varchar(11),
-    numer_ubezpieczenia varchar(200),
-    okres_zatrudnienia varchar(25),
-    data_rozpoczecia_pracy date,
-    data_zakonczenia_pracy date,
-    wynagrodzenie int(11),
-    premia int(5),
-    id_stanowisko int,
-    id_lokalizacja_pracy int,
-    id_dzial int,
-    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
-    foreign key (id_lokalizacja_pracy) references lokalizacje (id_lokalizacja)
+-- Tabela umowy
+create table contracts (
+    id_contract int primary key auto_increment, -- Identyfikator umowy
+    contract_number varchar(50), -- Numer umowy
+    PESEL varchar(11), -- PESEL
+    insurance_number varchar(200), -- Numer ubezpieczenia
+    employment_period varchar(25), -- Okres zatrudnienia
+    start_date date, -- Data rozpoczęcia pracy
+    end_date date, -- Data zakończenia pracy
+    salary int(11), -- Wynagrodzenie
+    bonus int(5), -- Premia
+    id_position int, -- Identyfikator stanowiska
+    id_work_location int, -- Identyfikator lokalizacji pracy
+    id_department int, -- Identyfikator działu
+    foreign key (id_position) references positions (id_position), -- Klucz obcy do tabeli stanowiska
+    foreign key (id_work_location) references locations (id_location) -- Klucz obcy do tabeli lokalizacje
 );
 
-create table pracownicy (
-    id_pracownik int primary key auto_increment,
-    adres_zamieszkania varchar (200),
-    id_umowa int,
-    data_urodzenia date,
-    zdjecie varchar(100),
-    czy_admin boolean,
-    id_stanowisko int,
-    id_samochod int,
-    foreign key (id_umowa) references umowy (id_umowa),
-    foreign key (id_stanowisko) references stanowiska (id_stanowisko),
-    foreign key (id_samochod) references samochody (id_samochod)
+-- Tabela pracownicy
+create table employees (
+    id_employee int primary key auto_increment, -- Identyfikator pracownika
+    home_address varchar(200), -- Adres zamieszkania
+    id_contract int, -- Identyfikator umowy
+    date_of_birth date, -- Data urodzenia
+    photo varchar(100), -- Zdjęcie
+    is_admin boolean, -- Czy administrator
+    id_position int, -- Identyfikator stanowiska
+    id_car int, -- Identyfikator samochodu
+    foreign key (id_contract) references contracts (id_contract), -- Klucz obcy do tabeli umowy
+    foreign key (id_position) references positions (id_position), -- Klucz obcy do tabeli stanowiska
+    foreign key (id_car) references cars (id_car) -- Klucz obcy do tabeli samochody
 );
 
-create table uzytkownicy (
-    id_uzytkownik int primary key auto_increment,
-    id_pracownik int,
-    id_firma int,
-    imie varchar(50),
-    nazwisko varchar(100),
-    id_numer_kierunkowy int,
-    numer_telefonu varchar(20),
-    adres_e_mail varchar(200),
-    nick varchar(50),
-    haslo varchar(250),
-    czy_admin_firmy boolean,
-    id_rabat int,
-    foreign key (id_pracownik) references pracownicy (id_pracownik),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy),
-    foreign key (id_rabat) references rabaty (id_rabat)
+-- Tabela użytkownicy
+create table users (
+    id_user int primary key auto_increment, -- Identyfikator użytkownika
+    id_employee int, -- Identyfikator pracownika
+    id_company int, -- Identyfikator firmy
+    first_name varchar(50), -- Imię
+    last_name varchar(100), -- Nazwisko
+    id_country_code int, -- Identyfikator numeru kierunkowego
+    phone_number varchar(20), -- Numer telefonu
+    email_address varchar(200), -- Adres e-mail
+    username varchar(50), -- Login
+    password varchar(250), -- Hasło
+    is_company_admin boolean, -- Czy administrator firmy
+    id_discount int, -- Identyfikator rabatu
+    foreign key (id_employee) references employees (id_employee), -- Klucz obcy do tabeli pracownicy
+    foreign key (id_country_code) references country_codes (id_country_code), -- Klucz obcy do tabeli numery_kierunkowe
+    foreign key (id_discount) references discounts (id_discount) -- Klucz obcy do tabeli rabaty
 );
 
-create table typy_uslug (
-    id_typ_uslugi int primary key auto_increment,
-    typ_uslugi varchar(100)
+-- Tabela typy usług
+create table service_types (
+    id_service_type int primary key auto_increment, -- Identyfikator typu usługi
+    service_type varchar(100) -- Typ usługi
 );
 
-create table uslugi (
-    id_uslugi int primary key auto_increment,
-    id_typ_uslugi int,
-    nazwa varchar(100),
-    opis longtext,
-    cena decimal(10,2),
-    foreign key (id_typ_uslugi) references typy_uslug (id_typ_uslugi)
+-- Tabela usługi
+create table services (
+    id_service int primary key auto_increment, -- Identyfikator usługi
+    id_service_type int, -- Identyfikator typu usługi
+    name varchar(100), -- Nazwa
+    description longtext, -- Opis
+    price decimal(10,2), -- Cena
+    foreign key (id_service_type) references service_types (id_service_type) -- Klucz obcy do tabeli typy_uslug
 );
 
-create table wpisy (
-    id_wpis int primary key auto_increment,
-    id_uzytkownik int,
-    tytul varchar(200),
-    tresc longtext,
-    data_dodania datetime,
-    id_pracownik_zatwierdzajacy int,
-    data_zatwierdzenia datetime,
-    foreign key (id_uzytkownik) references uzytkownicy (id_uzytkownik),
-    foreign key (id_pracownik_zatwierdzajacy) references pracownicy (id_pracownik)
+-- Tabela wpisy
+create table posts (
+    id_post int primary key auto_increment, -- Identyfikator wpisu
+    id_user int, -- Identyfikator użytkownika
+    title varchar(200), -- Tytuł
+    content longtext, -- Treść
+    date_added datetime, -- Data dodania
+    id_approving_employee int, -- Identyfikator zatwierdzającego pracownika
+    approval_date datetime, -- Data zatwierdzenia
+    foreign key (id_user) references users (id_user), -- Klucz obcy do tabeli użytkownicy
+    foreign key (id_approving_employee) references employees (id_employee) -- Klucz obcy do tabeli pracownicy
 );
 
-create table opinie(
-    id_opinia int primary key auto_increment,
-    id_uzytkownik int,
-    dataOpinii date,
-    trescOpini longtext,
-    foreign key (id_uzytkownik) references uzytkownicy (id_uzytkownik)
+-- Tabela opinie
+create table reviews (
+    id_review int primary key auto_increment, -- Identyfikator opinii
+    id_user int, -- Identyfikator użytkownika
+    review_date date, -- Data opinii
+    review_content longtext, -- Treść opinii
+    foreign key (id_user) references users (id_user) -- Klucz obcy do tabeli użytkownicy
 );
 
-create table o_firmie(
-    id_o_firmie int primary key auto_increment,
-    tytul varchar(255),
-    opis longtext
+-- Tabela o firmie
+create table about_company (
+    id_about_company int primary key auto_increment, -- Identyfikator informacji o firmie
+    title varchar(255), -- Tytuł
+    description longtext -- Opis
 );
 
-create table formularz_kontaktowy(
-    id_formularz_kontaktowy int primary key auto_increment,
-    imie varchar(50),
-    nazwisko varchar(100),
-    e_mail varchar(200),
-    id_numer_kierunkowy int,
-    numer_telefonu varchar(30),
-    tytul varchar(150),
-    wiadomosc longtext,
-    czy_zgoda boolean,
-    id_pracownik int,
-    foreign key (id_pracownik) references pracownicy (id_pracownik),
-    foreign key (id_numer_kierunkowy) references numery_kierunkowe (id_numer_kierunkowy)
+-- Tabela formularz kontaktowy
+create table contact_form (
+    id_contact_form int primary key auto_increment, -- Identyfikator formularza kontaktowego
+    first_name varchar(50), -- Imię
+    last_name varchar(100), -- Nazwisko
+    email varchar(200), -- Adres e-mail
+    id_country_code int, -- Identyfikator numeru kierunkowego
+    phone_number varchar(30), -- Numer telefonu
+    title varchar(150), -- Tytuł
+    message longtext, -- Wiadomość
+    consent boolean, -- Zgoda na przetwarzanie danych
+    id_employee int, -- Identyfikator pracownika
+    foreign key (id_employee) references employees (id_employee), -- Klucz obcy do tabeli pracownicy
+    foreign key (id_country_code) references country_codes (id_country_code) -- Klucz obcy do tabeli numery_kierunkowe
 );
 
 
 
-insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
+
+insert into `country_codes`(`country`, `country_code`) values
 ('Afganistan', '+93'),
 ('Alaska', '+1907'),
 ('Albania', '+355'),
@@ -379,15 +397,15 @@ insert into `numery_kierunkowe`(`kraj`, `numer_kierunkowy`) values
 ('Zielonego Przylądka Wyspy', '+238'),
 ('Zimbabwe', '+263');
 
-INSERT INTO `typy_uslug` (`id_typ_uslugi`, `typ_uslugi`) VALUES ('1', 'Sieci Komputerowe'), ('2', 'Systemy Operacyjne'), ('3', 'Bazy Danych'), ('4', 'Strony Internetowe'), ('5', 'Serwis Komputerowy');
+INSERT INTO `service_types` (`id_service_type`, `service_type`) VALUES ('1', 'Sieci Komputerowe'), ('2', 'Systemy Operacyjne'), ('3', 'Bazy Danych'), ('4', 'Strony Internetowe'), ('5', 'Serwis Komputerowy');
 
-INSERT INTO `stanowiska` (`id_stanowisko`, `nazwa`) VALUES ('1', 'CEO');
+INSERT INTO `positions` (`id_position`, `name`) VALUES ('1', 'CEO');
 
-INSERT INTO `typy_paliwa` (`id_typ_paliwa`, `typ_paliwa`) VALUES (NULL, 'P - benzyna'), (NULL, 'D - olej napędowy'), (NULL, 'M - mieszanka paliwo-olej'), (NULL, 'LPG - gaz płynny propan-butan'), (NULL, 'CNG - gaz ziemny skroplony (metan)'), (NULL, 'H - wodór'), (NULL, 'BD - biodiesel'), (NULL, 'E85 - etanol'), (NULL, 'EE - energia elektryczna'), (NULL, '999 - inne');
+INSERT INTO `fuel_types` (`id_fuel_type`, `fuel_type`) VALUES (NULL, 'P - benzyna'), (NULL, 'D - olej napędowy'), (NULL, 'M - mieszanka paliwo-olej'), (NULL, 'LPG - gaz płynny propan-butan'), (NULL, 'CNG - gaz ziemny skroplony (metan)'), (NULL, 'H - wodór'), (NULL, 'BD - biodiesel'), (NULL, 'E85 - etanol'), (NULL, 'EE - energia elektryczna'), (NULL, '999 - inne');
 
-INSERT INTO `uslugi` (`id_uslugi`, `id_typ_uslugi`, `nazwa`, `opis`, `cena`) VALUES ('1', '1', 'Test Sieci Komputerowe', 'Test', '200'), ('2', '2', 'Test Systemy Operacyjne', 'Test', '100'), ('3', '3', 'Test Bazy Danych', 'Test', '250'), ('4', '4', 'Test Strony Internetowe', 'Test', '500'), ('5', '5', 'Test Serwis Komputerowy', 'Test', '200');
+INSERT INTO `services` (`id_service`, `id_service_type`, `name`, `description`, `price`) VALUES ('1', '1', 'Test Sieci Komputerowe', 'Test', '200'), ('2', '2', 'Test Systemy Operacyjne', 'Test', '100'), ('3', '3', 'Test Bazy Danych', 'Test', '250'), ('4', '4', 'Test Strony Internetowe', 'Test', '500'), ('5', '5', 'Test Serwis Komputerowy', 'Test', '200');
 
-INSERT INTO `rabaty`(`id_rabat`, `wartosc_rabatu`) VALUES 
+INSERT INTO `discounts`(`id_discount`, `discount_value`) VALUES 
 ('1','0,01'),
 ('2','0,02'),
 ('3','0,03'),
@@ -489,7 +507,11 @@ INSERT INTO `rabaty`(`id_rabat`, `wartosc_rabatu`) VALUES
 ('99','0,99'),
 ('100','1');
 
-INSERT INTO `firmy`(`id_firma`, `nazwa`, `nazwa_cd`, `nip`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`) VALUES ('2','testfirma','testfirmacd','testNIP','144','121212121','testf@test.pl');
+INSERT INTO `companies`(`id_company`, `name`, `additional_name`, `tax_id`, `id_country_code`, `phone_number`, `email_address`) 
+VALUES ('2', 'testcompany', 'testcompanycd', 'testNIP', '144', '121212121', 'testf@test.pl');
 
-INSERT INTO `uzytkownicy`(`id_uzytkownik`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `czy_admin_firmy`, `id_rabat`) VALUES ('2',null,'2','Test','Test','145','111111111','test@test.pl','test','a94a8fe5ccb19ba61c4c0873d391e987982fbbd3','1',null);
-INSERT INTO `uzytkownicy`(`id_uzytkownik`, `id_pracownik`, `id_firma`, `imie`, `nazwisko`, `id_numer_kierunkowy`, `numer_telefonu`, `adres_e_mail`, `nick`, `haslo`, `czy_admin_firmy`, `id_rabat`) VALUES ('3',null,'2','Test2','Test2','145','222222222','test2@test.pl','test2','a94a8fe5ccb19ba61c4c0873d391e987982fbbd3',null,null);
+INSERT INTO `users`(`id_user`, `id_employee`, `id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) 
+VALUES ('2', NULL, '2', 'Test', 'Test', '145', '111111111', 'test@test.pl', 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '1', NULL);
+
+INSERT INTO `users`(`id_user`, `id_employee`, `id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) 
+VALUES ('3', NULL, '2', 'Test2', 'Test2', '145', '222222222', 'test2@test.pl', 'test2', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', NULL, NULL);
