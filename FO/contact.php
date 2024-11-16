@@ -14,7 +14,6 @@
     include('../DB/db_numery_kierunkowe.php');
     include('../DB/db_contact.php');
 
-    session_start();
     $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
     $selectedCountryId = null; // Domyślna wartość
     $userData = [];
