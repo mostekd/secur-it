@@ -399,7 +399,50 @@ insert into `country_codes`(`country`, `country_code`) values
 
 INSERT INTO `service_types` (`id_service_type`, `service_type`) VALUES ('1', 'Sieci Komputerowe'), ('2', 'Systemy Operacyjne'), ('3', 'Bazy Danych'), ('4', 'Strony Internetowe'), ('5', 'Serwis Komputerowy');
 
-INSERT INTO `positions` (`id_position`, `name`) VALUES ('1', 'CEO');
+INSERT INTO `positions` (`name`) VALUES
+('Prezes'),
+('Współzałożyciel'),
+('Administrator Baz Danych'),
+('Administrator IT'),
+('Administrator Linux'),
+('Administrator Serwerów'),
+('Administrator Sieci'),
+('Administrator Systemu'),
+('Analityk Biznesowy'),
+('Analityk Danych'),
+('Architekt Sieci'),
+('Informatyk'),
+('Kierownik Help Desk'),
+('Konsultant ds. IT'),
+('Konsultant ds. Wsparcia Technicznego'),
+('Pracownik help desk'),
+('Specjalista ds. Cyberzagrożeń'),
+('Specjalista ds. Informatyki'),
+('Specjalista ds. IT'),
+('Specjalista ds. licencji'),
+('Specjalista ds. ochrony danych'),
+('Specjalista ds. Oprogramowania'),
+('Wdrożeniowiec'),
+('Front-end Developer'),
+('Back-end Developer'),
+('Full Stack Developer'),
+('Inżynier DevOps'),
+('Młodszy Programista'),
+('Starszy Programista'),
+('Programista'),
+('Pracownik Tester'),
+('Programista Aplikacji Mobilnych'),
+('Programista baz danych'),
+('Webdeveloper'),
+('Webmaster'),
+('Dyrektor ds personalnych'),
+('Analityk HR'),
+('HR manager'),
+('Specjalista ds. rekrutacji'),
+('Kierownik działu kadr'),
+('Specjalista ds. płac'),
+('Specjalista ds. szkoleń'),
+('Inspektor ds. BHP');
 
 INSERT INTO `fuel_types` (`id_fuel_type`, `fuel_type`) VALUES (NULL, 'P - benzyna'), (NULL, 'D - olej napędowy'), (NULL, 'M - mieszanka paliwo-olej'), (NULL, 'LPG - gaz płynny propan-butan'), (NULL, 'CNG - gaz ziemny skroplony (metan)'), (NULL, 'H - wodór'), (NULL, 'BD - biodiesel'), (NULL, 'E85 - etanol'), (NULL, 'EE - energia elektryczna'), (NULL, '999 - inne');
 
