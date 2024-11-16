@@ -38,8 +38,7 @@
                         <th>Przypisano do</th>
                     </tr>
                 </thead>
-                <tbody>63+
-
+                <tbody>
                     <?php 
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
