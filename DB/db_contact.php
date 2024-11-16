@@ -3,7 +3,7 @@
     class db_contact extends db_connection{
         function selectContact(){
             $query = 'SELECT fk.*, u.imie AS pi, u.nazwisko AS pn, nk.numer_kierunkowy FROM `formularz_kontaktowy` AS fk
-            JOIN uzytkownicy AS u ON u.id_pracownik = fk.id_pracownik
+            LEFT JOIN uzytkownicy AS u ON u.id_pracownik = fk.id_pracownik
             JOIN numery_kierunkowe AS nk ON nk.id_numer_kierunkowy = fk.id_numer_kierunkowy
             WHERE 1;';
             $data = mysqli_query($this->connect, $query);
