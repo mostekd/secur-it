@@ -42,12 +42,12 @@
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['imie']); ?></td>
-                            <td><?php echo htmlspecialchars($row['nazwisko']); ?></td>
-                            <td><?php echo htmlspecialchars($row['e_mail']); ?></td>
-                            <td><?php echo htmlspecialchars($row['numer_kierunkowy']) .htmlspecialchars($row['numer_telefonu']); ?></td>
-                            <td><?php echo htmlspecialchars($row['tytul']); ?></td>
-                            <td><?php echo htmlspecialchars($row['wiadomosc']); ?></td>
+                            <td><?php echo ($row['imie']); ?></td>
+                            <td><?php echo ($row['nazwisko']); ?></td>
+                            <td><?php echo ($row['e_mail']); ?></td>
+                            <td><?php echo ($row['numer_kierunkowy']) .($row['numer_telefonu']); ?></td>
+                            <td><?php echo ($row['tytul']); ?></td>
+                            <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                             <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                         </tr>
                     <?php 
