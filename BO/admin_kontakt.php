@@ -51,7 +51,16 @@
                                 <td><?php echo ($row['tytul']); ?></td>
                                 <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
-                                <td><?php echo ($row['pi']). " " .($row['pn']); ?></td>
+                                <?php
+                                    if ($row['pi'] == null){
+                                        echo "<button>Przypisz</button>";
+                                    }
+                                    else{
+                                    ?>
+                                        <td><?php echo ($row['pi']). " " .($row['pn']); ?></td>
+                                    <?php
+                                    }
+                                    ?>
                             </tr>
                     <?php 
                         endwhile; 
