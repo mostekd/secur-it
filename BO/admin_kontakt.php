@@ -11,7 +11,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 else {
     $id_uzytkownik = 0;
     $czy_admin  = 0;
-    $id_pracownik = 0;
+    $id_pracownik = null;
 }
 ?>
 <!DOCTYPE html>
