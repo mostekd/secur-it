@@ -53,7 +53,7 @@
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
                                     if ($row['pi'] == null){
-                                        echo "<button>Przypisz</button>";
+                                        echo "<td><button>Przypisz</button></td>";
                                     }
                                     else{
                                     ?>
