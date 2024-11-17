@@ -1,3 +1,19 @@
+<?php
+if(!isset($_SESSION['sesja'])){
+    session_start();
+    $_SESSION['sesja'] = "test";
+}
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    $id_uzytkownik = $_SESSION['id_uzytkownik'];
+    $czy_admin = $_SESSION['czy_admin'];
+    $id_pracownik = $_SESSION['id_pracownik'];
+}
+else {
+    $id_uzytkownik = 0;
+    $czy_admin  = 0;
+    $id_pracownik = 0;
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
     <head>
