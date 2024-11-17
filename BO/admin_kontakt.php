@@ -72,8 +72,7 @@
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
                                     if ($row['pi'] == null){
-                                        echo "<input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input>";
-                                        echo "<td><button>Przypisz</button></td>";
+                                        echo "<td><input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input><input type='submit'></input></td>";
                                     }
                                     else{
                                     ?>
