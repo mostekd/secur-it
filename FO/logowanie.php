@@ -32,7 +32,8 @@
                 $_SESSION['id_uzytkownik'] = $user['id_uzytkownik'];
                 $_SESSION['id_firma'] = $user['id_firma'];
                 $_SESSION['czy_admin'] = $user['czy_admin'];
-
+                $_SESSION['id_pracownik'] = $user['id_pracownik'];
+                
                 header("Location: ./konto.php");
             } else {
                 $_SESSION['loggedin'] = false;
