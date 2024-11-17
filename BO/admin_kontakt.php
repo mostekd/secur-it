@@ -19,6 +19,25 @@
             $baza = new db_contact();
             $baza->databaseConnect();
             $kontakty = $baza->selectContact();
+
+            if(isset($_GET['opcja'])){
+                if($_GET['opcja'] == 'przypisz'){
+                    $id_formularz_kontaktowy = $_GET['id_formularz_kontaktowy'];
+                    $imie = $_GET['imie'];
+                    $nazwisko = $_GET['nazwisko'];
+                    $email = $_GET['email'];
+                    $id_numer_kierunkowy = $_GET['id_numer_kierunkowy'];
+                    $numer_telefonu = $_GET['numer_telefonu'];
+                    $tytul = $_GET['tytul'];
+                    $wiadomosc = $_GET['wiadomosc'];
+                    $czy_zgoda = 0;
+                    if(isset($_GET['czy_zgoda'])){
+                       $czy_zgoda = 1;
+                    }
+                    $id_pracownik = $_GET['id_pracownik'];
+
+                    $baza->updateContact($id_formularz_kontaktowy, $imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda, $id_pracownik);
+                }}
         ?>
         <main class="main">
             <h1>Lista Kontaktów</h1>
@@ -53,6 +72,7 @@
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
                                     if ($row['pi'] == null){
+                                        echo "<input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input>";
                                         echo "<td><button>Przypisz</button></td>";
                                     }
                                     else{
