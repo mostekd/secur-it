@@ -50,7 +50,6 @@ else {
                     if(isset($_GET['czy_zgoda'])){
                        $czy_zgoda = 1;
                     }
-                    $id_pracownik = $_GET['id_pracownik'];
 
                     $baza->updateContact($id_formularz_kontaktowy, $imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda, $id_pracownik);
                 }}
