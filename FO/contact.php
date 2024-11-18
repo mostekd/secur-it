@@ -90,19 +90,19 @@
                         <br>
                         <input type="text" placeholder="Imię" name="first_name" id="first_name" alt="pole imię" 
                                value="<?php echo $isLoggedIn ? ($userData['first_name']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['first_name']).'"' : ''; ?>>
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['first_name']).'"' : ''; ?> required>
                         <br>
                         Nazwisko:
                         <br>
                         <input type="text" placeholder="Nazwisko" name="last_name" id="last_name" alt="pole nazwisko"
                                value="<?php echo $isLoggedIn ? ($userData['last_name']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['last_name']).'"' : ''; ?>>
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['last_name']).'"' : ''; ?> required>
                         <br>
                         Adres e-mail:
                         <br>
                         <input type="email" placeholder="Adres e-mail" name="email" id="email" alt="pole e-mail" 
                                value="<?php echo $isLoggedIn ? ($userData['uea']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['uea']).'"' : ''; ?>>
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['uea']).'"' : ''; ?> required>
                         <br>
                         Numer Telefonu:
                         <br>
@@ -144,17 +144,17 @@
                             ?>
                             <input type="tel" placeholder="Numer Telefonu" name="phone_number" id="phone_number" alt="pole numer telefonu" 
                                value="<?php echo $isLoggedIn ? ($userData['upn']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['upn']).'"' : ''; ?>>
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['upn']).'"' : ''; ?> required>
                             </div>
                         </div>
                         <br>
                         Tytuł:
                         <br>
-                        <input type="text" placeholder="Tytuł" name="title" id="title" alt="pole tytuł">
+                        <input type="text" placeholder="Tytuł" name="title" id="title" alt="pole tytuł" required>
                         <br>
                         Wiadomość:
                         <br>
-                        <textarea name="message" placeholder="Treść Wiadomości" id="message"></textarea>
+                        <textarea name="message" placeholder="Treść Wiadomości" id="message" required></textarea>
                         <br><br>
                         Zgoda na przetwarzanie danych:
                         <br><br>
