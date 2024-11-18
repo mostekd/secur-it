@@ -29,13 +29,13 @@ dropdown.forEach(e => {
     });
 });
 document.addEventListener('DOMContentLoaded', () => {
-    const typKontaRadios = document.querySelectorAll('input[name="typ_konta"]');
-    const firmaDiv = document.querySelector('.firma');
+    const typKontaRadios = document.querySelectorAll('input[name="account_type"]');
+    const firmaDiv = document.querySelector('.company');
     const submitButton = document.querySelector('.button');
 
     typKontaRadios.forEach(radio => {
         radio.addEventListener('change', () => {
-            if (radio.value === 'firma') {
+            if (radio.value === 'company') {
                 firmaDiv.style.display = 'block'; // Pokaż sekcję dla firmy
                 submitButton.textContent = 'Zarejestruj firmę'; // Zmień tekst przycisku
             } else {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Inicjalnie ustaw widoczność
-    if (document.querySelector('#firma').checked) {
+    if (document.querySelector('#company').checked) {
         firmaDiv.style.display = 'block';
     } else {
         firmaDiv.style.display = 'none';
