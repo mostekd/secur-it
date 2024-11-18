@@ -23,9 +23,9 @@ else {
                 </div>
             </div>
             <ol class="dropdown-list">
-                <li class="dropdown-item" style="--i:1;--j:2"><a href="./o_firmie.php"></a>O Firmie</li>
-                <li class="dropdown-item" style="--i:2;--j:2"><a href="./pracownicy.php"></a>Pracownicy</li>
-                <li class="dropdown-item" style="--i:3;--j:1"><a href="./wpisy.php"></a>Wpisy</li>
+                <li class="dropdown-item" style="--i:1;--j:2"><a href="./about_company.php"></a>O Firmie</li>
+                <li class="dropdown-item" style="--i:2;--j:2"><a href="./employess.php"></a>Pracownicy</li>
+                <li class="dropdown-item" style="--i:3;--j:1"><a href="./posts.php"></a>Wpisy</li>
             </ol>
         </div>
         <div class="dropdown">
@@ -36,11 +36,11 @@ else {
                 </div>
             </div>
             <ol class="dropdown-list">
-                <li class="dropdown-item" style="--i:1;--j:5"><a href="./sieci_komputerowe.php"></a>Sieci komputerowe</li>
-                <li class="dropdown-item" style="--i:2;--j:4"><a href="./systemy_operacyjne.php"></a>Systemy Operacyjne</li>
-                <li class="dropdown-item" style="--i:3;--j:3"><a href="./bazy_danych.php"></a>Bazy Danych</li>
-                <li class="dropdown-item" style="--i:4;--j:2"><a href="./strony_internetowe.php"></a>Strony Internetowe</li>
-                <li class="dropdown-item" style="--i:5;--j:1"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
+                <li class="dropdown-item" style="--i:1;--j:5"><a href="./networks.php"></a>Sieci komputerowe</li>
+                <li class="dropdown-item" style="--i:2;--j:4"><a href="./systems.php"></a>Systemy Operacyjne</li>
+                <li class="dropdown-item" style="--i:3;--j:3"><a href="./databaes.php"></a>Bazy Danych</li>
+                <li class="dropdown-item" style="--i:4;--j:2"><a href="./websites.php"></a>Strony Internetowe</li>
+                <li class="dropdown-item" style="--i:5;--j:1"><a href="./computer_service.php"></a>Serwis Komputerowy</li>
             </ol>
         </div>
         <div class="dropdown-kontakt">
