@@ -1,26 +1,26 @@
 <?php
-    include_once('../DB/ab_accounts.php');
+    include_once('../DB/db_accounts.php');
     
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         header("Location: ./login.php");
         exit();
     }
     
-    $id_firma = $_SESSION['id_firma'];
-    $baza = new db_konta();
+    $id_company = $_SESSION['id_company'];
+    $baza = new db_accounts();
     $baza->databaseConnect();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $imie = $_POST['imie'];
-        $nazwisko = $_POST['nazwisko'];
-        $nick = $_POST['nick'];
-        $adres_e_mail = $_POST['adres_e_mail'];
-        $numer_kierunkowy = $_POST['numer_kierunkowy'];
-        $numer_telefonu = $_POST['numer_telefonu'];
-        $haslo = sha1($_POST['haslo']);
-        $czy_admin_firmy = 0;
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $username = $_POST['username'];
+        $email_address = $_POST['email_address'];
+        $id_country_code = $_POST['country_code'];
+        $phone_number = $_POST['phone_number'];
+        $password = sha1($_POST['password']);
+        $is_company_admin = 0;
 
-        $query = $baza->rejestrujKlienta($id_firma, '', '', '', $numer_kierunkowy, '', '', $numer_telefonu, $adres_e_mail, '', $imie, $nazwisko, $nick, $haslo, $czy_admin_firmy);
+        $query = $baza->registerCustomer($id_company, '', '', '', $id_country_code, '', '', $phone_number, $email_address, '', $first_name, $last_name, $username, $password, $is_company_admin);
         
         if ($query == 1) {
             echo "Pracownik został dodany pomyślnie.";
@@ -52,43 +52,43 @@
                 <h2>Dodaj Pracownika</h2>
                 <form method="post" action="dodaj_pracownika.php" class="employee-form">
                     <div class="form-group">
-                        <label for="imie">Imię:</label>
-                        <input type="text" id="imie" name="imie" placeholder="Wpisz imię" required><br>
+                        <label for="first_name">Imię:</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="Wpisz imię" required><br>
                         
-                        <label for="nazwisko">Nazwisko:</label>
-                        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz nazwisko" required><br>
+                        <label for="last_name">Nazwisko:</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Wpisz nazwisko" required><br>
                         
-                        <label for="nick">Nazwa użytkownika (Nick):</label>
-                        <input type="text" id="nick" name="nick" placeholder="Wpisz nazwę użytkownika" required><br>
+                        <label for="username">Nazwa użytkownika (Nick):</label>
+                        <input type="text" id="username" name="username" placeholder="Wpisz nazwę użytkownika" required><br>
                         
-                        <label for="adres_e_mail">Email:</label>
-                        <input type="email" id="adres_e_mail" name="adres_e_mail" placeholder="Wpisz email" required><br>
-                        <label for="numer_telefonu_firma" id="numer_telefonu_firma_txt" >Numer telefonu firmy:</label>
+                        <label for="email_address">Email:</label>
+                        <input type="email" id="email_address" name="email_address" placeholder="Wpisz email" required><br>
+                        <label for="phone_number" id="phone_number_txt" >Numer telefonu:</label>
                         <?php
-                            include('../DB/db_numery_kierunkowe.php');
-                            $baza = new db_numery_kierunkowe();
+                            include('../DB/db_country_codes.php.php');
+                            $baza = new db_country_codes.php();
                             $baza->databaseConnect();
                             
-                            $dataPolska = $baza->selectNrKierunkowePolska();
+                            $dataPolska = $baza->selectCountryCodesPolska();
                             if ($dataPolska){
                                 while ($row = mysqli_fetch_assoc($dataPolska)){
-                                    $selectedId = $row["id_numer_kierunkowy"];
+                                    $selectedId = $row["id_country_code"];
                                 } 
                             }
                             
-                            $data = $baza->selectNrKierunkowe();
+                            $data = $baza->selectCountryCodes();
                             if ($data)
                             {
                                 echo '<div class="phone_number">';
-                                echo '<select class="kierunkowy" name="numer_kierunkowy" default="">';
+                                echo '<select class="kierunkowy" name="country_code" default="">';
                                 while ($row = mysqli_fetch_assoc($data))
                                 {
                                     $text = '<option id="pole" class="kierunkowy"';
-                                    if($row["id_numer_kierunkowy"] == $selectedId)
+                                    if($row["id_country_code"] == $selectedId)
                                     {
                                     $text .= 'selected = "selected"';
                                     } 
-                                    $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                                    $text .= ' value=' .$row["id_country_code"] .'> ' .$row["country_code"]. " " .$row["country"] .'</option>';
 
                                     echo $text;
                                 }
@@ -102,9 +102,9 @@
                             }
                             $baza->close();
                         ?>
-                        <input type="text" id="numer_telefonu" name="numer_telefonu" placeholder="Wpisz numer telefonu"><br>
-                        <label for="haslo">Hasło:</label>
-                        <input type="password" id="haslo" name="haslo" placeholder="Wpisz hasło" required><br>
+                        <input type="text" id="phone_number" name="phone_number" placeholder="Wpisz numer telefonu"><br>
+                        <label for="password">Hasło:</label>
+                        <input type="password" id="password" name="password" placeholder="Wpisz hasło" required><br>
                         <button class="button" type="submit">Dodaj pracownika</button>
                     </div>
                 </form>
