@@ -1,30 +1,30 @@
 <?php
 include_once ('../include/functions.php');
-include('../DB/db_firmy.php');
+include('../DB/db_companies.php');
 
-$baza = new db_firmy();
+$baza = new db_companies();
 $baza->databaseConnect();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    $id_uzytkownik = $_SESSION['id_uzytkownik'];
+    $id_user = $_SESSION['id_user'];
 }
-if (isset($_SESSION['id_firma'])) {
-    $id_firma = $_SESSION['id_firma'];
-    $data = $baza->selectFirmaById($id_firma);
-    $firma = mysqli_fetch_assoc($data);
+if (isset($_SESSION['id_company'])) {
+    $id_company = $_SESSION['id_company'];
+    $data = $baza->selectCompanyByID($id_company);
+    $company = mysqli_fetch_assoc($data);
 } else {
-    echo "Error: No firm ID specified.";
+    echo "Error: No company ID specified.";
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
-    $nazwa = $_POST['nazwa'];
-    $nazwacd = $_POST['nazwa_cd'];
-    $nip = $_POST['nip'];
-    $id_numer_kierunkowy = $_POST['numer_kierunkowy'];
-    $numer_telefonu = $_POST['numer_telefonu'];
-    $adres_e_mail = $_POST['adres_e_mail'];
+    $name = $_POST['name'];
+    $additional_name = $_POST['additional_name'];
+    $tax = $_POST['tax'];
+    $id_country_code = $_POST['id_country_code'];
+    $phone_number = $_POST['phone_number'];
+    $email_address = $_POST['email_address'];
 
-    $baza->updateFirma($id_firma, $nazwa, $nazwacd, $nip, $id_numer_kierunkowy, $numer_telefonu, $adres_e_mail);
+    $baza->updateCompany($id_company, $name, $additional_name, $tax, $id_country_code, $phone_number, $email_address);
 }
 $baza->close();
 ?>
@@ -48,33 +48,33 @@ $baza->close();
 
         <section class="form-section">
             <h2>Edytuj Dane Firmy</h2>
-            <form action="edytuj_firme.php?id_firma=<?php echo $id_firma; ?>" method="post">
+            <form action="edytuj_firme.php?id_firma=<?php echo $id_company; ?>" method="post">
                 <label for="nazwa">Nazwa firmy:</label>
-                <input type="text" id="nazwa" name="nazwa" value="<?php echo $firma['nazwa']; ?>" required><br>
+                <input type="text" id="nazwa" name="nazwa" value="<?php echo $company['name']; ?>" required><br>
 
-                <label for="nazwa_cd">Nazwa firmy cd:</label>
-                <input type="text" id="nazwa_cd" name="nazwa_cd" value="<?php echo $firma['nazwa_cd']; ?>" required><br>
+                <label for="additional_name">Nazwa firmy cd:</label>
+                <input type="text" id="additional_name" name="additional_name" value="<?php echo $company['additional_name']; ?>" required><br>
 
-                <label for="nip">NIP:</label>
-                <input type="text" id="nip" name="nip" value="<?php echo $firma['nip']; ?>" required><br>
+                <label for="tax">NIP:</label>
+                <input type="text" id="tax" name="tax" value="<?php echo $company['tax']; ?>" required><br>
 
                 <label for="id_numer_kierunkowy">Numer kierunkowy:</label>
                 <?php
-                    include('../DB/db_numery_kierunkowe.php');
-                    $baza_numery = new db_numery_kierunkowe();
+                    include('../DB/db_country_codes.php');
+                    $baza_numery = new db_country_codes();
                     $baza_numery->databaseConnect();
 
-                    $selectedId = $firma['id_numer_kierunkowy']; 
-                    $data = $baza_numery->selectNrKierunkowe();
+                    $selectedId = $company['id_country_code']; 
+                    $data = $baza_numery->selectCountryCodes();
                     if ($data) {
                         echo '<div class="phone_number">';
-                        echo '<select class="kierunkowy" name="numer_kierunkowy">';
+                        echo '<select class="kierunkowy" name="country_code">';
                         while ($row = mysqli_fetch_assoc($data)) {
-                            $text = '<option value="' . $row["id_numer_kierunkowy"] . '"';
-                            if ($row["id_numer_kierunkowy"] == $selectedId) {
+                            $text = '<option value="' . $row["id_country_code"] . '"';
+                            if ($row["id_country_code"] == $selectedId) {
                                 $text .= ' selected="selected"';
                             }
-                            $text .= '> ' . $row["numer_kierunkowy"] . ' ' . $row["kraj"] . '</option>';
+                            $text .= '> ' . $row["country_code"] . ' ' . $row["kraj"] . '</option>';
                             echo $text;
                         }
                         echo '</select>';
@@ -86,11 +86,11 @@ $baza->close();
                     $baza_numery->close();
                 ?>
 
-                <label for="numer_telefonu">Numer telefonu:</label>
-                <input type="text" id="numer_telefonu" name="numer_telefonu" value="<?php echo $firma['numer_telefonu']; ?>" required><br>
+                <label for="phone_number">Numer telefonu:</label>
+                <input type="text" id="phone_number" name="phone_number" value="<?php echo $company['phone_number']; ?>" required><br>
 
-                <label for="adres_e_mail">Adres e-mail:</label>
-                <input type="email" id="adres_e_mail" name="adres_e_mail" value="<?php echo $firma['adres_e_mail']; ?>" required><br>
+                <label for="email_address">Adres e-mail:</label>
+                <input type="email" id="email_address" name="email_address" value="<?php echo $company['email_address']; ?>" required><br>
 
                 <button type="submit" name="update">Zaktualizuj dane</button>
                 <button><a href="./konto.php">Powrót</a></button>

@@ -8,7 +8,7 @@
         $typ_konta = $_POST['typ_konta'];
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
-        $nazwa_firmy = ($typ_konta == 'firma') ? $_POST['nazwa_firmy'] : '';
+        $name = ($typ_konta == 'firma') ? $_POST['name'] : '';
         $nazwa_cd = ($typ_konta == 'firma') ? $_POST['nazwa_firmy_cd'] : '';
         $nip = ($typ_konta == 'firma') ? $_POST['nip'] : '';
         $nick = $_POST['nick'];
