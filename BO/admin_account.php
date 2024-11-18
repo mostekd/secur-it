@@ -1,5 +1,5 @@
 <?php
-    include('../DB/ab_accounts.php');
+    include('../DB/db_accounts.php');
     include_once ('../include/functions.php');
 ?>
 <!DOCTYPE html>
@@ -15,12 +15,11 @@
     <title>Secur IT | Admin Konto</title>
 </head>
 <body>
-<body>
     <div class="tlo"></div>
     <main class="main">
     <?php
-            include("header.php");
-            include("nav.php");
+            include("admin_header.php");
+            include("admin_nav.php");
 
             if (/*isset($_SESSION['loggedin']) && */ $_SESSION['loggedin'] === true) {
                 $id_user = $_SESSION['id_user'];
@@ -36,7 +35,8 @@
                     echo "<p>Imię: " . ($user['first_name']) . "</p>";
                     echo "<p>Nazwisko: " . ($user['last_name']) . "</p>";
                     echo "<p>Numer telefonu: " . ($user['ucc']) . " " . ($user['upn']) . "</p>";
-                    echo "<p>Email: " . ($user['uea']) . "</p>";                        
+                    echo "<p>Email: " . ($user['uea']) . "</p>";
+                        
                         // Dodanie opcji administracyjnych, jeśli użytkownik jest administratorem firmy
                         if ($user['is_company_admin'] == 1) {
                             echo "<a href='./add_employee.php'><button>Dodaj pracownika</button</a>";
@@ -44,7 +44,6 @@
                             echo "<a href='./edit_company.php'><button>Edytuj dane firmy</button></a>";
                         }
                         echo "</div>";
-                    }
                     echo "<a href='./logout.php' class='button_logout'>Wyloguj się</a>";
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
