@@ -36,19 +36,29 @@
                     echo "<p>Nazwisko: " . ($user['last_name']) . "</p>";
                     echo "<p>Numer telefonu: " . ($user['ucc']) . " " . ($user['upn']) . "</p>";
                     echo "<p>Email: " . ($user['uea']) . "</p>";
-                        
-                        // Dodanie opcji administracyjnych, jeśli użytkownik jest administratorem firmy
-                        if ($user['is_company_admin'] == 1) {
-                            echo "<a href='./add_employee.php'><button>Dodaj pracownika</button</a>";
-                            echo "<a href='./view_employee.php'><button>Wyświetl pracowników</botton></a>";
-                            echo "<a href='./edit_company.php'><button>Edytuj dane firmy</button></a>";
-                        }
-                        echo "</div>";
-                    echo "<a href='./logout.php' class='button_logout'>Wyloguj się</a>";
-                } else {
-                    echo "<p>Nie znaleziono danych użytkownika.</p>";
+                    
+            // Sprawdzamy, czy użytkownik należy do firmy
+            if (!empty($user['company_name'])) {
+                echo "</div><div class='firma_page'>";
+                echo "<h2>Twoja Firma:</h2>";
+                echo "<p>Nazwa firmy:  " . ($user['company_name']) . " " . ($user['additional_name']) . "</p>";
+                echo "<p>NIP: " . ($user['tax']) . "</p>";
+                echo "<p>Numer telefonu firmy: " . ($user['ccc']) . " " . ($user['cpn']) . "</p>";
+                echo "<p>Email firmy: " . ($user['cea']) . "</p>";
+                
+                // Dodanie opcji administracyjnych, jeśli użytkownik jest administratorem firmy
+                if ($user['is_company_admin'] == 1) {
+                    echo "<a href='./add_employee.php'><button>Dodaj pracownika</button</a>";
+                    echo "<a href='./view_employee.php'><button>Wyświetl pracowników</botton></a>";
+                    echo "<a href='./edit_company.php'><button>Edytuj dane firmy</button></a>";
                 }
-                $baza->close();
+                echo "</div>";
+            }
+            echo "<a href='./logout.php' class='button_logout'>Wyloguj się</a>";
+            } else {
+            echo "<p>Nie znaleziono danych użytkownika.</p>";
+            }
+            $baza->close();
             } else {
                 echo "<p>Musisz być <a href='./login.php'>zalogowany</a>, aby zobaczyć tę stronę.</p>";
             }
