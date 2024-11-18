@@ -1,8 +1,8 @@
 <?php
-    include_once('../DB/db_konta.php');
+    include_once('../DB/ab_accounts.php');
     
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        header("Location: logowanie.php");
+        header("Location: ./login.php");
         exit();
     }
     
