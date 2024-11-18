@@ -73,12 +73,14 @@
                                     $userData = mysqli_fetch_assoc($result);
                                 }
                                 $konto->close();
-                            }
                         ?>
                         <label>
                             <input type="checkbox" id="useOtherData" onclick="toggleUserData(this)">
                             Użyj innych danych
                         </label>
+                        <?php
+                            }
+                        ?>
                         <br><br>
 
                         Imię:
