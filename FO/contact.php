@@ -142,7 +142,7 @@
                                 
                                 $baza->close();
                             ?>
-                            <input type="tel" placeholder="Numer Telefonu" name="numer_telefonu" id="numer_telefonu" alt="pole numer telefonu" 
+                            <input type="tel" placeholder="Numer Telefonu" name="phone_number" id="phone_number" alt="pole numer telefonu" 
                                value="<?php echo $isLoggedIn ? ($userData['upn']) : ''; ?>" 
                                <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['upn']).'"' : ''; ?>>
                             </div>
