@@ -24,7 +24,7 @@
             <ol class="dropdown-list">
                 <li class="dropdown-item" style="--i:1;--j:5"><a href="./networks.php"></a>Sieci komputerowe</li>
                 <li class="dropdown-item" style="--i:2;--j:4"><a href="./systems.php"></a>Systemy Operacyjne</li>
-                <li class="dropdown-item" style="--i:3;--j:3"><a href="./databaes.php"></a>Bazy Danych</li>
+                <li class="dropdown-item" style="--i:3;--j:3"><a href="./databases.php"></a>Bazy Danych</li>
                 <li class="dropdown-item" style="--i:4;--j:2"><a href="./websites.php"></a>Strony Internetowe</li>
                 <li class="dropdown-item" style="--i:5;--j:1"><a href="./computer_service.php"></a>Serwis Komputerowy</li>
             </ol>
@@ -59,7 +59,7 @@
                 <li class="dropdown-item" style="--i:3;--j:8"><a href="./posts.php"></a>Wpisy</li>
                 <li class="dropdown-item" style="--i:4;--j:7"><a href="./networks.php"></a>Sieci komputerowe</li>
                 <li class="dropdown-item" style="--i:5;--j:6"><a href="./systems.php"></a>Systemy Operacyjne</li>
-                <li class="dropdown-item" style="--i:6;--j:5"><a href="./databaes.php"></a>Bazy Danych</li>
+                <li class="dropdown-item" style="--i:6;--j:5"><a href="./databases.php"></a>Bazy Danych</li>
                 <li class="dropdown-item" style="--i:7;--j:4"><a href="./websites.php"></a>Strony Internetowe</li>
                 <li class="dropdown-item" style="--i:8;--j:3"><a href="./computer_service.php"></a>Serwis Komputerowy</li>
                 <li class="dropdown-item" style="--i:9;--j:2"> <a href="./contact.php"></a>Kontakt</li>
