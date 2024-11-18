@@ -1,7 +1,7 @@
 <?php    
 include_once("db_connection.php");
 class db_employees extends db_connection{
-        function selectPracownikById($id_employee){
+        function selectEmployeeById($id_employee){
             $query = "SELECT u.first_name, u.last_name, u.id_country_code, cc.id_country_code, u.phone_number, u.email_address, e.home_address, e.date_of_birth, e.photo, c.*, s.nazwa, d.nazwa_dzialu
             FROM `users` AS u
             LEFT JOIN country_codes AS cc ON u.id_country_code = cc.id_country_code
@@ -17,7 +17,7 @@ class db_employees extends db_connection{
                 return $data;
             }
         }
-        function selectPracownik(){
+        function selectEmployee(){
             $query = 'SELECT u.id_employee, u.first_name, u.last_name, e.photo, p.name, d.department_name 
             FROM users AS u
             JOIN employees as e ON u.id_employee = e.id_employee
@@ -30,7 +30,7 @@ class db_employees extends db_connection{
             return $data;
             }
         }
-        function selectPracownikAll(){
+        function selectEmployeesAll(){
             $query = 'SELECT * FROM `employees`;';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
@@ -45,7 +45,7 @@ class db_employees extends db_connection{
         //     $this->close();
         // }
 
-        function deletePracownik($id_employee){
+        function deleteEmployee($id_employee){
             $query = "Delete from employees where id_employee =".$id_employee.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id']);

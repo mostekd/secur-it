@@ -22,8 +22,8 @@
             $this->close();
         }
 
-        function updatePost ($id_wpis, $imie, $nazwisko, $PESEL, $email, $comments){
-            $query = "UPDATE `posts` SET `id_user`='".$id_user."',`title`='".$title."',`content`='".$content."',`date_added`='".$date_added."',`id_approving_employee`='".$id_approving_employee."',`approval_date`='".$approval_date."' WHERE `id_wpis`=".$id_wpis.";";
+        function updatePost ($id_post, $id_user, $title, $content, $date_added, $id_approving_employee, $approval_date){
+            $query = "UPDATE `posts` SET `id_user`='".$id_user."',`title`='".$title."',`content`='".$content."',`date_added`='".$date_added."',`id_approving_employee`='".$id_approving_employee."',`approval_date`='".$approval_date."' WHERE `id_post`=".$id_post.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id_post']);
             $this->close();

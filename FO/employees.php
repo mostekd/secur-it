@@ -21,8 +21,8 @@
             include("nav.php");
         ?>
         <?php
-            include('../DB/db_pracownicy.php');
-            $baza = new db_pracownicy();
+            include('../DB/db_employees.php');
+            $baza = new db_employees();
             $baza->databaseConnect();
             $data = $baza->selectPracownik();
             if (!empty($data)){
