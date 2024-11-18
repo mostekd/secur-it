@@ -69,8 +69,8 @@
                         <input type="email" id="email_address" name="email_address" placeholder="Wpisz email" required><br>
                         <label for="phone_number" id="phone_number_txt" >Numer telefonu:</label>
                         <?php
-                            include('../DB/db_country_codes.php.php');
-                            $baza = new db_country_codes.php();
+                            include('../DB/db_country_codes.php');
+                            $baza = new db_country_codes();
                             $baza->databaseConnect();
                             
                             $dataPolska = $baza->selectCountryCodesPolska();
