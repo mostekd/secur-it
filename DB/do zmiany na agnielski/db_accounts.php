@@ -1,6 +1,6 @@
 <?php
 include_once("db_connection.php");
-class db_konta extends db_connection
+class db_accounts extends db_connection
     {
         function selectKlient($login, $encrypted)
         {
