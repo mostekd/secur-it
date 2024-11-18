@@ -1,6 +1,6 @@
 <?php
 include_once("db_connection.php");
-class db_firmy extends db_connection
+class db_companies extends db_connection
     {
         function selectFirmy()
         {
