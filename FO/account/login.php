@@ -12,27 +12,27 @@
     </head>
     <body>
     <?php
-        include_once('../DB/db_konta.php');
+        include_once('../DB/db_accounts.php');
         if(!isset($_SESSION['sesja'])){
             session_start();
         }
-        $baza = new db_konta();
+        $baza = new db_accounts();
         $baza->databaseConnect();
 
-        if (isset($_POST['nick'])) {
-            $login = $_POST['nick'];
-            $haslo = $_POST['haslo'];
-            $encrypted = sha1($haslo);
-            $data = $baza->selectKlient($login, $encrypted);
+        if (isset($_POST['username'])) {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $encrypted = sha1($password);
+            $data = $baza->selectKlient($username, $encrypted);
 
             if ($data && mysqli_num_rows($data) > 0) {
                 $user = mysqli_fetch_assoc($data);
                 $_SESSION['loggedin'] = true;
-                $_SESSION['login'] = $login;
-                $_SESSION['id_uzytkownik'] = $user['id_uzytkownik'];
-                $_SESSION['id_firma'] = $user['id_firma'];
-                $_SESSION['czy_admin'] = $user['czy_admin'];
-                $_SESSION['id_pracownik'] = $user['id_pracownik'];
+                $_SESSION['username'] = $username;
+                $_SESSION['id_user'] = $user['id_user'];
+                $_SESSION['id_company'] = $user['id_company'];
+                $_SESSION['is_admin'] = $user['is_admin'];
+                $_SESSION['id_employee'] = $user['id_employee'];
                 
                 header("Location: ./konto.php");
             } else {
@@ -60,11 +60,11 @@
             <form method="POST" class="login-form">
                 <div class="form-group">
                     <label for="username">Nazwa użytkownika:</label>
-                    <input type="text" id="nick" name="nick" placeholder="Enter your nick" required>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Hasło:</label>
-                    <input type="password" id="haslo" name="haslo" placeholder="Enter your password" required>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <div class="form-group">
                     <button class="button" type="submit">Zaloguj się</button><br><br>

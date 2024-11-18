@@ -5,7 +5,7 @@
         {
             $query = "SELECT * FROM `users` AS u 
             LEFT JOIN employees AS e ON u.id_employee = e.id_employee 
-            WHERE nick='$login' AND haslo='$encrypted'";
+            WHERE username='$login' AND password='$encrypted'";
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0)
             {
