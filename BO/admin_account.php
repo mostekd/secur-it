@@ -36,7 +36,7 @@
                     echo "<p>Nazwisko: " . ($user['last_name']) . "</p>";
                     echo "<p>Numer telefonu: " . ($user['ucc']) . " " . ($user['upn']) . "</p>";
                     echo "<p>Email: " . ($user['uea']) . "</p>";
-                    
+
             // Sprawdzamy, czy użytkownik należy do firmy
             if (!empty($user['company_name'])) {
                 echo "</div><div class='firma_page'>";
@@ -54,7 +54,7 @@
                 }
                 echo "</div>";
             }
-            echo "<a href='./logout.php' class='button_logout'>Wyloguj się</a>";
+            echo "<a href='./admin_logout.php' class='button_logout'>Wyloguj się</a>";
             } else {
             echo "<p>Nie znaleziono danych użytkownika.</p>";
             }
