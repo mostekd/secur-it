@@ -54,7 +54,7 @@
             <a href="./account.php"><button>Powrót</button></a>
             <div id="addEmployeePage" class="add-employee-container">
                 <h2>Dodaj Pracownika</h2>
-                <form method="post" action="dodaj_pracownika.php" class="employee-form">
+                <form method="post" action="add_employee.php" class="employee-form">
                     <div class="form-group">
                         <label for="first_name">Imię:</label>
                         <input type="text" id="first_name" name="first_name" placeholder="Wpisz imię" required><br>

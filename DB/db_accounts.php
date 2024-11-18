@@ -16,7 +16,7 @@
         function registerCustomer($id_company = null, $company_name = '', $additional_name = '', $tax = '', $id_country_code, $id_company_country_code = '', $company_phone_number = '', $phone_number = '', $email_address= '', $company_email_address = '', $first_name, $last_name, $username, $password, $is_company_admin = '0')
         {
             // Krok 1: Sprawdzenie, czy użytkownik o podanym nicku lub firma o podanej nazwie już istnieją
-            $query = "SELECT id_user AS user FROM users WHERE nick = '".$nick."'";
+            $query = "SELECT id_user AS user FROM users WHERE username = '".$username."'";
             if ($company_name != '') {
                 $query .= " UNION ";
                 $query .= "SELECT id_company AS company FROM companies WHERE name = '".$company_name."'";
