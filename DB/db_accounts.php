@@ -1,0 +1,104 @@
+<?php
+    include_once("db_connection.php");
+    class db_accounts extends db_connection {
+        function selectCustomer($login, $encrypted)
+        {
+            $query = "SELECT * FROM `users` AS u 
+            LEFT JOIN employees AS e ON u.id_employee = e.id_employee 
+            WHERE nick='$login' AND haslo='$encrypted'";
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0)
+            {
+                return $data;
+            }
+        }
+
+        function registerCustomer($id_company = null, $company_name = '', $additional_name = '', $tax = '', $id_country_code, $id_company_country_code = '', $company_phone_number = '', $phone_number = '', $email_address= '', $company_email_address = '', $first_name, $last_name, $username, $password, $is_company_admin = '0')
+        {
+            // Krok 1: Sprawdzenie, czy użytkownik o podanym nicku lub firma o podanej nazwie już istnieją
+            $query = "SELECT id_user AS user FROM users WHERE nick = '".$nick."'";
+            if ($company_name != '') {
+                $query .= " UNION ";
+                $query .= "SELECT id_company AS company FROM companies WHERE name = '".$company_name."'";
+            }
+            $data = mysqli_query($this->connect, $query);
+
+            // Krok 2: Jeśli nie istnieje użytkownik lub firma o podanych danych, przechodzimy do rejestracji
+            if (mysqli_num_rows($data) == 0) {
+                // Sprawdzenie, czy podano nazwę firmy
+                if ($company_name != '') {
+                    // Rejestracja firmy
+                    $query = "INSERT INTO `companies`(`name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) VALUES('".$name."', '".$additional_name."', '".$tax."', '".$id_company_country_code."', '".$company_phone_number."', '".$company_email_address."')";
+                    $data = mysqli_query($this->connect, $query);
+                    $id_firma = $this->connect->insert_id;
+
+                    if ($data) {
+                        // Ustawienie użytkownika jako administratora firmy
+                        $is_company_admin = 1;
+                    } else {
+                        return 2; // Błąd przy tworzeniu firmy. Spróbuj ponownie.
+                    }
+                }
+
+                // Krok 3: Rejestracja użytkownika
+                $query = "INSERT INTO `users`(`id_employee`, `id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES (null, '".$id_company."', '".$first_name."', '".$last_name."', '".$id_country_code."', '".$phone_number."', '".$email_address."', '".$username."', '".$password."', '".$is_company_admin."', null)";
+                $data = mysqli_query($this->connect, $query);
+
+                if ($data) {
+                    $this->close();
+                    $_POST = array();
+                    return 1; // Rejestracja zakończona sukcesem
+                } else {
+                    mysqli_rollback($this->connect);
+                    return 4; // Użytkownik o takim loginie już istnieje. Wybierz inny login
+                }
+            } else {
+                return 3; // Firma/Użytkownik o takiej nazwie już istnieje. Skontaktuj się z administratorem firmy
+            }
+        }
+    
+        function deleteCustomer($id_user)
+        {
+            $query = "Delete from users where id_user =".$id_user.";";
+            $data = mysqli_query($this->connect, $query);
+            unset($_GET['id']);
+            $this->close();
+        }
+    
+        function updateCustomer($id_user, $id_employee, $id_company, $first_name, $last_name, $id_country_code, $phone_number, $email_address, $username, $password)
+        {
+            $query = "UPDATE `users` `id_employee`='".$id_employee."',`id_company`='".$id_company."',`first_name`='".$first_name."',`last_name`='".$last_name."',`id_country_code`='".$id_country_code."',`phone_number`='".$phone_number."',`email_address`='".$email_address."'`username`='".$username."',`password`='".$password."' WHERE `id_user`=".$id_user.";";
+            $data = mysqli_query($this->connect, $query);
+            unset($_GET['id']);
+            header('location: ../index_admin.php');
+            $this->close();
+        }
+    
+        function selectCustomerById($id_user, $id_company)
+        {
+            $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code, cc1.id_country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.name, c.additional_name, c.tax, c.id_country_code, cc2.id_country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = f.id_country_code 
+            WHERE id_user =".$id_user;
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0) 
+            {
+                return $data;
+            }
+        }
+        function selectCustomerByIdCompany($id_company)
+        {
+            $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code, cc.id_country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin
+            FROM users as u
+            JOIN country_codes as cc ON cc.id_country_code = u.id_country_code
+            WHERE u.id_company =".$id_company;
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0) 
+            {
+                return $data;
+            }
+        }
+    }
+?>

@@ -63,7 +63,7 @@ create table companies (
     id_company int primary key auto_increment, -- Identyfikator firmy
     name varchar(50), -- Nazwa
     additional_name varchar(100), -- Dodatkowa nazwa
-    tax_id varchar(20), -- NIP
+    tax varchar(20), -- NIP
     id_country_code int, -- Identyfikator numeru kierunkowego
     phone_number varchar(20), -- Numer telefonu
     email_address varchar(200), -- Adres e-mail
