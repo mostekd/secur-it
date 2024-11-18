@@ -16,7 +16,7 @@
     <body>
         <?php
             include("../DB/db_connection.php");
-            include('../DB/db_numery_kierunkowe.php');
+            include('../DB/db_country_codes.php');
             include('../DB/db_contact.php');
             $baza = new db_contact();
 
@@ -24,18 +24,18 @@
                 $baza->databaseConnect();
                 if(isset($_GET['opcja'])){
                     if($_GET['opcja'] == 'dodaj'){
-                        $imie = $_GET['imie'];
-                        $nazwisko = $_GET['nazwisko'];
-                        $email = $_GET['e_mail'];
-                        $id_numer_kierunkowy = $_GET['id_numer_kierunkowy'];
-                        $numer_telefonu = $_GET['numer_telefonu'];
-                        $tytul = $_GET['tytul'];
-                        $wiadomosc = $_GET['wiadomosc'];
-                        $czy_zgoda = 0;
-                        if(isset($_GET['czy_zgoda'])){
-                            $czy_zgoda = 1;
+                        $first_name = $_GET['first_name'];
+                        $last_name = $_GET['last_name'];
+                        $email = $_GET['email'];
+                        $id_country_code = $_GET['id_country_code'];
+                        $phone_number = $_GET['phone_number'];
+                        $title = $_GET['title'];
+                        $message = $_GET['message'];
+                        $consent = 0;
+                        if(isset($_GET['consent'])){
+                            $consent = 1;
                         }
-                        $baza->insertContact ($imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda);
+                        $baza->insertContact ($first_name, $last_name, $email, $id_country_code, $phone_number, $title, $message, $consent);
                         if(isset($baza)){
                             switch($baza){
                                 case 1:
@@ -68,10 +68,10 @@
                             $userData = [];
 
                             if ($isLoggedIn) {
-                                $id_uzytkownik = $_SESSION['id_uzytkownik'];
-                                $konto = new db_konta();
+                                $id_user = $_SESSION['id_user'];
+                                $konto = new db_accounts();
                                 $konto->databaseConnect();
-                                $result = $konto->selectKontoById($id_uzytkownik, null);
+                                $result = $konto->selectCustomerById($id_user, null);
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     $userData = mysqli_fetch_assoc($result);
                                 }
@@ -88,33 +88,33 @@
 
                         Imię:
                         <br>
-                        <input type="text" placeholder="Imię" name="imie" id="imie" alt="pole imię" 
-                               value="<?php echo $isLoggedIn ? ($userData['imie']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['imie']).'"' : ''; ?>>
+                        <input type="text" placeholder="Imię" name="first_name" id="first_name" alt="pole imię" 
+                               value="<?php echo $isLoggedIn ? ($userData['first_name']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['first_name']).'"' : ''; ?>>
                         <br>
                         Nazwisko:
                         <br>
-                        <input type="text" placeholder="Nazwisko" name="nazwisko" id="nazwisko" alt="pole nazwisko"
-                               value="<?php echo $isLoggedIn ? ($userData['nazwisko']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['nazwisko']).'"' : ''; ?>>
+                        <input type="text" placeholder="Nazwisko" name="last_name" id="last_name" alt="pole nazwisko"
+                               value="<?php echo $isLoggedIn ? ($userData['last_name']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['last_name']).'"' : ''; ?>>
                         <br>
                         Adres e-mail:
                         <br>
-                        <input type="email" placeholder="Adres e-mail" name="e_mail" id="e_mail" alt="pole e-mail" 
-                               value="<?php echo $isLoggedIn ? ($userData['uae']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['uae']).'"' : ''; ?>>
+                        <input type="email" placeholder="Adres e-mail" name="email" id="email" alt="pole e-mail" 
+                               value="<?php echo $isLoggedIn ? ($userData['uea']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['uea']).'"' : ''; ?>>
                         <br>
                         Numer Telefonu:
                         <br>
                         <div class="phonenumber">
                             <?php
-                                $baza = new db_numery_kierunkowe();
+                                $baza = new db_country_codes();
                                 $baza->databaseConnect();
                 
-                                $dataPolska = $baza->selectNrKierunkowePolska();
+                                $dataPolska = $baza->selectCountryCodesPolska();
                                 if ($dataPolska){
                                     while ($row = mysqli_fetch_assoc($dataPolska)){
-                                        $selectedId = $row["id_numer_kierunkowy"];
+                                        $selectedId = $row["id_country_code"];
                                     } 
                                 }
                                 
@@ -122,14 +122,14 @@
                                 if ($data){
                                     
                                 echo '<div class="phone_number">';
-                                echo '<select class="kierunkowy" name="id_numer_kierunkowy" default="">';
+                                echo '<select class="kierunkowy" name="id_country_code" default="">';
                                 while ($row = mysqli_fetch_assoc($data)){
                                     $text = '<option id="pole" class="kierunkowy"';
-                                    if($row["id_numer_kierunkowy"] == $selectedId)
+                                    if($row["id_country_code"] == $selectedId)
                                     {
                                     $text .= 'selected = "selected"';
                                     } 
-                                    $text .= ' value=' .$row["id_numer_kierunkowy"] .'> ' .$row["numer_kierunkowy"]. " " .$row["kraj"] .'</option>';
+                                    $text .= ' value=' .$row["id_country_code"] .'> ' .$row["country_code"]. " " .$row["country"] .'</option>';
 
                                     echo $text;
                                 }
@@ -143,22 +143,22 @@
                                 $baza->close();
                             ?>
                             <input type="tel" placeholder="Numer Telefonu" name="numer_telefonu" id="numer_telefonu" alt="pole numer telefonu" 
-                               value="<?php echo $isLoggedIn ? ($userData['unt']) : ''; ?>" 
-                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['unt']).'"' : ''; ?>>
+                               value="<?php echo $isLoggedIn ? ($userData['upn']) : ''; ?>" 
+                               <?php echo $isLoggedIn ? 'readonly data-default-value="'.($userData['upn']).'"' : ''; ?>>
                             </div>
                         </div>
                         <br>
                         Tytuł:
                         <br>
-                        <input type="text" placeholder="Tytuł" name="tytul" id="tytul" alt="pole tytuł">
+                        <input type="text" placeholder="Tytuł" name="title" id="title" alt="pole tytuł">
                         <br>
                         Wiadomość:
                         <br>
-                        <textarea name="wiadomosc" placeholder="Treść Wiadomości" id="wiadomosc"></textarea>
+                        <textarea name="message" placeholder="Treść Wiadomości" id="message"></textarea>
                         <br><br>
                         Zgoda na przetwarzanie danych:
                         <br><br>
-                        <input type="checkbox" name="czy_zgoda" required>
+                        <input type="checkbox" name="consent" required>
                         <span> Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o.w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej secur-it.pl i dalszej wymiany korespondencji oraz oświadczam, 
                         że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w <a href="./polityka_prywatności.html">polityce prywatności</a></span>
                         <br><br>
