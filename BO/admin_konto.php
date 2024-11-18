@@ -1,6 +1,6 @@
 <?php
     include('../DB/db_konta.php');
-    session_start();
+    include_once ('../include/functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="pl">

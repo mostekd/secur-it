@@ -1,17 +1,3 @@
-<?php
-if(!isset($_SESSION['sesja'])){
-    session_start();
-    $_SESSION['sesja'] = "test";
-}
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    $id_uzytkownik = $_SESSION['id_uzytkownik'];
-    $czy_admin = $_SESSION['czy_admin'];
-}
-else {
-    $id_uzytkownik = 0;
-    $czy_admin  = 0;
-}
-?>
 <nav class="top-nav">
                 <a class="logo" href="./admin_panel.php"><img src="../images/logo.png" alt="logo"></a>                    
                 <div class="top-nav-buttons">
