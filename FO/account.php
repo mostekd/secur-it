@@ -33,8 +33,8 @@
                     echo "<h2>Witaj, " . ($user['username']) . "!</h2>";
                     echo "<p>Imię: " . ($user['first_name']) . "</p>";
                     echo "<p>Nazwisko: " . ($user['last_name']) . "</p>";
-                    echo "<p>Email: " . ($user['uea']) . "</p>";
                     echo "<p>Numer telefonu: " . ($user['ucc']) . " " . ($user['upn']) . "</p>";
+                    echo "<p>Email: " . ($user['uea']) . "</p>";
                     
                     // Sprawdzamy, czy użytkownik należy do firmy
                     if (!empty($user['name'])) {
