@@ -1,7 +1,7 @@
 <?php
     include_once('../DB/db_accounts.php');
     
-    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == false) {
         header("Location: ./login.php");
         exit();
     }
