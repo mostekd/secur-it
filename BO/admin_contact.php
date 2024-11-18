@@ -25,20 +25,20 @@
 
             if(isset($_GET['opcja'])){
                 if($_GET['opcja'] == 'przypisz'){
-                    $id_formularz_kontaktowy = $_GET['id_formularz_kontaktowy'];
-                    $imie = $_GET['imie'];
-                    $nazwisko = $_GET['nazwisko'];
+                    $id_contact_form = $_GET['id_contact_form'];
+                    $first_name = $_GET['first_name'];
+                    $last_name = $_GET['last_name'];
                     $email = $_GET['email'];
-                    $id_numer_kierunkowy = $_GET['id_numer_kierunkowy'];
-                    $numer_telefonu = $_GET['numer_telefonu'];
-                    $tytul = $_GET['tytul'];
-                    $wiadomosc = $_GET['wiadomosc'];
-                    $czy_zgoda = 0;
-                    if(isset($_GET['czy_zgoda'])){
-                       $czy_zgoda = 1;
+                    $id_country_code = $_GET['id_country_code'];
+                    $phone_number = $_GET['phone_number'];
+                    $title = $_GET['title'];
+                    $message = $_GET['message'];
+                    $consent = 0;
+                    if(isset($_GET['consent'])){
+                       $consent = 1;
                     }
 
-                    $baza->updateContact($id_formularz_kontaktowy, $imie, $nazwisko, $email, $id_numer_kierunkowy, $numer_telefonu, $tytul, $wiadomosc, $czy_zgoda, $id_pracownik);
+                    $baza->updateContact($id_contact_form, $first_name, $last_name, $email, $id_country_code, $phone_number, $title, $message, $consent, $id_employee);
                 }}
         ?>
         <main class="main">
@@ -65,13 +65,13 @@
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
                             <tr>
-                                <td><?php echo ($row['imie']); ?></td>
-                                <td><?php echo ($row['nazwisko']); ?></td>
-                                <td><?php echo ($row['e_mail']); ?></td>
-                                <td><?php echo ($row['numer_kierunkowy']), " " .($row['numer_telefonu']); ?></td>
-                                <td><?php echo ($row['tytul']); ?></td>
-                                <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
-                                <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
+                                <td><?php echo ($row['first_name']); ?></td>
+                                <td><?php echo ($row['last_name']); ?></td>
+                                <td><?php echo ($row['email']); ?></td>
+                                <td><?php echo ($row['country_code']), " " .($row['phone_number']); ?></td>
+                                <td><?php echo ($row['title']); ?></td>
+                                <td><?php echo substr($row['message'],0,150)." ...;" ?></td>
+                                <td><?php echo $row['consent'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
                                     if ($row['ufn'] == null){
                                         echo "<td><input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input><input type='submit' value='Przypisz'></input></td>";
