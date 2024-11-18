@@ -118,7 +118,7 @@
                                     } 
                                 }
                                 
-                                $data = $baza->selectNrKierunkowe();
+                                $data = $baza->selectCountryCodes();
                                 if ($data){
                                     
                                 echo '<div class="phone_number">';
