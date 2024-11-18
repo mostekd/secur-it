@@ -51,7 +51,7 @@
                     }
                 }
             ?>
-            <a href="./konto.php"><button>Powrót</button></a>
+            <a href="./account.php"><button>Powrót</button></a>
             <div id="addEmployeePage" class="add-employee-container">
                 <h2>Dodaj Pracownika</h2>
                 <form method="post" action="dodaj_pracownika.php" class="employee-form">
