@@ -1,34 +1,34 @@
 <?php
 include_once("db_connection.php");
     class db_about_company extends db_connection{
-        function selectOFirmie(){
-            $query = 'SELECT *FROM `o_firmie` WHERE 1';
+        function selectAbout_company(){
+            $query = 'SELECT * FROM `about_company` WHERE 1';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
             }
         }
 
-        function insertOFirmie ($tytul, $opis){
-            $query = "INSERT INTO `o_firmie`(`tytul`, `opis`) VALUES ('".$tytul."','".$opis."');";
+        function insertAbout_company($title, $description){
+            $query = "INSERT INTO `about_company`(`title`, `description`) VALUES ('".$title."','".$description."');";
             $data = mysqli_query($this->connect, $query);
-            header('location: ../BO/o_firmie.php'); 
+            header('location: ../BO/about_company.php'); 
             $this->close();
         }
 
-        function deleteOFirmie($id_o_firmie){
-            $query = "Delete from o_firmie where id_o_firmie =".$id_o_firmie.";";
+        function deleteAbout_company($id_about_company){
+            $query = "Delete from about_company where id_about_company =".$id_about_company.";";
             $data = mysqli_query($this->connect, $query);
-            unset($_GET['id']);
-            header('location: ../BO/o_firmie.php'); 
+            unset($_GET['id_about_company']);
+            header('location: ../BO/about_company.php'); 
             $this->close();
         }
 
-        function updateOFirmie($id_o_firmie, $tytul, $opis){
-            $query = "UPDATE `o_firmie` SET `tytul`='".$tytul."',`opis`='".$opis.";";
+        function updateAbout_company($id_about_company, $title, $description){
+            $query = "UPDATE `about_company` SET `title`='".$title."',`description`='".$description.";";
             $data = mysqli_query($this->connect, $query);
-            unset($_GET['id']);
-            header('location: ../BO/o_firmie.php');  
+            unset($_GET['id_about_company']);
+            header('location: ../BO/about_company.php');  
             $this->close();
         }
     }
