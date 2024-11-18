@@ -86,12 +86,12 @@ else {
                                 <td><?php echo substr($row['wiadomosc'],0,150)." ...;" ?></td>
                                 <td><?php echo $row['czy_zgoda'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
-                                    if ($row['pi'] == null){
+                                    if ($row['ufn'] == null){
                                         echo "<td><input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input><input type='submit' value='Przypisz'></input></td>";
                                     }
                                     else{
                                     ?>
-                                        <td><?php echo ($row['pi']). " " .($row['pn']); ?></td>
+                                        <td><?php echo ($row['ufn']). " " .($row['uln']); ?></td>
                                     <?php
                                     }
                                     ?>
