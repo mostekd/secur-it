@@ -550,16 +550,16 @@ INSERT INTO `discounts`(`id_discount`, `discount_value`) VALUES
 ('99','0,99'),
 ('100','1');
 
-INSERT INTO `companies`(`id_company`, `name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) 
+INSERT INTO `companies`(`id_company`, `company_name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) 
 VALUES ('2', 'testcompany', 'testcompanycd', 'testNIP', '144', '131313131', 'testf@test.pl');
 
-INSERT INTO `companies` (`id_company`, `name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) VALUES ('1', 'Secur IT', 'sp. z o.o.', 'testNIP', '145', '121212121', 'secur-it@secur-it.pl');
+INSERT INTO `companies` (`id_company`, `company_name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) VALUES ('1', 'Secur IT', 'sp. z o.o.', 'testNIP', '145', '121212121', 'secur-it@secur-it.pl');
 
 INSERT INTO `contracts` (`id_contract`, `contract_number`, `PESEL`, `insurance_number`, `employment_period`, `start_date`, `end_date`, `salary`, `bonus`, `id_position`, `id_work_location`, `id_department`) VALUES ('1', '2024/02/01/0001', '06250205651', NULL, NULL, '2024-02-01', NULL, NULL, NULL, '1', NULL, NULL);
 
 INSERT INTO `employees` (`id_employee`, `home_address`, `id_contract`, `date_of_birth`, `photo`, `is_admin`, `id_position`, `id_car`) VALUES ('1', 'Heraklesa 38G, 42-221, Częstochowa, Polska', '1', '2006-02-05', '../images/pracownicy/dawid_mostowski.png', '1', '1', NULL);
 
-
+INSERT INTO `users` (`id_user`, `id_employee`, `id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES ('1', '1', '1', 'Dawid', 'Mostowski', '145', '535525904', 'dawid.mostowski@secur-it.pl', 'dmostowski', '0a122bc6fa5426260c1d55ecdce0bb3765725429', '1', '100');
 
 INSERT INTO `users`(`id_user`, `id_employee`, `id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) 
 VALUES ('2', NULL, '2', 'Test', 'Test', '145', '111111111', 'test@test.pl', 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '1', NULL);
