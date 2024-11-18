@@ -1,34 +1,4 @@
-<?php
-    include_once('../DB/db_accounts.php');
-    
-    if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == false) {
-        header("Location: ./login.php");
-        exit();
-    }
-    
-    $id_company = $_SESSION['id_company'];
-    $baza = new db_accounts();
-    $baza->databaseConnect();
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $username = $_POST['username'];
-        $email_address = $_POST['email_address'];
-        $id_country_code = $_POST['country_code'];
-        $phone_number = $_POST['phone_number'];
-        $password = sha1($_POST['password']);
-        $is_company_admin = 0;
-
-        $query = $baza->registerCustomer($id_company, '', '', '', $id_country_code, '', '', $phone_number, $email_address, '', $first_name, $last_name, $username, $password, $is_company_admin);
-        
-        if ($query == 1) {
-            echo "Pracownik został dodany pomyślnie.";
-        } else {
-            echo "Wystąpił błąd podczas dodawania pracownika.";
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -46,6 +16,38 @@
             <?php
                 include("header.php");
                 include("nav.php");
+            ?>
+
+            <?php
+                include_once('../DB/db_accounts.php');
+
+                if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == false) {
+                    header("Location: ./login.php");
+                    exit();
+                }
+                
+                $id_company = $_SESSION['id_company'];
+                $baza = new db_accounts();
+                $baza->databaseConnect();
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $first_name = $_POST['first_name'];
+                    $last_name = $_POST['last_name'];
+                    $username = $_POST['username'];
+                    $email_address = $_POST['email_address'];
+                    $id_country_code = $_POST['country_code'];
+                    $phone_number = $_POST['phone_number'];
+                    $password = sha1($_POST['password']);
+                    $is_company_admin = 0;
+
+                    $query = $baza->registerCustomer($id_company, '', '', '', $id_country_code, '', '', $phone_number, $email_address, '', $first_name, $last_name, $username, $password, $is_company_admin);
+                    
+                    if ($query == 1) {
+                        echo "Pracownik został dodany pomyślnie.";
+                    } else {
+                        echo "Wystąpił błąd podczas dodawania pracownika.";
+                    }
+                }
             ?>
             <a href="./konto.php"><button>Powrót</button></a>
             <div id="addEmployeePage" class="add-employee-container">

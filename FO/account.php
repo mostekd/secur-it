@@ -1,4 +1,5 @@
 <?php
+    include_once ('../include/functions.php');
     include_once('../DB/db_accounts.php');
 ?>
 <!DOCTYPE html>
