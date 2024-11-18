@@ -61,7 +61,7 @@ create table country_codes (
 -- Tabela firmy
 create table companies (
     id_company int primary key auto_increment, -- Identyfikator firmy
-    name varchar(50), -- Nazwa
+    company_name varchar(50), -- Nazwa
     additional_name varchar(100), -- Dodatkowa nazwa
     tax varchar(20), -- NIP
     id_country_code int, -- Identyfikator numeru kierunkowego

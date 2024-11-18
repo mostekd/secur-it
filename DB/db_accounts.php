@@ -28,7 +28,7 @@
                 // Sprawdzenie, czy podano nazwę firmy
                 if ($company_name != '') {
                     // Rejestracja firmy
-                    $query = "INSERT INTO `companies`(`name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) VALUES('".$name."', '".$additional_name."', '".$tax."', '".$id_company_country_code."', '".$company_phone_number."', '".$company_email_address."')";
+                    $query = "INSERT INTO `companies`(`company_name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) VALUES('".$company_name."', '".$additional_name."', '".$tax."', '".$id_company_country_code."', '".$company_phone_number."', '".$company_email_address."')";
                     $data = mysqli_query($this->connect, $query);
                     $id_firma = $this->connect->insert_id;
 
