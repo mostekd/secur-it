@@ -53,13 +53,13 @@
                         }
                         echo "</div>";
                     }
-                    echo "<a href='./wyloguj.php' class='button_logout'>Wyloguj się</a>";
+                    echo "<a href='./logout.php' class='button_logout'>Wyloguj się</a>";
                 } else {
                     echo "<p>Nie znaleziono danych użytkownika.</p>";
                 }
                 $baza->close();
             } else {
-                echo "<p>Musisz być <a href='./logowanie.php'>zalogowany</a>, aby zobaczyć tę stronę.</p>";
+                echo "<p>Musisz być <a href='./login.php'>zalogowany</a>, aby zobaczyć tę stronę.</p>";
             }
         ?>
     </main>
