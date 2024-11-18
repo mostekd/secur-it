@@ -33,7 +33,7 @@
                 while($row = mysqli_fetch_assoc($data))
                 {
                     echo "<div class='pracownik_ingo'>";
-                    echo "<img class='photo' src='".$row['zdjecie']."'><br>";
+                    echo "<img class='photo' src='".$row['photo']."'><br>";
                     echo "Imię: ".$row['first_name']."<br>
                     Nazwisko: ".$row['last_name']."<br>
                     Numer telefonu: Numer telefonu: " .($row['country_code']) . " " .($row['phone_number']) . "<br>
