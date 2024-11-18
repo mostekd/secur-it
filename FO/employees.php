@@ -32,12 +32,12 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='pracownik'>";
-                echo "<img class='photo' src='".$row['zdjecie']."'><br>";
-                echo "Imię: ".$row['imie']."
-                <br>Nazwisko: ".$row['nazwisko']."
-                <br>Stanowisko: ".$row['nazwa']."";
-                if(!empty($row['nazwa_dzialu'])){
-                    echo "<br>Dział: ".$row['nazwa_dzialu']."
+                echo "<img class='photo' src='".$row['photo']."'><br>";
+                echo "Imię: ".$row['first_name']."
+                <br>Nazwisko: ".$row['last_name']."
+                <br>Stanowisko: ".$row['name']."";
+                if(!empty($row['department_name'])){
+                    echo "<br>Dział: ".$row['department_name']."
                     </div>";
                 }
                 else{
