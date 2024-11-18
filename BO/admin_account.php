@@ -1,5 +1,5 @@
 <?php
-    include('../DB/db_konta.php');
+    include('../DB/ab_accounts.php');
     include_once ('../include/functions.php');
 ?>
 <!DOCTYPE html>
