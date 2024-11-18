@@ -16,7 +16,7 @@
         }
 
         function deletePost ($id_post){
-            $query = "Delete from wpisy where id_post =".$id_post.";";
+            $query = "Delete from posts where id_post =".$id_post.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id_post']);
             $this->close();
