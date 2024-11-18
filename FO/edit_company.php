@@ -1,4 +1,5 @@
 <?php
+include_once ('../include/functions.php');
 include('../DB/db_firmy.php');
 
 $baza = new db_firmy();
