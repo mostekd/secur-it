@@ -20,28 +20,28 @@
     include("./admin_nav.php");
 ?>
     <div class="panel_lewy">
-    <a class="przycisk" href="./dodawanie_pracownika.php"><i class="fa-solid fa-user-plus" style="color: #fff;"></i>Dodaj pracownika</a>
+    <a class="przycisk" href="./add_amployee.php"><i class="fa-solid fa-user-plus" style="color: #fff;"></i>Dodaj pracownika</a>
     </div>
     <main class="main">
         <?php
-            include('../DB/db_pracownicy.php');
-            $baza = new db_pracownicy();
+            include('../DB/db_employees.php');
+            $baza = new db_employees();
             $baza->databaseConnect();
-            $data = $baza->selectPracownik();
+            $data = $baza->selectEmployee();
             if (!empty($data)){
             ?>
         <div class="tresc">
         <?php
             while($row = mysqli_fetch_assoc($data))
             {
-                echo "<a href='./pracownik.php?id_pracownik=".$row['id_pracownik']."'>";
+                echo "<a href='./employee.php?id_employee=".$row['id_employee']."'>";
                 echo "<div class='pracownik'>";
-                echo "<img class='photo' src='".$row['zdjecie']."'><br>";
-                echo "Imię: ".$row['imie']."
-                <br>Nazwisko: ".$row['nazwisko']."
-                <br>Stanowisko: ".$row['nazwa']."";
-                if(!empty($row['nazwa_dzialu'])){
-                    echo "<br>Dział: ".$row['nazwa_dzialu']."
+                echo "<img class='photo' src='".$row['photo']."'><br>";
+                echo "Imię: ".$row['first_name']."
+                <br>Nazwisko: ".$row['last_name']."
+                <br>Stanowisko: ".$row['name']."";
+                if(!empty($row['department_name'])){
+                    echo "<br>Dział: ".$row['department_name']."
                     </div> </a>";
                 }
                 else{
