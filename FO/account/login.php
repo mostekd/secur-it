@@ -23,7 +23,7 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
             $encrypted = sha1($password);
-            $data = $baza->selectKlient($username, $encrypted);
+            $data = $baza->selectCustomer($username, $encrypted);
 
             if ($data && mysqli_num_rows($data) > 0) {
                 $user = mysqli_fetch_assoc($data);

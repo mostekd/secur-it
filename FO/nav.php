@@ -4,12 +4,12 @@ if(!isset($_SESSION['sesja'])){
     $_SESSION['sesja'] = "test";
 }
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    $id_uzytkownik = $_SESSION['id_uzytkownik'];
-    $czy_admin = $_SESSION['czy_admin'];
+    $id_user = $_SESSION['id_user'];
+    $is_admin = $_SESSION['is_admin'];
 }
 else {
-    $id_uzytkownik = 0;
-    $czy_admin  = 0;
+    $id_user = 0;
+    $is_admin  = 0;
 }
 ?>
 <nav class="top-nav">
@@ -49,7 +49,7 @@ else {
             </div>
         </div>
         <?php
-            if($czy_admin == 1){
+            if($is_admin == 1){
         ?>
         <div class="dropdown-kontakt">
             <div class="dropdown-top-kontakt">
@@ -78,7 +78,7 @@ else {
                 <li class="dropdown-item" style="--i:8;--j:3"><a href="./serwis_komputerowy.php"></a>Serwis Komputerowy</li>
                 <li class="dropdown-item" style="--i:9;--j:2"> <a href="./contact.php"></a>Kontakt</li>
                 <?php
-                    if($czy_admin == 1){
+                    if($is_admin == 1){
                         echo "<li class='dropdown-item' style='--i:10;--j:1'><a href='../BO/admin_panel.php'></a>Panel Administratora</li>";
                     }
                 ?>
