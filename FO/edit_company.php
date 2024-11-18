@@ -48,9 +48,9 @@ $baza->close();
 
         <section class="form-section">
             <h2>Edytuj Dane Firmy</h2>
-            <form action="edytuj_firme.php?id_firma=<?php echo $id_company; ?>" method="post">
-                <label for="nazwa">Nazwa firmy:</label>
-                <input type="text" id="nazwa" name="nazwa" value="<?php echo $company['name']; ?>" required><br>
+            <form action="edit_company.php?id_firma=<?php echo $id_company; ?>" method="post">
+                <label for="name">Nazwa firmy:</label>
+                <input type="text" id="nazwa" name="name" value="<?php echo $company['name']; ?>" required><br>
 
                 <label for="additional_name">Nazwa firmy cd:</label>
                 <input type="text" id="additional_name" name="additional_name" value="<?php echo $company['additional_name']; ?>" required><br>
@@ -68,13 +68,13 @@ $baza->close();
                     $data = $baza_numery->selectCountryCodes();
                     if ($data) {
                         echo '<div class="phone_number">';
-                        echo '<select class="kierunkowy" name="country_code">';
+                        echo '<select class="kierunkowy" name="id_country_code">';
                         while ($row = mysqli_fetch_assoc($data)) {
                             $text = '<option value="' . $row["id_country_code"] . '"';
                             if ($row["id_country_code"] == $selectedId) {
                                 $text .= ' selected="selected"';
                             }
-                            $text .= '> ' . $row["country_code"] . ' ' . $row["kraj"] . '</option>';
+                            $text .= ' value=' .$row["id_country_code"] .'> ' .$row["country_code"]. " " .$row["country"] .'</option>';
                             echo $text;
                         }
                         echo '</select>';

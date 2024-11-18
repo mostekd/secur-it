@@ -24,7 +24,7 @@
             include('../DB/db_employees.php');
             $baza = new db_employees();
             $baza->databaseConnect();
-            $data = $baza->selectPracownik();
+            $data = $baza->selectEmployee();
             if (!empty($data)){
             ?>
         <div class="tresc">
