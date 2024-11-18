@@ -2,7 +2,7 @@
 include_once("db_connection.php");
 class db_employees extends db_connection{
         function selectEmployeeById($id_employee){
-            $query = "SELECT u.first_name, u.last_name, u.id_country_code, cc.id_country_code, u.phone_number, u.email_address, e.home_address, e.date_of_birth, e.photo, c.*, s.nazwa, d.nazwa_dzialu
+            $query = "SELECT u.first_name, u.last_name, u.id_country_code, cc.country_code, u.phone_number, u.email_address, e.home_address, e.date_of_birth, e.photo, c.*, p.name, d.department_name
             FROM `users` AS u
             LEFT JOIN country_codes AS cc ON u.id_country_code = cc.id_country_code
             LEFT JOIN employees AS e ON u.id_employee = e.id_employee

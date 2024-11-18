@@ -23,40 +23,40 @@
             ?>
             <div id="contactInfo" class="contact-container">
             <?php
-                include('../DB/db_pracownicy.php');
-                $baza = new db_pracownicy();
+                include('../DB/db_employees.php');
+                $baza = new db_employees();
                 
                 $baza->databaseConnect();
-                $id_pracownik = $_GET['id_pracownik'];
-                $data = $baza->selectPracownikById($id_pracownik);
+                $id_employee = $_GET['id_employee'];
+                $data = $baza->selectEmployeeById($id_employee);
                 
                 while($row = mysqli_fetch_assoc($data))
                 {
                     echo "<div class='pracownik_ingo'>";
                     echo "<img class='photo' src='".$row['zdjecie']."'><br>";
-                    echo "Imię: ".$row['imie']."<br>
-                    Nazwisko: ".$row['nazwisko']."<br>
-                    Numer telefonu: Numer telefonu: " .($row['numer_kierunkowy']) . " " .($row['numer_telefonu']) . "<br>
-                    Adres e-mail: ".$row['adres_e_mail']."<br>
-                    Adres zamieszkania: ".$row['adres_zamieszkania']."<br>
-                    Data urodzenia: ".$row['data_urodzenia']."<br>
-                    Numer umowy: ".$row['numer_umowy']."<br>
+                    echo "Imię: ".$row['first_name']."<br>
+                    Nazwisko: ".$row['last_name']."<br>
+                    Numer telefonu: Numer telefonu: " .($row['country_code']) . " " .($row['phone_number']) . "<br>
+                    Adres e-mail: ".$row['email_address']."<br>
+                    Adres zamieszkania: ".$row['home_address']."<br>
+                    Data urodzenia: ".$row['date_of_birth']."<br>
+                    Numer umowy: ".$row['contract_number']."<br>
                     PESEL: ".$row['PESEL']."<br>
-                    Numer ubezpieczenia: ".$row['numer_ubezpieczenia']."<br>
-                    Okres zatrudnienia: ".$row['okres_zatrudnienia']."<br>
-                    Data rozpoczęcia pracy: ".$row['data_rozpoczecia_pracy']."<br>
-                    Data zakończenia pracy: ".$row['data_zakonczenia_pracy']."<br>
-                    Wynagrodzenie: ".$row['wynagrodzenie']."<br>
-                    Wysokość premii: ".$row['premia']."<br>
-                    Lokalizacja pracy: ".$row['id_lokalizacja_pracy']."<br>
-                    Stanowisko: ".$row['nazwa']."<br>
-                    Dział: ".$row['nazwa_dzialu']."
+                    Numer ubezpieczenia: ".$row['insurance_number']."<br>
+                    Okres zatrudnienia: ".$row['employment_period']."<br>
+                    Data rozpoczęcia pracy: ".$row['start_date']."<br>
+                    Data zakończenia pracy: ".$row['end_date']."<br>
+                    Wynagrodzenie: ".$row['salary']."<br>
+                    Wysokość premii: ".$row['bonus']."<br>
+                    Lokalizacja pracy: ".$row['id_work_location']."<br>
+                    Stanowisko: ".$row['name']."<br>
+                    Dział: ".$row['department_name']."
                     </div>";
                 }
 
                 $baza->close();
             ?>
-            <a href="./admin_pracownicy.php">Powrót</a>
+            <a href="./admin_employee.php">Powrót</a>
             </div>
         </main>
     </body>
