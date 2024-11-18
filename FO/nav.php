@@ -10,7 +10,7 @@
             </div>
             <ol class="dropdown-list">
                 <li class="dropdown-item" style="--i:1;--j:2"><a href="./about_company.php"></a>O Firmie</li>
-                <li class="dropdown-item" style="--i:2;--j:2"><a href="./employess.php"></a>Pracownicy</li>
+                <li class="dropdown-item" style="--i:2;--j:2"><a href="./employees.php"></a>Pracownicy</li>
                 <li class="dropdown-item" style="--i:3;--j:1"><a href="./posts.php"></a>Wpisy</li>
             </ol>
         </div>
@@ -55,7 +55,7 @@
             </div>
             <ol class="dropdown-list">
                 <li class="dropdown-item" style="--i:1;--j:10"><a href="./about_company.php"></a>O Firmie</li>
-                <li class="dropdown-item" style="--i:2;--j:9"><a href="./employess.php"></a>Pracownicy</li>
+                <li class="dropdown-item" style="--i:2;--j:9"><a href="./employees.php"></a>Pracownicy</li>
                 <li class="dropdown-item" style="--i:3;--j:8"><a href="./posts.php"></a>Wpisy</li>
                 <li class="dropdown-item" style="--i:4;--j:7"><a href="./networks.php"></a>Sieci komputerowe</li>
                 <li class="dropdown-item" style="--i:5;--j:6"><a href="./systems.php"></a>Systemy Operacyjne</li>
