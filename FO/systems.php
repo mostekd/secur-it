@@ -18,10 +18,10 @@
             include("nav.php");
         ?>
         <?php
-            include('../DB/db_uslugi.php');
-            $baza = new db_uslugi();
+            include('../DB/db_services.php');
+            $baza = new db_services();
             $baza->databaseConnect();
-            $data = $baza->selectUslugi_systemy();
+            $data = $baza->selectServices_systems();
             if (!empty($data)){
             ?>
         <div class="tresc">
@@ -29,9 +29,9 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='artykul'>
-                ".$row['nazwa']."
-                <br>".$row['opis']."
-                <br>".$row['cena']."
+                ".$row['name']."
+                <br>".$row['description']."
+                <br>".$row['price']."
                 </div>";
             }
             }else {

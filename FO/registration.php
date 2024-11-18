@@ -6,7 +6,6 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $account_type = $_POST['account_type'];
-        $id_company = null;
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $company_name = ($account_type == 'company') ? $_POST['company_name'] : '';
@@ -20,8 +19,7 @@
         $company_phone_number = $_POST['company_phone_number'];
         $phone_number = $_POST['phone_number'];
         $password = sha1($_POST['password']);
-        $is_company_admin = '0';
-
+        
         // Obsługa zapisu danych do bazy
         $return = $baza->registerCustomer($id_company,$company_name = '', $additional_name = '', $tax = '', $id_country_code, $id_company_country_code = '', $company_phone_number = '', $phone_number, $email_address, $company_email_address = '', $first_name, $last_name, $username, $password);
         if(isset($return)){

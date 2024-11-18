@@ -90,7 +90,7 @@
         }
         function selectCustomerByIdCompany($id_company)
         {
-            $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code, cc.id_country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin
+            $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, cc.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin
             FROM users as u
             JOIN country_codes as cc ON cc.id_country_code = u.id_country_code
             WHERE u.id_company =".$id_company;

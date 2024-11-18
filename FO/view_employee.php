@@ -1,6 +1,6 @@
 <?php
     include_once ('../include/functions.php');
-    include_once('../DB/db_konta.php');
+    include_once('../DB/db_accounts.php');
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -22,24 +22,24 @@
             include("nav.php");
         
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                $id_uzytkownik = $_SESSION['id_uzytkownik'];
-                $id_firma = $_SESSION['id_firma'];
+                $id_user = $_SESSION['id_user'];
+                $id_company = $_SESSION['id_company'];
 
-                $baza = new db_konta();
+                $baza = new db_accounts();
                 $baza->databaseConnect();
-                $data = $baza->selectKontoByIdFirma($id_firma);
+                $data = $baza->selectCustomerByIdCompany($id_company);
                 if (!empty($data)){
                     ?>
-                    <a href="./konto.php"><button>Powrót</button></a>
+                    <a href="./account.php"><button>Powrót</button></a>
                     <div class="tresc">
                     <?php
                     while($row = mysqli_fetch_assoc($data))
                     {
                         echo "<div class='user_page'>";
-                        echo "<p>Imię: ".$row['imie']."
-                        </p><p>Nazwisko: ".$row['nazwisko']."
-                        </p><p>Email: ".$row['uae']."
-                        </p><p>Numer teoefonu: ".$row['unk']." ".$row['unt']."</p></div>";
+                        echo "<p>Imię: ".$row['first_name']."
+                        </p><p>Nazwisko: ".$row['last_name']."
+                        </p><p>Email: ".$row['uea']."
+                        </p><p>Numer teoefonu: ".$row['ucc']." ".$row['upn']."</p></div>";
                     }
                 }else {
                     echo "Brak pracowników";

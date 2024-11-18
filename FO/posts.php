@@ -21,10 +21,10 @@
             include("nav.php");
         ?>
         <?php
-            include('../DB/db_wpisy.php');
-            $baza = new db_wpisy();
+            include('../DB/db_posts.php');
+            $baza = new db_posts();
             $baza->databaseConnect();
-            $data = $baza->selectCheckWpis();
+            $data = $baza->selectCheckedPost();
             if (!empty($data)){
             ?>
         <div class="tresc">
@@ -32,9 +32,9 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='artykul'>
-                ".$row['tytul']."
-                <br>".$row['tresc']."
-                <br>".$row['data_zatwierdzenia']."
+                ".$row['title']."
+                <br>".$row['content']."
+                <br>".$row['approval_date']."
                 </div>";
             }
             }else {

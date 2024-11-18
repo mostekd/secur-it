@@ -38,10 +38,10 @@
                     echo "<p>Email: " . ($user['uea']) . "</p>";
                     
                     // Sprawdzamy, czy użytkownik należy do firmy
-                    if (!empty($user['name'])) {
+                    if (!empty($user['company_name'])) {
                         echo "</div><div class='firma_page'>";
                         echo "<h2>Twoja Firma:</h2>";
-                        echo "<p>Nazwa firmy:  " . ($user['name']) . " " . ($user['additional_name']) . "</p>";
+                        echo "<p>Nazwa firmy:  " . ($user['company_name']) . " " . ($user['additional_name']) . "</p>";
                         echo "<p>NIP: " . ($user['tax']) . "</p>";
                         echo "<p>Numer telefonu firmy: " . ($user['ccc']) . " " . ($user['cpn']) . "</p>";
                         echo "<p>Email firmy: " . ($user['cea']) . "</p>";

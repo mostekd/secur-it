@@ -56,7 +56,7 @@
             $this->close();
         }
 
-        function updateServices ($id_service, $name, $description, $cena){
+        function updateServices ($id_service, $name, $description, $price){
             $query = "UPDATE `uslugi` SET `name`='".$name."',`description`='".$description."',`price`='".$price."' WHERE `id_service`=".$id_service.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id_service']);
