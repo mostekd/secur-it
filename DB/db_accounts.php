@@ -30,7 +30,7 @@
                     // Rejestracja firmy
                     $query = "INSERT INTO `companies`(`company_name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) VALUES('".$company_name."', '".$additional_name."', '".$tax."', '".$id_company_country_code."', '".$company_phone_number."', '".$company_email_address."')";
                     $data = mysqli_query($this->connect, $query);
-                    $id_firma = $this->connect->insert_id;
+                    $id_company = $this->connect->insert_id;
 
                     if ($data) {
                         // Ustawienie użytkownika jako administratora firmy
@@ -41,7 +41,7 @@
                 }
 
                 // Krok 3: Rejestracja użytkownika
-                $query = "INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES (null, '".$id_company."', '".$first_name."', '".$last_name."', '".$id_country_code."', '".$phone_number."', '".$email_address."', '".$username."', '".$password."', '".$is_company_admin."', null)";
+                $query = "INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES ('".$id_company."', '".$first_name."', '".$last_name."', '".$id_country_code."', '".$phone_number."', '".$email_address."', '".$username."', '".$password."', '".$is_company_admin."', null)";
                 $data = mysqli_query($this->connect, $query);
 
                 if ($data) {
