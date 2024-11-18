@@ -1,8 +1,8 @@
 zmienić język na angielski - dawid
 ustawić odpowiednie ścieżki do plików - dawid
-nie pobiera id_numer_kierunkowy użytkownika z bazy przy zalogowanym użytkowniku (contact.php)
-ogólnie css do strony
-Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony.
+nie pobiera id_numer_kierunkowy użytkownika z bazy przy zalogowanym użytkowniku (contact.php) - Pan Tomek
+ogólnie css do strony - konrad
+Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony. - dawid i Pan Tomek
 TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
-komunikaty przy błędzie rejestracji
-w panelu administracyjnym możliwość przypisania problemu z admin_kontakt do pracownika oraz jego przepisanie do innego pracownika
+komunikaty przy błędzie rejestracji - Pan Tomek
+w panelu administracyjnym możliwość przypisania problemu z admin_kontakt do pracownika oraz jego przepisanie do innego pracownika - Pan Tomek
