@@ -1,6 +1,5 @@
 Dawid:
     zmienić język na angielski - dawid
-    ustawić odpowiednie ścieżki do plików - dawid
 
 Konrad:
     TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
