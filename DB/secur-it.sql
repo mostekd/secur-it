@@ -550,7 +550,7 @@ INSERT INTO `discounts`(`id_discount`, `discount_value`) VALUES
 ('99','0,99'),
 ('100','1');
 
-INSERT INTO `companies`(`id_company`, `name`, `additional_name`, `tax_id`, `id_country_code`, `phone_number`, `email_address`) 
+INSERT INTO `companies`(`id_company`, `name`, `additional_name`, `tax`, `id_country_code`, `phone_number`, `email_address`) 
 VALUES ('2', 'testcompany', 'testcompanycd', 'testNIP', '144', '121212121', 'testf@test.pl');
 
 INSERT INTO `users`(`id_user`, `id_employee`, `id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) 
