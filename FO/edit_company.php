@@ -17,14 +17,14 @@ if (isset($_SESSION['id_company'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
-    $name = $_POST['name'];
+    $company_name = $_POST['company_name'];
     $additional_name = $_POST['additional_name'];
     $tax = $_POST['tax'];
     $id_country_code = $_POST['id_country_code'];
     $phone_number = $_POST['phone_number'];
     $email_address = $_POST['email_address'];
 
-    $baza->updateCompany($id_company, $name, $additional_name, $tax, $id_country_code, $phone_number, $email_address);
+    $baza->updateCompany($id_company, $company_name, $additional_name, $tax, $id_country_code, $phone_number, $email_address);
 }
 $baza->close();
 ?>
@@ -50,7 +50,7 @@ $baza->close();
             <h2>Edytuj Dane Firmy</h2>
             <form action="edit_company.php?id_firma=<?php echo $id_company; ?>" method="post">
                 <label for="name">Nazwa firmy:</label>
-                <input type="text" id="nazwa" name="name" value="<?php echo $company['name']; ?>" required><br>
+                <input type="text" id="nazwa" name="name" value="<?php echo $company['company_name']; ?>" required><br>
 
                 <label for="additional_name">Nazwa firmy cd:</label>
                 <input type="text" id="additional_name" name="additional_name" value="<?php echo $company['additional_name']; ?>" required><br>
