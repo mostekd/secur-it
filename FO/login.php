@@ -34,7 +34,7 @@
                 $_SESSION['is_admin'] = $user['is_admin'];
                 $_SESSION['id_employee'] = $user['id_employee'];
                 
-                header("Location: ./konto.php");
+                header("Location: ./account.php");
             } else {
                 $_SESSION['loggedin'] = false;
                 $error_message = "Nieprawidłowa nazwa użytkownika lub hasło.";

@@ -16,8 +16,8 @@
                 if ($data && mysqli_num_rows($data) > 0) {
                     $user = mysqli_fetch_assoc($data);
                     echo "<div class='user_page'>";
-                    echo "<a href='./konto.php'><i class='fa-solid fa-user'></i> ";
-                    echo htmlspecialchars($user['nick']);
+                    echo "<a href='./account.php'><i class='fa-solid fa-user'></i> ";
+                    echo htmlspecialchars($user['username']);
                     echo "</a></div>";
                 }
                 $baza->close();

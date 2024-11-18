@@ -80,7 +80,7 @@
             FROM users as u
             JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
             JOIN companies as c ON c.id_company = u.id_company
-            JOIN country_codes as cc2 ON cc2.id_country_code = f.id_country_code 
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
             WHERE id_user =".$id_user;
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0) 
