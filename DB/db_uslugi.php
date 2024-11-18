@@ -1,65 +1,65 @@
 <?php
     include_once("db_connection.php");
-    class db_uslugi extends db_connection{
-        function selectUslugi_sieci(){
-            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 1';
+    class db_services extends db_connection{
+        function selectServices_networks(){
+            $query = 'SELECT * FROM `services` WHERE id_service_type = 1';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
             }
         }
         
-        function selectUslugi_systemy(){
-            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 2';
+        function selectServices_systems(){
+            $query = 'SELECT * FROM `services` WHERE id_service_type = 2';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
             }
         }
 
-        function selectUslugi_bazy_danych(){
-            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 3';
+        function selectServices_databases(){
+            $query = 'SELECT * FROM `services` WHERE id_service_type = 3';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
             }
         }
 
-        function selectUslugi_strony_internetowe(){
-            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 4';
+        function selectServices_websites(){
+            $query = 'SELECT * FROM `services` WHERE id_service_type = 4';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
             }
         }
 
-        function selectUslugi_serwis_komputerowy(){
-            $query = 'SELECT * FROM `uslugi` WHERE id_typ_uslugi = 5';
+        function selectServices_computer_service(){
+            $query = 'SELECT * FROM `services` WHERE id_service_type = 5';
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;
             }
         }
 
-        function insertUslugi ($nazwa, $opis, $cena){
-            $query = "INSERT INTO `uslugi`(`nazwa`, `opis`, `cena`) VALUES ('".$nazwa."','".$opis."','".$cena."');";
+        function insertServices ($name, $description, $price){
+            $query = "INSERT INTO `services`(`name`, `description`, `price`) VALUES ('".$name."','".$description."','".$price."');";
             $data = mysqli_query($this->connect, $query);
             header('location: ../BO/uslugi.php'); 
             $this->close();
         }
 
-        function deleteUslugi ($id_uslugi){
-            $query = "Delete from uslugi where id_uslugi =".$id_uslugi.";";
+        function deleteServices ($id_service){
+            $query = "Delete from services where id_service =".$id_service.";";
             $data = mysqli_query($this->connect, $query);
-            unset($_GET['id']);
+            unset($_GET['id_service']);
             header('location: ../BO/uslugi.php'); 
             $this->close();
         }
 
-        function updateUslugi ($id_uslugi, $nazwa, $opis, $cena){
-            $query = "UPDATE `uslugi` SET `nazwa`='".$nazwa."',`opis`='".$opis."',`cena`='".$cena.";";
+        function updateServices ($id_service, $name, $description, $cena){
+            $query = "UPDATE `uslugi` SET `name`='".$name."',`description`='".$description."',`price`='".$price."' WHERE `id_service`=".$id_service.";";
             $data = mysqli_query($this->connect, $query);
-            unset($_GET['id']);
+            unset($_GET['id_service']);
             header('location: ../BO/uslugi.php');  
             $this->close();
         }
