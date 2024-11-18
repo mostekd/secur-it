@@ -93,7 +93,7 @@ $baza->close();
                 <input type="email" id="email_address" name="email_address" value="<?php echo $company['email_address']; ?>" required><br>
 
                 <button type="submit" name="update">Zaktualizuj dane</button>
-                <button><a href="./konto.php">Powrót</a></button>
+                <button><a href="./account.php">Powrót</a></button>
             </form>
         </section>
     </main>
