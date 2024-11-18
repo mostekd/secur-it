@@ -18,10 +18,10 @@
             include("nav.php");
         ?>
         <?php
-            include('../DB/db_o_firmie.php');
-            $baza = new db_o_firmie();
+            include('../DB/db_about_company.php');
+            $baza = new db_about_company();
             $baza->databaseConnect();
-            $data = $baza->selectOFirmie();
+            $data = $baza->selectAbout_company();
             if (!empty($data)){
             ?>
         <div class="tresc">
@@ -29,8 +29,8 @@
             while($row = mysqli_fetch_assoc($data))
             {
                 echo "<div id='wpis' class='artykul'>
-                Tytuł:<br> ".$row['tytul']."
-                <br>Treść:<br> ".$row['opis']."
+                Tytuł:<br> ".$row['title']."
+                <br>Treść:<br> ".$row['description']."
                 </div><br>";
             }
             }else {

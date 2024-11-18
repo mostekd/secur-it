@@ -1,6 +1,6 @@
 <?php
     include_once("db_connection.php");
-    class db_accounts extends db_connection {
+    class    extends db_connection {
         function selectCustomer($login, $encrypted)
         {
             $query = "SELECT * FROM `users` AS u 

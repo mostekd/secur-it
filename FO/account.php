@@ -1,5 +1,5 @@
 <?php
-    include_once('../DB/db_konta.php');
+    include_once('../DB/db_accounts.php');
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -21,32 +21,32 @@
             include("nav.php");
 
             if (/*isset($_SESSION['loggedin']) && */ $_SESSION['loggedin'] === true) {
-                $id_uzytkownik = $_SESSION['id_uzytkownik'];
+                $id_user = $_SESSION['id_user'];
 
-                $baza = new db_konta();
+                $baza = new db_accounts();
                 $baza->databaseConnect();
-                $data = $baza->selectKontoById($id_uzytkownik, null);
+                $data = $baza->selectCustomerById($id_user, null);
 
                 if ($data && mysqli_num_rows($data) > 0) {
                     $user = mysqli_fetch_assoc($data);
                     echo "<div class='user_page'>";
-                    echo "<h2>Witaj, " . htmlspecialchars($user['nick']) . "!</h2>";
-                    echo "<p>Imię: " . htmlspecialchars($user['imie']) . "</p>";
-                    echo "<p>Nazwisko: " . htmlspecialchars($user['nazwisko']) . "</p>";
-                    echo "<p>Email: " . htmlspecialchars($user['uae']) . "</p>";
-                    echo "<p>Numer telefonu: " . htmlspecialchars($user['unk']) . " " . htmlspecialchars($user['unt']) . "</p>";
+                    echo "<h2>Witaj, " . ($user['username']) . "!</h2>";
+                    echo "<p>Imię: " . ($user['first_name']) . "</p>";
+                    echo "<p>Nazwisko: " . ($user['last_name']) . "</p>";
+                    echo "<p>Email: " . ($user['uea']) . "</p>";
+                    echo "<p>Numer telefonu: " . ($user['ucc']) . " " . ($user['upn']) . "</p>";
                     
                     // Sprawdzamy, czy użytkownik należy do firmy
-                    if (!empty($user['nazwa'])) {
+                    if (!empty($user['name'])) {
                         echo "</div><div class='firma_page'>";
                         echo "<h2>Twoja Firma:</h2>";
-                        echo "<p>Nazwa firmy:  " . htmlspecialchars($user['nazwa']) . " " . htmlspecialchars($user['nazwa_cd']) . "</p>";
-                        echo "<p>NIP: " . htmlspecialchars($user['nip']) . "</p>";
-                        echo "<p>Numer telefonu firmy: " . htmlspecialchars($user['fnk']) . " " . htmlspecialchars($user['fnt']) . "</p>";
-                        echo "<p>Email firmy: " . htmlspecialchars($user['fae']) . "</p>";
+                        echo "<p>Nazwa firmy:  " . ($user['name']) . " " . ($user['additional_name']) . "</p>";
+                        echo "<p>NIP: " . ($user['tax']) . "</p>";
+                        echo "<p>Numer telefonu firmy: " . ($user['ccc']) . " " . ($user['cpn']) . "</p>";
+                        echo "<p>Email firmy: " . ($user['cea']) . "</p>";
                         
                         // Dodanie opcji administracyjnych, jeśli użytkownik jest administratorem firmy
-                        if ($user['czy_admin_firmy'] == 1) {
+                        if ($user['is_company_admin'] == 1) {
                             echo "<a href='./dodaj_pracownika.php'><button>Dodaj pracownika</button</a>";
                             echo "<a href='./wyswietl_pracownikow.php'><button>Wyświetl pracowników</botton></a>";
                             echo "<a href='./edytuj_firme.php'><button>Edytuj dane firmy</button></a>";
