@@ -30,19 +30,19 @@
             if(isset($_GET['opcja'])){
                 if($_GET['opcja'] == 'przypisz'){
                     $id_contact_form = $_GET['id_contact_form'];
-                    $first_name = $_GET['first_name'];
-                    $last_name = $_GET['last_name'];
-                    $email = $_GET['email'];
-                    $id_country_code = $_GET['id_country_code'];
-                    $phone_number = $_GET['phone_number'];
-                    $title = $_GET['title'];
-                    $message = $_GET['message'];
-                    $consent = 0;
-                    if(isset($_GET['consent'])){
-                       $consent = 1;
-                    }
+                    // $first_name = $_GET['first_name'];
+                    // $last_name = $_GET['last_name'];
+                    // $email = $_GET['email'];
+                    // $id_country_code = $_GET['id_country_code'];
+                    // $phone_number = $_GET['phone_number'];
+                    // $title = $_GET['title'];
+                    // $message = $_GET['message'];
+                    // $consent = 0;
+                    // if(isset($_GET['consent'])){
+                    //    $consent = 1;
+                    // }
 
-                    $baza->updateContact($id_contact_form, $first_name, $last_name, $email, $id_country_code, $phone_number, $title, $message, $consent, $id_employee);
+                    $baza->updateContactSetEmployee($id_contact_form, $id_employee);
                 }}
         ?>
         <main class="main">

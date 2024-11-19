@@ -45,5 +45,12 @@
                 return $data;
             }
         }
+
+        function updateContactSetEmployee($id_contact_form, $id_employee){
+            $query = "UPDATE `contact_form` SET `id_employee`=".$id_employee." WHERE  `id_contact_form`=".$id_contact_form.";";
+            $data = mysqli_query($this->connect, $query);
+            unset($_GET['id_contact_form']); 
+            $this->close();
+        }
     }
 ?>
