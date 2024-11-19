@@ -108,26 +108,32 @@
                         <br>
                         <div class="phonenumber">
                             <?php
+                                
                                 $baza = new db_country_codes();
                                 $baza->databaseConnect();
-                
-                                $dataPolska = $baza->selectCountryCodesPolska();
-                                if ($dataPolska){
-                                    while ($row = mysqli_fetch_assoc($dataPolska)){
-                                        $selectedId = $row["id_country_code"];
-                                    } 
-                                }
                                 
-                                $data = $baza->selectCountryCodes();
-                                if ($data){
+                                if(isset($userData['uicc'])){
+                                    $selectedId = $userData["uicc"];
+                                }
+                                else {
+                                    $dataPolska = $baza->selectCountryCodesPolska();
+                                    if($dataPolska){
+                                        while ($row = mysqli_fetch_assoc($dataPolska)){
+                                            $selectedId = $row["id_country_code"];
+                                        }
+                                    }
+                                } 
+                                
+                                $dataCountryCode = $baza->selectCountryCodes();
+                                if ($dataCountryCode){
                                     
                                 echo '<div class="phone_number">';
                                 echo '<select class="kierunkowy" name="id_country_code" default="">';
-                                while ($row = mysqli_fetch_assoc($data)){
+                                while ($row = mysqli_fetch_assoc($dataCountryCode)){
                                     $text = '<option id="pole" class="kierunkowy"';
                                     if($row["id_country_code"] == $selectedId)
                                     {
-                                    $text .= 'selected = "selected"';
+                                    $text .= ' selected ';
                                     } 
                                     $text .= ' value=' .$row["id_country_code"] .'> ' .$row["country_code"]. " " .$row["country"] .'</option>';
 
@@ -135,7 +141,7 @@
                                 }
                                     echo '</select>';
 
-                                    mysqli_free_result($data);
+                                    mysqli_free_result($dataCountryCode);
                                 } else {
                                     echo "Błąd zapytania: " .mysqli_error($connection);
                                 }

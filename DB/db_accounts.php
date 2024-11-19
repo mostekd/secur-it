@@ -76,7 +76,7 @@
     
         function selectCustomerById($id_user, $id_company)
         {
-            $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
             FROM users as u
             JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
             JOIN companies as c ON c.id_company = u.id_company
