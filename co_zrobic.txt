@@ -6,7 +6,6 @@ Konrad:
     ogólnie css do strony - konrad
 
 Pan Tomasz:
-    nie pobiera id_numer_kierunkowy użytkownika z bazy przy zalogowanym użytkowniku (contact.php) - Pan Tomek
     komunikaty przy błędzie rejestracji - Pan Tomek
     w panelu administracyjnym możliwość przypisania problemu z admin_kontakt do pracownika oraz jego przepisanie do innego pracownika - Pan Tomek
 
