@@ -1,6 +1,3 @@
-Dawid:
-    zmienić język na angielski - dawid
-
 Konrad:
     TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
     ogólnie css do strony - konrad
