@@ -1,5 +1,9 @@
 <?php
     include_once ('../include/functions.php');
+
+    if ($id_employee == 0){
+        header('Location: ../FO/account.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pl">

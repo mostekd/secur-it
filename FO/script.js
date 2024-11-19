@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function toggleUserData(checkbox) {
-    const fields = ['first_name', 'last_name', 'email', 'phone_number'];
+    const fields = ['first_name', 'last_name', 'email', 'country_code', 'phone_number'];
     fields.forEach(fieldId => {
         const field = document.getElementById(fieldId);
         if (checkbox.checked) {

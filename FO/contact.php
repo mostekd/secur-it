@@ -128,7 +128,7 @@
                                 if ($dataCountryCode){
                                     
                                 echo '<div class="phone_number">';
-                                echo '<select class="kierunkowy" name="id_country_code" default="">';
+                                echo '<select class="kierunkowy" id="country_code" name="id_country_code" default="">';
                                 while ($row = mysqli_fetch_assoc($dataCountryCode)){
                                     $text = '<option id="pole" class="kierunkowy"';
                                     if($row["id_country_code"] == $selectedId)
