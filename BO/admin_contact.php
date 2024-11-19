@@ -50,7 +50,8 @@
             <?php 
                 if ($kontakty && mysqli_num_rows($kontakty) > 0): 
             ?>
-            <table class="kontakt_table" border="1" cellpadding="15" cellspacing="0">
+            <form class="MyClass" action="admin_contact.php" method='get'>
+            <table class="kontakt_table"border="1" cellpadding="15" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Imię</th>
@@ -78,7 +79,8 @@
                                 <td><?php echo $row['consent'] ? 'Tak' : 'Nie'; ?></td>
                                 <?php
                                     if ($row['ufn'] == null){
-                                        echo "<td><input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input><input type='submit' value='Przypisz'></input></td>";
+                                        echo "<td><input type=hidden name='opcja' id='opcja' class='opcja' value='przypisz'></input>
+                                        <input type='submit' value='Przypisz'></input></td>";
                                     }
                                     else{
                                     ?>
@@ -92,6 +94,7 @@
                     ?>
                 </tbody>
             </table>
+            </form> 
             <?php 
                 else: 
             ?>
