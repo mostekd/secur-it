@@ -66,10 +66,10 @@
                     while($row = mysqli_fetch_assoc($data))
                     {
                         echo "<div id='service' class='service'>Nazwa: ".$row['name']." Opis: ".$row['description']." Cena: ".$row['price']."
-                        <button class='delete'><a href=book_list.php?del=True&id_service=".$row['id_service'].">
+                        <button class='delete'><a href=admin_networks.php?del=True&id_service=".$row['id_service'].">
                         Usuń usługę
                         </a></button>
-                        <button class='delete'><a href=service_edit.php?id_service=".$row['id_service'].">
+                        <button class='delete'><a href=networks_edit.php.php?id_service=".$row['id_service'].">
                         Edytuj usługę
                         </a></button>
                         </div>";

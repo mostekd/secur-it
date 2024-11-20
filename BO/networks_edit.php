@@ -33,7 +33,7 @@
                     if (!empty($data)){
                         while($row = mysqli_fetch_assoc($data))
                         {
-                            echo "<form class='MyForm' action='./book_list.php' method = 'get'>
+                            echo "<form class='MyForm' action='./admin_networks.php' method = 'get'>
                                 <input type=text  name='name' placeholder='nazwa' id='name' class='name' value=".$row['name']."></input>
                                 <textarea type=text name='description' placeholder='opis' id='description' class='description' value=".$row['description']."></textarea>
                                 <input type=number name='price' placeholder='cena' id='price' class='price' value=".$row['price']."></input>";
