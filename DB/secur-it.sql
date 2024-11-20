@@ -447,6 +447,7 @@ INSERT INTO `positions` (`name`) VALUES
 INSERT INTO `fuel_types` (`id_fuel_type`, `fuel_type`) VALUES (NULL, 'P - benzyna'), (NULL, 'D - olej napędowy'), (NULL, 'M - mieszanka paliwo-olej'), (NULL, 'LPG - gaz płynny propan-butan'), (NULL, 'CNG - gaz ziemny skroplony (metan)'), (NULL, 'H - wodór'), (NULL, 'BD - biodiesel'), (NULL, 'E85 - etanol'), (NULL, 'EE - energia elektryczna'), (NULL, '999 - inne');
 
 INSERT INTO `services` (`id_service`, `id_service_type`, `name`, `description`, `price`) VALUES ('1', '1', 'Test Sieci Komputerowe', 'Test', '200'), ('2', '2', 'Test Systemy Operacyjne', 'Test', '100'), ('3', '3', 'Test Bazy Danych', 'Test', '250'), ('4', '4', 'Test Strony Internetowe', 'Test', '500'), ('5', '5', 'Test Serwis Komputerowy', 'Test', '200');
+INSERT INTO `services` (`id_service`, `id_service_type`, `name`, `description`, `price`) VALUES ('6', '1', 'Test Sieci Komputerowe 2', 'Test', '1100'), ('7', '2', 'Test Systemy Operacyjne 2', 'Test', '1200'), ('8', '3', 'Test Bazy Danych 2', 'Test', '1300'), ('9', '4', 'Test Strony Internetowe 2', 'Test', '1400'), ('10', '5', 'Test Serwis Komputerowy 2', 'Test', '1500');
 
 INSERT INTO `discounts`(`id_discount`, `discount_value`) VALUES 
 ('1','0,01'),

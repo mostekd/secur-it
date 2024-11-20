@@ -62,6 +62,7 @@
             if (!empty($data)){ 
         ?>
             <div class="services">
+                <button><a href="./add_services.php">Dodaj usługę</a></button>
                 <?php
                     while($row = mysqli_fetch_assoc($data))
                     {
