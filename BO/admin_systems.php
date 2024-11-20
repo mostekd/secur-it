@@ -15,7 +15,7 @@
     <script src="./admin.js" defer></script>
     <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../images/ikona.png">
-    <title>Secur IT | Admin - Sieci Komputerowe</title>
+    <title>Secur IT | Admin - Systemy Operacyjne</title>
 </head>
 <body>
     <div class="tlo"></div>
@@ -37,7 +37,7 @@
                 }
                 if(isset($_GET['opcja'])){
                     if($_GET['opcja'] == 'dodaj'){
-                        $id_service_type = 1;
+                        $id_service_type = 2;
                         $name = $_GET['name'];
                         $description = $_GET['description'];
                         $price = $_GET['price'];
@@ -58,7 +58,7 @@
             }
             
             $baza->databaseConnect();
-            $data = $baza->selectServices_networks();
+            $data = $baza->selectServices_systems();
             if (!empty($data)){ 
         ?>
             <div class="services">
@@ -66,10 +66,10 @@
                     while($row = mysqli_fetch_assoc($data))
                     {
                         echo "<div id='service' class='service'>Nazwa: ".$row['name']." Opis: ".$row['description']." Cena: ".$row['price']."
-                        <button class='delete'><a href=admin_networks.php?del=True&id_service=".$row['id_service'].">
+                        <button class='delete'><a href=admin_systems.php?del=True&id_service=".$row['id_service'].">
                         Usuń usługę
                         </a></button>
-                        <button class='delete'><a href=networks_edit.php?id_service=".$row['id_service'].">
+                        <button class='delete'><a href=systems_edit.php?id_service=".$row['id_service'].">
                         Edytuj usługę
                         </a></button>
                         </div>";

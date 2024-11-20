@@ -15,7 +15,7 @@
         <script src="./admin.js" defer></script>
         <script src="https://kit.fontawesome.com/1deffa5961.js" crossorigin="anonymous"></script>
         <link rel="shortcut icon" href="../images/ikona.png">
-        <title>Secur IT | Admin - Edytuj Sieci Komputerowe</title>
+        <title>Secur IT | Admin - Edytuj Systemy Operacyjne</title>
     </head>
     <body>
         <div class="tlo"></div>
@@ -33,7 +33,7 @@
                     if (!empty($data)){
                         while($row = mysqli_fetch_assoc($data))
                         {
-                            echo "<form class='MyForm' action='./admin_networks.php' method = 'get'>
+                            echo "<form class='MyForm' action='./admin_systems.php' method = 'get'>
                                 <input type=text name='name' placeholder='nazwa' id='name' class='name' value=".$row['name']."></input>
                                 <textarea type=text name='description' placeholder='opis' id='description' class='description' value=".$row['description']."></textarea>
                                 <input type=number name='price' placeholder='cena' id='price' class='price' value=".$row['price']."></input>";
