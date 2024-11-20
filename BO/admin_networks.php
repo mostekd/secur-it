@@ -69,7 +69,7 @@
                         <button class='delete'><a href=admin_networks.php?del=True&id_service=".$row['id_service'].">
                         Usuń usługę
                         </a></button>
-                        <button class='delete'><a href=networks_edit.php.php?id_service=".$row['id_service'].">
+                        <button class='delete'><a href=networks_edit.php?id_service=".$row['id_service'].">
                         Edytuj usługę
                         </a></button>
                         </div>";
