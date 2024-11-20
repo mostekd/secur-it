@@ -75,7 +75,7 @@
                         </div>";
                     }
                     } else {
-                        echo "Brak książek";
+                        echo "Brak Usług";
                     }
                     $baza->close();
                 ?>
