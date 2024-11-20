@@ -36,15 +36,7 @@
                     $baza->deleteServices($id_service);
                 }
                 if(isset($_GET['opcja'])){
-                    if($_GET['opcja'] == 'dodaj'){
-                        $id_service_type = 5;
-                        $name = $_GET['name'];
-                        $description = $_GET['description'];
-                        $price = $_GET['price'];
-                        $comment = $_GET['comment'];
-                        $baza->insertServices ($id_service_type, $name, $description, $price);
-                    }
-                    elseif($_GET['opcja'] == 'edytuj'){
+                    if($_GET['opcja'] == 'edytuj'){
                         $id_service = $_GET['id_service'];
                         $name = $_GET['name'];
                         $description = $_GET['description'];

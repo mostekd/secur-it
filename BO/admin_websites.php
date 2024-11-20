@@ -36,15 +36,7 @@
                     $baza->deleteServices($id_service);
                 }
                 if(isset($_GET['opcja'])){
-                    if($_GET['opcja'] == 'dodaj'){
-                        $id_service_type = 4;
-                        $name = $_GET['name'];
-                        $description = $_GET['description'];
-                        $price = $_GET['price'];
-                        $comment = $_GET['comment'];
-                        $baza->insertServices ($id_service_type, $name, $description, $price);
-                    }
-                    elseif($_GET['opcja'] == 'edytuj'){
+                    if($_GET['opcja'] == 'edytuj'){
                         $id_service = $_GET['id_service'];
                         $name = $_GET['name'];
                         $description = $_GET['description'];
@@ -62,6 +54,7 @@
             if (!empty($data)){ 
         ?>
             <div class="services">
+            <button><a href="./add_services.php">Dodaj usługę</a></button>
                 <?php
                     while($row = mysqli_fetch_assoc($data))
                     {
