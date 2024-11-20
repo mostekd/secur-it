@@ -13,11 +13,11 @@ if ($id_employee == 0) {
 
 $baza = new db_services();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id_service_type = $_POST['id_service_type'] ?? '';
-    $name = $_POST['name'] ?? '';
-    $description = $_POST['description'] ?? '';
-    $price = $_POST['price'] ?? '';
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $id_service_type = $_GET['id_service_type'] ?? '';
+    $name = $_GET['name'] ?? '';
+    $description = $_GET['description'] ?? '';
+    $price = $_GET['price'] ?? '';
 
     $baza->insertServices($id_service_type, $name, $description, $price);
     exit;
@@ -46,7 +46,7 @@ $service_types = $baza->SelectServiceType();
         ?>
         <section class="content">
             <h1>Dodaj Nową Usługę</h1>
-            <form action="add_service.php" method="POST" class="form-add-service">
+            <form action="add_service.php" method="GET" class="form-add-service">
                 <label for="id_service_type">Typ usługi:</label>
                 <select name="id_service_type" id="id_service_type" required>
                     <option value="" disabled selected>Wybierz typ usługi</option>
