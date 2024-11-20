@@ -45,12 +45,11 @@
                         $baza->insertServices ($id_service_type, $name, $description, $price);
                     }
                     elseif($_GET['opcja'] == 'edytuj'){
-                        $id_service = $_GET['id_service'];
                         $id_service_type = $_GET['id_service_type'];
                         $name = $_GET['name'];
                         $description = $_GET['description'];
                         $price = $_GET['price'];
-                        $baza->updateServices ($id_service, $id_service_type, $name, $description, $price);
+                        $baza->updateServices ($id_service_type, $name, $description, $price);
                     }
                 }
                 else{
@@ -67,10 +66,10 @@
                     while($row = mysqli_fetch_assoc($data))
                     {
                         echo "<div id='service' class='service'>Nazwa: ".$row['name']." Opis: ".$row['description']." Cena: ".$row['price']."
-                        <button class='delete'><a href=book_list.php?del=True&id=".$row['id_service'].">
+                        <button class='delete'><a href=book_list.php?del=True&id_service=".$row['id_service'].">
                         Usuń usługę
                         </a></button>
-                        <button class='delete'><a href=service_edit.php?id=".$row['id_service'].">
+                        <button class='delete'><a href=service_edit.php?id_service=".$row['id_service'].">
                         Edytuj usługę
                         </a></button>
                         </div>";
