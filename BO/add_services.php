@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include_once('../include/functions.php');
-include_once('../DB/db_services.php');
+include('../DB/db_services.php');
 
 if ($id_employee == 0) {
     header('Location: ../FO/account.php');
