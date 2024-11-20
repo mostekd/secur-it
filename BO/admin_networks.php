@@ -54,7 +54,7 @@
                     }
                 }
                 else{
-                    echo "<p>Książki nie ma w naszej bazie</p>";
+                    echo "<p>Usługi nie ma w naszej bazie</p>";
                 }
             }
             
@@ -62,11 +62,11 @@
             $data = $baza->selectServices_networks();
             if (!empty($data)){ 
         ?>
-            <div class="wpisy">
+            <div class="services">
                 <?php
                     while($row = mysqli_fetch_assoc($data))
                     {
-                        echo "<div id='wpis' class='artykul'>Nazwa: ".$row['name']." Opis: ".$row['description']." Cena: ".$row['price']."
+                        echo "<div id='service' class='service'>Nazwa: ".$row['name']." Opis: ".$row['description']." Cena: ".$row['price']."
                         <button class='delete'><a href=book_list.php?del=True&id=".$row['id_service'].">
                         Usuń usługę
                         </a></button>

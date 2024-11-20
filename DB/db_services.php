@@ -1,6 +1,14 @@
 <?php
     include_once("db_connection.php");
     class db_services extends db_connection{
+
+        function selectServiceById($id_service) {
+            $query = "SELECT * FROM `services` WHERE id_service =".$id_service;
+            $data = mysqli_query($this->connect, $query);
+            if (mysqli_num_rows($data) > 0) {
+                return $data;
+            }
+        }
         function selectServices_networks(){
             $query = 'SELECT * FROM `services` WHERE id_service_type = 1';
             $data = mysqli_query($this->connect, $query);
