@@ -41,8 +41,8 @@
             }
         }
 
-        function insertServices ($name, $description, $price){
-            $query = "INSERT INTO `services`(`name`, `description`, `price`) VALUES ('".$name."','".$description."','".$price."');";
+        function insertServices ($id_service_type, $name, $description, $price){
+            $query = "INSERT INTO `services`(`id_service_type`, `name`, `description`, `price`) VALUES ('".$id_service_type."', '".$name."','".$description."','".$price."');";
             $data = mysqli_query($this->connect, $query);
             header('location: ../BO/uslugi.php'); 
             $this->close();
@@ -56,8 +56,8 @@
             $this->close();
         }
 
-        function updateServices ($id_service, $name, $description, $price){
-            $query = "UPDATE `uslugi` SET `name`='".$name."',`description`='".$description."',`price`='".$price."' WHERE `id_service`=".$id_service.";";
+        function updateServices ($id_service, $id_service_type, $name, $description, $price){
+            $query = "UPDATE `uslugi` SET `id_service_type`='".$id_service_type."', `name`='".$name."',`description`='".$description."',`price`='".$price."' WHERE `id_service`=".$id_service.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id_service']);
             header('location: ../BO/uslugi.php');  
