@@ -6,4 +6,9 @@ Pan Tomasz:
     komunikaty przy błędzie rejestracji - Pan Tomek
     w panelu administracyjnym możliwość przypisania problemu z admin_kontakt do pracownika oraz jego przepisanie do innego pracownika - Pan Tomek
 
-Ogólnie Back office - część strony dla administratora strony oraz pracowników firmy którzy będą mieli możliwość dodawania wpisów do strony. - dawid i Pan Tomek
+Back office - dawid i Pan Tomek: 
+    o firmie
+    wpisy
+    dodaj usługę
+    pobieranie do edytuj usługę
+    usuń usługę
