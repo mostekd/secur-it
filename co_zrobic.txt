@@ -12,3 +12,4 @@ Back office - dawid i Pan Tomek:
     dodaj usługę
     pobieranie do edytuj usługę
     usuń usługę
+    dodaj pracownika
