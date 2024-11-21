@@ -442,7 +442,8 @@ INSERT INTO `positions` (`name`) VALUES
 ('Kierownik działu kadr'),
 ('Specjalista ds. płac'),
 ('Specjalista ds. szkoleń'),
-('Inspektor ds. BHP');
+('Inspektor ds. BHP'),
+('Grafik Komputerowy');
 
 INSERT INTO `fuel_types` (`id_fuel_type`, `fuel_type`) VALUES (NULL, 'P - benzyna'), (NULL, 'D - olej napędowy'), (NULL, 'M - mieszanka paliwo-olej'), (NULL, 'LPG - gaz płynny propan-butan'), (NULL, 'CNG - gaz ziemny skroplony (metan)'), (NULL, 'H - wodór'), (NULL, 'BD - biodiesel'), (NULL, 'E85 - etanol'), (NULL, 'EE - energia elektryczna'), (NULL, '999 - inne');
 
