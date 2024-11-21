@@ -13,7 +13,7 @@ if ($id_employee == 0) {
 
 $baza = new db_services();
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+if (!empty($_GET)) {
     $id_service_type = $_GET['id_service_type'];
     $name = $_GET['name'] ?? '';
     $description = $_GET['description'];

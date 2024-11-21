@@ -13,7 +13,7 @@ if ($id_employee == 0) {
 
 $baza = new db_about_company();
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+if (!empty($_GET)) {
     $title = $_GET['title'];
     $description = $_GET['description'];
 

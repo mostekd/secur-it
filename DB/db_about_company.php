@@ -12,7 +12,7 @@ include_once("db_connection.php");
         function insertAbout_company($title, $description){
             $query = "INSERT INTO `about_company`(`title`, `description`) VALUES ('".$title."','".$description."');";
             $data = mysqli_query($this->connect, $query);
-            header('location: ../BO/about_company.php'); 
+            header('location: ../BO/admin_about_company.php'); 
             $this->close();
         }
 
@@ -20,7 +20,7 @@ include_once("db_connection.php");
             $query = "Delete from about_company where id_about_company =".$id_about_company.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id_about_company']);
-            header('location: ../BO/about_company.php'); 
+            header('location: ../BO/admin_about_company.php'); 
             $this->close();
         }
 
@@ -28,7 +28,7 @@ include_once("db_connection.php");
             $query = "UPDATE `about_company` SET `title`='".$title."',`description`='".$description.";";
             $data = mysqli_query($this->connect, $query);
             unset($_GET['id_about_company']);
-            header('location: ../BO/about_company.php');  
+            header('location: ../BO/admin_about_company.php');  
             $this->close();
         }
     }
