@@ -50,27 +50,28 @@
             
             $baza->databaseConnect();
             $data = $baza->selectAbout_company();
-            if (!empty($data)){ 
-        ?>
-            <div class="services">
-            <button><a href="./add_about_company.php">Dodaj o firmie</a></button>
-                <?php
-                    while($row = mysqli_fetch_assoc($data))
-                    {
-                        echo "<div id='service' class='service'>Tytuł: ".$row['title']." Opis: ".$row['description']."
-                        <button class='delete'><a href=admin_about_company.php?del=True&id_about_company=".$row['id_about_company'].">
+            if (!empty($data)){
+            ?>
+            <div class="tresc">
+            <?php
+                while($row = mysqli_fetch_assoc($data))
+                {
+                    echo "<div id='wpis' class='artykul'>
+                    Tytuł:<br> ".$row['title']."
+                    <br>Treść:<br> ".$row['description']."
+                    </div><br>
+                    <button class='delete'><a href=admin_about_company.php?del=True&id_about_company=".$row['id_about_company'].">
                         Usuń o firmie
-                        </a></button>
-                        <button class='delete'><a href=edit_about_company.php?id_about_company=".$row['id_about_company'].">
+                    </a></button>
+                    <button class='delete'><a href=edit_about_company.php?id_about_company=".$row['id_about_company'].">
                         Edytuj o firmie
-                        </a></button>
-                        </div>";
-                    }
-                    } else {
-                        echo "Brak Wpisów";
-                    }
-                    $baza->close();
-                ?>
+                    </a></button>";
+                }
+                }else {
+                    echo "Brak wpisów";
+                }
+                $baza->close();
+            ?>
             </div>
         </main>
     </body>
