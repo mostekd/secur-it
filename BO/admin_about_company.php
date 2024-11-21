@@ -53,6 +53,7 @@
             if (!empty($data)){
             ?>
             <div class="tresc">
+            <button><a href="./add_about_company.php">Dodaj wpis</a></button>
             <?php
                 while($row = mysqli_fetch_assoc($data))
                 {

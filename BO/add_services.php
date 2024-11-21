@@ -14,10 +14,10 @@ if ($id_employee == 0) {
 $baza = new db_services();
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $id_service_type = $_GET['id_service_type'] ?? '';
+    $id_service_type = $_GET['id_service_type'];
     $name = $_GET['name'] ?? '';
-    $description = $_GET['description'] ?? '';
-    $price = $_GET['price'] ?? '';
+    $description = $_GET['description'];
+    $price = $_GET['price'];
 
     $baza->insertServices($id_service_type, $name, $description, $price);
     exit;
