@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
     include_once ('../include/functions.php');
     include_once('../DB/db_accounts.php');
     $baza = new db_accounts();
@@ -24,7 +21,7 @@ error_reporting(E_ALL);
         $password = sha1($_POST['password']);
         
         // Obsługa zapisu danych do bazy
-        $return = $baza->registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, $id_company, $company_name = '', $additional_name = '', $tax = '', $id_company_country_code = '', $company_phone_number = '', $company_email_address = '', $is_company_admin)
+        $return = $baza->registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, $id_company, $company_name, $additional_name, $tax, $id_company_country_code, $company_phone_number, $company_email_address, $is_company_admin);
         if(isset($return)){
             switch($return) {
                 case 1:
