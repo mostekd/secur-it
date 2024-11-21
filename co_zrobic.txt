@@ -1,3 +1,6 @@
+Dawid:
+    dodawanie wpisów w posts.php dla użytkowników zarejestrowanych
+
 Konrad:
     TODO: zrobic logowanie/rejestracje/konto w headerze - konrad
     ogólnie css do strony - konrad
