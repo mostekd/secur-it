@@ -13,7 +13,7 @@
             }
         }
 
-        function registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, $company_name = '', $additional_name = '', $tax = '', $id_company_country_code = '', $company_phone_number = '', $company_email_address = '',$id_company = 'null', $is_company_admin = '0')
+        function registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, $company_name = '', $additional_name = '', $tax = '', $id_company_country_code = '', $company_phone_number = '', $company_email_address = '',$id_company = null, $is_company_admin = '0')
         {
             // Krok 1: Sprawdzenie, czy użytkownik o podanym nicku lub firma o podanej nazwie już istnieją
             $query = "SELECT id_user AS user FROM users WHERE username = '".$username."'";
