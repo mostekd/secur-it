@@ -30,6 +30,7 @@
             if(isset($_GET['opcja'])){
                 if($_GET['opcja'] == 'przypisz'){
                     $id_contact_form = $_GET['id_contact_form'];
+                    echo '<input value="' . $id_contact_form . '">';
                     // $first_name = $_GET['first_name'];
                     // $last_name = $_GET['last_name'];
                     // $email = $_GET['email'];
@@ -54,6 +55,7 @@
             <table class="kontakt_table"border="1" cellpadding="15" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Imię</th>
                         <th>Nazwisko</th>
                         <th>E-mail</th>
@@ -70,6 +72,7 @@
                         while ($row = mysqli_fetch_assoc($kontakty)): 
                     ?>
                             <tr>
+                                <td><?php echo ($row['id_contact_form']); ?></td>
                                 <td><?php echo ($row['first_name']); ?></td>
                                 <td><?php echo ($row['last_name']); ?></td>
                                 <td><?php echo ($row['email']); ?></td>
