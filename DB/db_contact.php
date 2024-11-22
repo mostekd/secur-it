@@ -15,7 +15,6 @@
 
         function insertContact ($first_name, $last_name, $email, $id_country_code, $phone_number, $title, $message, $consent){
             $query = "INSERT INTO `contact_form` (`first_name`, `last_name`, `email`, `id_country_code`, `phone_number`, `title`, `message`, `consent`) VALUES ('".$first_name."','".$last_name."','".$email."','".$id_country_code."','".$phone_number."','".$title."','".$message."','".$consent."');";
-            $this->wQueryToFile($query);
             $data = mysqli_query($this->connect, $query);
             if ($data) {
                 $this->close();
