@@ -6,6 +6,7 @@
             LEFT JOIN users AS u ON u.id_employee = cf.id_employee
             JOIN country_codes AS cc ON cc.id_country_code = cf.id_country_code
             WHERE 1;';
+            $this->wQueryToFile($query);
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0){
             return $data;

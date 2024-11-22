@@ -84,8 +84,6 @@
             LEFT JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
             WHERE id_user =".$id_user.";";
 
-            $this->wQueryToFile($query);
-
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0) 
             {
