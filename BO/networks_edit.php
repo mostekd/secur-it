@@ -34,11 +34,11 @@
                         while($row = mysqli_fetch_assoc($data))
                         {
                             echo "<form class='MyForm' action='./admin_networks.php' method = 'get'>
-                                <input type=text name='name' placeholder='nazwa' id='name' class='name' value=".$row['name']."></input>
-                                <textarea type=text name='description' placeholder='opis' id='description' class='description' value=".$row['description']."></textarea>
-                                <input type=number name='price' placeholder='cena' id='price' class='price' value=".$row['price']."></input>";
-                            echo "<input type=hidden name='id_service' id='id_service' class='id_service' value=".$row['id_service']."></input>
-                                <input type=hidden name='opcja' id='opcja' class='opcja' value='edytuj'></input>
+                                <input type='text' name='name' id='name' value='".$row['name']."'></input>
+                                <input type='text' name='description' id='description' value='".$row['description']."'></input>
+                                <input type='number' name='price' placeholder='cena' id='price' class='price' value=".$row['price']."></input>";
+                            echo "<input type='hidden' name='id_service' id='id_service' class='id_service' value=".$row['id_service']."></input>
+                                <input type='hidden' name='opcja' id='opcja' class='opcja' value='edytuj'></input>
                                 <input type='submit'></input>
                                 </form>";
                         }
@@ -47,4 +47,4 @@
             ?>
         </main>        
     </body>
-</html>
+</html>s
