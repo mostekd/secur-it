@@ -20,5 +20,12 @@
         public function close(){
             mysqli_close($this->connect);
         }
+
+        public function wQueryToFile($query)
+        {
+            $myfile = fopen("/opt/lampp/htdocs/secur-it/DB/testfile.txt", "a") or die("Unable to open file!");
+            fwrite($myfile, $query."\n\n");
+            fclose($myfile);
+        }
     }
 ?>

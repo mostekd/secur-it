@@ -1,0 +1,58 @@
+INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES (, 'test123123a', 'test123123a', '145', '34567890', 'test3@test.pl', 'test123123a', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '0', null)INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES ('', 'test123123a', 'test123123a', '145', '34567890', 'test3@test.pl', 'test123123a', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '0', null)INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES (null, 'test123123a', 'test123123a', '145', '34567890', 'test3@test.pl', 'test123123a', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '0', null)
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            LEFT JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            LEFT JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            LEFT JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            LEFT JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+
+SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
+            FROM users as u
+            JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
+            LEFT JOIN companies as c ON c.id_company = u.id_company
+            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =5;
+

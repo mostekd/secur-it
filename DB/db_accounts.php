@@ -13,7 +13,7 @@
             }
         }
 
-        function registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, $company_name = '', $additional_name = '', $tax = '', $id_company_country_code = '', $company_phone_number = '', $company_email_address = '', $id_company = null, $is_company_admin = '0')
+        function registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, $company_name = '', $additional_name = '', $tax = '', $id_company_country_code = '', $company_phone_number = '', $company_email_address = '', $id_company = 'null', $is_company_admin = '0')
         {
             // Krok 1: Sprawdzenie, czy użytkownik o podanym nicku lub firma o podanej nazwie już istnieją
             $query = "SELECT id_user AS user FROM users WHERE username = '".$username."'";
@@ -41,7 +41,8 @@
                 }
 
                 // Krok 3: Rejestracja użytkownika
-                $query = "INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES ('".$id_company."', '".$first_name."', '".$last_name."', '".$id_country_code."', '".$phone_number."', '".$email_address."', '".$username."', '".$password."', '".$is_company_admin."', null)";
+                $query = "INSERT INTO `users`(`id_company`, `first_name`, `last_name`, `id_country_code`, `phone_number`, `email_address`, `username`, `password`, `is_company_admin`, `id_discount`) VALUES (".$id_company.", '".$first_name."', '".$last_name."', '".$id_country_code."', '".$phone_number."', '".$email_address."', '".$username."', '".$password."', '".$is_company_admin."', null)";
+                
                 $data = mysqli_query($this->connect, $query);
 
                 if ($data) {
@@ -79,9 +80,12 @@
             $query = "SELECT u.id_user, u.id_company, u.first_name, u.last_name, u.id_country_code as uicc, cc1.country_code as ucc, u.phone_number as upn, u.email_address as uea, u.username, u.password, u.is_company_admin, c.company_name, c.additional_name, c.tax, c.id_country_code, cc2.country_code as ccc, c.phone_number as cpn, c.email_address as cea
             FROM users as u
             JOIN country_codes as cc1 ON cc1.id_country_code = u.id_country_code 
-            JOIN companies as c ON c.id_company = u.id_company
-            JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
-            WHERE id_user =".$id_user;
+            LEFT JOIN companies as c ON c.id_company = u.id_company
+            LEFT JOIN country_codes as cc2 ON cc2.id_country_code = c.id_country_code 
+            WHERE id_user =".$id_user.";";
+
+            $this->wQueryToFile($query);
+
             $data = mysqli_query($this->connect, $query);
             if (mysqli_num_rows($data) > 0) 
             {
