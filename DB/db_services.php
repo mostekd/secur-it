@@ -14,7 +14,6 @@
             $query = "SELECT `id_service`, `id_service_type`, `name`, `description`, `price` FROM `services` WHERE id_service =".$id_service;
             $data = mysqli_query($this->connect, $query);
 
-            $this->wQueryToFile($query);
             if (mysqli_num_rows($data) > 0) {
                 return $data;
             }
