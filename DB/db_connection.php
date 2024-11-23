@@ -24,10 +24,10 @@
         public function wQueryToFile($query)
         {
             //Linux:
-            // $myfile = fopen("/opt/lampp/htdocs/secur-it/DB/testfile.txt", "a") or die("Unable to open file!");
+            $myfile = fopen("/opt/lampp/htdocs/secur-it/DB/testfile.txt", "a") or die("Unable to open file!");
 
             //Windows:
-            $myfile = fopen("C:/xampp/htdocs/dashboard/Strony Internetowe/secur-it/DB/testfile.txt", "a") or die("Unable to open file!");
+            // $myfile = fopen("C:/xampp/htdocs/dashboard/Strony Internetowe/secur-it/DB/testfile.txt", "a") or die("Unable to open file!");
             fwrite($myfile, $query."\n\n");
             fclose($myfile);
         }
