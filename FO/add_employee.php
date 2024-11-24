@@ -42,7 +42,7 @@
                     $password = sha1($_POST['password']);
                     $is_company_admin = 0;
 
-                    $query = $baza->registerCustomer($id_company, '', '', '', $id_country_code, '', '', $phone_number, $email_address, '', $first_name, $last_name, $username, $password, $is_company_admin);
+                    $query = $baza->registerCustomer($first_name, $last_name, $username, $password, $id_country_code,  $phone_number, $email_address, '', '', '', '', '', '', $id_company, $is_company_admin);
                     
                     if ($query == 1) {
                         echo "Pracownik został dodany pomyślnie.";
