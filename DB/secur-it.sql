@@ -191,7 +191,7 @@ create table orders (
     implemented boolean, -- Czy zrealizowano?
     id_employee int, -- Identyfikator realizującego pracownika
     foreign key (id_employee) references employees (id_employee), -- Klucz obcy do tabeli pracownicy
-    foreign key (id_user) references users (id_user), -- Klucz obcy do tabeli użytkownicy
+    foreign key (id_user) references users (id_user) -- Klucz obcy do tabeli użytkownicy
 );
 
 create table service_to_order (
