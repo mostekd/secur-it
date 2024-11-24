@@ -183,14 +183,25 @@ create table contact_form (
     foreign key (id_country_code) references country_codes (id_country_code) -- Klucz obcy do tabeli numery_kierunkowe
 );
 
+-- Tabela zamówienia
 create table orders (
-    id_order int primary key auto_increment,
-    id_service int,
-    price decimal(10,2),
-    id_discount int,
-    final_price decimal(10,2),
-    foreign key (id_service) references services (id_service),
-    foreign key (id_discount) references discounts (id_discount)
+    id_order int primary key auto_increment,  -- Identyfikator zamówienia
+    id_user int, -- Identyfikator użytkownika
+    id_discount int, -- Identyfikator zniżki
+    final_price decimal(10,2), -- cena z zniżką
+    implemented boolean, -- Czy zrealizowano?
+    id_employee int, -- Identyfikator realizującego pracownika
+    foreign key (id_employee) references employees (id_employee), -- Klucz obcy do tabeli pracownicy
+    foreign key (id_user) references users (id_user), -- Klucz obcy do tabeli użytkownicy
+    foreign key (id_discount) references discounts (id_discount) -- Klucz obcy do tabeli zniżki
+);
+
+create table service_to_order (
+    id_service_to_order int primary key auto_increment, -- Identyfikator usługi do zamówienia
+    id_service int, -- Identyfikator usługi
+    id_order int, -- Identyfikator zamówienia
+    foreign key (id_service) references services (id_service), -- Klucz obcy do tabeli usługi
+    foreign key (id_order) references orders (id_order) -- Klucz obcy do tabeli zamówienia
 );
 
 insert into `country_codes`(`country`, `country_code`) values
