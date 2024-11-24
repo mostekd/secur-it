@@ -7,6 +7,7 @@
         $id_user = $_SESSION['id_user'];
         $is_admin = $_SESSION['is_admin'];
         $id_employee = $_SESSION['id_employee'];
+        $id_company -= $_SESSION['id_company'];
     }
     else {
         $id_employee = 0;
