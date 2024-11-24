@@ -187,13 +187,11 @@ create table contact_form (
 create table orders (
     id_order int primary key auto_increment,  -- Identyfikator zamówienia
     id_user int, -- Identyfikator użytkownika
-    id_discount int, -- Identyfikator zniżki
     final_price decimal(10,2), -- cena z zniżką
     implemented boolean, -- Czy zrealizowano?
     id_employee int, -- Identyfikator realizującego pracownika
     foreign key (id_employee) references employees (id_employee), -- Klucz obcy do tabeli pracownicy
     foreign key (id_user) references users (id_user), -- Klucz obcy do tabeli użytkownicy
-    foreign key (id_discount) references discounts (id_discount) -- Klucz obcy do tabeli zniżki
 );
 
 create table service_to_order (
