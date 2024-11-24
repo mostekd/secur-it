@@ -17,7 +17,8 @@
                     $user = mysqli_fetch_assoc($data);
                     echo "<div class='user_page'>";
                     echo "<a href='./account.php'><i class='fa-solid fa-user'></i> ";
-                    echo htmlspecialchars($user['username']);
+                    echo ($user['username']);
+                    echo "<a href='basket.php'><i class='fa-solid fa-basket-shopping'></i>Koszyk</a>";
                     echo "</a></div>";
                 }
                 $baza->close();
