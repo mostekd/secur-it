@@ -183,8 +183,15 @@ create table contact_form (
     foreign key (id_country_code) references country_codes (id_country_code) -- Klucz obcy do tabeli numery_kierunkowe
 );
 
-
-
+create table orders (
+    id_order int primary key auto_increment,
+    id_service int,
+    price decimal(10,2),
+    id_discount int,
+    final_price decimal(10,2),
+    foreign key (id_service) references services (id_service),
+    foreign key (id_discount) references discounts (id_discount)
+);
 
 insert into `country_codes`(`country`, `country_code`) values
 ('Afganistan', '+93'),
